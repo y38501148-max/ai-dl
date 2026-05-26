@@ -25,6 +25,12 @@ const questions = computed(() =>
 )
 const current = computed(() => questions.value[index.value])
 const currentAnswers = computed(() => props.session.answers[current.value?.id] ?? [])
+const isPracticeMode = computed(() => props.session.mode === 'practice')
+const practiceAnswered = computed(() => isPracticeMode.value && currentAnswers.value.length > 0)
+const practiceCorrect = computed(() => {
+  if (!current.value || !practiceAnswered.value) return false
+  return sameAnswers(currentAnswers.value, current.value.correctAnswers)
+})
 const answeredCount = computed(() =>
   props.session.questionIds.filter((id) => (props.session.answers[id] ?? []).length > 0).length,
 )
@@ -58,6 +64,20 @@ function selectAnswer(key: string, checked: boolean) {
   if (checked) next.add(key)
   else next.delete(key)
   emit('answer', current.value.id, [...next])
+}
+
+function sameAnswers(first: string[], second: string[]): boolean {
+  return [...first].sort().join('|') === [...second].sort().join('|')
+}
+
+function answersText(question: Question, answers: string[]): string {
+  if (!answers.length) return '未作答'
+  return answers
+    .map((key) => {
+      const option = question.options.find((item) => item.key === key)
+      return `${key}. ${option?.text ?? ''}`
+    })
+    .join('；')
 }
 
 function go(target: number) {
@@ -127,7 +147,11 @@ onBeforeUnmount(() => {
             v-for="option in current.options"
             :key="option.key"
             class="option"
-            :class="{ selected: currentAnswers.includes(option.key) }"
+            :class="{
+              selected: currentAnswers.includes(option.key),
+              correct: practiceAnswered && current.correctAnswers.includes(option.key),
+              incorrect: practiceAnswered && currentAnswers.includes(option.key) && !current.correctAnswers.includes(option.key),
+            }"
           >
             <input
               :type="current.type === 'multiple' ? 'checkbox' : 'radio'"
@@ -139,6 +163,15 @@ onBeforeUnmount(() => {
             <span>{{ option.text }}</span>
           </label>
         </div>
+        <section
+          v-if="practiceAnswered"
+          class="practice-feedback"
+          :class="practiceCorrect ? 'correct' : 'incorrect'"
+        >
+          <strong>{{ practiceCorrect ? '回答正确' : '回答错误' }}</strong>
+          <p>你的答案：{{ answersText(current, currentAnswers) }}</p>
+          <p>正确答案：{{ answersText(current, current.correctAnswers) }}</p>
+        </section>
         <footer class="question-navigation">
           <button class="button secondary" :disabled="index === 0" @click="go(index - 1)">上一题</button>
           <button
