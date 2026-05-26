@@ -17,6 +17,7 @@ defineProps<{
 
 defineEmits<{
   start: []
+  practice: []
   resume: []
   history: []
   wrongBook: []
@@ -36,6 +37,7 @@ function dateTime(value: string): string {
         <p class="subtitle">从 360 道题中随机组卷，专注完成每一次 60 分钟训练。</p>
         <div class="hero-actions">
           <button class="button primary" @click="$emit('start')">开始随机考试</button>
+          <button class="button secondary" @click="$emit('practice')">自由练习</button>
           <button v-if="activeExam" class="button secondary" @click="$emit('resume')">继续未完成考试</button>
         </div>
       </div>
@@ -48,7 +50,14 @@ function dateTime(value: string): string {
     </section>
 
     <section class="stat-grid">
-      <StatCard label="已做题目" :value="`${attemptedCount} / ${totalQuestions}`" detail="仅统计已作答题目" accent />
+      <StatCard
+        label="已做题目"
+        :value="`${attemptedCount} / ${totalQuestions}`"
+        detail="点击进入练习菜单"
+        accent
+        button
+        @click="$emit('practice')"
+      />
       <StatCard label="累计考试" :value="examCount" detail="正式随机考试场次" />
       <StatCard label="平均成绩" :value="`${averageScore} 分`" />
       <StatCard label="历史最高" :value="`${highestScore} 分`" />
@@ -66,6 +75,10 @@ function dateTime(value: string): string {
         <button class="shortcut" @click="$emit('wrongBook')">
           <span>错题本</span>
           <small>复习尚未掌握的题目</small>
+        </button>
+        <button class="shortcut" @click="$emit('practice')">
+          <span>练习模式</span>
+          <small>按 60 题分组或自由挑题</small>
         </button>
         <button class="shortcut" @click="$emit('history')">
           <span>考试经历</span>
@@ -94,4 +107,3 @@ function dateTime(value: string): string {
     <footer class="storage-note">本地数据目录：{{ dataDirectory }}</footer>
   </main>
 </template>
-

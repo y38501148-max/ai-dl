@@ -58,6 +58,13 @@ export function useExamStore() {
     activeExam.value = session
   }
 
+  async function startPractice(questionIds: string[]) {
+    if (!questionIds.length) return
+    const session = createExam(questionIds, 'practice')
+    await saveApplicationData('activeExam', session)
+    activeExam.value = session
+  }
+
   async function setAnswer(questionId: string, answers: string[]) {
     if (!activeExam.value) return
     const session = {
@@ -116,6 +123,7 @@ export function useExamStore() {
     initialize,
     startOfficialExam,
     startWrongPractice,
+    startPractice,
     setAnswer,
     setCurrentIndex,
     submitActiveExam,

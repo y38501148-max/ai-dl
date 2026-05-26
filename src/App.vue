@@ -4,11 +4,12 @@ import { useExamStore } from './composables/useExamStore'
 import DashboardView from './views/DashboardView.vue'
 import ExamView from './views/ExamView.vue'
 import HistoryView from './views/HistoryView.vue'
+import PracticePickerView from './views/PracticePickerView.vue'
 import ResultView from './views/ResultView.vue'
 import WrongBookView from './views/WrongBookView.vue'
 import type { ExamRecord } from './types'
 
-type Page = 'dashboard' | 'exam' | 'result' | 'wrong-book' | 'history'
+type Page = 'dashboard' | 'exam' | 'result' | 'wrong-book' | 'history' | 'practice-picker'
 
 const store = useExamStore()
 const page = ref<Page>('dashboard')
@@ -41,6 +42,16 @@ async function startPractice() {
     if (store.activeExam.value) page.value = 'exam'
   } catch {
     actionError.value = '无法开始错题重练，请重新启动应用后再试。'
+  }
+}
+
+async function startSelectedPractice(questionIds: string[]) {
+  try {
+    actionError.value = ''
+    await store.startPractice(questionIds)
+    if (store.activeExam.value) page.value = 'exam'
+  } catch {
+    actionError.value = '无法开始练习，请重新启动应用后再试。'
   }
 }
 
@@ -104,9 +115,17 @@ function home() {
     :active-exam="store.activeExam.value"
     :data-directory="store.dataDirectory.value"
     @start="confirmingStart = true"
+    @practice="page = 'practice-picker'"
     @resume="page = 'exam'"
     @history="page = 'history'"
     @wrong-book="page = 'wrong-book'"
+  />
+  <PracticePickerView
+    v-else-if="page === 'practice-picker'"
+    :questions="store.questions.value"
+    :attempted-question-ids="store.progress.value.attemptedQuestionIds"
+    @back="home"
+    @start="startSelectedPractice"
   />
   <ExamView
     v-else-if="page === 'exam' && store.activeExam.value"

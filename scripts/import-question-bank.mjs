@@ -1,6 +1,6 @@
 import { execFileSync } from 'node:child_process'
-import { mkdirSync, rmSync, writeFileSync } from 'node:fs'
-import { basename, dirname, join, resolve } from 'node:path'
+import { mkdirSync, writeFileSync } from 'node:fs'
+import { basename, join, resolve } from 'node:path'
 
 const sourcePdf = process.argv[2]
 if (!sourcePdf) {
@@ -10,7 +10,6 @@ if (!sourcePdf) {
 
 const outputDirectory = resolve('resources/question-bank')
 const jsonPath = join(outputDirectory, 'questions.json')
-const zipPath = resolve('resources/question-bank.zip')
 
 function compact(text) {
   return text
@@ -98,12 +97,9 @@ questions.forEach((question, index) => {
 
 mkdirSync(outputDirectory, { recursive: true })
 writeFileSync(jsonPath, `${JSON.stringify(questions, null, 2)}\n`, 'utf8')
-rmSync(zipPath, { force: true })
-execFileSync('zip', ['-j', '-q', zipPath, jsonPath])
 
 const multipleCount = questions.filter((question) => question.type === 'multiple').length
 const booleanCount = questions.filter((question) => question.type === 'boolean').length
 console.log(`已导入 ${questions.length} 题：多选 ${multipleCount} 题，判断 ${booleanCount} 题。`)
 console.log(`来源文件：${basename(sourcePdf)}`)
 console.log(`生成文件：${jsonPath}`)
-console.log(`压缩资源：${zipPath}`)

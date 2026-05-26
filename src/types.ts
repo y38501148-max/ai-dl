@@ -1,5 +1,5 @@
 export type QuestionType = 'single' | 'multiple' | 'boolean'
-export type ExamMode = 'exam' | 'wrong-practice'
+export type ExamMode = 'exam' | 'wrong-practice' | 'practice'
 export type SubmitMethod = 'manual' | 'timeout'
 export type StorageKey = 'records' | 'wrongBook' | 'progress' | 'activeExam' | 'settings'
 
@@ -78,4 +78,3 @@ export interface BootstrapData {
   activeExam: ActiveExam | null
   settings: SettingsData
 }
-

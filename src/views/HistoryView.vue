@@ -14,6 +14,12 @@ defineEmits<{
 function dateTime(value: string): string {
   return new Date(value).toLocaleString('zh-CN', { hour12: false })
 }
+
+function modeText(mode: ExamRecord['mode']): string {
+  if (mode === 'exam') return '随机考试'
+  if (mode === 'wrong-practice') return '错题重练'
+  return '自由练习'
+}
 </script>
 
 <template>
@@ -30,7 +36,7 @@ function dateTime(value: string): string {
     <section v-if="records.length" class="history-list panel">
       <button v-for="record in records" :key="record.id" class="history-row" @click="$emit('open', record)">
         <div>
-          <strong>{{ record.mode === 'exam' ? '随机考试' : '错题重练' }}</strong>
+          <strong>{{ modeText(record.mode) }}</strong>
           <small>{{ dateTime(record.submittedAt) }}</small>
         </div>
         <span>{{ record.score }} / {{ record.maxScore }} 分</span>
@@ -45,4 +51,3 @@ function dateTime(value: string): string {
     </section>
   </main>
 </template>
-

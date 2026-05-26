@@ -29,6 +29,16 @@ const answeredCount = computed(() =>
   props.session.questionIds.filter((id) => (props.session.answers[id] ?? []).length > 0).length,
 )
 const unansweredCount = computed(() => props.session.questionIds.length - answeredCount.value)
+const modeTitle = computed(() => {
+  if (props.session.mode === 'exam') return '正式随机考试'
+  if (props.session.mode === 'wrong-practice') return '错题重练'
+  return '自由练习'
+})
+const paperTitle = computed(() => {
+  if (props.session.mode === 'exam') return '随机试卷'
+  if (props.session.mode === 'wrong-practice') return '待掌握错题练习'
+  return '自选题练习'
+})
 
 function syncTimer() {
   secondsLeft.value = Math.max(0, Math.ceil((new Date(props.session.deadlineAt).getTime() - Date.now()) / 1000))
@@ -75,8 +85,8 @@ onBeforeUnmount(() => {
   <main class="exam-layout">
     <header class="exam-header">
       <div>
-        <p class="eyebrow">{{ session.mode === 'exam' ? '正式随机考试' : '错题重练' }}</p>
-        <h1>{{ session.mode === 'exam' ? '随机试卷' : '待掌握错题练习' }}</h1>
+        <p class="eyebrow">{{ modeTitle }}</p>
+        <h1>{{ paperTitle }}</h1>
       </div>
       <div class="exam-status">
         <span>已答 {{ answeredCount }} / {{ questions.length }}</span>
@@ -156,4 +166,3 @@ onBeforeUnmount(() => {
     </div>
   </main>
 </template>
-

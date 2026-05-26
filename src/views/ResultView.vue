@@ -20,13 +20,19 @@ function answersText(question: Question, answers: string[]): string {
     })
     .join('；')
 }
+
+function modeText(mode: ExamRecord['mode']): string {
+  if (mode === 'exam') return '考试完成'
+  if (mode === 'wrong-practice') return '错题重练完成'
+  return '练习完成'
+}
 </script>
 
 <template>
   <main class="result-page">
     <header class="result-summary panel">
       <div>
-        <p class="eyebrow">{{ record.mode === 'exam' ? '考试完成' : '错题重练完成' }}</p>
+        <p class="eyebrow">{{ modeText(record.mode) }}</p>
         <h1>{{ record.score }}<small>/ {{ record.maxScore }} 分</small></h1>
         <p class="muted">
           用时 {{ formatDuration(record.elapsedSeconds) }} ·
