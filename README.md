@@ -3,7 +3,7 @@
 
 # 人工智能导论题库
 
-基于 Tauri 与 Vue 的本地桌面考试程序。每场正式考试从题库随机抽取 50 题，限时 60 分钟，每题 2 分；包含题库完成度、自由练习、错题重练与考试经历统计。
+基于 Tauri 与 Vue 的本地桌面及 Android 考试程序。每场正式考试从题库随机抽取 50 题，限时 60 分钟，每题 2 分；包含题库完成度、自由练习、错题重练与考试经历统计。
 
 ## 功能
 
@@ -34,6 +34,7 @@ Tauri 应用会内置 `resources/question-bank/questions.json`，首次运行释
 
 - macOS：`~/Library/Application Support/人工智能导论题库/data/`
 - Windows：`%APPDATA%\人工智能导论题库\data\`
+- Android：应用私有数据目录中的 `data/`
 
 ## 构建安装包
 
@@ -43,3 +44,18 @@ npm run pack:win
 ```
 
 `pack:mac` 生成 `.dmg` 安装包；`pack:win` 生成 NSIS `.exe` 安装包。跨平台正式签名与公证证书需要在发布环境中另行配置。
+
+## Android 构建
+
+安装 Android SDK、NDK 与 Rust Android targets，并配置 `ANDROID_HOME`、`NDK_HOME`、`JAVA_HOME` 后执行：
+
+```bash
+npm run android:init
+npm run android:dev
+npm run pack:android:apk:debug
+npm run pack:android:apk
+npm run pack:android:aab
+```
+
+`pack:android:apk:debug` 生成自动使用兼容调试签名、可供设备安装测试的 APK。`pack:android:apk` 和
+`pack:android:aab` 生成正式发布产物，使用前需要配置 Android 发布签名。

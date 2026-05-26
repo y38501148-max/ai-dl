@@ -107,6 +107,7 @@ fn get_data_directory(app: tauri::AppHandle) -> Result<String, String> {
     data_directory(&app).map(|path| path.display().to_string())
 }
 
+#[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![

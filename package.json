@@ -4,15 +4,21 @@
   "description": "人工智能导论题库桌面练习与考试应用",
   "private": true,
   "scripts": {
+    "tauri": "tauri",
     "dev": "tauri dev",
-    "dev:web": "vite --host 127.0.0.1",
+    "dev:web": "vite",
     "import:questions": "node scripts/import-question-bank.mjs",
     "smoke:web": "node scripts/smoke-web.mjs",
     "typecheck": "vue-tsc --noEmit",
     "build:web": "npm run typecheck && vite build",
     "build": "tauri build",
     "pack:mac": "tauri build --bundles dmg",
-    "pack:win": "tauri build --bundles nsis"
+    "pack:win": "tauri build --bundles nsis",
+    "android:init": "tauri android init",
+    "android:dev": "tauri android dev",
+    "pack:android:apk:debug": "tauri android build --debug --apk",
+    "pack:android:apk": "tauri android build --apk",
+    "pack:android:aab": "tauri android build --aab"
   },
   "dependencies": {
     "@tauri-apps/api": "^2.0.0",

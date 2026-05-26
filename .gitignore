@@ -1,6 +1,12 @@
 node_modules/
 dist/
 release/
+src-tauri/target/
 .DS_Store
 *.log
 
+# Android release signing secrets
+*.jks
+*.keystore
+src-tauri/gen/android/key.properties
+src-tauri/gen/android/keystore.properties
