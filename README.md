@@ -71,6 +71,5 @@ npm run build:pages
 npm run preview:pages
 ```
 
-当前发布采用 `gh-pages` 分支承载构建后的静态文件。首次启用时，需要在 GitHub 仓库的
-`Settings > Pages > Build and deployment > Source` 中选择 `Deploy from a branch`，再将分支设为
-`gh-pages`、目录设为 `/(root)`。
+推送到 `main` 后，`.github/workflows/deploy-pages.yml` 会构建并发布 `dist/`。首次启用时，需要在 GitHub
+仓库的 `Settings > Pages > Build and deployment > Source` 中选择 `GitHub Actions`。
