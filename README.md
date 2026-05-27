@@ -59,3 +59,18 @@ npm run pack:android:aab
 
 `pack:android:apk:debug` 生成自动使用兼容调试签名、可供设备安装测试的 APK。`pack:android:apk` 和
 `pack:android:aab` 生成正式发布产物，使用前需要配置 Android 发布签名。
+
+## GitHub Pages
+
+浏览器版本将答题记录与错题记录保存在浏览器本地存储中，静态部署不会使用桌面或 Android 应用的数据目录。
+
+仓库 `y38501148-max/AI-DL` 使用项目页面路径 `/AI-DL/`。本地验证 Pages 构建：
+
+```bash
+npm run build:pages
+npm run preview:pages
+```
+
+当前发布采用 `gh-pages` 分支承载构建后的静态文件。首次启用时，需要在 GitHub 仓库的
+`Settings > Pages > Build and deployment > Source` 中选择 `Deploy from a branch`，再将分支设为
+`gh-pages`、目录设为 `/(root)`。

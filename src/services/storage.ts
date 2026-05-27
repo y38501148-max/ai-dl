@@ -23,8 +23,8 @@ export async function loadApplicationData(): Promise<BootstrapData> {
   if (window.__TAURI__ || window.__TAURI_INTERNALS__) return invokeTauri<BootstrapData>('bootstrap')
   if (window.examAPI) return window.examAPI.bootstrap()
 
-  const questions = await fetch('/question-bank/questions.json').then((response) => {
-    if (!response.ok) throw new Error('无法读取开发模式下的题库文件')
+  const questions = await fetch(`${import.meta.env.BASE_URL}question-bank/questions.json`).then((response) => {
+    if (!response.ok) throw new Error('无法读取浏览器版本题库文件')
     return response.json()
   })
 

@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { readFileSync } from 'node:fs'
+import { copyFileSync, mkdirSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 
 export default defineConfig({
-  base: './',
+  base: process.env.VITE_BASE_PATH ?? './',
   server: {
     host: process.env.TAURI_DEV_HOST ?? '127.0.0.1',
     port: 5173,
@@ -23,6 +23,14 @@ export default defineConfig({
             next()
           }
         })
+      },
+    },
+    {
+      name: 'include-question-bank-in-web-build',
+      writeBundle() {
+        const outputDirectory = resolve('dist/question-bank')
+        mkdirSync(outputDirectory, { recursive: true })
+        copyFileSync(resolve('resources/question-bank/questions.json'), resolve(outputDirectory, 'questions.json'))
       },
     },
   ],

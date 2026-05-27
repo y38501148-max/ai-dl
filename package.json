@@ -11,6 +11,8 @@
     "smoke:web": "node scripts/smoke-web.mjs",
     "typecheck": "vue-tsc --noEmit",
     "build:web": "npm run typecheck && vite build",
+    "build:pages": "VITE_BASE_PATH=/AI-DL/ npm run build:web",
+    "preview:pages": "VITE_BASE_PATH=/AI-DL/ vite preview",
     "build": "tauri build",
     "pack:mac": "tauri build --bundles dmg",
     "pack:win": "tauri build --bundles nsis",
