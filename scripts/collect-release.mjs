@@ -29,7 +29,7 @@ if (!copied.length) {
   process.exit(1)
 }
 
-for (const file of readdirSync(releaseDirectory).sort()) {
+for (const file of readdirSync(releaseDirectory).filter((file) => !file.startsWith('.')).sort()) {
   const path = resolve(releaseDirectory, file)
   const sizeMb = (statSync(path).size / 1024 / 1024).toFixed(1)
   console.log(`${basename(path)} ${sizeMb} MB`)
