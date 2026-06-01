@@ -1,24 +1,33 @@
 <script setup lang="ts">
 import { formatDuration } from '../services/exam'
+import type { SubjectConfig } from '../services/subjects'
 import type { ExamRecord, Question } from '../types'
 
 defineProps<{
   record: ExamRecord
   questionMap: Map<string, Question>
+  subject: SubjectConfig
 }>()
 
 defineEmits<{
   home: []
 }>()
 
+const baseUrl = import.meta.env.BASE_URL
+
 function answersText(question: Question, answers: string[]): string {
   if (!answers.length) return '未作答'
+  if (question.type === 'blank') return answers.join('；')
   return answers
     .map((key) => {
       const option = question.options.find((item) => item.key === key)
       return `${key}. ${option?.text ?? ''}`
     })
     .join('；')
+}
+
+function assetUrl(path: string): string {
+  return `${baseUrl}${path}`
 }
 
 function modeText(mode: ExamRecord['mode']): string {
@@ -59,12 +68,22 @@ function modeText(mode: ExamRecord['mode']): string {
           <div class="review-title">
             <strong>第 {{ evaluation.displayNumber }} 题</strong>
             <span :class="evaluation.correct ? 'tag-success' : evaluation.answered ? 'tag-error' : 'tag-neutral'">
-              {{ evaluation.correct ? '正确 +2 分' : evaluation.answered ? '错误 0 分' : '未答 0 分' }}
+              {{ evaluation.correct ? `正确 +${subject.scorePerQuestion} 分` : evaluation.answered ? '错误 0 分' : '未答 0 分' }}
             </span>
           </div>
           <p class="review-stem">{{ questionMap.get(evaluation.questionId)!.stem }}</p>
+          <img
+            v-if="questionMap.get(evaluation.questionId)!.image"
+            class="question-image compact"
+            :src="assetUrl(questionMap.get(evaluation.questionId)!.image!)"
+            alt="题目配图"
+          />
           <p>你的答案：{{ answersText(questionMap.get(evaluation.questionId)!, evaluation.selectedAnswers) }}</p>
           <p>正确答案：{{ answersText(questionMap.get(evaluation.questionId)!, evaluation.correctAnswers) }}</p>
+          <section v-if="questionMap.get(evaluation.questionId)!.explanation" class="explanation-box">
+            <strong>题解</strong>
+            <p>{{ questionMap.get(evaluation.questionId)!.explanation }}</p>
+          </section>
         </template>
       </article>
     </section>

@@ -91,6 +91,7 @@ function startPractice() {
 function typeText(type: Question['type']): string {
   if (type === 'multiple') return '多选'
   if (type === 'boolean') return '判断'
+  if (type === 'blank') return '填空'
   return '单选'
 }
 </script>

@@ -17,11 +17,17 @@ const filtered = computed(() =>
   props.entries.filter((entry) => showMastered.value || !entry.mastered).sort((a, b) => b.wrongCount - a.wrongCount),
 )
 const unresolvedCount = computed(() => props.entries.filter((entry) => !entry.mastered).length)
+const baseUrl = import.meta.env.BASE_URL
 
 function answersText(question: Question, answers: string[]): string {
+  if (question.type === 'blank') return answers.length ? answers.join('；') : '未作答'
   return answers
     .map((key) => `${key}. ${question.options.find((option) => option.key === key)?.text ?? ''}`)
     .join('；')
+}
+
+function assetUrl(path: string): string {
+  return `${baseUrl}${path}`
 }
 
 function dateTime(value: string): string {
@@ -57,10 +63,20 @@ function dateTime(value: string): string {
             </span>
           </div>
           <h2>{{ questionMap.get(entry.questionId)!.stem }}</h2>
+          <img
+            v-if="questionMap.get(entry.questionId)!.image"
+            class="question-image compact"
+            :src="assetUrl(questionMap.get(entry.questionId)!.image!)"
+            alt="题目配图"
+          />
           <p>最近错误答案：{{ answersText(questionMap.get(entry.questionId)!, entry.latestWrongAnswers) }}</p>
           <p class="correct-answer">
             正确答案：{{ answersText(questionMap.get(entry.questionId)!, questionMap.get(entry.questionId)!.correctAnswers) }}
           </p>
+          <section v-if="questionMap.get(entry.questionId)!.explanation" class="explanation-box">
+            <strong>题解</strong>
+            <p>{{ questionMap.get(entry.questionId)!.explanation }}</p>
+          </section>
           <small class="muted">最近答错：{{ dateTime(entry.latestWrongAt) }}</small>
         </template>
       </article>
@@ -71,4 +87,3 @@ function dateTime(value: string): string {
     </section>
   </main>
 </template>
-

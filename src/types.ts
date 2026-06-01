@@ -1,7 +1,8 @@
-export type QuestionType = 'single' | 'multiple' | 'boolean'
+export type QuestionType = 'single' | 'multiple' | 'boolean' | 'blank'
 export type ExamMode = 'exam' | 'wrong-practice' | 'practice'
 export type SubmitMethod = 'manual' | 'timeout'
 export type StorageKey = 'records' | 'wrongBook' | 'progress' | 'activeExam' | 'settings'
+export type SubjectId = 'ai' | 'data-structure'
 
 export interface QuestionOption {
   key: string
@@ -12,14 +13,20 @@ export interface Question {
   id: string
   sourceNumber: number
   type: QuestionType
+  subjectId?: SubjectId
   stem: string
   options: QuestionOption[]
   correctAnswers: string[]
+  acceptedAnswers?: string[]
+  image?: string
+  tags?: string[]
+  explanation?: string
 }
 
 export interface ActiveExam {
   id: string
   mode: ExamMode
+  subjectId?: SubjectId
   questionIds: string[]
   answers: Record<string, string[]>
   startedAt: string
@@ -40,6 +47,7 @@ export interface QuestionEvaluation {
 export interface ExamRecord {
   id: string
   mode: ExamMode
+  subjectId?: SubjectId
   startedAt: string
   submittedAt: string
   submitMethod: SubmitMethod
@@ -68,6 +76,7 @@ export interface ProgressData {
 
 export interface SettingsData {
   questionBankVersion: number
+  activeSubjectId?: SubjectId
 }
 
 export interface BootstrapData {

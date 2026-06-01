@@ -1,7 +1,8 @@
 import { computed, ref } from 'vue'
 import { createExam, gradeExam, selectOfficialQuestions, updateProgress, updateWrongBook } from '../services/exam'
 import { loadApplicationData, resolveDataDirectory, saveApplicationData } from '../services/storage'
-import type { ActiveExam, ExamRecord, ProgressData, Question, SubmitMethod, WrongBookEntry } from '../types'
+import { DEFAULT_SUBJECT_ID, getSubjectConfig, isSubjectId, subjectOf } from '../services/subjects'
+import type { ActiveExam, ExamRecord, ProgressData, Question, SubjectId, SubmitMethod, WrongBookEntry } from '../types'
 
 export function useExamStore() {
   const loading = ref(true)
@@ -11,16 +12,35 @@ export function useExamStore() {
   const wrongBook = ref<WrongBookEntry[]>([])
   const progress = ref<ProgressData>({ attemptedQuestionIds: [] })
   const activeExam = ref<ActiveExam | null>(null)
+  const activeSubjectId = ref<SubjectId>(DEFAULT_SUBJECT_ID)
   const dataDirectory = ref('')
 
   const questionMap = computed(() => new Map(questions.value.map((question) => [question.id, question])))
-  const unresolvedWrongBook = computed(() => wrongBook.value.filter((entry) => !entry.mastered))
+  const activeSubject = computed(() => getSubjectConfig(activeSubjectId.value))
+  const subjectQuestions = computed(() => questions.value.filter((question) => subjectOf(question) === activeSubjectId.value))
+  const subjectRecords = computed(() =>
+    records.value.filter((record) => (record.subjectId ?? DEFAULT_SUBJECT_ID) === activeSubjectId.value),
+  )
+  const subjectWrongBook = computed(() =>
+    wrongBook.value.filter((entry) => {
+      const question = questionMap.value.get(entry.questionId)
+      return question && subjectOf(question) === activeSubjectId.value
+    }),
+  )
+  const unresolvedWrongBook = computed(() => subjectWrongBook.value.filter((entry) => !entry.mastered))
   const completionPercent = computed(() =>
-    questions.value.length
-      ? Number(((progress.value.attemptedQuestionIds.length / questions.value.length) * 100).toFixed(1))
+    subjectQuestions.value.length
+      ? Number(
+          ((
+            progress.value.attemptedQuestionIds.filter((id) => {
+              const question = questionMap.value.get(id)
+              return question && subjectOf(question) === activeSubjectId.value
+            }).length / subjectQuestions.value.length
+          ) * 100).toFixed(1),
+        )
       : 0,
   )
-  const officialRecords = computed(() => records.value.filter((record) => record.mode === 'exam'))
+  const officialRecords = computed(() => subjectRecords.value.filter((record) => record.mode === 'exam'))
   const averageScore = computed(() => {
     if (!officialRecords.value.length) return 0
     const score = officialRecords.value.reduce((sum, record) => sum + record.score, 0)
@@ -36,6 +56,11 @@ export function useExamStore() {
       wrongBook.value = initial.wrongBook
       progress.value = initial.progress
       activeExam.value = initial.activeExam
+      activeSubjectId.value = isSubjectId(initial.activeExam?.subjectId)
+        ? initial.activeExam.subjectId
+        : isSubjectId(initial.settings.activeSubjectId)
+          ? initial.settings.activeSubjectId
+          : DEFAULT_SUBJECT_ID
       dataDirectory.value = await resolveDataDirectory()
     } catch (reason) {
       error.value = reason instanceof Error ? reason.message : '应用初始化失败'
@@ -44,23 +69,31 @@ export function useExamStore() {
     }
   }
 
+  async function setActiveSubject(subjectId: SubjectId) {
+    activeSubjectId.value = subjectId
+    await saveApplicationData('settings', { questionBankVersion: 2, activeSubjectId: subjectId })
+  }
+
   async function startOfficialExam() {
-    const session = createExam(selectOfficialQuestions(questions.value), 'exam')
+    const session = createExam(selectOfficialQuestions(subjectQuestions.value, activeSubjectId.value), 'exam', activeSubjectId.value)
     await saveApplicationData('activeExam', session)
     activeExam.value = session
   }
 
   async function startWrongPractice() {
-    const ids = unresolvedWrongBook.value.map((entry) => entry.questionId).slice(0, 50)
+    const ids = subjectWrongBook.value
+      .filter((entry) => !entry.mastered)
+      .map((entry) => entry.questionId)
+      .slice(0, 50)
     if (!ids.length) return
-    const session = createExam(ids, 'wrong-practice')
+    const session = createExam(ids, 'wrong-practice', activeSubjectId.value)
     await saveApplicationData('activeExam', session)
     activeExam.value = session
   }
 
   async function startPractice(questionIds: string[]) {
     if (!questionIds.length) return
-    const session = createExam(questionIds, 'practice')
+    const session = createExam(questionIds, 'practice', activeSubjectId.value)
     await saveApplicationData('activeExam', session)
     activeExam.value = session
   }
@@ -113,6 +146,11 @@ export function useExamStore() {
     wrongBook,
     progress,
     activeExam,
+    activeSubjectId,
+    activeSubject,
+    subjectQuestions,
+    subjectRecords,
+    subjectWrongBook,
     dataDirectory,
     questionMap,
     unresolvedWrongBook,
@@ -121,6 +159,7 @@ export function useExamStore() {
     averageScore,
     highestScore,
     initialize,
+    setActiveSubject,
     startOfficialExam,
     startWrongPractice,
     startPractice,

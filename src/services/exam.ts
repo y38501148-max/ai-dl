@@ -5,10 +5,10 @@ import type {
   ProgressData,
   Question,
   SubmitMethod,
+  SubjectId,
   WrongBookEntry,
 } from '../types'
-
-const EXAM_DURATION_MS = 60 * 60 * 1000
+import { getSubjectConfig, subjectOf } from './subjects'
 
 function makeId(): string {
   return globalThis.crypto?.randomUUID?.() ?? `exam-${Date.now()}-${Math.random().toString(16).slice(2)}`
@@ -23,25 +23,52 @@ function shuffle<T>(values: T[]): T[] {
   return result
 }
 
-export function createExam(questionIds: string[], mode: ExamMode): ActiveExam {
+export function createExam(questionIds: string[], mode: ExamMode, subjectId: SubjectId): ActiveExam {
   const startedAt = new Date()
+  const subject = getSubjectConfig(subjectId)
   return {
     id: makeId(),
     mode,
+    subjectId,
     questionIds: shuffle(questionIds),
     answers: {},
     startedAt: startedAt.toISOString(),
-    deadlineAt: new Date(startedAt.getTime() + EXAM_DURATION_MS).toISOString(),
+    deadlineAt: new Date(startedAt.getTime() + subject.durationSeconds * 1000).toISOString(),
     currentIndex: 0,
   }
 }
 
-export function selectOfficialQuestions(questions: Question[]): string[] {
+export function selectOfficialQuestions(questions: Question[], subjectId: SubjectId): string[] {
+  if (subjectId === 'data-structure') {
+    const singles = shuffle(questions.filter((question) => question.type === 'single')).slice(0, 10)
+    const blanks = shuffle(questions.filter((question) => question.type === 'blank')).slice(0, 10)
+    return shuffle([...singles, ...blanks].map((question) => question.id))
+  }
   return shuffle(questions.map((question) => question.id)).slice(0, 50)
 }
 
-function sameAnswers(first: string[], second: string[]): boolean {
+export function sameAnswers(first: string[], second: string[]): boolean {
   return [...first].sort().join('|') === [...second].sort().join('|')
+}
+
+function normalizeBlankAnswer(value: string): string {
+  return value
+    .trim()
+    .toLowerCase()
+    .replace(/[，。；：]/g, (match) => ({ '，': ',', '。': '.', '；': ';', '：': ':' })[match] ?? match)
+    .replace(/\s+/g, '')
+}
+
+export function isCorrectAnswer(question: Question, selectedAnswers: string[]): boolean {
+  if (!selectedAnswers.length) return false
+  if (question.type !== 'blank') return sameAnswers(selectedAnswers, question.correctAnswers)
+  const normalizedInput = normalizeBlankAnswer(selectedAnswers[0] ?? '')
+  const accepted = [...question.correctAnswers, ...(question.acceptedAnswers ?? [])].map(normalizeBlankAnswer)
+  return accepted.includes(normalizedInput)
+}
+
+function scoreFor(question: Question, session: ActiveExam): number {
+  return getSubjectConfig(session.subjectId ?? subjectOf(question)).scorePerQuestion
 }
 
 export function gradeExam(
@@ -57,7 +84,7 @@ export function gradeExam(
     if (!question) throw new Error(`题目不存在：${questionId}`)
     const selectedAnswers = session.answers[questionId] ?? []
     const answered = selectedAnswers.length > 0
-    const correct = answered && sameAnswers(selectedAnswers, question.correctAnswers)
+    const correct = isCorrectAnswer(question, selectedAnswers)
     if (answered && !attemptedBefore.has(questionId)) {
       newlyAttemptedCount += 1
       attemptedBefore.add(questionId)
@@ -69,7 +96,7 @@ export function gradeExam(
       correctAnswers: question.correctAnswers,
       answered,
       correct,
-      score: correct ? 2 : 0,
+      score: correct ? scoreFor(question, session) : 0,
     }
   })
 
@@ -77,6 +104,7 @@ export function gradeExam(
   return {
     id: session.id,
     mode: session.mode,
+    subjectId: session.subjectId,
     startedAt: session.startedAt,
     submittedAt: submittedAt.toISOString(),
     submitMethod: method,
@@ -87,7 +115,7 @@ export function gradeExam(
     questionIds: session.questionIds,
     evaluations,
     score,
-    maxScore: session.questionIds.length * 2,
+    maxScore: evaluations.reduce((total, item) => total + scoreFor(questionMap.get(item.questionId)!, session), 0),
     correctCount: evaluations.filter((item) => item.correct).length,
     wrongCount: evaluations.filter((item) => item.answered && !item.correct).length,
     unansweredCount: evaluations.filter((item) => !item.answered).length,
@@ -126,4 +154,3 @@ export function formatDuration(totalSeconds: number): string {
   const seconds = totalSeconds % 60
   return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
 }
-

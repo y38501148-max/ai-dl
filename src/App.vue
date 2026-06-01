@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { useExamStore } from './composables/useExamStore'
+import { SUBJECTS } from './services/subjects'
+import { checkForUpdate, type UpdateInfo } from './services/update'
 import DashboardView from './views/DashboardView.vue'
 import ExamView from './views/ExamView.vue'
 import HistoryView from './views/HistoryView.vue'
 import PracticePickerView from './views/PracticePickerView.vue'
 import ResultView from './views/ResultView.vue'
 import WrongBookView from './views/WrongBookView.vue'
-import type { ExamRecord } from './types'
+import type { ExamRecord, SubjectId } from './types'
 
 type Page = 'dashboard' | 'exam' | 'result' | 'wrong-book' | 'history' | 'practice-picker'
 
@@ -16,13 +18,37 @@ const page = ref<Page>('dashboard')
 const result = ref<ExamRecord | null>(null)
 const confirmingStart = ref(false)
 const actionError = ref('')
+const updateInfo = ref<UpdateInfo | null>(null)
+const subjectNotice = ref('')
 
 const recentOfficialRecord = computed(() => store.officialRecords.value[0])
+const activeExamSubjectId = computed(() => store.activeExam.value?.subjectId ?? store.activeSubjectId.value)
+const resultSubjectId = computed(() => result.value?.subjectId ?? 'ai')
+const attemptedCount = computed(
+  () =>
+    store.progress.value.attemptedQuestionIds.filter((id) => {
+      const question = store.questionMap.value.get(id)
+      if (!question) return false
+      return (question.subjectId ?? 'ai') === store.activeSubjectId.value
+    }).length,
+)
 
 onMounted(async () => {
   await store.initialize()
   if (store.activeExam.value) page.value = 'exam'
+  void checkForUpdate().then((info) => {
+    updateInfo.value = info
+  })
 })
+
+async function changeSubject(subjectId: SubjectId) {
+  if (store.activeExam.value) return
+  await store.setActiveSubject(subjectId)
+  const subject = SUBJECTS.find((item) => item.id === subjectId)
+  subjectNotice.value = subject?.notice ?? ''
+  page.value = 'dashboard'
+  result.value = null
+}
 
 async function startOfficial() {
   try {
@@ -94,6 +120,12 @@ function home() {
   page.value = 'dashboard'
   result.value = null
 }
+
+function openUpdate() {
+  if (!updateInfo.value) return
+  window.open(updateInfo.value.releaseUrl, '_blank', 'noopener,noreferrer')
+  updateInfo.value = null
+}
 </script>
 
 <template>
@@ -102,62 +134,85 @@ function home() {
     <h1>应用启动失败</h1>
     <p>{{ store.error.value }}</p>
   </div>
-  <DashboardView
-    v-else-if="page === 'dashboard'"
-    :completion-percent="store.completionPercent.value"
-    :attempted-count="store.progress.value.attemptedQuestionIds.length"
-    :total-questions="store.questions.value.length"
-    :exam-count="store.officialRecords.value.length"
-    :average-score="store.averageScore.value"
-    :highest-score="store.highestScore.value"
-    :wrong-count="store.unresolvedWrongBook.value.length"
-    :recent-record="recentOfficialRecord"
-    :active-exam="store.activeExam.value"
-    :data-directory="store.dataDirectory.value"
-    @start="confirmingStart = true"
-    @practice="page = 'practice-picker'"
-    @resume="page = 'exam'"
-    @history="page = 'history'"
-    @wrong-book="page = 'wrong-book'"
-  />
-  <PracticePickerView
-    v-else-if="page === 'practice-picker'"
-    :questions="store.questions.value"
-    :attempted-question-ids="store.progress.value.attemptedQuestionIds"
-    @back="home"
-    @start="startSelectedPractice"
-  />
-  <ExamView
-    v-else-if="page === 'exam' && store.activeExam.value"
-    :session="store.activeExam.value"
-    :question-map="store.questionMap.value"
-    @answer="answer"
-    @navigate="navigate"
-    @submit="submit"
-  />
-  <ResultView
-    v-else-if="page === 'result' && result"
-    :record="result"
-    :question-map="store.questionMap.value"
-    @home="home"
-  />
-  <WrongBookView
-    v-else-if="page === 'wrong-book'"
-    :entries="store.wrongBook.value"
-    :question-map="store.questionMap.value"
-    @back="home"
-    @practice="startPractice"
-  />
-  <HistoryView v-else-if="page === 'history'" :records="store.records.value" @back="home" @open="showRecord" />
+  <template v-else>
+    <div class="subject-switcher panel">
+      <label for="subject-select">科目选择</label>
+      <select
+        id="subject-select"
+        :value="store.activeSubjectId.value"
+        :disabled="Boolean(store.activeExam.value)"
+        @change="changeSubject(($event.target as HTMLSelectElement).value as SubjectId)"
+      >
+        <option v-for="subject in SUBJECTS" :key="subject.id" :value="subject.id">{{ subject.name }}</option>
+      </select>
+    </div>
+
+    <DashboardView
+      v-if="page === 'dashboard'"
+      :subject="store.activeSubject.value"
+      :completion-percent="store.completionPercent.value"
+      :attempted-count="attemptedCount"
+      :total-questions="store.subjectQuestions.value.length"
+      :exam-count="store.officialRecords.value.length"
+      :average-score="store.averageScore.value"
+      :highest-score="store.highestScore.value"
+      :wrong-count="store.unresolvedWrongBook.value.length"
+      :recent-record="recentOfficialRecord"
+      :active-exam="store.activeExam.value"
+      :data-directory="store.dataDirectory.value"
+      @start="confirmingStart = true"
+      @practice="page = 'practice-picker'"
+      @resume="page = 'exam'"
+      @history="page = 'history'"
+      @wrong-book="page = 'wrong-book'"
+    />
+    <PracticePickerView
+      v-else-if="page === 'practice-picker'"
+      :questions="store.subjectQuestions.value"
+      :attempted-question-ids="store.progress.value.attemptedQuestionIds"
+      @back="home"
+      @start="startSelectedPractice"
+    />
+    <ExamView
+      v-else-if="page === 'exam' && store.activeExam.value"
+      :session="store.activeExam.value"
+      :question-map="store.questionMap.value"
+      :subject="SUBJECTS.find((subject) => subject.id === activeExamSubjectId) ?? SUBJECTS[0]"
+      @answer="answer"
+      @navigate="navigate"
+      @submit="submit"
+    />
+    <ResultView
+      v-else-if="page === 'result' && result"
+      :record="result"
+      :question-map="store.questionMap.value"
+      :subject="SUBJECTS.find((subject) => subject.id === resultSubjectId) ?? SUBJECTS[0]"
+      @home="home"
+    />
+    <WrongBookView
+      v-else-if="page === 'wrong-book'"
+      :entries="store.subjectWrongBook.value"
+      :question-map="store.questionMap.value"
+      @back="home"
+      @practice="startPractice"
+    />
+    <HistoryView
+      v-else-if="page === 'history'"
+      :records="store.subjectRecords.value"
+      @back="home"
+      @open="showRecord"
+    />
+  </template>
 
   <div v-if="confirmingStart" class="modal-backdrop">
     <section class="modal start-modal panel">
       <p class="eyebrow">开始考试</p>
-      <h2>随机抽取 50 道题</h2>
+      <h2>{{ store.activeSubject.value.examDescription }}</h2>
       <ul class="rules">
         <li>考试时长 60 分钟，超时自动交卷。</li>
-        <li>每题 2 分，满分 100 分。</li>
-        <li>多选题必须完全正确才得分。</li>
+        <li>每题 {{ store.activeSubject.value.scorePerQuestion }} 分，自动保存考试记录。</li>
+        <li v-if="store.activeSubjectId.value === 'ai'">多选题必须完全正确才得分。</li>
+        <li v-else>填空题支持多种等价答案，选择题均为单选。</li>
         <li>考试界面仅显示本场题号，不显示题库原编号。</li>
       </ul>
       <div class="modal-actions">
@@ -169,5 +224,25 @@ function home() {
   <div v-if="actionError" class="action-error" role="alert">
     <span>{{ actionError }}</span>
     <button @click="actionError = ''">关闭</button>
+  </div>
+  <div v-if="subjectNotice" class="modal-backdrop">
+    <section class="modal panel">
+      <h2>科目提醒</h2>
+      <p>{{ subjectNotice }}</p>
+      <div class="modal-actions">
+        <button class="button primary" @click="subjectNotice = ''">我知道了</button>
+      </div>
+    </section>
+  </div>
+  <div v-if="updateInfo" class="modal-backdrop">
+    <section class="modal panel">
+      <p class="eyebrow">发现新版本</p>
+      <h2>可更新到 {{ updateInfo.latestVersion }}</h2>
+      <p>当前版本为 {{ updateInfo.currentVersion }}。更新检测已异步完成，网络失败不会影响正常使用。</p>
+      <div class="modal-actions">
+        <button class="button secondary" @click="updateInfo = null">稍后</button>
+        <button class="button primary" @click="openUpdate">前往更新</button>
+      </div>
+    </section>
   </div>
 </template>

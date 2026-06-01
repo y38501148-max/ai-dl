@@ -1,0 +1,8 @@
+node_modules
+dist
+release
+src-tauri/target
+src-tauri/target-linux-arm64
+.git
+.DS_Store
+*.log

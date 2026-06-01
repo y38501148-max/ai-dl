@@ -5,7 +5,7 @@ const fallbackDefaults = {
   wrongBook: [],
   progress: { attemptedQuestionIds: [] },
   activeExam: null,
-  settings: { questionBankVersion: 1 },
+  settings: { questionBankVersion: 2, activeSubjectId: 'ai' },
 }
 
 async function invokeTauri<T>(command: string, args?: Record<string, unknown>): Promise<T> {
@@ -15,7 +15,7 @@ async function invokeTauri<T>(command: string, args?: Record<string, unknown>): 
 }
 
 function fallbackGet<T>(key: StorageKey): T {
-  const saved = localStorage.getItem(`ai-question-exam:${key}`)
+  const saved = localStorage.getItem(`muz-choice-blank-bank:${key}`) ?? localStorage.getItem(`ai-question-exam:${key}`)
   return saved ? (JSON.parse(saved) as T) : (fallbackDefaults[key] as T)
 }
 
@@ -48,7 +48,7 @@ export async function saveApplicationData(key: StorageKey, value: unknown): Prom
     await window.examAPI.save(key, serializableValue)
     return
   }
-  localStorage.setItem(`ai-question-exam:${key}`, JSON.stringify(serializableValue))
+  localStorage.setItem(`muz-choice-blank-bank:${key}`, JSON.stringify(serializableValue))
 }
 
 export async function resolveDataDirectory(): Promise<string> {
