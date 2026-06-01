@@ -203,10 +203,10 @@ gcc --version
 
 ## 发布与更新检测
 
-应用启动后会异步读取：
+应用启动后会优先异步读取 GitHub 最新 Release：
 
 ```text
-https://raw.githubusercontent.com/y38501148-max/AI-DL/main/package.json
+https://api.github.com/repos/y38501148-max/AI-DL/releases/latest
 ```
 
-如果远端版本号高于当前版本，会提示前往 GitHub Releases 更新。检测请求设置了超时并吞掉网络错误，因此不会因为 GitHub 连接失败影响离线使用。
+只有 Release 不是草稿/预发布、包含安装包资产，并且 Release 名称或 tag 能解析为高于当前版本的语义化版本号时，才会提示前往该 Release 更新。GitHub Releases API 不可用时才降级读取 `main` 分支的 `package.json`；检测请求设置了超时并吞掉网络错误，因此不会因为 GitHub 连接失败影响离线使用。
