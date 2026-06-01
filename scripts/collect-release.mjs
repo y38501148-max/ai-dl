@@ -1,18 +1,24 @@
-import { copyFileSync, existsSync, mkdirSync, readdirSync, statSync } from 'node:fs'
+import { copyFileSync, existsSync, mkdirSync, readdirSync, rmSync, statSync } from 'node:fs'
 import { basename, resolve } from 'node:path'
 import packageInfo from '../package.json' with { type: 'json' }
 
 const releaseDirectory = resolve('release', packageInfo.version)
+const releaseName = `muz-choice-blank-bank_${packageInfo.version}`
 mkdirSync(releaseDirectory, { recursive: true })
 
+for (const file of readdirSync(releaseDirectory)) {
+  if (file.startsWith('.')) continue
+  rmSync(resolve(releaseDirectory, file), { force: true, recursive: true })
+}
+
 const artifactGroups = [
-  ['src-tauri/gen/android/app/build/outputs/apk/universal/release/app-universal-release.apk', `muz-选填题库_${packageInfo.version}_universal.apk`],
-  ['src-tauri/gen/android/app/build/outputs/bundle/universalRelease/app-universal-release.aab', `muz-选填题库_${packageInfo.version}_universal.aab`],
-  [`src-tauri/target-linux-arm64/release/bundle/deb/muz-选填题库_${packageInfo.version}_arm64.deb`, `muz-选填题库_${packageInfo.version}_arm64.deb`],
-  [`src-tauri/target/release/bundle/dmg/muz-选填题库_${packageInfo.version}_aarch64.dmg`, `muz-选填题库_${packageInfo.version}_aarch64.dmg`],
-  [`src-tauri/target/universal-apple-darwin/release/bundle/dmg/muz-选填题库_${packageInfo.version}_universal.dmg`, `muz-选填题库_${packageInfo.version}_universal.dmg`],
-  [`src-tauri/target/x86_64-pc-windows-gnu/release/bundle/nsis/muz-选填题库_${packageInfo.version}_x64-setup.exe`, `muz-选填题库_${packageInfo.version}_x64-setup.exe`],
-  [`src-tauri/target/x86_64-pc-windows-msvc/release/bundle/nsis/muz-选填题库_${packageInfo.version}_x64-setup.exe`, `muz-选填题库_${packageInfo.version}_x64-setup.exe`],
+  ['src-tauri/gen/android/app/build/outputs/apk/universal/release/app-universal-release.apk', `${releaseName}_android-universal.apk`],
+  ['src-tauri/gen/android/app/build/outputs/bundle/universalRelease/app-universal-release.aab', `${releaseName}_android-universal.aab`],
+  [`src-tauri/target-linux-arm64/release/bundle/deb/muz-选填题库_${packageInfo.version}_arm64.deb`, `${releaseName}_linux-arm64.deb`],
+  [`src-tauri/target/release/bundle/dmg/muz-选填题库_${packageInfo.version}_aarch64.dmg`, `${releaseName}_macos-aarch64.dmg`],
+  [`src-tauri/target/universal-apple-darwin/release/bundle/dmg/muz-选填题库_${packageInfo.version}_universal.dmg`, `${releaseName}_macos-universal.dmg`],
+  [`src-tauri/target/x86_64-pc-windows-gnu/release/bundle/nsis/muz-选填题库_${packageInfo.version}_x64-setup.exe`, `${releaseName}_windows-x64-setup.exe`],
+  [`src-tauri/target/x86_64-pc-windows-msvc/release/bundle/nsis/muz-选填题库_${packageInfo.version}_x64-setup.exe`, `${releaseName}_windows-x64-setup.exe`],
 ]
 
 const copied = []

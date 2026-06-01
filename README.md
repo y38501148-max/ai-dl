@@ -187,6 +187,8 @@ npm run release:collect
 release/0.1.4/
 ```
 
+发布目录中的安装包文件名使用纯 ASCII，例如 `muz-choice-blank-bank_0.1.4_windows-x64-setup.exe`，便于上传到 GitHub Releases；应用内显示名称仍为 `muz-选填题库`。
+
 macOS 根目录 `/release` 可能是只读文件系统，因此本仓库默认使用项目内的 `release/<版本号>/` 作为发布目录。
 
 ## C 代码运行说明
