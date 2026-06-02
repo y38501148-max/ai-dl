@@ -1,4 +1,5 @@
 import type { BootstrapData, Question, QuestionBankManifest, StorageKey } from '../types'
+import { compareQuestionBankTags } from './questionBankVersion'
 
 const fallbackDefaults = {
   records: [],
@@ -31,6 +32,33 @@ function readBrowserQuestionBankOverride(): { questions: Question[]; manifest?: 
   return { questions, manifest }
 }
 
+function clearBrowserQuestionBankOverride() {
+  localStorage.removeItem(QUESTION_BANK_OVERRIDE_KEY)
+  localStorage.removeItem(QUESTION_BANK_MANIFEST_KEY)
+}
+
+function selectBrowserQuestionBankOverride(
+  override: { questions: Question[]; manifest?: QuestionBankManifest } | null,
+  embeddedManifest?: QuestionBankManifest,
+): { questions: Question[]; manifest?: QuestionBankManifest } | null {
+  if (!override?.questions.length) return null
+  if (!embeddedManifest?.bankTag) return override
+  if (!override.manifest?.bankTag) {
+    clearBrowserQuestionBankOverride()
+    return null
+  }
+
+  const tagComparison = compareQuestionBankTags(override.manifest.bankTag, embeddedManifest.bankTag)
+  const sameBankShape =
+    override.questions.length === embeddedManifest.questionCount &&
+    override.manifest.questionCount === embeddedManifest.questionCount
+  if (tagComparison < 0 || (tagComparison === 0 && !sameBankShape)) {
+    clearBrowserQuestionBankOverride()
+    return null
+  }
+  return override
+}
+
 export async function loadApplicationData(): Promise<BootstrapData> {
   if (window.__TAURI__ || window.__TAURI_INTERNALS__) return invokeTauri<BootstrapData>('bootstrap')
   if (window.examAPI) return window.examAPI.bootstrap()
@@ -38,7 +66,7 @@ export async function loadApplicationData(): Promise<BootstrapData> {
   const embeddedManifest = await fetch(`${import.meta.env.BASE_URL}question-bank/manifest.json`)
     .then((response) => (response.ok ? response.json() : undefined))
     .catch(() => undefined)
-  const override = readBrowserQuestionBankOverride()
+  const override = selectBrowserQuestionBankOverride(readBrowserQuestionBankOverride(), embeddedManifest)
   const questions =
     override?.questions ??
     (await fetch(`${import.meta.env.BASE_URL}question-bank/questions.json`).then((response) => {

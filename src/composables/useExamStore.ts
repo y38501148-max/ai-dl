@@ -58,20 +58,44 @@ export function useExamStore() {
   })
   const highestScore = computed(() => Math.max(0, ...officialRecords.value.map((record) => record.score)))
 
+  function sameIds(first: string[], second: string[]): boolean {
+    return first.length === second.length && first.every((id, index) => id === second[index])
+  }
+
   async function initialize() {
     try {
       const initial = await loadApplicationData()
+      const validQuestionIds = new Set(initial.questions.map((question) => question.id))
+      const sanitizedProgress = {
+        attemptedQuestionIds: initial.progress.attemptedQuestionIds.filter((id) => validQuestionIds.has(id)),
+      }
+      const sanitizedWrongBook = initial.wrongBook.filter((entry) => validQuestionIds.has(entry.questionId))
+      const activeExamIsUsable = initial.activeExam?.questionIds.every((id) => validQuestionIds.has(id)) ?? false
+      const sanitizedActiveExam = activeExamIsUsable ? initial.activeExam : null
+
+      const cleanupTasks: Promise<void>[] = []
+      if (!sameIds(initial.progress.attemptedQuestionIds, sanitizedProgress.attemptedQuestionIds)) {
+        cleanupTasks.push(saveApplicationData('progress', sanitizedProgress))
+      }
+      if (initial.wrongBook.length !== sanitizedWrongBook.length) {
+        cleanupTasks.push(saveApplicationData('wrongBook', sanitizedWrongBook))
+      }
+      if (initial.activeExam && !sanitizedActiveExam) {
+        cleanupTasks.push(saveApplicationData('activeExam', null))
+      }
+
       questions.value = initial.questions
       questionBankManifest.value = initial.questionBankManifest
       records.value = initial.records
-      wrongBook.value = initial.wrongBook
-      progress.value = initial.progress
-      activeExam.value = initial.activeExam
-      activeSubjectId.value = isSubjectId(initial.activeExam?.subjectId)
-        ? initial.activeExam.subjectId
+      wrongBook.value = sanitizedWrongBook
+      progress.value = sanitizedProgress
+      activeExam.value = sanitizedActiveExam
+      activeSubjectId.value = isSubjectId(sanitizedActiveExam?.subjectId)
+        ? sanitizedActiveExam.subjectId
         : isSubjectId(initial.settings.activeSubjectId)
           ? initial.settings.activeSubjectId
           : DEFAULT_SUBJECT_ID
+      if (cleanupTasks.length) await Promise.all(cleanupTasks)
       dataDirectory.value = await resolveDataDirectory()
     } catch (reason) {
       error.value = reason instanceof Error ? reason.message : '应用初始化失败'

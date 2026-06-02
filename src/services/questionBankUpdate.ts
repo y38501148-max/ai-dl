@@ -1,4 +1,5 @@
 import type { Question, QuestionBankManifest } from '../types'
+import { compareQuestionBankTags } from './questionBankVersion'
 import { installQuestionBankData } from './storage'
 
 const DEFAULT_MANIFEST_URL = 'https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/manifest.json'
@@ -9,22 +10,6 @@ export interface QuestionBankUpdateInfo {
   latestTag: string
   questionCount: number
   manifest: QuestionBankManifest
-}
-
-function tagVersion(tag: string): number[] {
-  const version = tag.match(/(\d+(?:\.\d+){1,3})/)?.[1] ?? tag
-  return version.split('.').map((item) => Number(item) || 0)
-}
-
-function compareTags(first: string, second: string): number {
-  const left = tagVersion(first)
-  const right = tagVersion(second)
-  const length = Math.max(left.length, right.length)
-  for (let index = 0; index < length; index += 1) {
-    const delta = (left[index] ?? 0) - (right[index] ?? 0)
-    if (delta !== 0) return delta
-  }
-  return first.localeCompare(second)
 }
 
 async function fetchJson<T>(url: string, timeoutMs = 6000): Promise<T | null> {
@@ -62,7 +47,7 @@ export async function checkForQuestionBankUpdate(
   const latest = await fetchJson<QuestionBankManifest>(currentManifest?.manifestUrl ?? DEFAULT_MANIFEST_URL)
   if (!latest?.bankTag || !latest.questionCount) return null
   const currentTag = currentManifest?.bankTag ?? 'embedded'
-  if (currentManifest && compareTags(latest.bankTag, currentManifest.bankTag) <= 0) return null
+  if (currentManifest && compareQuestionBankTags(latest.bankTag, currentManifest.bankTag) <= 0) return null
   return {
     currentTag,
     latestTag: latest.bankTag,
