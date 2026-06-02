@@ -13,6 +13,9 @@ import type {
   WrongBookEntry,
 } from '../types'
 
+const CURRENT_QUESTION_BANK_TAG = 'multi-0.1.5-20260602'
+const CURRENT_QUESTION_BANK_VERSION = 4
+
 export function useExamStore() {
   const loading = ref(true)
   const error = ref('')
@@ -106,7 +109,11 @@ export function useExamStore() {
 
   async function setActiveSubject(subjectId: SubjectId) {
     activeSubjectId.value = subjectId
-    await saveApplicationData('settings', { questionBankVersion: 3, questionBankTag: 'ds1-0.1.5', activeSubjectId: subjectId })
+    await saveApplicationData('settings', {
+      questionBankVersion: CURRENT_QUESTION_BANK_VERSION,
+      questionBankTag: CURRENT_QUESTION_BANK_TAG,
+      activeSubjectId: subjectId,
+    })
   }
 
   async function replaceQuestionBank(nextQuestions: Question[], manifest: QuestionBankManifest) {
@@ -120,7 +127,7 @@ export function useExamStore() {
       saveApplicationData('wrongBook', nextWrongBook),
       saveApplicationData('activeExam', null),
       saveApplicationData('settings', {
-        questionBankVersion: 3,
+        questionBankVersion: CURRENT_QUESTION_BANK_VERSION,
         questionBankTag: manifest.bankTag,
         activeSubjectId: activeSubjectId.value,
       }),

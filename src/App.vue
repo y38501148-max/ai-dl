@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { useExamStore } from './composables/useExamStore'
-import { SUBJECTS } from './services/subjects'
+import { DEFAULT_SUBJECT_ID, SUBJECTS, subjectOf } from './services/subjects'
 import {
   checkForQuestionBankUpdate,
   downloadAndInstallQuestionBank,
@@ -30,13 +30,13 @@ const subjectNotice = ref('')
 
 const recentOfficialRecord = computed(() => store.officialRecords.value[0])
 const activeExamSubjectId = computed(() => store.activeExam.value?.subjectId ?? store.activeSubjectId.value)
-const resultSubjectId = computed(() => result.value?.subjectId ?? 'data-structure')
+const resultSubjectId = computed(() => result.value?.subjectId ?? DEFAULT_SUBJECT_ID)
 const attemptedCount = computed(
   () =>
     store.progress.value.attemptedQuestionIds.filter((id) => {
       const question = store.questionMap.value.get(id)
       if (!question) return false
-      return (question.subjectId ?? 'data-structure') === store.activeSubjectId.value
+      return subjectOf(question) === store.activeSubjectId.value
     }).length,
 )
 

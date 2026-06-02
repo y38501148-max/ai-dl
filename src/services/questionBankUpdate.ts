@@ -26,7 +26,8 @@ async function fetchJson<T>(url: string, timeoutMs = 6000): Promise<T | null> {
   }
 }
 
-function validateQuestions(questions: Question[]): boolean {
+function validateQuestions(questions: Question[], manifest?: QuestionBankManifest): boolean {
+  const subjectIds = manifest?.subjects?.map((subject) => subject.id) ?? []
   return (
     Array.isArray(questions) &&
     questions.length > 0 &&
@@ -36,8 +37,10 @@ function validateQuestions(questions: Question[]): boolean {
         question.stem &&
         Array.isArray(question.options) &&
         Array.isArray(question.correctAnswers) &&
-        Boolean(question.explanation),
-    )
+        (!question.subjectId || !subjectIds.length || subjectIds.includes(question.subjectId)) &&
+        (question.subjectId !== 'data-structure' || Boolean(question.explanation)),
+    ) &&
+    (!manifest?.questionCount || questions.length === manifest.questionCount)
   )
 }
 
@@ -57,9 +60,23 @@ export async function checkForQuestionBankUpdate(
 }
 
 export async function downloadAndInstallQuestionBank(update: QuestionBankUpdateInfo): Promise<Question[]> {
-  const questionsUrl = update.manifest.questionsUrl ?? DEFAULT_QUESTIONS_URL
-  const questions = await fetchJson<Question[]>(questionsUrl, 15000)
-  if (!questions || !validateQuestions(questions)) throw new Error('下载到的题库格式不完整')
+  const questions = update.manifest.subjects?.length
+    ? (
+        await Promise.all(
+          update.manifest.subjects.map(async (subject) => {
+            const questionsUrl = subject.questionsUrl
+            if (!questionsUrl) throw new Error(`题库清单缺少 ${subject.id} 的下载地址`)
+            const subjectQuestions = await fetchJson<Question[]>(questionsUrl, 15000)
+            if (!subjectQuestions) throw new Error(`下载 ${subject.id} 题库失败`)
+            if (subject.questionCount && subjectQuestions.length !== subject.questionCount) {
+              throw new Error(`${subject.id} 题库数量异常`)
+            }
+            return subjectQuestions
+          }),
+        )
+      ).flat()
+    : await fetchJson<Question[]>(update.manifest.questionsUrl ?? DEFAULT_QUESTIONS_URL, 15000)
+  if (!questions || !validateQuestions(questions, update.manifest)) throw new Error('下载到的题库格式不完整')
   await installQuestionBankData(questions, { ...update.manifest, questionCount: questions.length })
   return questions
 }

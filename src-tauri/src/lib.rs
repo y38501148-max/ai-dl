@@ -7,7 +7,9 @@ use std::thread;
 use std::time::{Duration, Instant};
 use tauri::Manager;
 
-const QUESTIONS_JSON: &str = include_str!("../../resources/question-bank/questions.json");
+const AI_QUESTIONS_JSON: &str = include_str!("../../resources/question-bank/ai/questions.json");
+const DATA_STRUCTURE_QUESTIONS_JSON: &str =
+    include_str!("../../resources/question-bank/data-structure/questions.json");
 const QUESTION_BANK_MANIFEST: &str = include_str!("../../resources/question-bank/manifest.json");
 
 const FILES: &[(&str, &str)] = &[
@@ -24,7 +26,7 @@ fn default_value(key: &str) -> Option<Value> {
         "wrongBook" => Some(json!([])),
         "progress" => Some(json!({ "attemptedQuestionIds": [] })),
         "activeExam" => Some(Value::Null),
-        "settings" => Some(json!({ "questionBankVersion": 3, "questionBankTag": "ds1-0.1.5", "activeSubjectId": "data-structure" })),
+        "settings" => Some(json!({ "questionBankVersion": 4, "questionBankTag": "multi-0.1.5-20260602", "activeSubjectId": "ai" })),
         _ => None,
     }
 }
@@ -108,35 +110,87 @@ fn read_or_create_json(app: &tauri::AppHandle, key: &str) -> Result<Value, Strin
     }
 }
 
-fn ensure_data_files(app: &tauri::AppHandle) -> Result<PathBuf, String> {
+fn embedded_subject_file_exists(bank_dir: &Path) -> bool {
+    bank_dir.join("ai").join("questions.json").exists()
+        && bank_dir
+            .join("data-structure")
+            .join("questions.json")
+            .exists()
+}
+
+fn write_embedded_question_bank(bank_dir: &Path) -> Result<(), String> {
+    let ai_dir = bank_dir.join("ai");
+    let data_structure_dir = bank_dir.join("data-structure");
+    fs::create_dir_all(&ai_dir).map_err(|error| format!("无法创建人工智能导论题库目录：{error}"))?;
+    fs::create_dir_all(&data_structure_dir).map_err(|error| format!("无法创建数据结构题库目录：{error}"))?;
+    fs::write(ai_dir.join("questions.json"), AI_QUESTIONS_JSON)
+        .map_err(|error| format!("无法释放人工智能导论题库：{error}"))?;
+    fs::write(
+        data_structure_dir.join("questions.json"),
+        DATA_STRUCTURE_QUESTIONS_JSON,
+    )
+    .map_err(|error| format!("无法释放数据结构题库：{error}"))?;
+    fs::write(bank_dir.join("manifest.json"), QUESTION_BANK_MANIFEST)
+        .map_err(|error| format!("无法释放题库清单：{error}"))?;
+    Ok(())
+}
+
+fn read_questions_from_manifest(bank_dir: &Path, manifest: Option<&Value>) -> Result<Value, String> {
+    if let Some(subjects) = manifest
+        .and_then(|value| value.get("subjects"))
+        .and_then(Value::as_array)
+    {
+        let mut questions = Vec::new();
+        for subject in subjects {
+            let relative_path = subject
+                .get("relativePath")
+                .and_then(Value::as_str)
+                .ok_or_else(|| "题库清单缺少科目文件路径".to_string())?;
+            let path = bank_dir.join(relative_path);
+            let content = fs::read_to_string(&path)
+                .map_err(|error| format!("无法读取科目题库 {}：{error}", path.display()))?;
+            let subject_questions = serde_json::from_str::<Value>(&content)
+                .map_err(|error| format!("科目题库格式错误：{error}"))?;
+            let items = subject_questions
+                .as_array()
+                .ok_or_else(|| "科目题库格式错误：顶层必须是数组".to_string())?;
+            questions.extend(items.iter().cloned());
+        }
+        return Ok(Value::Array(questions));
+    }
+
+    let questions_path = bank_dir.join("questions.json");
+    fs::read_to_string(questions_path)
+        .map_err(|error| format!("无法读取题库：{error}"))
+        .and_then(|content| serde_json::from_str::<Value>(&content).map_err(|error| format!("题库格式错误：{error}")))
+}
+
+fn ensure_data_files(app: &tauri::AppHandle) -> Result<(), String> {
     let data_dir = data_directory(app)?;
     let bank_dir = bank_directory(app)?;
     fs::create_dir_all(&data_dir).map_err(|error| format!("无法创建数据目录：{error}"))?;
     fs::create_dir_all(&bank_dir).map_err(|error| format!("无法创建题库目录：{error}"))?;
 
-    let questions_path = bank_dir.join("questions.json");
     let manifest_path = bank_dir.join("manifest.json");
     let existing_manifest = fs::read_to_string(&manifest_path)
         .ok()
         .and_then(|content| serde_json::from_str::<Value>(&content).ok());
-    if !questions_path.exists() || should_replace_bank(existing_manifest) {
-        fs::write(&questions_path, QUESTIONS_JSON).map_err(|error| format!("无法释放内置题库：{error}"))?;
-        fs::write(&manifest_path, QUESTION_BANK_MANIFEST).map_err(|error| format!("无法释放题库清单：{error}"))?;
+    if !embedded_subject_file_exists(&bank_dir) || should_replace_bank(existing_manifest) {
+        write_embedded_question_bank(&bank_dir)?;
     }
 
-    Ok(questions_path)
+    Ok(())
 }
 
 #[tauri::command]
 fn bootstrap(app: tauri::AppHandle) -> Result<Value, String> {
-    let questions_path = ensure_data_files(&app)?;
-    let questions = fs::read_to_string(questions_path)
-        .map_err(|error| format!("无法读取题库：{error}"))
-        .and_then(|content| serde_json::from_str::<Value>(&content).map_err(|error| format!("题库格式错误：{error}")))?;
+    ensure_data_files(&app)?;
+    let bank_dir = bank_directory(&app)?;
     let manifest_path = bank_directory(&app)?.join("manifest.json");
     let question_bank_manifest = fs::read_to_string(manifest_path)
         .ok()
         .and_then(|content| serde_json::from_str::<Value>(&content).ok());
+    let questions = read_questions_from_manifest(&bank_dir, question_bank_manifest.as_ref())?;
 
     Ok(json!({
         "questions": questions,
@@ -171,19 +225,45 @@ fn install_question_bank(app: tauri::AppHandle, questions: Value, manifest: Valu
         return Err("题库格式错误：题目不能为空".to_string());
     }
     for item in items {
+        let subject_id = item.get("subjectId").and_then(Value::as_str);
         if item.get("id").and_then(Value::as_str).is_none()
             || item.get("type").and_then(Value::as_str).is_none()
             || item.get("stem").and_then(Value::as_str).is_none()
             || item.get("options").and_then(Value::as_array).is_none()
             || item.get("correctAnswers").and_then(Value::as_array).is_none()
-            || item.get("explanation").and_then(Value::as_str).is_none()
+            || (subject_id == Some("data-structure") && item.get("explanation").and_then(Value::as_str).is_none())
         {
-            return Err("题库格式错误：存在缺少必填字段或题解的题目".to_string());
+            return Err("题库格式错误：存在缺少必填字段的数据结构题目".to_string());
         }
     }
     let bank_dir = bank_directory(&app)?;
     fs::create_dir_all(&bank_dir).map_err(|error| format!("无法创建题库目录：{error}"))?;
-    write_json(&bank_dir.join("questions.json"), &questions)?;
+    if let Some(subjects) = manifest.get("subjects").and_then(Value::as_array) {
+        for subject in subjects {
+            let subject_id = subject
+                .get("id")
+                .and_then(Value::as_str)
+                .ok_or_else(|| "题库清单缺少科目 ID".to_string())?;
+            let relative_path = subject
+                .get("relativePath")
+                .and_then(Value::as_str)
+                .ok_or_else(|| "题库清单缺少科目文件路径".to_string())?;
+            let subject_questions = Value::Array(
+                items
+                    .iter()
+                    .filter(|item| item.get("subjectId").and_then(Value::as_str) == Some(subject_id))
+                    .cloned()
+                    .collect(),
+            );
+            let target_path = bank_dir.join(relative_path);
+            if let Some(parent) = target_path.parent() {
+                fs::create_dir_all(parent).map_err(|error| format!("无法创建科目题库目录：{error}"))?;
+            }
+            write_json(&target_path, &subject_questions)?;
+        }
+    } else {
+        write_json(&bank_dir.join("questions.json"), &questions)?;
+    }
     write_json(&bank_dir.join("manifest.json"), &manifest)?;
     Ok(json!({
         "questionCount": items.len(),

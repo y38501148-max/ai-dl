@@ -85,9 +85,23 @@ export interface QuestionBankManifest {
   bankTag: string
   appVersion?: string
   questionCount: number
+  subjects?: QuestionBankSubjectManifest[]
   updatedAt?: string
   questionsUrl?: string
   manifestUrl?: string
+}
+
+export interface QuestionBankSubjectManifest {
+  id: SubjectId
+  name?: string
+  questionCount: number
+  relativePath: string
+  questionsUrl?: string
+  assetDirectory?: string
+  restoredFrom?: string
+  types?: Partial<Record<QuestionType, number>>
+  explanations?: number
+  sourceCounts?: Record<string, unknown>
 }
 
 export interface BootstrapData {

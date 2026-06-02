@@ -1,20 +1,46 @@
 {
-  "schemaVersion": 1,
-  "bankTag": "ds1-0.1.5",
+  "schemaVersion": 2,
+  "bankTag": "multi-0.1.5-20260602",
   "appVersion": "0.1.5",
-  "questionCount": 358,
-  "sourceCounts": {
-    "imageExamples": 63,
-    "mdExamInput": 75,
-    "selfMadeInput": 160,
-    "extraFoundationInput": 60,
-    "duplicatesRemoved": 14,
-    "supplementsUsed": 14,
-    "mdExamKept": 64,
-    "selfMadeKept": 171,
-    "extraFoundationKept": 74
-  },
+  "questionCount": 718,
+  "subjects": [
+    {
+      "id": "ai",
+      "name": "人工智能导论",
+      "questionCount": 360,
+      "relativePath": "ai/questions.json",
+      "questionsUrl": "https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/ai/questions.json",
+      "restoredFrom": "v0.1.4:resources/question-bank/questions.json",
+      "types": {
+        "single": 347,
+        "multiple": 7,
+        "boolean": 6,
+        "blank": 0
+      },
+      "explanations": 0
+    },
+    {
+      "id": "data-structure",
+      "name": "数据结构",
+      "questionCount": 358,
+      "relativePath": "data-structure/questions.json",
+      "questionsUrl": "https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/data-structure/questions.json",
+      "assetDirectory": "ds-assets",
+      "types": {
+        "single": 189,
+        "multiple": 0,
+        "boolean": 0,
+        "blank": 169
+      },
+      "explanations": 358,
+      "sourceCounts": {
+        "imageExamples": 63,
+        "mdExamKept": 64,
+        "selfMadeKept": 171,
+        "extraFoundationKept": 74
+      }
+    }
+  ],
   "updatedAt": "2026-06-02T00:00:00+08:00",
-  "questionsUrl": "https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/questions.json",
   "manifestUrl": "https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/manifest.json"
 }

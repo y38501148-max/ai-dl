@@ -15,6 +15,17 @@ export interface SubjectConfig {
 
 export const SUBJECTS: SubjectConfig[] = [
   {
+    id: 'ai',
+    name: '人工智能导论',
+    title: '人工智能导论题库',
+    subtitle: '从恢复的 360 道题中随机组卷，覆盖单选、多选与判断训练。',
+    examLabel: 'AI COURSE EXAM',
+    examDescription: '随机抽取 50 道题，限时 60 分钟，每题 2 分。',
+    durationSeconds: 60 * 60,
+    scorePerQuestion: 2,
+    allowPractice: true,
+  },
+  {
     id: 'data-structure',
     name: '数据结构',
     title: '数据结构选填训练',
@@ -29,7 +40,7 @@ export const SUBJECTS: SubjectConfig[] = [
   },
 ]
 
-export const DEFAULT_SUBJECT_ID: SubjectId = 'data-structure'
+export const DEFAULT_SUBJECT_ID: SubjectId = 'ai'
 
 export function subjectOf(question: Question): SubjectId {
   return question.subjectId ?? DEFAULT_SUBJECT_ID

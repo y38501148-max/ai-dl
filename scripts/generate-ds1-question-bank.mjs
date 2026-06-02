@@ -5,7 +5,7 @@ import { mdExamQuestions } from './data/ds-md-exam-questions.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 const bankDir = join(root, 'resources/question-bank')
-const bankPath = join(bankDir, 'questions.json')
+const bankPath = join(bankDir, 'data-structure/questions.json')
 const manifestPath = join(bankDir, 'manifest.json')
 const assetDir = join(bankDir, 'ds-assets')
 const sourceDir = '/Users/muzermat/Documents/ds-xtlt'
@@ -359,28 +359,53 @@ const dedupe = deduplicateAndSupplement(questions, duplicateSupplementQuestions)
 questions.splice(0, questions.length, ...dedupe.questions)
 
 mkdirSync(bankDir, { recursive: true })
+mkdirSync(join(bankDir, 'data-structure'), { recursive: true })
 writeFileSync(bankPath, `${JSON.stringify(questions, null, 2)}\n`)
+
+const existingManifest = existsSync(manifestPath) ? JSON.parse(readFileSync(manifestPath, 'utf8')) : {}
+const aiSubject = existingManifest.subjects?.find((subject) => subject.id === 'ai') ?? {
+  id: 'ai',
+  name: '人工智能导论',
+  questionCount: 0,
+  relativePath: 'ai/questions.json',
+  questionsUrl: 'https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/ai/questions.json',
+}
+const dataStructureSubject = {
+  id: 'data-structure',
+  name: '数据结构',
+  questionCount: questions.length,
+  relativePath: 'data-structure/questions.json',
+  questionsUrl: 'https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/data-structure/questions.json',
+  assetDirectory: 'ds-assets',
+  types: {
+    single: questions.filter((question) => question.type === 'single').length,
+    multiple: questions.filter((question) => question.type === 'multiple').length,
+    boolean: questions.filter((question) => question.type === 'boolean').length,
+    blank: questions.filter((question) => question.type === 'blank').length,
+  },
+  explanations: questions.filter((question) => Boolean(question.explanation)).length,
+  sourceCounts: {
+    imageExamples: imageExampleCount,
+    mdExamInput: mdExamQuestionCount,
+    selfMadeInput: choiceUnits.length + blankUnits.length,
+    extraFoundationInput: extraFoundationQuestionCount,
+    duplicatesRemoved: dedupe.removedCount,
+    supplementsUsed: dedupe.supplementCount,
+    mdExamKept: questions.filter((question) => question.tags?.includes('非编程题')).length,
+    selfMadeKept: questions.filter((question) => question.tags?.includes('自主命题')).length,
+    extraFoundationKept: questions.filter((question) => question.tags?.includes('专题补充')).length,
+  },
+}
 writeFileSync(
   manifestPath,
   `${JSON.stringify(
     {
-      schemaVersion: 1,
-      bankTag: 'ds1-0.1.5',
+      schemaVersion: 2,
+      bankTag: existingManifest.bankTag ?? 'multi-0.1.5-20260602',
       appVersion: '0.1.5',
-      questionCount: questions.length,
-      sourceCounts: {
-        imageExamples: imageExampleCount,
-        mdExamInput: mdExamQuestionCount,
-        selfMadeInput: choiceUnits.length + blankUnits.length,
-        extraFoundationInput: extraFoundationQuestionCount,
-        duplicatesRemoved: dedupe.removedCount,
-        supplementsUsed: dedupe.supplementCount,
-        mdExamKept: questions.filter((question) => question.tags?.includes('非编程题')).length,
-        selfMadeKept: questions.filter((question) => question.tags?.includes('自主命题')).length,
-        extraFoundationKept: questions.filter((question) => question.tags?.includes('专题补充')).length,
-      },
+      questionCount: aiSubject.questionCount + dataStructureSubject.questionCount,
+      subjects: [aiSubject, dataStructureSubject],
       updatedAt: '2026-06-02T00:00:00+08:00',
-      questionsUrl: 'https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/questions.json',
       manifestUrl: 'https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/manifest.json',
     },
     null,

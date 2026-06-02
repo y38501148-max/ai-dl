@@ -8,7 +8,7 @@ if (!sourcePdf) {
   process.exit(1)
 }
 
-const outputDirectory = resolve('resources/question-bank')
+const outputDirectory = resolve('resources/question-bank/ai')
 const jsonPath = join(outputDirectory, 'questions.json')
 
 function compact(text) {
@@ -74,6 +74,7 @@ const questions = starts.map((match, index) => {
   return {
     id: `q-${sourceNumber}`,
     sourceNumber,
+    subjectId: 'ai',
     type: correctAnswers.length > 1 ? 'multiple' : isBoolean ? 'boolean' : 'single',
     stem,
     options: options.map(({ key, text }) => ({ key, text })),

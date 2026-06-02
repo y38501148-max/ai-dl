@@ -39,8 +39,9 @@
       "icons/icon.ico"
     ],
     "resources": {
-      "../resources/question-bank/questions.json": "question-bank/questions.json",
       "../resources/question-bank/manifest.json": "question-bank/manifest.json",
+      "../resources/question-bank/ai": "question-bank/ai",
+      "../resources/question-bank/data-structure": "question-bank/data-structure",
       "../resources/question-bank/ds-assets": "question-bank/ds-assets"
     }
   }

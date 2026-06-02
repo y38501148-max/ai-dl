@@ -6,7 +6,7 @@ const fallbackDefaults = {
   wrongBook: [],
   progress: { attemptedQuestionIds: [] },
   activeExam: null,
-  settings: { questionBankVersion: 3, questionBankTag: 'ds1-0.1.5', activeSubjectId: 'data-structure' },
+  settings: { questionBankVersion: 4, questionBankTag: 'multi-0.1.5-20260602', activeSubjectId: 'ai' },
 }
 
 const QUESTION_BANK_OVERRIDE_KEY = 'muz-choice-blank-bank:questionBankOverride'
@@ -59,6 +59,23 @@ function selectBrowserQuestionBankOverride(
   return override
 }
 
+async function loadEmbeddedQuestionBank(manifest?: QuestionBankManifest): Promise<Question[]> {
+  if (manifest?.subjects?.length) {
+    const subjectBanks = await Promise.all(
+      manifest.subjects.map(async (subject) => {
+        const response = await fetch(`${import.meta.env.BASE_URL}question-bank/${subject.relativePath}`)
+        if (!response.ok) throw new Error(`无法读取浏览器版本题库文件：${subject.relativePath}`)
+        return (await response.json()) as Question[]
+      }),
+    )
+    return subjectBanks.flat()
+  }
+
+  const response = await fetch(`${import.meta.env.BASE_URL}question-bank/questions.json`)
+  if (!response.ok) throw new Error('无法读取浏览器版本题库文件')
+  return response.json()
+}
+
 export async function loadApplicationData(): Promise<BootstrapData> {
   if (window.__TAURI__ || window.__TAURI_INTERNALS__) return invokeTauri<BootstrapData>('bootstrap')
   if (window.examAPI) return window.examAPI.bootstrap()
@@ -67,12 +84,7 @@ export async function loadApplicationData(): Promise<BootstrapData> {
     .then((response) => (response.ok ? response.json() : undefined))
     .catch(() => undefined)
   const override = selectBrowserQuestionBankOverride(readBrowserQuestionBankOverride(), embeddedManifest)
-  const questions =
-    override?.questions ??
-    (await fetch(`${import.meta.env.BASE_URL}question-bank/questions.json`).then((response) => {
-      if (!response.ok) throw new Error('无法读取浏览器版本题库文件')
-      return response.json()
-    }))
+  const questions = override?.questions ?? (await loadEmbeddedQuestionBank(embeddedManifest))
 
   return {
     questions,

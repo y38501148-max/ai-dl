@@ -72,6 +72,7 @@ function parsePdf(pdfPath) {
     return {
       id: `q-${sourceNumber}`,
       sourceNumber,
+      subjectId: 'ai',
       type: correctAnswers.length > 1 ? 'multiple' : isBoolean ? 'boolean' : 'single',
       stem,
       options: options.map(({ key, text }) => ({ key, text })),
@@ -90,7 +91,7 @@ function optionsKey(options) {
   return options.map((option) => `${option.key}.${option.text}`).join('|')
 }
 
-const current = JSON.parse(readFileSync('resources/question-bank/questions.json', 'utf8'))
+const current = JSON.parse(readFileSync('resources/question-bank/ai/questions.json', 'utf8'))
 const incoming = parsePdf(sourcePdf)
 const currentByNumber = new Map(current.map((question) => [question.sourceNumber, question]))
 
