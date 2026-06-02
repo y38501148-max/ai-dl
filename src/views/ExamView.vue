@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import { isCorrectAnswer } from '../services/exam'
+import { examSecondsLeft, initialExamSecondsLeft } from '../services/examTimer'
 import { runCCode, type CompileResult } from '../services/compiler'
 import type { SubjectConfig } from '../services/subjects'
 import type { ActiveExam, Question } from '../types'
@@ -35,6 +36,8 @@ const revealedPracticeQuestionIds = ref(new Set<string>())
 const baseUrl = import.meta.env.BASE_URL
 let clock: number | undefined
 let timeoutSubmitted = false
+let timerStartedAt = 0
+let initialSecondsLeft = 0
 
 const questions = computed(() =>
   props.session.questionIds.map((id) => props.questionMap.get(id)).filter((item): item is Question => Boolean(item)),
@@ -75,7 +78,7 @@ const paperTitle = computed(() => {
 })
 
 function syncTimer() {
-  secondsLeft.value = Math.max(0, Math.ceil((new Date(props.session.deadlineAt).getTime() - Date.now()) / 1000))
+  secondsLeft.value = examSecondsLeft(initialSecondsLeft, timerStartedAt, performance.now())
   if (secondsLeft.value === 0 && !timeoutSubmitted) {
     timeoutSubmitted = true
     emit('submit', 'timeout')
@@ -168,6 +171,8 @@ function timeText(value: number): string {
 }
 
 onMounted(() => {
+  timerStartedAt = performance.now()
+  initialSecondsLeft = initialExamSecondsLeft(props.session.deadlineAt)
   syncTimer()
   clock = window.setInterval(syncTimer, 1000)
 })

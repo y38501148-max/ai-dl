@@ -34,8 +34,12 @@ const groups = computed(() => {
 const selectedCount = computed(() => selectedIds.value.size)
 const allSelected = computed(() => selectedCount.value === props.questions.length && props.questions.length > 0)
 const attemptedIds = computed(() => new Set(props.attemptedQuestionIds))
+const unattemptedQuestions = computed(() => props.questions.filter((question) => !attemptedIds.value.has(question.id)))
 const unattemptedCount = computed(() =>
-  props.questions.filter((question) => !attemptedIds.value.has(question.id)).length,
+  unattemptedQuestions.value.length,
+)
+const allUnattemptedSelected = computed(
+  () => unattemptedQuestions.value.length > 0 && unattemptedQuestions.value.every((question) => selectedIds.value.has(question.id)),
 )
 
 function isSelected(questionId: string): boolean {
@@ -63,6 +67,16 @@ function toggleAll() {
     return
   }
   updateSelection(new Set(props.questions.map((question) => question.id)))
+}
+
+function toggleAllUnattempted() {
+  if (allUnattemptedSelected.value) {
+    const next = new Set(selectedIds.value)
+    unattemptedQuestions.value.forEach((question) => next.delete(question.id))
+    updateSelection(next)
+    return
+  }
+  updateSelection(new Set([...selectedIds.value, ...unattemptedQuestions.value.map((question) => question.id)]))
 }
 
 function groupSelected(groupQuestions: Question[]): boolean {
@@ -106,6 +120,9 @@ function typeText(type: Question['type']): string {
         <p class="muted">题库按每 60 题分组，也可以单独勾选任意题目后开始练习。</p>
       </div>
       <div class="page-actions">
+        <button class="button secondary" :disabled="unattemptedCount === 0" @click="toggleAllUnattempted">
+          {{ allUnattemptedSelected ? '取消新题' : `选择全部新题 ${unattemptedCount} 题` }}
+        </button>
         <button class="button secondary" @click="toggleAll">
           {{ allSelected ? '取消全选' : `全选 ${questions.length} 题` }}
         </button>
