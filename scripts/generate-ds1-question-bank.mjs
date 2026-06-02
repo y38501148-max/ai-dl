@@ -381,17 +381,25 @@ const existingManifest = existsSync(manifestPath) ? JSON.parse(readFileSync(mani
 const aiSubject = existingManifest.subjects?.find((subject) => subject.id === 'ai') ?? {
   id: 'ai',
   name: '人工智能导论',
+  bankTag: 'ai-0.1.5-20260602',
   questionCount: 0,
   relativePath: 'ai/questions.json',
   questionsUrl: 'https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/ai/questions.json',
 }
+aiSubject.bankTag = aiSubject.bankTag ?? 'ai-0.1.5-20260602'
 const dataStructureSubject = {
   id: 'data-structure',
   name: '数据结构',
+  bankTag: 'ds-0.1.5.1-20260602',
   questionCount: questions.length,
   relativePath: 'data-structure/questions.json',
   questionsUrl: 'https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/data-structure/questions.json',
   assetDirectory: 'ds-assets',
+  releaseNotes: [
+    '新增第七套作业 20 道选填例题，并补充逐题题解。',
+    '数据结构题量更新为 378 道，题型分布为单选 203、多选 1、填空 174。',
+    '新增第七套作业截图资源，保留旧图片资源编号稳定。',
+  ],
   types: {
     single: questions.filter((question) => question.type === 'single').length,
     multiple: questions.filter((question) => question.type === 'multiple').length,

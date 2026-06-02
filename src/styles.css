@@ -329,6 +329,13 @@ p {
   line-height: 1.55;
 }
 
+.update-tags {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
 .storage-note {
   padding-top: 22px;
   color: #8b95a7;

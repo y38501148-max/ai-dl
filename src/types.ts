@@ -95,11 +95,13 @@ export interface QuestionBankManifest {
 export interface QuestionBankSubjectManifest {
   id: SubjectId
   name?: string
+  bankTag?: string
   questionCount: number
   relativePath: string
   questionsUrl?: string
   assetDirectory?: string
   restoredFrom?: string
+  releaseNotes?: string[]
   types?: Partial<Record<QuestionType, number>>
   explanations?: number
   sourceCounts?: Record<string, unknown>

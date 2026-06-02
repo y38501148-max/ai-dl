@@ -148,7 +148,11 @@ async function installQuestionBankUpdate() {
     questionBankUpdating.value = true
     actionError.value = ''
     const manifest = questionBankUpdateInfo.value.manifest
-    const questions = await downloadAndInstallQuestionBank(questionBankUpdateInfo.value)
+    const questions = await downloadAndInstallQuestionBank(
+      questionBankUpdateInfo.value,
+      store.questions.value,
+      store.questionBankManifest.value,
+    )
     await store.replaceQuestionBank(questions, { ...manifest, questionCount: questions.length })
     questionBankUpdateInfo.value = null
     page.value = 'dashboard'
@@ -286,11 +290,12 @@ async function installQuestionBankUpdate() {
   <div v-if="questionBankUpdateInfo" class="modal-backdrop">
     <section class="modal panel">
       <p class="eyebrow">发现新题库</p>
-      <h2>可更新到 {{ questionBankUpdateInfo.latestTag }}</h2>
+      <h2>发现 {{ questionBankUpdateInfo.updatedSubjects.length }} 个科目可更新</h2>
       <p>
-        当前题库为 {{ questionBankUpdateInfo.currentTag }}，新题库共
-        {{ questionBankUpdateInfo.questionCount }} 道题。题库更新会单独下载，不需要重新安装应用。
+        将更新 {{ questionBankUpdateInfo.updatedSubjects.map((subject) => subject.name ?? subject.id).join('、') }}，这些科目共
+        {{ questionBankUpdateInfo.questionCount }} 道题。未变化的科目会保留当前本地题库。
       </p>
+      <p class="update-tags">当前：{{ questionBankUpdateInfo.currentTag }}<br />最新：{{ questionBankUpdateInfo.latestTag }}</p>
       <div v-if="questionBankUpdateInfo.releaseNotes.length" class="update-notes">
         <strong>更新说明</strong>
         <ul>

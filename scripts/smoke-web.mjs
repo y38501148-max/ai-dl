@@ -56,6 +56,8 @@ if (dsSingles.length < 200 || dsMultiples.length < 1 || dsBlanks.length < 170) {
 if (imageExamples.length < 83) throw new Error(`图片例题数量异常：${imageExamples.length}`)
 if (homework7Questions.length !== 20) throw new Error(`第七套作业数量异常：${homework7Questions.length}`)
 const dsManifest = manifest.subjects.find((subject) => subject.id === 'data-structure')
+if (!manifest.subjects.every((subject) => subject.bankTag)) throw new Error('科目级题库标记缺失')
+if (!dsManifest?.releaseNotes?.length) throw new Error('数据结构科目更新说明缺失')
 if (mdExamQuestions.length !== dsManifest?.sourceCounts?.mdExamKept) {
   throw new Error(`2019-2022 非编程题保留数量异常：${mdExamQuestions.length}`)
 }
