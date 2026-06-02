@@ -13,8 +13,8 @@ import type {
   WrongBookEntry,
 } from '../types'
 
-const CURRENT_QUESTION_BANK_TAG = 'multi-0.1.5-20260602'
-const CURRENT_QUESTION_BANK_VERSION = 4
+const CURRENT_QUESTION_BANK_TAG = 'multi-0.1.5.1-20260602'
+const CURRENT_QUESTION_BANK_VERSION = 5
 
 export function useExamStore() {
   const loading = ref(true)

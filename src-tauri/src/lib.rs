@@ -26,7 +26,7 @@ fn default_value(key: &str) -> Option<Value> {
         "wrongBook" => Some(json!([])),
         "progress" => Some(json!({ "attemptedQuestionIds": [] })),
         "activeExam" => Some(Value::Null),
-        "settings" => Some(json!({ "questionBankVersion": 4, "questionBankTag": "multi-0.1.5-20260602", "activeSubjectId": "ai" })),
+        "settings" => Some(json!({ "questionBankVersion": 5, "questionBankTag": "multi-0.1.5.1-20260602", "activeSubjectId": "ai" })),
         _ => None,
     }
 }

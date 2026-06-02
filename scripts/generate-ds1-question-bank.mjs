@@ -1,6 +1,7 @@
 import { copyFileSync, existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs'
 import { extname, join, resolve } from 'node:path'
 import { duplicateSupplementQuestions, extraFoundationQuestions } from './data/ds-extra-foundation-questions.mjs'
+import { homework7Questions } from './data/ds-homework7-questions.mjs'
 import { mdExamQuestions } from './data/ds-md-exam-questions.mjs'
 
 const root = resolve(import.meta.dirname, '..')
@@ -9,6 +10,7 @@ const bankPath = join(bankDir, 'data-structure/questions.json')
 const manifestPath = join(bankDir, 'manifest.json')
 const assetDir = join(bankDir, 'ds-assets')
 const sourceDir = '/Users/muzermat/Documents/ds-xtlt'
+const homework7Dir = join(sourceDir, '7')
 const imageExamplesPath = join(root, 'scripts/data/ds-image-examples.json')
 
 const questions = []
@@ -73,12 +75,17 @@ function copyAllImages() {
     }
   }
   walk(sourceDir)
-  files.sort((a, b) => a.localeCompare(b, 'zh-CN'))
-  files.forEach((file, index) => {
+  const homework7Prefix = `${homework7Dir}/`
+  const homework7Files = files.filter((file) => file.startsWith(homework7Prefix))
+  const legacyFiles = files.filter((file) => !file.startsWith(homework7Prefix))
+  legacyFiles.sort((a, b) => a.localeCompare(b, 'zh-CN'))
+  homework7Files.sort((a, b) => a.localeCompare(b, 'zh-CN'))
+  const orderedFiles = [...legacyFiles, ...homework7Files]
+  orderedFiles.forEach((file, index) => {
     const targetName = `ds1-source-${String(index + 1).padStart(3, '0')}${extname(file).toLowerCase()}`
     copyFileSync(file, join(assetDir, targetName))
   })
-  return files.length
+  return orderedFiles.length
 }
 
 function addImageExamples() {
@@ -106,6 +113,13 @@ function addExtraFoundationQuestions() {
     addQuestion(question)
   }
   return extraFoundationQuestions.length
+}
+
+function addHomework7Questions() {
+  for (const question of homework7Questions) {
+    addQuestion(question)
+  }
+  return homework7Questions.length
 }
 
 function normalizeStem(stem) {
@@ -355,6 +369,7 @@ const imageExampleCount = addImageExamples()
 const mdExamQuestionCount = addMdExamQuestions()
 addGeneratedQuestions()
 const extraFoundationQuestionCount = addExtraFoundationQuestions()
+const homework7QuestionCount = addHomework7Questions()
 const dedupe = deduplicateAndSupplement(questions, duplicateSupplementQuestions)
 questions.splice(0, questions.length, ...dedupe.questions)
 
@@ -389,11 +404,13 @@ const dataStructureSubject = {
     mdExamInput: mdExamQuestionCount,
     selfMadeInput: choiceUnits.length + blankUnits.length,
     extraFoundationInput: extraFoundationQuestionCount,
+    homework7Input: homework7QuestionCount,
     duplicatesRemoved: dedupe.removedCount,
     supplementsUsed: dedupe.supplementCount,
     mdExamKept: questions.filter((question) => question.tags?.includes('非编程题')).length,
     selfMadeKept: questions.filter((question) => question.tags?.includes('自主命题')).length,
     extraFoundationKept: questions.filter((question) => question.tags?.includes('专题补充')).length,
+    homework7Kept: questions.filter((question) => question.tags?.includes('第七套作业')).length,
   },
 }
 writeFileSync(
@@ -401,8 +418,8 @@ writeFileSync(
   `${JSON.stringify(
     {
       schemaVersion: 2,
-      bankTag: existingManifest.bankTag ?? 'multi-0.1.5-20260602',
-      appVersion: '0.1.5',
+      bankTag: 'multi-0.1.5.1-20260602',
+      appVersion: '0.1.5.1',
       questionCount: aiSubject.questionCount + dataStructureSubject.questionCount,
       subjects: [aiSubject, dataStructureSubject],
       updatedAt: '2026-06-02T00:00:00+08:00',
@@ -414,5 +431,5 @@ writeFileSync(
 )
 
 console.log(
-  `已生成 0.1.5 数据结构题库：${questions.length} 道；图片例题 ${imageExampleCount} 道，真题选填 ${mdExamQuestionCount} 道，自主命题 ${choiceUnits.length + blankUnits.length} 道，专题补充 ${extraFoundationQuestionCount} 道，去重 ${dedupe.removedCount} 道，补题 ${dedupe.supplementCount} 道，复制图片 ${copiedImageCount} 张。`,
+  `已生成 0.1.5.1 数据结构题库：${questions.length} 道；图片例题 ${imageExampleCount} 道，第七套作业 ${homework7QuestionCount} 道，真题选填 ${mdExamQuestionCount} 道，自主命题 ${choiceUnits.length + blankUnits.length} 道，专题补充 ${extraFoundationQuestionCount} 道，去重 ${dedupe.removedCount} 道，补题 ${dedupe.supplementCount} 道，复制图片 ${copiedImageCount} 张。`,
 )
