@@ -272,6 +272,39 @@ fn install_question_bank(app: tauri::AppHandle, questions: Value, manifest: Valu
 }
 
 #[tauri::command]
+fn open_external_url(url: String) -> Result<bool, String> {
+    if !url.starts_with("https://github.com/y38501148-max/AI-DL/releases") {
+        return Err("不支持打开该外部链接".to_string());
+    }
+
+    #[cfg(target_os = "macos")]
+    let mut command = {
+        let mut command = Command::new("open");
+        command.arg(&url);
+        command
+    };
+
+    #[cfg(target_os = "windows")]
+    let mut command = {
+        let mut command = Command::new("rundll32");
+        command.arg("url.dll,FileProtocolHandler").arg(&url);
+        command
+    };
+
+    #[cfg(all(unix, not(target_os = "macos")))]
+    let mut command = {
+        let mut command = Command::new("xdg-open");
+        command.arg(&url);
+        command
+    };
+
+    command
+        .spawn()
+        .map_err(|error| format!("无法打开更新页面：{error}"))?;
+    Ok(true)
+}
+
+#[tauri::command]
 fn run_c_code(source: String, stdin: Option<String>) -> Result<Value, String> {
     let work_dir = std::env::temp_dir().join(format!(
         "muz-ds-c-{}",
@@ -364,6 +397,7 @@ pub fn run() {
             save_data,
             get_data_directory,
             install_question_bank,
+            open_external_url,
             run_c_code
         ])
         .run(tauri::generate_context!())

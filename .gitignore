@@ -11,3 +11,4 @@ src-tauri/target-linux-arm64/
 *.keystore
 src-tauri/gen/android/key.properties
 src-tauri/gen/android/keystore.properties
+src-tauri/gen/android/app/src/main/assets/question-bank/

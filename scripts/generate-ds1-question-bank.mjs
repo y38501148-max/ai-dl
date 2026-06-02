@@ -423,6 +423,11 @@ writeFileSync(
       questionCount: aiSubject.questionCount + dataStructureSubject.questionCount,
       subjects: [aiSubject, dataStructureSubject],
       updatedAt: '2026-06-02T00:00:00+08:00',
+      releaseNotes: [
+        '数据结构题库新增第七套作业 20 道选填例题，并补充逐题题解。',
+        '数据结构题量更新为 378 道，总题量更新为 738 道。',
+        '新增第七套作业截图资源，保留旧图片资源编号稳定。',
+      ],
       manifestUrl: 'https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/manifest.json',
     },
     null,

@@ -9,6 +9,7 @@ export interface QuestionBankUpdateInfo {
   currentTag: string
   latestTag: string
   questionCount: number
+  releaseNotes: string[]
   manifest: QuestionBankManifest
 }
 
@@ -55,6 +56,7 @@ export async function checkForQuestionBankUpdate(
     currentTag,
     latestTag: latest.bankTag,
     questionCount: latest.questionCount,
+    releaseNotes: latest.releaseNotes ?? [],
     manifest: latest,
   }
 }

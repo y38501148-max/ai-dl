@@ -2,6 +2,7 @@
 import { computed, onMounted, ref } from 'vue'
 import { useExamStore } from './composables/useExamStore'
 import { DEFAULT_SUBJECT_ID, SUBJECTS, subjectOf } from './services/subjects'
+import { openExternalLink } from './services/externalLink'
 import {
   checkForQuestionBankUpdate,
   downloadAndInstallQuestionBank,
@@ -131,10 +132,14 @@ function home() {
   result.value = null
 }
 
-function openUpdate() {
+async function openUpdate() {
   if (!updateInfo.value) return
-  window.open(updateInfo.value.releaseUrl, '_blank', 'noopener,noreferrer')
-  updateInfo.value = null
+  try {
+    await openExternalLink(updateInfo.value.releaseUrl)
+    updateInfo.value = null
+  } catch {
+    actionError.value = '无法打开更新页面，请稍后手动访问 GitHub Releases。'
+  }
 }
 
 async function installQuestionBankUpdate() {
@@ -266,6 +271,12 @@ async function installQuestionBankUpdate() {
       <p class="eyebrow">发现新版本</p>
       <h2>可更新到 {{ updateInfo.latestVersion }}</h2>
       <p>当前版本为 {{ updateInfo.currentVersion }}。更新检测已异步完成，网络失败不会影响正常使用。</p>
+      <div v-if="updateInfo.releaseNotes.length" class="update-notes">
+        <strong>更新说明</strong>
+        <ul>
+          <li v-for="note in updateInfo.releaseNotes" :key="note">{{ note }}</li>
+        </ul>
+      </div>
       <div class="modal-actions">
         <button class="button secondary" @click="updateInfo = null">稍后</button>
         <button class="button primary" @click="openUpdate">前往更新</button>
@@ -280,6 +291,12 @@ async function installQuestionBankUpdate() {
         当前题库为 {{ questionBankUpdateInfo.currentTag }}，新题库共
         {{ questionBankUpdateInfo.questionCount }} 道题。题库更新会单独下载，不需要重新安装应用。
       </p>
+      <div v-if="questionBankUpdateInfo.releaseNotes.length" class="update-notes">
+        <strong>更新说明</strong>
+        <ul>
+          <li v-for="note in questionBankUpdateInfo.releaseNotes" :key="note">{{ note }}</li>
+        </ul>
+      </div>
       <div class="modal-actions">
         <button class="button secondary" :disabled="questionBankUpdating" @click="questionBankUpdateInfo = null">
           稍后

@@ -87,6 +87,7 @@ export interface QuestionBankManifest {
   questionCount: number
   subjects?: QuestionBankSubjectManifest[]
   updatedAt?: string
+  releaseNotes?: string[]
   questionsUrl?: string
   manifestUrl?: string
 }

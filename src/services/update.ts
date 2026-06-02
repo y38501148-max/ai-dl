@@ -8,12 +8,14 @@ export interface UpdateInfo {
   currentVersion: string
   latestVersion: string
   releaseUrl: string
+  releaseNotes: string[]
 }
 
 interface GitHubRelease {
   name?: string
   tag_name?: string
   html_url?: string
+  body?: string
   draft?: boolean
   prerelease?: boolean
   assets?: { name?: string }[]
@@ -37,6 +39,24 @@ function compareVersions(first: string, second: string): number {
 function normalizeVersion(value: string | undefined): string | null {
   const match = value?.trim().match(/^v?(\d+(?:\.\d+){1,3})$/)
   return match?.[1] ?? null
+}
+
+function parseReleaseNotes(body: string | undefined): string[] {
+  return (
+    body
+      ?.split(/\r?\n/)
+      .map((line) =>
+        line
+          .trim()
+          .replace(/^#{1,6}\s*/, '')
+          .replace(/^[-*]\s*/, '')
+          .replace(/^\d+[.)]\s*/, '')
+          .trim(),
+      )
+      .filter(Boolean)
+      .filter((line) => !/^[-*_]{3,}$/.test(line))
+      .slice(0, 8) ?? []
+  )
 }
 
 async function fetchJson<T>(url: string): Promise<FetchResult<T>> {
@@ -69,6 +89,7 @@ async function checkLatestRelease(): Promise<{ checked: boolean; info: UpdateInf
       currentVersion: packageInfo.version,
       latestVersion,
       releaseUrl: release.html_url ?? RELEASE_URL,
+      releaseNotes: parseReleaseNotes(release.body),
     },
   }
 }
@@ -82,6 +103,7 @@ async function checkFallbackManifest(): Promise<UpdateInfo | null> {
     currentVersion: packageInfo.version,
     latestVersion,
     releaseUrl: RELEASE_URL,
+    releaseNotes: ['发现 GitHub 上存在新版本，请前往 Releases 页面查看安装包和发布说明。'],
   }
 }
 

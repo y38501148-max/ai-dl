@@ -1,5 +1,6 @@
 import type { BootstrapData, Question, QuestionBankManifest, StorageKey } from '../types'
 import { compareQuestionBankTags } from './questionBankVersion'
+import { subjectOf } from './subjects'
 
 const fallbackDefaults = {
   records: [],
@@ -11,6 +12,7 @@ const fallbackDefaults = {
 
 const QUESTION_BANK_OVERRIDE_KEY = 'muz-choice-blank-bank:questionBankOverride'
 const QUESTION_BANK_MANIFEST_KEY = 'muz-choice-blank-bank:questionBankManifest'
+const QUESTION_BANK_SUBJECT_OVERRIDE_PREFIX = 'muz-choice-blank-bank:questionBankOverride:'
 
 async function invokeTauri<T>(command: string, args?: Record<string, unknown>): Promise<T> {
   const invoke = window.__TAURI__?.core?.invoke ?? window.__TAURI_INTERNALS__?.invoke
@@ -23,18 +25,36 @@ function fallbackGet<T>(key: StorageKey): T {
   return saved ? (JSON.parse(saved) as T) : (fallbackDefaults[key] as T)
 }
 
+function subjectOverrideKey(subjectId: string): string {
+  return `${QUESTION_BANK_SUBJECT_OVERRIDE_PREFIX}${subjectId}`
+}
+
 function readBrowserQuestionBankOverride(): { questions: Question[]; manifest?: QuestionBankManifest } | null {
+  const savedManifest = localStorage.getItem(QUESTION_BANK_MANIFEST_KEY)
+  const manifest = savedManifest ? (JSON.parse(savedManifest) as QuestionBankManifest) : undefined
+
+  if (manifest?.subjects?.length) {
+    const subjectBanks = manifest.subjects.map((subject) => {
+      const savedSubjectQuestions = localStorage.getItem(subjectOverrideKey(subject.id))
+      return savedSubjectQuestions ? (JSON.parse(savedSubjectQuestions) as Question[]) : null
+    })
+    if (subjectBanks.every((questions): questions is Question[] => Array.isArray(questions))) {
+      return { questions: subjectBanks.flat(), manifest }
+    }
+  }
+
   const savedQuestions = localStorage.getItem(QUESTION_BANK_OVERRIDE_KEY)
   if (!savedQuestions) return null
   const questions = JSON.parse(savedQuestions) as Question[]
-  const savedManifest = localStorage.getItem(QUESTION_BANK_MANIFEST_KEY)
-  const manifest = savedManifest ? (JSON.parse(savedManifest) as QuestionBankManifest) : undefined
   return { questions, manifest }
 }
 
 function clearBrowserQuestionBankOverride() {
   localStorage.removeItem(QUESTION_BANK_OVERRIDE_KEY)
   localStorage.removeItem(QUESTION_BANK_MANIFEST_KEY)
+  for (const key of Object.keys(localStorage)) {
+    if (key.startsWith(QUESTION_BANK_SUBJECT_OVERRIDE_PREFIX)) localStorage.removeItem(key)
+  }
 }
 
 function selectBrowserQuestionBankOverride(
@@ -104,7 +124,18 @@ export async function installQuestionBankData(
   if (window.__TAURI__ || window.__TAURI_INTERNALS__) {
     return invokeTauri<{ questionCount: number; bankTag?: string }>('install_question_bank', { questions, manifest })
   }
-  localStorage.setItem(QUESTION_BANK_OVERRIDE_KEY, JSON.stringify(questions))
+  localStorage.removeItem(QUESTION_BANK_OVERRIDE_KEY)
+  for (const key of Object.keys(localStorage)) {
+    if (key.startsWith(QUESTION_BANK_SUBJECT_OVERRIDE_PREFIX)) localStorage.removeItem(key)
+  }
+  if (manifest.subjects?.length) {
+    for (const subject of manifest.subjects) {
+      const subjectQuestions = questions.filter((question) => subjectOf(question) === subject.id)
+      localStorage.setItem(subjectOverrideKey(subject.id), JSON.stringify(subjectQuestions))
+    }
+  } else {
+    localStorage.setItem(QUESTION_BANK_OVERRIDE_KEY, JSON.stringify(questions))
+  }
   localStorage.setItem(QUESTION_BANK_MANIFEST_KEY, JSON.stringify(manifest))
   return { questionCount: questions.length, bankTag: manifest.bankTag }
 }
