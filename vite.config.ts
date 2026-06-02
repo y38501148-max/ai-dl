@@ -6,6 +6,7 @@ import { extname, resolve } from 'node:path'
 function copyQuestionBankAssets(outputDirectory: string) {
   mkdirSync(outputDirectory, { recursive: true })
   copyFileSync(resolve('resources/question-bank/questions.json'), resolve(outputDirectory, 'questions.json'))
+  copyFileSync(resolve('resources/question-bank/manifest.json'), resolve(outputDirectory, 'manifest.json'))
   const sourceAssetDirectory = resolve('resources/question-bank/ds-assets')
   if (!existsSync(sourceAssetDirectory)) return
   const targetAssetDirectory = resolve(outputDirectory, 'ds-assets')
@@ -48,9 +49,25 @@ export default defineConfig({
           }
           const extension = extname(filePath).toLowerCase()
           const contentType =
-            extension === '.png' ? 'image/png' : extension === '.svg' ? 'image/svg+xml' : 'application/octet-stream'
+            extension === '.png'
+              ? 'image/png'
+              : extension === '.jpg' || extension === '.jpeg'
+                ? 'image/jpeg'
+                : extension === '.webp'
+                  ? 'image/webp'
+                  : extension === '.svg'
+                    ? 'image/svg+xml'
+                    : 'application/octet-stream'
           response.setHeader('Content-Type', contentType)
           createReadStream(filePath).pipe(response)
+        })
+        server.middlewares.use('/question-bank/manifest.json', (_request, response, next) => {
+          try {
+            response.setHeader('Content-Type', 'application/json; charset=utf-8')
+            response.end(readFileSync(resolve('resources/question-bank/manifest.json')))
+          } catch {
+            next()
+          }
         })
       },
     },

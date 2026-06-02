@@ -2,6 +2,11 @@
 import { computed, onMounted, ref } from 'vue'
 import { useExamStore } from './composables/useExamStore'
 import { SUBJECTS } from './services/subjects'
+import {
+  checkForQuestionBankUpdate,
+  downloadAndInstallQuestionBank,
+  type QuestionBankUpdateInfo,
+} from './services/questionBankUpdate'
 import { checkForUpdate, type UpdateInfo } from './services/update'
 import DashboardView from './views/DashboardView.vue'
 import ExamView from './views/ExamView.vue'
@@ -19,17 +24,19 @@ const result = ref<ExamRecord | null>(null)
 const confirmingStart = ref(false)
 const actionError = ref('')
 const updateInfo = ref<UpdateInfo | null>(null)
+const questionBankUpdateInfo = ref<QuestionBankUpdateInfo | null>(null)
+const questionBankUpdating = ref(false)
 const subjectNotice = ref('')
 
 const recentOfficialRecord = computed(() => store.officialRecords.value[0])
 const activeExamSubjectId = computed(() => store.activeExam.value?.subjectId ?? store.activeSubjectId.value)
-const resultSubjectId = computed(() => result.value?.subjectId ?? 'ai')
+const resultSubjectId = computed(() => result.value?.subjectId ?? 'data-structure')
 const attemptedCount = computed(
   () =>
     store.progress.value.attemptedQuestionIds.filter((id) => {
       const question = store.questionMap.value.get(id)
       if (!question) return false
-      return (question.subjectId ?? 'ai') === store.activeSubjectId.value
+      return (question.subjectId ?? 'data-structure') === store.activeSubjectId.value
     }).length,
 )
 
@@ -38,6 +45,9 @@ onMounted(async () => {
   if (store.activeExam.value) page.value = 'exam'
   void checkForUpdate().then((info) => {
     updateInfo.value = info
+  })
+  void checkForQuestionBankUpdate(store.questionBankManifest.value).then((info) => {
+    questionBankUpdateInfo.value = info
   })
 })
 
@@ -126,6 +136,24 @@ function openUpdate() {
   window.open(updateInfo.value.releaseUrl, '_blank', 'noopener,noreferrer')
   updateInfo.value = null
 }
+
+async function installQuestionBankUpdate() {
+  if (!questionBankUpdateInfo.value) return
+  try {
+    questionBankUpdating.value = true
+    actionError.value = ''
+    const manifest = questionBankUpdateInfo.value.manifest
+    const questions = await downloadAndInstallQuestionBank(questionBankUpdateInfo.value)
+    await store.replaceQuestionBank(questions, { ...manifest, questionCount: questions.length })
+    questionBankUpdateInfo.value = null
+    page.value = 'dashboard'
+    result.value = null
+  } catch {
+    actionError.value = '题库更新失败，已继续使用当前题库。'
+  } finally {
+    questionBankUpdating.value = false
+  }
+}
 </script>
 
 <template>
@@ -211,8 +239,7 @@ function openUpdate() {
       <ul class="rules">
         <li>考试时长 60 分钟，超时自动交卷。</li>
         <li>每题 {{ store.activeSubject.value.scorePerQuestion }} 分，自动保存考试记录。</li>
-        <li v-if="store.activeSubjectId.value === 'ai'">多选题必须完全正确才得分。</li>
-        <li v-else>填空题支持多种等价答案，选择题均为单选。</li>
+        <li>填空题以精确计算和模拟结果为主，选择题均为单选。</li>
         <li>考试界面仅显示本场题号，不显示题库原编号。</li>
       </ul>
       <div class="modal-actions">
@@ -242,6 +269,24 @@ function openUpdate() {
       <div class="modal-actions">
         <button class="button secondary" @click="updateInfo = null">稍后</button>
         <button class="button primary" @click="openUpdate">前往更新</button>
+      </div>
+    </section>
+  </div>
+  <div v-if="questionBankUpdateInfo" class="modal-backdrop">
+    <section class="modal panel">
+      <p class="eyebrow">发现新题库</p>
+      <h2>可更新到 {{ questionBankUpdateInfo.latestTag }}</h2>
+      <p>
+        当前题库为 {{ questionBankUpdateInfo.currentTag }}，新题库共
+        {{ questionBankUpdateInfo.questionCount }} 道题。题库更新会单独下载，不需要重新安装应用。
+      </p>
+      <div class="modal-actions">
+        <button class="button secondary" :disabled="questionBankUpdating" @click="questionBankUpdateInfo = null">
+          稍后
+        </button>
+        <button class="button primary" :disabled="questionBankUpdating" @click="installQuestionBankUpdate">
+          {{ questionBankUpdating ? '更新中...' : '更新题库' }}
+        </button>
       </div>
     </section>
   </div>

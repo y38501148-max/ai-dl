@@ -1,7 +1,7 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "muz-选填题库",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "identifier": "cn.aidl.questionexam",
   "build": {
     "beforeDevCommand": "npm run dev:web",
@@ -40,6 +40,7 @@
     ],
     "resources": {
       "../resources/question-bank/questions.json": "question-bank/questions.json",
+      "../resources/question-bank/manifest.json": "question-bank/manifest.json",
       "../resources/question-bank/ds-assets": "question-bank/ds-assets"
     }
   }

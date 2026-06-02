@@ -8,6 +8,7 @@ use std::time::{Duration, Instant};
 use tauri::Manager;
 
 const QUESTIONS_JSON: &str = include_str!("../../resources/question-bank/questions.json");
+const QUESTION_BANK_MANIFEST: &str = include_str!("../../resources/question-bank/manifest.json");
 
 const FILES: &[(&str, &str)] = &[
     ("records", "exam-records.json"),
@@ -23,7 +24,7 @@ fn default_value(key: &str) -> Option<Value> {
         "wrongBook" => Some(json!([])),
         "progress" => Some(json!({ "attemptedQuestionIds": [] })),
         "activeExam" => Some(Value::Null),
-        "settings" => Some(json!({ "questionBankVersion": 2, "activeSubjectId": "ai" })),
+        "settings" => Some(json!({ "questionBankVersion": 3, "questionBankTag": "ds1-0.1.5", "activeSubjectId": "data-structure" })),
         _ => None,
     }
 }
@@ -53,6 +54,46 @@ fn write_json(path: &Path, value: &Value) -> Result<(), String> {
     Ok(())
 }
 
+fn bank_tag_value(manifest: &Value) -> Option<&str> {
+    manifest.get("bankTag").and_then(Value::as_str)
+}
+
+fn tag_version(tag: &str) -> Vec<u32> {
+    tag.split(|character: char| !(character.is_ascii_digit() || character == '.'))
+        .find(|part| part.contains('.'))
+        .unwrap_or(tag)
+        .split('.')
+        .map(|part| part.parse::<u32>().unwrap_or(0))
+        .collect()
+}
+
+fn newer_tag_is_greater(first: &str, second: &str) -> bool {
+    let first_version = tag_version(first);
+    let second_version = tag_version(second);
+    let length = first_version.len().max(second_version.len());
+    for index in 0..length {
+        let left = *first_version.get(index).unwrap_or(&0);
+        let right = *second_version.get(index).unwrap_or(&0);
+        if left != right {
+            return left > right;
+        }
+    }
+    first > second
+}
+
+fn should_replace_bank(existing_manifest: Option<Value>) -> bool {
+    let Ok(embedded_manifest) = serde_json::from_str::<Value>(QUESTION_BANK_MANIFEST) else {
+        return false;
+    };
+    let Some(embedded_tag) = bank_tag_value(&embedded_manifest) else {
+        return false;
+    };
+    let Some(existing_tag) = existing_manifest.as_ref().and_then(bank_tag_value) else {
+        return true;
+    };
+    newer_tag_is_greater(embedded_tag, existing_tag)
+}
+
 fn read_or_create_json(app: &tauri::AppHandle, key: &str) -> Result<Value, String> {
     let file = file_name(key).ok_or_else(|| format!("不支持的数据键：{key}"))?;
     let path = data_directory(app)?.join(file);
@@ -74,7 +115,14 @@ fn ensure_data_files(app: &tauri::AppHandle) -> Result<PathBuf, String> {
     fs::create_dir_all(&bank_dir).map_err(|error| format!("无法创建题库目录：{error}"))?;
 
     let questions_path = bank_dir.join("questions.json");
-    fs::write(&questions_path, QUESTIONS_JSON).map_err(|error| format!("无法释放内置题库：{error}"))?;
+    let manifest_path = bank_dir.join("manifest.json");
+    let existing_manifest = fs::read_to_string(&manifest_path)
+        .ok()
+        .and_then(|content| serde_json::from_str::<Value>(&content).ok());
+    if !questions_path.exists() || should_replace_bank(existing_manifest) {
+        fs::write(&questions_path, QUESTIONS_JSON).map_err(|error| format!("无法释放内置题库：{error}"))?;
+        fs::write(&manifest_path, QUESTION_BANK_MANIFEST).map_err(|error| format!("无法释放题库清单：{error}"))?;
+    }
 
     Ok(questions_path)
 }
@@ -85,9 +133,14 @@ fn bootstrap(app: tauri::AppHandle) -> Result<Value, String> {
     let questions = fs::read_to_string(questions_path)
         .map_err(|error| format!("无法读取题库：{error}"))
         .and_then(|content| serde_json::from_str::<Value>(&content).map_err(|error| format!("题库格式错误：{error}")))?;
+    let manifest_path = bank_directory(&app)?.join("manifest.json");
+    let question_bank_manifest = fs::read_to_string(manifest_path)
+        .ok()
+        .and_then(|content| serde_json::from_str::<Value>(&content).ok());
 
     Ok(json!({
         "questions": questions,
+        "questionBankManifest": question_bank_manifest,
         "records": read_or_create_json(&app, "records")?,
         "wrongBook": read_or_create_json(&app, "wrongBook")?,
         "progress": read_or_create_json(&app, "progress")?,
@@ -107,6 +160,35 @@ fn save_data(app: tauri::AppHandle, key: String, value: Value) -> Result<bool, S
 #[tauri::command]
 fn get_data_directory(app: tauri::AppHandle) -> Result<String, String> {
     data_directory(&app).map(|path| path.display().to_string())
+}
+
+#[tauri::command]
+fn install_question_bank(app: tauri::AppHandle, questions: Value, manifest: Value) -> Result<Value, String> {
+    let items = questions
+        .as_array()
+        .ok_or_else(|| "题库格式错误：顶层必须是数组".to_string())?;
+    if items.is_empty() {
+        return Err("题库格式错误：题目不能为空".to_string());
+    }
+    for item in items {
+        if item.get("id").and_then(Value::as_str).is_none()
+            || item.get("type").and_then(Value::as_str).is_none()
+            || item.get("stem").and_then(Value::as_str).is_none()
+            || item.get("options").and_then(Value::as_array).is_none()
+            || item.get("correctAnswers").and_then(Value::as_array).is_none()
+            || item.get("explanation").and_then(Value::as_str).is_none()
+        {
+            return Err("题库格式错误：存在缺少必填字段或题解的题目".to_string());
+        }
+    }
+    let bank_dir = bank_directory(&app)?;
+    fs::create_dir_all(&bank_dir).map_err(|error| format!("无法创建题库目录：{error}"))?;
+    write_json(&bank_dir.join("questions.json"), &questions)?;
+    write_json(&bank_dir.join("manifest.json"), &manifest)?;
+    Ok(json!({
+        "questionCount": items.len(),
+        "bankTag": manifest.get("bankTag").and_then(Value::as_str)
+    }))
 }
 
 #[tauri::command]
@@ -201,6 +283,7 @@ pub fn run() {
             bootstrap,
             save_data,
             get_data_directory,
+            install_question_bank,
             run_c_code
         ])
         .run(tauri::generate_context!())

@@ -2,7 +2,16 @@ import { computed, ref } from 'vue'
 import { createExam, gradeExam, selectOfficialQuestions, updateProgress, updateWrongBook } from '../services/exam'
 import { loadApplicationData, resolveDataDirectory, saveApplicationData } from '../services/storage'
 import { DEFAULT_SUBJECT_ID, getSubjectConfig, isSubjectId, subjectOf } from '../services/subjects'
-import type { ActiveExam, ExamRecord, ProgressData, Question, SubjectId, SubmitMethod, WrongBookEntry } from '../types'
+import type {
+  ActiveExam,
+  ExamRecord,
+  ProgressData,
+  Question,
+  QuestionBankManifest,
+  SubjectId,
+  SubmitMethod,
+  WrongBookEntry,
+} from '../types'
 
 export function useExamStore() {
   const loading = ref(true)
@@ -14,6 +23,7 @@ export function useExamStore() {
   const activeExam = ref<ActiveExam | null>(null)
   const activeSubjectId = ref<SubjectId>(DEFAULT_SUBJECT_ID)
   const dataDirectory = ref('')
+  const questionBankManifest = ref<QuestionBankManifest | undefined>()
 
   const questionMap = computed(() => new Map(questions.value.map((question) => [question.id, question])))
   const activeSubject = computed(() => getSubjectConfig(activeSubjectId.value))
@@ -52,6 +62,7 @@ export function useExamStore() {
     try {
       const initial = await loadApplicationData()
       questions.value = initial.questions
+      questionBankManifest.value = initial.questionBankManifest
       records.value = initial.records
       wrongBook.value = initial.wrongBook
       progress.value = initial.progress
@@ -71,7 +82,30 @@ export function useExamStore() {
 
   async function setActiveSubject(subjectId: SubjectId) {
     activeSubjectId.value = subjectId
-    await saveApplicationData('settings', { questionBankVersion: 2, activeSubjectId: subjectId })
+    await saveApplicationData('settings', { questionBankVersion: 3, questionBankTag: 'ds1-0.1.5', activeSubjectId: subjectId })
+  }
+
+  async function replaceQuestionBank(nextQuestions: Question[], manifest: QuestionBankManifest) {
+    const validQuestionIds = new Set(nextQuestions.map((question) => question.id))
+    const nextProgress = {
+      attemptedQuestionIds: progress.value.attemptedQuestionIds.filter((id) => validQuestionIds.has(id)),
+    }
+    const nextWrongBook = wrongBook.value.filter((entry) => validQuestionIds.has(entry.questionId))
+    await Promise.all([
+      saveApplicationData('progress', nextProgress),
+      saveApplicationData('wrongBook', nextWrongBook),
+      saveApplicationData('activeExam', null),
+      saveApplicationData('settings', {
+        questionBankVersion: 3,
+        questionBankTag: manifest.bankTag,
+        activeSubjectId: activeSubjectId.value,
+      }),
+    ])
+    questions.value = nextQuestions
+    questionBankManifest.value = manifest
+    progress.value = nextProgress
+    wrongBook.value = nextWrongBook
+    activeExam.value = null
   }
 
   async function startOfficialExam() {
@@ -147,6 +181,7 @@ export function useExamStore() {
     progress,
     activeExam,
     activeSubjectId,
+    questionBankManifest,
     activeSubject,
     subjectQuestions,
     subjectRecords,
@@ -160,6 +195,7 @@ export function useExamStore() {
     highestScore,
     initialize,
     setActiveSubject,
+    replaceQuestionBank,
     startOfficialExam,
     startWrongPractice,
     startPractice,

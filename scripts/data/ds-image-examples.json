@@ -1,0 +1,1503 @@
+[
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "在非空双向循环链表中由 q 所指结点前面插入一个由 p 所指的链结点，若已执行 p->rlink=q; p->llink=q->llink; q->llink=p; 则还应执行哪条语句？",
+    "options": [
+      {
+        "key": "A",
+        "text": "q->rlink=p;"
+      },
+      {
+        "key": "B",
+        "text": "q->llink->rlink=p;"
+      },
+      {
+        "key": "C",
+        "text": "p->rlink->rlink=p;"
+      },
+      {
+        "key": "D",
+        "text": "p->llink->rlink=p;"
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "tags": [
+      "栈",
+      "原例题"
+    ],
+    "explanation": "思路：把 q 的原前驱记为 pre。p 已指向 pre 和 q，q 的左指针已改为 p，剩下必须让 pre 的右指针改指向 p，四条链才闭合。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "设一个栈的输入序列是 1,2,3,4,5，则下列序列中，是栈的合法输出序列的是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "5 1 2 3 4"
+      },
+      {
+        "key": "B",
+        "text": "4 5 1 3 2"
+      },
+      {
+        "key": "C",
+        "text": "4 3 1 2 5"
+      },
+      {
+        "key": "D",
+        "text": "3 2 1 5 4"
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "tags": [
+      "栈",
+      "原例题"
+    ],
+    "explanation": "思路：按输入序列逐个入栈，只有当前栈顶可以出栈。逐项模拟选项，只有目标序列的每一步都能从栈顶弹出才合法。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "一个栈的进栈序列是 a,b,c,d,e，则栈的不可能的输出序列是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "edcba"
+      },
+      {
+        "key": "B",
+        "text": "decba"
+      },
+      {
+        "key": "C",
+        "text": "dceab"
+      },
+      {
+        "key": "D",
+        "text": "abcde"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "tags": [
+      "栈",
+      "原例题"
+    ],
+    "explanation": "思路：逐个检查候选序列是否能由同一个栈模拟出来。dceab 中 e 已在 d 之后入栈，却要求 c 出栈后再让 e、a、b 形成不可能的栈顶顺序，因此它不合法。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "设有一顺序栈 S，元素 a,b,c,d,e,f,g,h 依次进栈，如果 8 个元素出栈的顺序是 d,f,e,c,h,g,b,a，则栈的容量至少应该是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "3"
+      },
+      {
+        "key": "B",
+        "text": "4"
+      },
+      {
+        "key": "C",
+        "text": "5"
+      },
+      {
+        "key": "D",
+        "text": "6"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "tags": [
+      "栈",
+      "原例题"
+    ],
+    "explanation": "思路：按目标出栈序列模拟入栈和出栈，栈内元素最多时出现在 h 入栈前后，需要同时暂存 a、b、g、h 等元素，最大深度为 5。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "中缀表达式 A-(B+C/D)*E 的后缀形式是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "ABC+D/×E-"
+      },
+      {
+        "key": "B",
+        "text": "ABCD/+E×-"
+      },
+      {
+        "key": "C",
+        "text": "AB-C+D/E×"
+      },
+      {
+        "key": "D",
+        "text": "ABC-+D/E×"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "tags": [
+      "栈",
+      "原例题"
+    ],
+    "explanation": "思路：先处理括号内的 B+C/D，其中除法优先得到 B C D / +，再与 E 相乘，最后用 A 减去该结果。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "递归过程或函数调用时，处理参数及返回地址，要用一种称为什么的数据结构？",
+    "options": [
+      {
+        "key": "A",
+        "text": "队列"
+      },
+      {
+        "key": "B",
+        "text": "多维数组"
+      },
+      {
+        "key": "C",
+        "text": "栈"
+      },
+      {
+        "key": "D",
+        "text": "线性表"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "tags": [
+      "栈",
+      "原例题"
+    ],
+    "explanation": "思路：函数调用总是后调用的先返回，参数、局部状态和返回地址按调用层次压入再弹出，符合后进先出的栈结构。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "栈和队都是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "顺序存储的线性结构"
+      },
+      {
+        "key": "B",
+        "text": "链式存储的非线性结构"
+      },
+      {
+        "key": "C",
+        "text": "限制存取点的线性结构"
+      },
+      {
+        "key": "D",
+        "text": "限制存取点的非线性结构"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "tags": [
+      "栈",
+      "原例题"
+    ],
+    "explanation": "思路：栈和队列都属于线性结构，只是允许插入和删除的位置受限制；栈限制在栈顶，队列限制在队尾和队头。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "设栈 S 和队列 Q 初始为空，元素 e1,e2,e3,e4,e5,e6 依次通过栈 S，一个元素出栈后即进队列 Q，若 6 个元素出队序列为 e2,e4,e3,e6,e5,e1，则栈 S 的容量至少为？",
+    "options": [
+      {
+        "key": "A",
+        "text": "6"
+      },
+      {
+        "key": "B",
+        "text": "4"
+      },
+      {
+        "key": "C",
+        "text": "3"
+      },
+      {
+        "key": "D",
+        "text": "2"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "tags": [
+      "栈",
+      "原例题"
+    ],
+    "explanation": "思路：队列只保持出栈后的次序，所以目标队列序列就是栈的出栈序列。按 e2、e4、e3、e6、e5、e1 模拟，最大同时留在栈中的元素数为 3。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "若栈和队列都采用顺序存储结构，则下列说法正确的是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "任何情况下都可以进行出栈操作。"
+      },
+      {
+        "key": "B",
+        "text": "任何情况下都可以进行进栈操作。"
+      },
+      {
+        "key": "C",
+        "text": "队不为空时可以进行出队操作。"
+      },
+      {
+        "key": "D",
+        "text": "任何情况下都可以进行入队操作。"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "tags": [
+      "队列",
+      "原例题"
+    ],
+    "explanation": "思路：出栈和出队都要求结构非空；入栈或入队还要看顺序存储空间是否已满。只有“队不为空时可以出队”始终成立。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "允许对队列进行的操作有？",
+    "options": [
+      {
+        "key": "A",
+        "text": "对队列中的元素排序"
+      },
+      {
+        "key": "B",
+        "text": "取出最近进队的元素"
+      },
+      {
+        "key": "C",
+        "text": "在队头元素之前插入元素"
+      },
+      {
+        "key": "D",
+        "text": "删除队头元素"
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "tags": [
+      "队列",
+      "原例题"
+    ],
+    "explanation": "思路：队列的基本限制是队尾入队、队头出队，不支持随意排序、取最近入队元素或在队头前插入。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "为解决计算机主机与打印机之间速度不匹配问题，通常设置一个打印数据缓冲区，主机将要输出的数据依次写入该缓冲区，而打印机则依次从该缓冲区中取出数据。该缓冲区的逻辑结构应该是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "栈"
+      },
+      {
+        "key": "B",
+        "text": "队列"
+      },
+      {
+        "key": "C",
+        "text": "树"
+      },
+      {
+        "key": "D",
+        "text": "图"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "tags": [
+      "队列",
+      "原例题"
+    ],
+    "explanation": "思路：打印任务应按写入先后顺序被取出处理，先进入的数据先离开，正好是队列的先进先出。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "已知循环队列存储在一维数组 A[0..n-1] 中，且队列非空时 front 和 rear 分别指向队头元素和队尾元素。若初始时队列为空，且要求第 1 个进入队列的元素存储在 A[0] 处，则初始时 front 和 rear 的值分别是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "0,0"
+      },
+      {
+        "key": "B",
+        "text": "0,n-1"
+      },
+      {
+        "key": "C",
+        "text": "n-1,0"
+      },
+      {
+        "key": "D",
+        "text": "n-1,n-1"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "tags": [
+      "队列",
+      "原例题"
+    ],
+    "explanation": "思路：第一次入队后队头应在 A[0]，队尾也应在 A[0]。若入队时 rear 先循环加一再存放，则空队列初始 rear 应为 n-1，front 为 0。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "若用一个大小为 6 的数组来实现循环队列，且当前 rear 和 front 的值分别为 0 和 3，当从队列中删除一个元素，再加入两个元素后，rear 和 front 的值分别为多少？",
+    "options": [
+      {
+        "key": "A",
+        "text": "1 和 5"
+      },
+      {
+        "key": "B",
+        "text": "2 和 4"
+      },
+      {
+        "key": "C",
+        "text": "4 和 2"
+      },
+      {
+        "key": "D",
+        "text": "5 和 1"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "tags": [
+      "队列",
+      "原例题"
+    ],
+    "explanation": "思路：出队时 front 前进一格，3 变为 4；两次入队时 rear 连续前进两格，0 变为 2，所有下标都按容量 6 取模。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "下列程序判断字符串 s 是否对称，对称则返回 1，否则返回 0。函数形参应填写____。",
+    "options": [],
+    "correctAnswers": [
+      "char s[]"
+    ],
+    "acceptedAnswers": [
+      "char *s",
+      "char* s"
+    ],
+    "tags": [
+      "栈",
+      "原例题"
+    ],
+    "explanation": "思路：函数需要接收一个字符串，C 语言中可用字符数组形参或字符指针形参表示同一类参数。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "下列程序判断字符串 s 是否对称：int i=0,j=0; while(s[j])____; 该空应填写____。",
+    "options": [],
+    "correctAnswers": [
+      "j++"
+    ],
+    "acceptedAnswers": [
+      "++j",
+      "j=j+1",
+      "j+=1"
+    ],
+    "tags": [
+      "栈",
+      "原例题"
+    ],
+    "explanation": "思路：j 从 0 开始扫描字符串，while(s[j]) 为真说明还未到结尾，每轮让 j 向后移动一位即可统计长度位置。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "下列程序判断字符串 s 是否对称，比较结束后 return(____); 该空可填写____。",
+    "options": [],
+    "correctAnswers": [
+      "i>=j?1:0"
+    ],
+    "acceptedAnswers": [
+      "i<j?0:1",
+      "i>=j",
+      "i==j||i==j+1",
+      "s[i]==s[j]"
+    ],
+    "tags": [
+      "栈",
+      "原例题"
+    ],
+    "explanation": "思路：首尾字符向中间比较，循环正常结束时说明左右指针已经相遇或交错，此时返回真；若提前发现不等则返回假。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "用 S 表示入栈操作，X 表示出栈操作。若元素入栈顺序为 1234，为得到 1342 出栈顺序，相应的 S 和 X 操作串为____。",
+    "options": [],
+    "correctAnswers": [
+      "SXSSXSXX"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "栈",
+      "原例题"
+    ],
+    "explanation": "思路：先入 1 后立即出 1；再入 2、3 后出 3；再入 4 后出 4，最后出 2，把这些入栈和出栈动作连起来即可。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "已知一个栈的入栈序列是 1,2,3,...,30，其输出序列是 p1,p2,p3,...,pn，若 p1=30，则 p10 为____。",
+    "options": [],
+    "correctAnswers": [
+      "21"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "栈",
+      "原例题"
+    ],
+    "explanation": "思路：第一个出栈就是 30，说明 1 到 30 已全部入栈，此后只能按 30、29、28 递减出栈，所以第 10 个是 21。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "若某栈初始为空，进栈序列 a,b,c,d,e 经过 PUSH,PUSH,POP,PUSH,POP,PUSH,PUSH 后，得到的出栈序列是____。（答案用英文逗号隔开）",
+    "options": [],
+    "correctAnswers": [
+      "b,c"
+    ],
+    "acceptedAnswers": [
+      "b, c",
+      "\"b,c\"",
+      "\"b, c\""
+    ],
+    "tags": [
+      "栈",
+      "原例题"
+    ],
+    "explanation": "思路：逐步模拟操作：压入 a、b 后弹出 b；再压入 c 后弹出 c；后面只压入 d、e 没有再弹出。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "中缀表达式 3+x*(2.4/5-6) 所对应的后缀表达式为____。（中间有无空格均可）",
+    "options": [],
+    "correctAnswers": [
+      "3x2.45/6-*+"
+    ],
+    "acceptedAnswers": [
+      "3 x 2.4 5 / 6 - * +"
+    ],
+    "tags": [
+      "栈",
+      "原例题"
+    ],
+    "explanation": "思路：先把括号内 2.4/5-6 转为 2.4 5 / 6 -，再与 x 相乘，最后与 3 相加。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "栈 R 从顶到底为 {2,4,6,8,10}，逐个取出放入队列 Q 中，再从 Q 中逐个取出放入 R 中，问现在栈 R 中从顶到底的顺序为____。输出格式如 {1,2,3,4,5}",
+    "options": [],
+    "correctAnswers": [
+      "{10,8,6,4,2}"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "栈",
+      "原例题"
+    ],
+    "explanation": "思路：从栈顶弹出的顺序是 2、4、6、8、10；队列保持这个顺序出队，再逐个压回栈后，最后压入的 10 位于栈顶。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "有一后缀表达式为 abcde+*/*，对应的中缀表达式为____。",
+    "options": [],
+    "correctAnswers": [
+      "a*(b/(c*(d+e)))"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "栈",
+      "原例题"
+    ],
+    "explanation": "思路：按后缀式从左到右处理：d 和 e 先相加，再与 c 相乘，b 除以该结果，最后 a 乘以前面的商。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "在一棵度为 4 的树 T 中，若有 20 个度为 4 的结点，10 个度为 3 的结点，1 个度为 2 的结点，10 个度为 1 的结点，则树 T 的叶子结点个数是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "41"
+      },
+      {
+        "key": "B",
+        "text": "82"
+      },
+      {
+        "key": "C",
+        "text": "113"
+      },
+      {
+        "key": "D",
+        "text": "122"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：树中叶子数可由 1+Σ(度数-1)×对应结点数计算，代入 20、10、1、10 四类结点即可。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "一个满二叉树有 m 个树枝，n 个结点，其深度为 h，则下列关系正确的是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "n=h+m"
+      },
+      {
+        "key": "B",
+        "text": "h+m=2n"
+      },
+      {
+        "key": "C",
+        "text": "m=h-1"
+      },
+      {
+        "key": "D",
+        "text": "n=2^h-1"
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：满二叉树第 1 到第 h 层全部满，结点总数是 1+2+...+2^(h-1)，也就是 2^h-1。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "若二叉树的前序序列与后序序列的次序正好相反，则该二叉树一定是什么样的二叉树？",
+    "options": [
+      {
+        "key": "A",
+        "text": "空或仅有一个结点"
+      },
+      {
+        "key": "B",
+        "text": "其分支结点无左子树"
+      },
+      {
+        "key": "C",
+        "text": "其分支结点无右子树"
+      },
+      {
+        "key": "D",
+        "text": "其分支结点的度都为 1"
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：前序先访问根，后序最后访问根；两者完全相反时，每个分支结点不能同时有左右孩子，否则左右子树的相对次序无法整体反转。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "将森林 F 转换为对应的二叉树 T，F 中叶结点的个数等于什么？",
+    "options": [
+      {
+        "key": "A",
+        "text": "T 中叶结点的个数"
+      },
+      {
+        "key": "B",
+        "text": "T 中度为 1 的结点个数"
+      },
+      {
+        "key": "C",
+        "text": "T 中左孩子指针为空的结点个数"
+      },
+      {
+        "key": "D",
+        "text": "T 中右孩子指针为空的结点个数"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：森林转二叉树采用左孩子右兄弟表示，原森林中的叶结点没有第一个孩子，因此在二叉树中表现为左孩子指针为空。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "当一棵有 n 个结点的二叉树按层次从上到下、同层次从左到右将数据存放在一维数组 A[1..n] 中时，数组中第 i 个结点的左孩子为？",
+    "options": [
+      {
+        "key": "A",
+        "text": "A[2i](2i<=n)"
+      },
+      {
+        "key": "B",
+        "text": "A[2i+1](2i+1<=n)"
+      },
+      {
+        "key": "C",
+        "text": "A[i/2]"
+      },
+      {
+        "key": "D",
+        "text": "无法确定"
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：题目只说普通二叉树按层次紧凑存放，并不是完全二叉树顺序存储；缺少空孩子占位时，不能用 2i 确定左孩子。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "已知一算术表达式的中缀形式为 A+B*C-D/E，后缀形式为 ABC*+DE/-，其前缀形式为？",
+    "options": [
+      {
+        "key": "A",
+        "text": "-A+B*C/DE"
+      },
+      {
+        "key": "B",
+        "text": "-A+B*CD/E"
+      },
+      {
+        "key": "C",
+        "text": "-+*ABC/DE"
+      },
+      {
+        "key": "D",
+        "text": "-+A*BC/DE"
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：表达式结构是 (A+(B*C))-(D/E)，前缀要先写根运算符减号，再写左子表达式 +A*BC 和右子表达式 /DE。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "在二叉查找树中进行查找的效率与什么有关？",
+    "options": [
+      {
+        "key": "A",
+        "text": "二叉查找树的深度"
+      },
+      {
+        "key": "B",
+        "text": "二叉查找树的结点个数"
+      },
+      {
+        "key": "C",
+        "text": "被查找结点的度"
+      },
+      {
+        "key": "D",
+        "text": "二叉查找树的存储结构"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：二叉查找树每比较一次就沿一条分支向下走，最多比较次数主要由从根到目标位置的路径长度决定，也就是树的深度。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "5 个字符有如下 4 种编码方案，其中不是前缀编码的是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "0, 10, 110, 1111"
+      },
+      {
+        "key": "B",
+        "text": "11, 10, 001, 101, 0001"
+      },
+      {
+        "key": "C",
+        "text": "00, 010, 0110, 1000"
+      },
+      {
+        "key": "D",
+        "text": "b, c, aa, ac, aba, abb, abc"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：前缀编码要求没有任一编码是另一个编码的开头；选项 B 中 10 是 101 的前缀，所以不满足。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "由带权为 3,9,6,2,5 的五个叶子结点构成一棵哈夫曼树，则带权路径长度为？",
+    "options": [
+      {
+        "key": "A",
+        "text": "54"
+      },
+      {
+        "key": "B",
+        "text": "55"
+      },
+      {
+        "key": "C",
+        "text": "65"
+      },
+      {
+        "key": "D",
+        "text": "25"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：每次合并最小的两个权值：2+3、5+5、6+9、10+15；这些合并代价相加就是带权路径长度。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "有 11 个叶结点的哈夫曼树共有多少个结点？",
+    "options": [
+      {
+        "key": "A",
+        "text": "22"
+      },
+      {
+        "key": "B",
+        "text": "21"
+      },
+      {
+        "key": "C",
+        "text": "20"
+      },
+      {
+        "key": "D",
+        "text": "19"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：哈夫曼树是没有度为 1 结点的二叉树，若有 L 个叶结点，则总结点数为 2L-1。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "对具有 n 个结点的完全二叉树按层次从上到下、每一层从左到右编号，编号为 i 的结点的双亲结点编号为____，左孩子编号为____，右孩子编号为____。（答案用英文分号隔开）",
+    "options": [],
+    "correctAnswers": [
+      "[i/2];2i;2i+1"
+    ],
+    "acceptedAnswers": [
+      "⌊i/2⌋;2i;2i+1"
+    ],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：完全二叉树按 1 开始编号时，父子下标关系固定：父结点取 i/2 的整数部分，左右孩子分别为 2i 和 2i+1。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "度为 k 的树中，第 i 层最多有____个结点。（i≥1）",
+    "options": [],
+    "correctAnswers": [
+      "k^(i-1)"
+    ],
+    "acceptedAnswers": [
+      "k**(i-1)"
+    ],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：根所在第 1 层最多 1 个结点，此后每下一层最多扩大 k 倍，所以第 i 层最多为 k 的 i-1 次方。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "若一棵满二叉树有 2047 个结点，则该二叉树中叶结点的个数为____。",
+    "options": [],
+    "correctAnswers": [
+      "1024"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：满二叉树的叶子数等于 (总结点数+1)/2，把 2047 代入即可。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "已知某完全二叉树采用顺序存储结构，结点的存放次序为 A,B,C,D,E,F,G,H,I,J，则该二叉树的后序序列为____。（答案中不要加入空格及其他符号）",
+    "options": [],
+    "correctAnswers": [
+      "HIDJEBFGCA"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：按顺序存储还原完全二叉树，再按左子树、右子树、根的顺序访问；B 子树为 H、I、D、J、E、B，C 子树为 F、G、C。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "若具有 n 个结点的二叉树采用二叉链表存储结构，则该链表中有____个指针域，其中____个指针域用于链接孩子结点，____个指针域空闲存放着 NULL。（答案用英文分号隔开）",
+    "options": [],
+    "correctAnswers": [
+      "2n;n-1;n+1"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：二叉链表每个结点有两个孩子指针，共 2n 个；除根外每个结点都有一条来自父结点的链接，所以使用 n-1 个，剩下 n+1 个为空。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "已知二叉树的前序遍历序列为 ABDCEFG，中序遍历序列是 DBCAFEG，则其后序遍历序列为____。",
+    "options": [],
+    "correctAnswers": [
+      "DCBFGEA"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：前序首元素 A 是根；用中序把左右子树分开后递归还原，左子树后序为 DCB，右子树后序为 FGE，最后访问根 A。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "在顺序存储的二叉树中，编号为 i 和 j 的两个结点处在同一层的条件是____。",
+    "options": [],
+    "correctAnswers": [
+      "[log2i]==[log2j]"
+    ],
+    "acceptedAnswers": [
+      "floor(log2i)==floor(log2j)"
+    ],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：按 1 开始编号时，同一层结点编号落在同一个 2 的幂区间内，因此 floor(log2 编号) 相同。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "如果 A,B,C,D 的值分别为 2,3,4,5，前缀表达式 + - × A B C D 的值为____。",
+    "options": [],
+    "correctAnswers": [
+      "7"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：按前缀表达式从运算符结构还原：先算 A×B，再减 C，最后加 D。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "如果 A,B,C,D 的值分别为 2,3,4,5，前缀表达式 - × A + B C D 的值为____。",
+    "options": [],
+    "correctAnswers": [
+      "9"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：先计算 B+C，再与 A 相乘，最后减去 D。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "采用逐点插入法建立序列 (54,28,16,34,73,62,95,60,26,43) 的二叉查找树后，查找数据元素 62 共进行____次元素间的比较。",
+    "options": [],
+    "correctAnswers": [
+      "3"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：按插入序列建立二叉查找树，62 位于 54 的右孩子 73 的左孩子处；查找时依次比较 54、73、62。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "若以 {4,5,6,7,8} 作为叶子结点的权值构造哈夫曼树，则其带权路径长度是____。",
+    "options": [],
+    "correctAnswers": [
+      "69"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "树",
+      "原例题"
+    ],
+    "explanation": "思路：哈夫曼树每次合并最小权值：4+5、6+7、8+9、13+17；合并代价相加就是带权路径长度。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "对含有 n 条边的无向图而言，其邻接表中边数为？",
+    "options": [
+      {
+        "key": "A",
+        "text": "n"
+      },
+      {
+        "key": "B",
+        "text": "2n"
+      },
+      {
+        "key": "C",
+        "text": "n/2"
+      },
+      {
+        "key": "D",
+        "text": "n×n"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：无向图的一条边会在两个端点的邻接表中各出现一次，所以邻接表边结点数是实际边数的 2 倍。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "若具有 n 个顶点的无向图采用邻接矩阵存储方法，该邻接矩阵一定是一个？",
+    "options": [
+      {
+        "key": "A",
+        "text": "一般矩阵"
+      },
+      {
+        "key": "B",
+        "text": "对称矩阵"
+      },
+      {
+        "key": "C",
+        "text": "对角矩阵"
+      },
+      {
+        "key": "D",
+        "text": "稀疏矩阵"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：无向边连接 i 和 j 时，矩阵中 A[i][j] 与 A[j][i] 同时表示同一条边，因此矩阵关于主对角线对称。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "有 8 个顶点的无向图最多有多少条边？",
+    "options": [
+      {
+        "key": "A",
+        "text": "14"
+      },
+      {
+        "key": "B",
+        "text": "28"
+      },
+      {
+        "key": "C",
+        "text": "56"
+      },
+      {
+        "key": "D",
+        "text": "112"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：无向简单图最多在任意两点之间连一条边，所以边数是从 8 个顶点中任选 2 个的组合数。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "在一个图中，所有顶点的度数之和等于图的边数的多少倍？",
+    "options": [
+      {
+        "key": "A",
+        "text": "1/2"
+      },
+      {
+        "key": "B",
+        "text": "1"
+      },
+      {
+        "key": "C",
+        "text": "2"
+      },
+      {
+        "key": "D",
+        "text": "4"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：无向图中每条边对两个端点各贡献 1 个度数，因此总度数等于边数的 2 倍。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "图的深度优先遍历类似于二叉树的哪种遍历？",
+    "options": [
+      {
+        "key": "A",
+        "text": "前序遍历"
+      },
+      {
+        "key": "B",
+        "text": "中序遍历"
+      },
+      {
+        "key": "C",
+        "text": "后序遍历"
+      },
+      {
+        "key": "D",
+        "text": "层次遍历"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：深度优先遍历先访问当前顶点，再沿尚未访问的邻接点向深处走，整体访问风格与二叉树先序遍历相近。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "有一无向图 G=(V,E)，其中 V={a,b,c,d,e,f}，E={(a,b),(a,e),(a,c),(b,d),(c,f),(f,d),(e,c)}，则下面的顶点序列中，哪一个是该图深度优先遍历的一个正确输出序列？",
+    "options": [
+      {
+        "key": "A",
+        "text": "a,b,e,c,d,f"
+      },
+      {
+        "key": "B",
+        "text": "a,c,f,e,b,d"
+      },
+      {
+        "key": "C",
+        "text": "a,e,b,f,c,b"
+      },
+      {
+        "key": "D",
+        "text": "a,e,c,f,d,b"
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：从 a 出发可先访问 e，再到 c、f、d、b；每一步都沿当前顶点的未访问邻接点深入，符合深度优先过程。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "任何一个无向连通图的最小生成树有多少棵？",
+    "options": [
+      {
+        "key": "A",
+        "text": "只有一棵"
+      },
+      {
+        "key": "B",
+        "text": "一棵或多棵"
+      },
+      {
+        "key": "C",
+        "text": "一定有多棵"
+      },
+      {
+        "key": "D",
+        "text": "可能不存在"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：最小生成树一定存在，但若存在相同权值或多种等价选择，最小生成树可能不唯一。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "用邻接表表示图进行广度优先遍历时，通常采用什么结构实现算法？",
+    "options": [
+      {
+        "key": "A",
+        "text": "栈"
+      },
+      {
+        "key": "B",
+        "text": "队列"
+      },
+      {
+        "key": "C",
+        "text": "树"
+      },
+      {
+        "key": "D",
+        "text": "图"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：广度优先遍历按发现顺序逐层扩展，需要把已发现但尚未扩展的顶点排队保存。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "对于含有 n 个顶点 e 条边的无向连通图，利用 Kruskal 算法生成最小生成树，其时间复杂度为？",
+    "options": [
+      {
+        "key": "A",
+        "text": "O(elog2e)"
+      },
+      {
+        "key": "B",
+        "text": "O(e*n)"
+      },
+      {
+        "key": "C",
+        "text": "O(e*e)"
+      },
+      {
+        "key": "D",
+        "text": "O(nlog2n)"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：Kruskal 的主要耗时在对 e 条边按权值排序，排序复杂度为 O(e log e)，之后用并查集选边。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "single",
+    "stem": "若采用 Dijkstra 算法求图中顶点 A 到其他顶点的最短路径，Path[v] 表示顶点 v 在最短路径上的直接前驱顶点，则最终求得的 Path[E] 为？图的边为 AB=2, AF=4, AC=7, BF=1, BG=2, FE=3, EC=1, ED=2, EG=3, GD=5, CD=5。",
+    "options": [
+      {
+        "key": "A",
+        "text": "C"
+      },
+      {
+        "key": "B",
+        "text": "D"
+      },
+      {
+        "key": "C",
+        "text": "F"
+      },
+      {
+        "key": "D",
+        "text": "G"
+      }
+    ],
+    "correctAnswers": [
+      "C"
+    ],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：从 A 松弛各边，A 到 E 的最短路径可经 A-B-F-E，E 的直接前驱是 F。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "在图 G 的邻接表表示中，每个顶点邻接表中所含的结点数，对于无向图来说等于该顶点的____；对于有向图来说等于该顶点的____。（答案用英文分号隔开）",
+    "options": [],
+    "correctAnswers": [
+      "度;出度"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：无向图中邻接表列出所有相邻边，数量等于度；有向图的普通邻接表列出从该顶点发出的弧，数量等于出度。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "有向图 G 用邻接矩阵存储，其第 i 行的所有非无穷大元素个数等于顶点 i 的____。",
+    "options": [],
+    "correctAnswers": [
+      "出度"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：邻接矩阵第 i 行表示从顶点 i 发出的边或弧，非无穷大项对应可直接到达的后继顶点。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "在一个具有 n 个顶点的无向连通图中至少有____条边。",
+    "options": [],
+    "correctAnswers": [
+      "n-1"
+    ],
+    "acceptedAnswers": [
+      "n - 1"
+    ],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：连通 n 个顶点至少需要形成一棵树，树恰好有 n-1 条边；再少就无法保持连通。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "假设图 G 可选择的存储方案有邻接矩阵和邻接表两种，若图 G 为稀疏图，则 G 采用____存储较省空间。",
+    "options": [],
+    "correctAnswers": [
+      "邻接表"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：稀疏图边数远少于顶点对数量，邻接表只存实际存在的边，比固定 n² 空间的邻接矩阵更省。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "如果 n 个顶点的图是一个环，则它有____棵生成树。",
+    "options": [],
+    "correctAnswers": [
+      "n"
+    ],
+    "acceptedAnswers": [
+      "顶点数"
+    ],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：环上删去任意一条边都会得到一棵包含全部顶点的生成树，n 个顶点的环有 n 条边，因此有 n 种删法。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "对于边集 V1V2=16, V1V4=9, V1V3=10, V4V3=2, V2V3=11, V3V5=14, V2V5=6, V2V6=5, V5V6=1, V4V5=18 的无向连通图，若采用 Prim 算法求最小生成树并第一个选择 V1，则最后一条加入最小生成树的边的权值为____。",
+    "options": [],
+    "correctAnswers": [
+      "1"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：从 V1 开始，Prim 每次选择连接已选顶点集合与未选顶点集合的最小边，依次可选 9、2、11、5，最后通过 V5V6 加入剩余顶点，权值为 1。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "对于边集 V1V2=16, V1V4=9, V1V3=10, V4V3=2, V2V3=11, V3V5=14, V2V5=6, V2V6=5, V5V6=1, V4V5=18 的无向连通图，若采用 Kruskal 算法求最小生成树，则最后选择加入最小生成树的边的权值为____。",
+    "options": [],
+    "correctAnswers": [
+      "11"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：Kruskal 按权值从小到大选不成环的边，先选 1、2、5、9，跳过成环边后用权值 11 的边连通两个分量。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "已知无向带权图的边为 AB=5, AC=3, BC=3, BD=2, CD=1, CF=7, DF=4, DE=7, DG=3, EH=6, FG=2, GH=4，其最小生成树中各边的权重之和为____。",
+    "options": [],
+    "correctAnswers": [
+      "21"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：按 Kruskal 思路从小边开始选且避免成环，可取 CD、BD、FG、AC、DG、GH、EH，权重相加为 21。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "若一个非连通的无向图最多有 28 条边，则该无向图至少有____个顶点。",
+    "options": [],
+    "correctAnswers": [
+      "9"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：n 个顶点的非连通简单图最多把 n-1 个顶点连成完全图、另 1 个顶点孤立；令 C(n-1,2)=28，得到 n=9。"
+  },
+  {
+    "subjectId": "data-structure",
+    "type": "blank",
+    "stem": "用迪杰斯特拉算法计算有向图中 A 到 G 的最短路径。边为 AB=3, AC=2, AD=3, BC=3, BE=1, CE=3, DF=3, FC=1, FG=5, EG=1，则 A 到 G 的最短路径为____。（输出序列不要有空格，保持大写）",
+    "options": [],
+    "correctAnswers": [
+      "ABEG"
+    ],
+    "acceptedAnswers": [],
+    "tags": [
+      "图",
+      "原例题"
+    ],
+    "explanation": "思路：从 A 出发比较可达路径，A-B-E-G 的总权值为 3+1+1=5；经 C、D、F 到 G 的路径不更短。"
+  }
+]

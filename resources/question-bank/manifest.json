@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "bankTag": "ds1-0.1.5",
+  "appVersion": "0.1.5",
+  "questionCount": 358,
+  "sourceCounts": {
+    "imageExamples": 63,
+    "mdExamInput": 75,
+    "selfMadeInput": 160,
+    "extraFoundationInput": 60,
+    "duplicatesRemoved": 14,
+    "supplementsUsed": 14,
+    "mdExamKept": 64,
+    "selfMadeKept": 171,
+    "extraFoundationKept": 74
+  },
+  "updatedAt": "2026-06-02T00:00:00+08:00",
+  "questionsUrl": "https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/questions.json",
+  "manifestUrl": "https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/manifest.json"
+}

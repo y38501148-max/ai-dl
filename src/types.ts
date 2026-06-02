@@ -76,11 +76,23 @@ export interface ProgressData {
 
 export interface SettingsData {
   questionBankVersion: number
+  questionBankTag?: string
   activeSubjectId?: SubjectId
+}
+
+export interface QuestionBankManifest {
+  schemaVersion: number
+  bankTag: string
+  appVersion?: string
+  questionCount: number
+  updatedAt?: string
+  questionsUrl?: string
+  manifestUrl?: string
 }
 
 export interface BootstrapData {
   questions: Question[]
+  questionBankManifest?: QuestionBankManifest
   records: ExamRecord[]
   wrongBook: WrongBookEntry[]
   progress: ProgressData

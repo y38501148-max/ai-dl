@@ -5,33 +5,62 @@ const response = await fetch(`http://127.0.0.1:${port}${basePath}/question-bank/
 if (!response.ok) throw new Error('无法读取开发服务器题库')
 
 const questions = await response.json()
-if (!Array.isArray(questions) || questions.length !== 623) {
+if (!Array.isArray(questions) || questions.length < 223) {
   throw new Error(`题库数量异常：${Array.isArray(questions) ? questions.length : '非数组'}`)
 }
 
-const aiQuestions = questions.filter((question) => !question.subjectId || question.subjectId === 'ai')
 const dsQuestions = questions.filter((question) => question.subjectId === 'data-structure')
 const dsSingles = dsQuestions.filter((question) => question.type === 'single')
 const dsBlanks = dsQuestions.filter((question) => question.type === 'blank')
-const aiExplanations = aiQuestions.filter((question) => question.explanation)
 const missingDsExplanations = dsQuestions.filter((question) => !question.explanation)
-const originalExamples = dsQuestions.filter((question) => question.tags?.includes('原例题'))
+const imageExamples = dsQuestions.filter((question) => question.tags?.includes('图片例题'))
+const generatedExamples = dsQuestions.filter((question) => question.tags?.includes('自主命题'))
+const mdExamQuestions = dsQuestions.filter((question) => question.tags?.includes('非编程题'))
+const extraFoundationQuestions = dsQuestions.filter((question) => question.tags?.includes('专题补充'))
+const invalidIds = dsQuestions.filter((question, index) => question.id !== `ds1-${String(index + 1).padStart(3, '0')}`)
+const manifestResponse = await fetch(`http://127.0.0.1:${port}${basePath}/question-bank/manifest.json`)
+if (!manifestResponse.ok) throw new Error('无法读取开发服务器题库清单')
+const manifest = await manifestResponse.json()
 
-if (aiQuestions.length !== 360) throw new Error(`人工智能导论题库数量异常：${aiQuestions.length}`)
-if (dsQuestions.length !== 263 || dsSingles.length !== 133 || dsBlanks.length !== 130) {
+if (questions.length !== dsQuestions.length) throw new Error('0.1.5 题库应只包含数据结构题目')
+if (dsSingles.length < 80 || dsBlanks.length < 80) {
   throw new Error(`数据结构题库数量异常：选择 ${dsSingles.length}，填空 ${dsBlanks.length}`)
 }
-if (originalExamples.length !== 63) throw new Error(`数据结构原例题数量异常：${originalExamples.length}`)
-if (aiExplanations.length) throw new Error(`人工智能导论题库不应包含题解：${aiExplanations.length}`)
+if (imageExamples.length < 63) throw new Error(`图片例题数量异常：${imageExamples.length}`)
+if (manifest.sourceCounts?.mdExamInput !== 75) {
+  throw new Error(`2019-2022 非编程题输入数量异常：${manifest.sourceCounts?.mdExamInput}`)
+}
+if (manifest.sourceCounts?.duplicatesRemoved !== manifest.sourceCounts?.supplementsUsed) {
+  throw new Error(
+    `去重补题数量不一致：${manifest.sourceCounts?.duplicatesRemoved} != ${manifest.sourceCounts?.supplementsUsed}`,
+  )
+}
+if (mdExamQuestions.length !== manifest.sourceCounts?.mdExamKept) {
+  throw new Error(`2019-2022 非编程题保留数量异常：${mdExamQuestions.length}`)
+}
+if (generatedExamples.length < 160) throw new Error(`自主命题数量异常：${generatedExamples.length}`)
+if (extraFoundationQuestions.length < 60) throw new Error(`专题补充题数量异常：${extraFoundationQuestions.length}`)
 if (missingDsExplanations.length) throw new Error(`数据结构存在缺少题解的题目：${missingDsExplanations.length}`)
-
-const groups = []
-for (let start = 0; start < aiQuestions.length; start += 60) {
-  groups.push(aiQuestions.slice(start, start + 60))
+if (invalidIds.length) throw new Error(`题目编号异常：${invalidIds[0].id}`)
+if (manifest.questionCount !== questions.length) {
+  throw new Error(`题库清单数量异常：${manifest.questionCount} != ${questions.length}`)
 }
 
-if (groups.length !== 6 || groups.some((group) => group.length !== 60)) {
-  throw new Error('练习模式分组异常，应为 6 组，每组 60 题')
+function normalizeStem(stem) {
+  return String(stem)
+    .normalize('NFKC')
+    .replace(/\s+/g, '')
+    .replace(/[，。；：、,.!?！？;:()（）\[\]【】"'“”‘’`*_<>《》-]/g, '')
+    .toLowerCase()
 }
 
-console.log('Web 冒烟检查通过：AI 360 题且无题解，数据结构 263 题且均有题解，原例题 63 道。')
+const seen = new Set()
+for (const question of dsQuestions) {
+  const key = normalizeStem(question.stem)
+  if (seen.has(key)) throw new Error(`题干重复：${question.id}`)
+  seen.add(key)
+}
+
+console.log(
+  `Web 冒烟检查通过：数据结构 ${questions.length} 题，选择 ${dsSingles.length}，填空 ${dsBlanks.length}，全部有题解。`,
+)

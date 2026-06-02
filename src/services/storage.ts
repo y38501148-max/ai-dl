@@ -1,12 +1,15 @@
-import type { BootstrapData, StorageKey } from '../types'
+import type { BootstrapData, Question, QuestionBankManifest, StorageKey } from '../types'
 
 const fallbackDefaults = {
   records: [],
   wrongBook: [],
   progress: { attemptedQuestionIds: [] },
   activeExam: null,
-  settings: { questionBankVersion: 2, activeSubjectId: 'ai' },
+  settings: { questionBankVersion: 3, questionBankTag: 'ds1-0.1.5', activeSubjectId: 'data-structure' },
 }
+
+const QUESTION_BANK_OVERRIDE_KEY = 'muz-choice-blank-bank:questionBankOverride'
+const QUESTION_BANK_MANIFEST_KEY = 'muz-choice-blank-bank:questionBankManifest'
 
 async function invokeTauri<T>(command: string, args?: Record<string, unknown>): Promise<T> {
   const invoke = window.__TAURI__?.core?.invoke ?? window.__TAURI_INTERNALS__?.invoke
@@ -19,23 +22,51 @@ function fallbackGet<T>(key: StorageKey): T {
   return saved ? (JSON.parse(saved) as T) : (fallbackDefaults[key] as T)
 }
 
+function readBrowserQuestionBankOverride(): { questions: Question[]; manifest?: QuestionBankManifest } | null {
+  const savedQuestions = localStorage.getItem(QUESTION_BANK_OVERRIDE_KEY)
+  if (!savedQuestions) return null
+  const questions = JSON.parse(savedQuestions) as Question[]
+  const savedManifest = localStorage.getItem(QUESTION_BANK_MANIFEST_KEY)
+  const manifest = savedManifest ? (JSON.parse(savedManifest) as QuestionBankManifest) : undefined
+  return { questions, manifest }
+}
+
 export async function loadApplicationData(): Promise<BootstrapData> {
   if (window.__TAURI__ || window.__TAURI_INTERNALS__) return invokeTauri<BootstrapData>('bootstrap')
   if (window.examAPI) return window.examAPI.bootstrap()
 
-  const questions = await fetch(`${import.meta.env.BASE_URL}question-bank/questions.json`).then((response) => {
-    if (!response.ok) throw new Error('无法读取浏览器版本题库文件')
-    return response.json()
-  })
+  const embeddedManifest = await fetch(`${import.meta.env.BASE_URL}question-bank/manifest.json`)
+    .then((response) => (response.ok ? response.json() : undefined))
+    .catch(() => undefined)
+  const override = readBrowserQuestionBankOverride()
+  const questions =
+    override?.questions ??
+    (await fetch(`${import.meta.env.BASE_URL}question-bank/questions.json`).then((response) => {
+      if (!response.ok) throw new Error('无法读取浏览器版本题库文件')
+      return response.json()
+    }))
 
   return {
     questions,
+    questionBankManifest: override?.manifest ?? embeddedManifest,
     records: fallbackGet('records'),
     wrongBook: fallbackGet('wrongBook'),
     progress: fallbackGet('progress'),
     activeExam: fallbackGet('activeExam'),
     settings: fallbackGet('settings'),
   }
+}
+
+export async function installQuestionBankData(
+  questions: Question[],
+  manifest: QuestionBankManifest,
+): Promise<{ questionCount: number; bankTag?: string }> {
+  if (window.__TAURI__ || window.__TAURI_INTERNALS__) {
+    return invokeTauri<{ questionCount: number; bankTag?: string }>('install_question_bank', { questions, manifest })
+  }
+  localStorage.setItem(QUESTION_BANK_OVERRIDE_KEY, JSON.stringify(questions))
+  localStorage.setItem(QUESTION_BANK_MANIFEST_KEY, JSON.stringify(manifest))
+  return { questionCount: questions.length, bankTag: manifest.bankTag }
 }
 
 export async function saveApplicationData(key: StorageKey, value: unknown): Promise<void> {
