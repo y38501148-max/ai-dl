@@ -25,7 +25,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "图灵于 1950 年发表《Computing Machinery and Intelligence》，首次提出图灵测试的概念，故选 B。"
   },
   {
     "id": "q-2",
@@ -53,7 +54,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "AI 经历了两次低谷：1970 年代（感知机局限性）和 1980 年代末（专家系统局限），故选 B。"
   },
   {
     "id": "q-3",
@@ -81,7 +83,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "图灵测试标准：超过 30% 测试者无法区分人机即认为通过，这是图灵论文中的明确数值，故选 C。"
   },
   {
     "id": "q-4",
@@ -109,7 +112,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "图灵机由读写头、控制器和卡带（纸带）组成，仿真器不属其组件，故选 D。"
   },
   {
     "id": "q-5",
@@ -137,7 +141,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "树突接收刺激，轴突传出刺激。D 选项颠倒了二者的功能，故选 D。"
   },
   {
     "id": "q-6",
@@ -165,7 +170,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "AI 概念于 1956 年达特茅斯会议上由麦卡锡等人正式提出，故选 A。"
   },
   {
     "id": "q-7",
@@ -193,7 +199,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "摩尔定律指出晶体管密度约每 18 个月翻倍，PC 性能同步提升，故选 D。"
   },
   {
     "id": "q-8",
@@ -221,7 +228,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "专家系统（如 MYCIN）是第二次 AI 崛起的代表性技术，故选 B。"
   },
   {
     "id": "q-9",
@@ -249,7 +257,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "AI 三大流派是符号主义、连接主义、行为主义。生成主义不属此列，故选 D。"
   },
   {
     "id": "q-10",
@@ -277,7 +286,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "专家系统基于符号推理和知识库，属于符号主义学派，故选 A。"
   },
   {
     "id": "q-11",
@@ -305,7 +315,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "感知机模拟神经元连接和权重调整，是连接主义学派的奠基工作，故选 B。"
   },
   {
     "id": "q-12",
@@ -333,7 +344,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "明斯基和派珀特证明单层（一层）神经网络无法解决异或问题，故选 A。"
   },
   {
     "id": "q-13",
@@ -361,7 +373,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "异或运算：相同为 0，不同为 1。1⊕1=0 正确，其他三项均有误，故选 D。"
   },
   {
     "id": "q-14",
@@ -389,7 +402,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "AlphaGo 2016 年战胜李世石，基于深度学习和蒙特卡洛搜索，是第三次 AI 崛起的标志，故选 C。"
   },
   {
     "id": "q-15",
@@ -417,7 +431,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "知识图谱用符号节点和边表示实体关系，是符号主义代表性成果，故选 A。"
   },
   {
     "id": "q-16",
@@ -445,7 +460,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "深度学习基于多层神经网络的连接权重学习，是连接主义代表性成果，故选 B。"
   },
   {
     "id": "q-17",
@@ -473,7 +489,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "行为主义起源于控制论，强调感知-行动反馈循环，故选 C。"
   },
   {
     "id": "q-18",
@@ -501,7 +518,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "符号主义起源于数理逻辑和逻辑推理，代表为定理证明和专家系统，故选 A。"
   },
   {
     "id": "q-19",
@@ -529,7 +547,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "连接主义起源于仿生学，特别是对人脑神经元模型的研究，故选 B。"
   },
   {
     "id": "q-20",
@@ -557,7 +576,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "符号主义主张从功能模拟入手，关注'智能的功能等价'，故选 A。"
   },
   {
     "id": "q-21",
@@ -585,7 +605,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "连接主义主张从结构设计入手——通过模拟神经网络结构来实现智能，故选 B。"
   },
   {
     "id": "q-22",
@@ -613,7 +634,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "行为主义强调利用机器对环境作用的反馈来实现智能进化，是'感知-行动'范式，故选 C。"
   },
   {
     "id": "q-23",
@@ -641,7 +663,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "AlexNet 于 2012 年提出，在 ILSVRC 夺冠；ZeilerNet（2013）、GoogLeNet（2014）、ResNet（2015）均在其后。最早的深度学习模型中 AlexNet 最先被提出，故选 C。"
   },
   {
     "id": "q-24",
@@ -669,7 +692,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "2016 年 3 月 AlphaGo 以 4:1 战胜围棋世界冠军李世石，是 AI 历史上的里程碑事件，故选 D。"
   },
   {
     "id": "q-25",
@@ -697,7 +721,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "GPT-2 参数量约 15 亿（1.5B），GPT-1 约 1.17 亿，GPT-3 达 1750 亿，ChatGPT 基于 GPT-3.5/GPT-4，故选 B。"
   },
   {
     "id": "q-26",
@@ -725,7 +750,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "BERT 由 Google 于 2018 年提出，GPT-2（2019）、Turing-NLP（2020）、SWITCH T（2021）均在其后，故选 B。"
   },
   {
     "id": "q-27",
@@ -753,7 +779,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "新一代 AI 的'三元空间'指信息网络空间、人类社会空间和物理空间。仿生学不是三元空间的组成部分，故选 B。"
   },
   {
     "id": "q-28",
@@ -781,7 +808,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "2017 年《新一代人工智能发展规划》提出的基础理论不包括'长时记忆理论'——这是心理学/神经科学概念，不属于 AI 战略规划的核心基础理论，故选 C。"
   },
   {
     "id": "q-29",
@@ -809,7 +837,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "大数据智能的层级表示正确顺序：数据→知识→决策。数据是基础，经分析提取为知识，知识驱动决策，故选 A。"
   },
   {
     "id": "q-30",
@@ -837,7 +866,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "我国大模型进入快速发展期是在 2022 年末 ChatGPT 发布后，国内众多企业迅速跟进，故选 C。"
   },
   {
     "id": "q-31",
@@ -865,7 +895,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "大数据智能流程主要包括数据采集、清洗、存储、分析、挖掘和可视化。'手动编写规则'不属于大数据智能的自动化流程，故选 D。"
   },
   {
     "id": "q-32",
@@ -893,7 +924,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "国产大模型包括文心一言、通义千问、星火等。GPT-4 是 OpenAI（美国）的产品，不属于国产大模型，故选 D。"
   },
   {
     "id": "q-33",
@@ -921,7 +953,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "DeepSeek-R1 强调推理与思维链（Chain-of-Thought），在数学和编程推理上表现突出。DeepSeek-V2 和 V3 是通用对话模型，故选 C。"
   },
   {
     "id": "q-34",
@@ -949,7 +982,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "DeepSeek 是开源模型，并非闭源。题目问'错误的是'，若选项中有类似闭源的描述即为错误选项，故选 D。"
   },
   {
     "id": "q-35",
@@ -977,7 +1011,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "人机混合智能中，人类智能提供直觉、创造力和价值判断，而'高精度的重复计算'是机器智能的优势，故选 D。"
   },
   {
     "id": "q-36",
@@ -1005,7 +1040,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "机器智能擅长高速计算、模式识别和海量数据处理。'创造力和直觉'是人类智能独有的，故选 D。"
   },
   {
     "id": "q-37",
@@ -1033,7 +1069,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "人机混合智能中，人类对机器的指导包括提供目标、标注数据和反馈纠偏。'直接修改模型参数'属于技术操作而非人类智能的指导，故选 D。"
   },
   {
     "id": "q-38",
@@ -1061,7 +1098,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "群体智能（Swarm Intelligence）的历史起源可追溯到对蚂蚁、蜜蜂等社会性昆虫的观察研究。选项中的错误说法是'群体智能概念最早由计算机科学家提出'，实际上它起源于生物学观察，故选 D。"
   },
   {
     "id": "q-39",
@@ -1089,7 +1127,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "AI 目前的主要模式包括数据、算法（模型）和算力三大要素。'操作系统'是计算机基础软件，不属于 AI 的主要模式范畴，故选 B。"
   },
   {
     "id": "q-40",
@@ -1117,7 +1156,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "基于大模型的智能体社会中，每个 Agent 有固定角色、拥有自己的 LLM 模型、Agent 间可协作。'Agent 无需记忆'是错误的——记忆是智能体的核心能力之一，故选 C。"
   },
   {
     "id": "q-41",
@@ -1145,7 +1185,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "神经系统的基本组成单元是神经元（Neuron），它是神经系统结构和功能的基本单位，故选 A。"
   },
   {
     "id": "q-42",
@@ -1173,7 +1214,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "大脑中负责高级认知功能的区域是大脑皮层（Cerebral Cortex），覆盖在大脑半球表面，故选 B。"
   },
   {
     "id": "q-43",
@@ -1201,7 +1243,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "人类大脑中大约有 860 亿个神经元——这是现代神经科学公认的统计数值，故选 D。"
   },
   {
     "id": "q-44",
@@ -1229,7 +1272,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "人类大脑中大约有 100 万亿条神经连接（突触）——远远超过神经元数量，形成了极其复杂的神经网络，故选 A。"
   },
   {
     "id": "q-45",
@@ -1257,7 +1301,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "1873 年 Golgi 发明了神经元银染色法（Golgi stain）——首次使神经元在显微镜下可见，为神经科学奠基，故选 A。"
   },
   {
     "id": "q-46",
@@ -1285,7 +1330,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "大脑皮层是覆盖在大脑半球表面的灰质层，厚约 2-4 毫米，包含约 140 亿个神经元，是高级认知功能的物质基础，故选 B。"
   },
   {
     "id": "q-47",
@@ -1313,7 +1359,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "灰质主要由神经元细胞体和树突组成，位于大脑皮层和皮层下核团，是信息处理的核心区域，故选 B。"
   },
   {
     "id": "q-48",
@@ -1341,7 +1388,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "白质位于皮层下方，由有髓鞘轴突组成，负责连接不同脑区，构成大脑'通信网络'，故选 A。"
   },
   {
     "id": "q-49",
@@ -1369,7 +1417,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "脑脊液（CSF）填充于脑室和蛛网膜下腔，起缓冲保护、营养供应和废物清除作用，故选 D。"
   },
   {
     "id": "q-50",
@@ -1397,7 +1446,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "大脑视觉皮层位于枕叶，是视觉信息处理的'司令部'，故选 D。"
   },
   {
     "id": "q-51",
@@ -1425,7 +1475,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "颞叶包含初级听觉皮层，负责处理听觉信息，还与语言理解和记忆密切相关，故选 C。"
   },
   {
     "id": "q-52",
@@ -1453,7 +1504,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "初级视觉皮层（V1）位于枕叶，视觉信息经外侧膝状核首先到达此处，故选 D。"
   },
   {
     "id": "q-53",
@@ -1477,7 +1529,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Hubel 和 Wiesel 发现视觉皮层采用分层加工——简单细胞检测基本特征，复杂细胞整合信息。福岛邦彦借鉴此思想设计 Neocognitron，是现代 CNN 的雏形，故选 B。"
   },
   {
     "id": "q-54",
@@ -1505,7 +1558,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "腹侧视觉通路（Ventral Stream）又称'What通路'，负责物体识别和内容感知，故选 B。"
   },
   {
     "id": "q-55",
@@ -1533,7 +1587,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "背侧视觉通路（Dorsal Stream）又称'Where通路'，负责空间位置感知和运动检测，故选 A。"
   },
   {
     "id": "q-56",
@@ -1557,7 +1612,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "物体识别的特异性加工理论指大脑存在专门加工特定类别物体（如面孔、房屋）的脑区，如梭状回面孔区（FFA），故选 A。"
   },
   {
     "id": "q-57",
@@ -1585,7 +1641,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "腹侧听觉通路（What通路）负责声音内容的识别，如语音理解和音乐感知，故选 A。"
   },
   {
     "id": "q-58",
@@ -1613,7 +1670,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "听觉背侧通路（Where通路）主要负责声音的空间定位——判断声源方向，故选 B。"
   },
   {
     "id": "q-59",
@@ -1637,7 +1695,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "人类语言功能主要定位在左半球大脑（Broca 区和 Wernicke 区均位于左半球），这是脑功能偏侧化的典型表现，故选 A。"
   },
   {
     "id": "q-60",
@@ -1665,7 +1724,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Broca 区在语法加工和语言产出中起核心作用，Broca 失语症患者能理解语言但表达困难，故选 A。"
   },
   {
     "id": "q-61",
@@ -1693,7 +1753,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Wernicke 区位于左侧颞上回后部，负责语义理解。Wernicke 失语症患者能流利说话但内容无意义，故选 D。"
   },
   {
     "id": "q-62",
@@ -1717,7 +1778,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "短时记忆信息保持几秒到几分钟，容量约 7±2 个组块，需不断复述维持，故选 B。"
   },
   {
     "id": "q-63",
@@ -1741,7 +1803,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "长时记忆可保持数天到数十年，容量几乎无限，是最持久的记忆类型，故选 C。"
   },
   {
     "id": "q-64",
@@ -1769,7 +1832,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "海马体（Hippocampus）位于内侧颞叶，是记忆形成的关键脑区，H.M. 案例经典证明了其重要性，故选 A。"
   },
   {
     "id": "q-65",
@@ -1793,7 +1857,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "情绪的'行为表现'指通过面部表情、肢体动作等外部行为展现情绪状态，故选 C。"
   },
   {
     "id": "q-66",
@@ -1817,7 +1882,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "杏仁核（Amygdala）是情绪处理的核心脑区，尤其是恐惧情绪的感知和产生，故选 B。"
   },
   {
     "id": "q-67",
@@ -1845,7 +1911,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "脑解码是通过分析大脑神经活动信号来推断心理状态、感知内容的过程，故选 B。"
   },
   {
     "id": "q-68",
@@ -1873,7 +1940,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "类脑计算是借鉴大脑结构和功能原理来开发具有类脑能力的计算系统，如神经形态芯片，故选 C。"
   },
   {
     "id": "q-69",
@@ -1901,7 +1969,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "脑机接口（BCI）在大脑和外部设备间建立直接通信通道，实现意念控制外部设备，故选 C。"
   },
   {
     "id": "q-70",
@@ -1929,7 +1998,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "M-P 模型受神经元细胞结构特性及信息传递方式启发：多路输入加权求和，超过阈值后输出，模拟了神经元'全或无'特性，故选 A。"
   },
   {
     "id": "q-71",
@@ -1957,7 +2027,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "1957 年罗森布拉特提出感知机，是第一个具有学习能力的算法模型，可通过数据自动调整权重，故选 A。"
   },
   {
     "id": "q-72",
@@ -1985,7 +2056,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "1980 年福岛邦彦设计 Neocognitron，将视觉感受野和分层加工引入神经网络，是 CNN 雏形，故选 B。"
   },
   {
     "id": "q-73",
@@ -2013,7 +2085,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "1989 年杨立昆用反向传播优化 CNN 开发 LeNet，是最早实际应用的 CNN 模型（手写数字识别），故选 B。"
   },
   {
     "id": "q-74",
@@ -2041,7 +2114,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "2012 年 AlexNet（深度 CNN）以巨大优势赢得 ILSVRC，标志着深度学习大规模应用的开端，故选 C。"
   },
   {
     "id": "q-75",
@@ -2069,7 +2143,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "1982 年 Hopfield 设计了 Hopfield 神经网络，2024 年与 Hinton 共同获得诺贝尔物理学奖——表彰其在人工神经网络方面的基础性贡献，故选 B。"
   },
   {
     "id": "q-76",
@@ -2097,7 +2172,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "1997 年 Hochreiter 和 Schmidhuber 提出 LSTM（长短期记忆网络）——通过门控机制有效控制信息流动，解决长序列梯度消失问题，故选 A。"
   },
   {
     "id": "q-77",
@@ -2125,7 +2201,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "2017 年 Google 提出 Transformer，核心算法是自注意力机制（Self-Attention）——使模型能关注输入序列的关键部分，类似大脑的聚焦行为，故选 A。"
   },
   {
     "id": "q-78",
@@ -2153,7 +2230,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "AlphaGo 利用深度神经网络提取特征和强化学习做决策——通过自我博弈不断优化策略，最终击败人类顶尖棋手，故选 B。"
   },
   {
     "id": "q-79",
@@ -2181,7 +2259,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Longuet-Higgins 提出从认知科学（Cognitive Science）入手——整合数学、语言、心理、生理等多学科研究智能的本质，故选 B。"
   },
   {
     "id": "q-80",
@@ -2205,7 +2284,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "行为主义学派强调智能通过感知与行为的交互体现——智能体对外界环境的自适应能力是其核心特征，故选 B。"
   },
   {
     "id": "q-81",
@@ -2233,7 +2313,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "机器学习经典定义由 Arthur Samuel（1959）提出：'使计算机无需显式编程即可学习的研究领域'，故选 B。"
   },
   {
     "id": "q-82",
@@ -2261,7 +2342,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Tom Mitchell 的形式化定义：机器学习是指程序通过经验 E 提升在任务 T 上的性能 P——核心标准是'程序通过经验提升任务性能'，故选 B。"
   },
   {
     "id": "q-83",
@@ -2289,7 +2371,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "对客户购买行为进行聚类分群是无监督学习典型应用——不需要标签，自动将相似客户分组。A 是回归（监督学习），C 是医学影像检测（监督学习），D 是强化学习，故选 B。"
   },
   {
     "id": "q-84",
@@ -2317,7 +2400,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "C 选项错误：强化学习与监督学习并非完全独立——两者可结合使用（如 RLHF 中使用人类反馈作为监督信号）。A、B、D 描述正确，故选 C。"
   },
   {
     "id": "q-85",
@@ -2345,7 +2429,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "目标函数（Objective Function）是机器学习的核心要素之一——定义了模型优化的方向和目标，是训练过程的'导航仪'，故选 C。"
   },
   {
     "id": "q-86",
@@ -2373,7 +2458,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "均方误差（MSE）是典型的目标函数——用于评估模型预测值与真实值之间的差距，衡量目标函数误差的大小，故选 C。"
   },
   {
     "id": "q-87",
@@ -2401,7 +2487,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "当模型参数成千上万时，直接求导找解析解计算复杂度极高或根本不存在解析解——因此使用梯度下降等迭代优化方法近似求解，故选 C。"
   },
   {
     "id": "q-88",
@@ -2429,7 +2516,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "D 选项错误：梯度下降不限于线性模型——在深度学习（非线性模型）中同样广泛应用，是神经网络训练的核心优化算法，故选 D。"
   },
   {
     "id": "q-89",
@@ -2457,7 +2545,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "机器学习工作流程第一步是数据准备——包括数据收集、清洗、标注和预处理。没有高质量数据，后续训练无从谈起，故选 B。"
   },
   {
     "id": "q-90",
@@ -2485,7 +2574,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "验证集的主要作用是调整模型超参数——在训练过程中用于选择最优模型配置，不同于测试集（仅用于最终评估），故选 B。"
   },
   {
     "id": "q-91",
@@ -2513,7 +2603,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "过拟合典型表现：训练集误差低（模型'记住'了训练数据），但测试集误差高（无法泛化到新数据），故选 B。"
   },
   {
     "id": "q-92",
@@ -2541,7 +2632,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "训练集仅含白天照片、测试集仅含夜间照片会导致数据分布不一致——模型学到白天特征无法泛化到夜间场景，这是分布偏移的典型后果，故选 B。"
   },
   {
     "id": "q-93",
@@ -2569,7 +2661,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "欠拟合时模型过于简单，需要增加复杂度或减少正则化。提前停止（Early Stopping）用于防止过拟合——不让模型训练太久以免过度拟合训练数据，对欠拟合无帮助甚至可能加重，故选 C。"
   },
   {
     "id": "q-94",
@@ -2597,7 +2690,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "模型部署后需定期重新训练的主要原因是适应数据分布随时间的变化（概念漂移/数据漂移）——如用户行为、市场环境变化导致旧模型失效，故选 B。"
   },
   {
     "id": "q-95",
@@ -2625,7 +2719,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "根据已有标注数据训练气温预测模型是监督学习的典型应用——输入（日期、气象数据）+ 输出标签（气温）构成训练样本，故选 B。"
   },
   {
     "id": "q-96",
@@ -2653,7 +2748,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "弱监督学习适用于只有粗粒度标签的场景——如只有'是否包含动物'的二值标签（标签信息不完整/不精确），利用不精确标签学习，故选 B。"
   },
   {
     "id": "q-97",
@@ -2681,7 +2777,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "监督学习与非监督学习的根本区别是是否依赖标注数据训练——监督学习需要标签指导学习，非监督学习从无标签数据中挖掘模式，故选 C。"
   },
   {
     "id": "q-98",
@@ -2709,7 +2806,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "'回归'（Regression）一词由弗朗西斯·高尔顿（Francis Galton）在 19 世纪末研究遗传学时提出——发现'向均值回归'现象，后世用于统计学和 ML，故选 B。"
   },
   {
     "id": "q-99",
@@ -2737,7 +2835,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "BGD 使用全部样本计算梯度更新参数，SGD 每次只用一个样本——这是两者最核心的区别：批量 vs 单个样本，故选 A。"
   },
   {
     "id": "q-100",
@@ -2765,7 +2864,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "逻辑回归（Logistic Regression）尽管名称带'回归'，但主要用于二分类任务——通过 Sigmoid 函数输出 0 到 1 的概率值做分类，故选 B。"
   },
   {
     "id": "q-101",
@@ -2793,7 +2893,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "K 均值（K-Means）聚类算法需要预先指定 K 值——即期望将数据分成的簇的个数，K 是算法最关键的超参数，故选 B。"
   },
   {
     "id": "q-102",
@@ -2821,7 +2922,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "K 均值算法正确步骤：初始化中心 → 分配样本到最近中心 → 更新中心为簇内均值 → 迭代至收敛，对应顺序 C，故选 C。"
   },
   {
     "id": "q-103",
@@ -2849,7 +2951,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "K 均值算法目标是最小化簇内距离平方和（WCSS）——使每个簇内的样本到中心的距离之和最小，故选 B。"
   },
   {
     "id": "q-104",
@@ -2877,7 +2980,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "经验误差（Empirical Error）反映模型在训练集上的表现——是模型在已见数据上的误差，故选 A。"
   },
   {
     "id": "q-105",
@@ -2905,7 +3009,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "过拟合模型表现为训练集误差低但测试集误差高——'记住'了训练数据的噪声，泛化能力差，故选 B。"
   },
   {
     "id": "q-106",
@@ -2933,7 +3038,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "K 折交叉验证的核心优势是减少数据划分的随机性影响，评估结果更稳定可靠，故选 B。"
   },
   {
     "id": "q-107",
@@ -2961,7 +3067,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "交叉验证需要多次划分和训练，不能通过单次划分完成评估——这正是 D 选项的错误之处，故选 D。"
   },
   {
     "id": "q-108",
@@ -2989,7 +3096,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "False Negative（FN）即假阴性——模型将正类错误预测为负类的样本数，即'漏检'，故选 D。"
   },
   {
     "id": "q-109",
@@ -3017,7 +3125,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "医疗癌症筛查优先保证高召回率——宁可误报（假阳性），也不能漏掉真患者，故选 B。"
   },
   {
     "id": "q-110",
@@ -3045,7 +3154,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "F1 分数对类别不平衡数据集同样有参考价值——通过精确率和召回率的调和平均进行综合评估。D 选项说法错误，故选 D。"
   },
   {
     "id": "q-111",
@@ -3073,7 +3183,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "奥卡姆剃刀原则在 ML 中体现为：在性能相近时优先选择更简单的模型——简单模型泛化能力通常更好，故选 B。"
   },
   {
     "id": "q-112",
@@ -3101,7 +3212,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "采用更复杂的网络结构会加剧过拟合而非缓解——因此不能直接用于缓解过拟合，故选 D。"
   },
   {
     "id": "q-113",
@@ -3129,7 +3241,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "选择 ML 模型时不需考虑训练所用的编程语言——这与模型性能无关，故选 C。"
   },
   {
     "id": "q-114",
@@ -3157,7 +3270,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "L2 正则化通过限制参数大小（权重衰减）来降低模型复杂度，防止过拟合，故选 B。"
   },
   {
     "id": "q-115",
@@ -3185,7 +3299,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "线性可分二分类任务中，线性分类器最简单且能完美解决，最符合奥卡姆剃刀原则，故选 B。"
   },
   {
     "id": "q-116",
@@ -3213,7 +3328,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "机器学习核心目标是泛化能力——对未知数据做出准确预测，故选 B。"
   },
   {
     "id": "q-117",
@@ -3241,7 +3357,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "数据分布一致是为了确保模型学到可泛化的规律——否则评估指标无法反映真实场景性能，故选 B。"
   },
   {
     "id": "q-118",
@@ -3269,7 +3386,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "ML 与传统编程的核心区别：ML 通过数据自动生成规则，非人工编写，故选 B。"
   },
   {
     "id": "q-119",
@@ -3297,7 +3415,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "监督学习的特点是根据已知答案（标签）调整预测规则，故选 C。"
   },
   {
     "id": "q-120",
@@ -3325,7 +3444,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "数据是 ML 基础——模型通过分析数据规律而非预设规则学习。数据量大不必然准确率高，故选 B。"
   },
   {
     "id": "q-121",
@@ -3353,7 +3473,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "泛化能力差意味着在新数据上预测效果不佳——模型过度拟合训练数据，无法迁移到未见数据，故选 B。"
   },
   {
     "id": "q-122",
@@ -3381,7 +3502,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "医疗诊断中 ML 伦理首要关注可解释性与错误风险——关乎患者生命安全，故选 B。"
   },
   {
     "id": "q-123",
@@ -3409,7 +3531,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "偏导数为正说明增大 w 将加大误差，梯度下降应减小 w，故选 B。"
   },
   {
     "id": "q-124",
@@ -3437,7 +3560,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "深度学习核心思想是模拟大脑神经网络的结构和功能，通过多层神经元实现层次化特征学习，故选 B。"
   },
   {
     "id": "q-125",
@@ -3465,7 +3589,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "ANN 训练本质是调整神经元间的连接权重——通过优化算法不断修正权重使输出逼近目标，故选 C。"
   },
   {
     "id": "q-126",
@@ -3493,7 +3618,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "ANN 和生物神经网络的共同点：连接强度都可以根据经验/学习调整（突触可塑性 vs 权重更新），故选 B。"
   },
   {
     "id": "q-127",
@@ -3521,7 +3647,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "单层感知机只能解决线性可分问题（AND、OR、NOT），无法解决 XOR（异或）——因为 XOR 非线性可分，故选 C。"
   },
   {
     "id": "q-128",
@@ -3549,7 +3676,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "单层感知机是线性分类器，只能实现线性可分分类任务，故选 A。"
   },
   {
     "id": "q-129",
@@ -3577,7 +3705,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "多层感知机解决 XOR 的关键是引入隐藏层——通过非线性变换使数据在新空间线性可分，故选 B。"
   },
   {
     "id": "q-130",
@@ -3605,7 +3734,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "BP 算法主要局限性是梯度消失——深层网络反向传播时梯度指数衰减，浅层权重难以更新，故选 B。"
   },
   {
     "id": "q-131",
@@ -3633,7 +3763,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "BP 算法核心基于链式法则——通过链式法则将输出误差逐层分解为各层权重的梯度，故选 B。"
   },
   {
     "id": "q-132",
@@ -3661,7 +3792,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "传统神经网络的局限性包括过拟合、局部极值、梯度消失。'计算复杂度低'不是局限——实际上复杂度很高，故选 B。"
   },
   {
     "id": "q-133",
@@ -3689,7 +3821,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "BP 算法依据误差梯度更新权重——计算损失函数对各权重的偏导数，沿梯度下降方向更新，故选 B。"
   },
   {
     "id": "q-134",
@@ -3717,7 +3850,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "BP 算法缺点之一是参数量随网络规模平方级增长，导致计算和内存开销巨大，故选 B。"
   },
   {
     "id": "q-135",
@@ -3745,7 +3879,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "MP 模型用阶跃激活函数时，输出为二值（0/1），实际上是一个线性分类器，故选 C。"
   },
   {
     "id": "q-136",
@@ -3773,7 +3908,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "万能近似定理：至少一个隐藏层的神经网络可以逼近任意连续函数（但不是任意函数），故选 B。"
   },
   {
     "id": "q-137",
@@ -3801,7 +3937,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "BP 算法是在 δ 学习（Delta Rule）基础上进行多层扩展——通过链式法则推广到多层网络，故选 B。"
   },
   {
     "id": "q-138",
@@ -3829,7 +3966,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "BP 算法通过链式法则（Chain Rule）计算误差函数对每层权重的梯度，故选 B。"
   },
   {
     "id": "q-139",
@@ -3857,7 +3995,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "BP 算法流程包括：前向传播预测、计算输出误差、梯度下降更新权重。不包括 Hebb 法则更新权重，故选 C。"
   },
   {
     "id": "q-140",
@@ -3885,7 +4024,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "BP 算法中常用均方误差（MSE）作为误差计算方法（回归任务），交叉熵常用于分类任务，但 BP 通用误差计算以 MSE 为代表，故选 B。"
   },
   {
     "id": "q-141",
@@ -3913,7 +4053,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "网络结构复杂且训练数据有限时最易出现过拟合——模型容量过高但数据不足以约束，故选 C。"
   },
   {
     "id": "q-142",
@@ -3941,7 +4082,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "隐含层增多导致反向传播梯度衰减——浅层几乎无法更新，即梯度消失问题，故选 A。"
   },
   {
     "id": "q-143",
@@ -3969,7 +4111,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "BP 算法（反向传播）证明了多层网络可通过误差反向传播有效训练，克服了单层感知机局限，故选 C。"
   },
   {
     "id": "q-144",
@@ -3997,7 +4140,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "CNN 相比全连接网络的核心优势是局部连接和参数共享——大幅减少参数量，同时保留空间结构信息，故选 C。"
   },
   {
     "id": "q-145",
@@ -4025,7 +4169,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "生物视觉'简单细胞'对某一朝向的边缘信息敏感——检测特定方向的线条和边缘，这是 Hubel 和 Wiesel 的核心发现，故选 D。"
   },
   {
     "id": "q-146",
@@ -4053,7 +4198,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "视觉'复杂细胞'对简单细胞提供的局部信息进行整合——形成对位置不敏感的抽象特征表示，故选 B。"
   },
   {
     "id": "q-147",
@@ -4081,7 +4227,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "池化层的主要作用是通过下采样降低特征图的空间维度，同时保留重要特征，减少计算量并提供平移不变性。提取局部特征是卷积层的工作，故选 C（若选项描述为降低维度/降采样）。"
   },
   {
     "id": "q-148",
@@ -4109,7 +4256,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "ResNet 的核心创新是引入跳跃连接（残差连接/Skip Connection）——将浅层输入直接传至深层，解决深层网络的梯度消失和退化问题，故选 A。"
   },
   {
     "id": "q-149",
@@ -4137,7 +4285,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "CNN 的局限性包括：需要大量标注数据、对旋转和缩放敏感、缺乏全局理解能力等。'计算复杂度低'不是 CNN 的局限——实际 CNN 计算复杂度随深度大幅增长，故选 B。"
   },
   {
     "id": "q-150",
@@ -4165,7 +4314,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "RNN 核心特点是具有循环连接和隐藏状态——能保留历史信息，适合处理时序序列数据如自然语言和语音信号，故选 B。"
   },
   {
     "id": "q-151",
@@ -4193,7 +4343,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "LSTM 中'遗忘门'的作用是决定丢弃多少先前的信息——通过 Sigmoid 输出 0-1 之间的值控制信息保留程度，解决梯度消失问题，故选 A。"
   },
   {
     "id": "q-152",
@@ -4221,7 +4372,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Transformer 模型的核心机制是自注意力机制（Self-Attention）——允许每个位置直接关注所有其他位置，实现并行化和全局依赖建模，故选 D。"
   },
   {
     "id": "q-153",
@@ -4249,7 +4401,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "位置编码的作用是为序列元素添加位置信息——因为自注意力机制本身不感知位置顺序，需要通过位置编码注入时序/位置信息，故选 B。"
   },
   {
     "id": "q-154",
@@ -4277,7 +4430,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "BERT 模型的核心特点是基于 Transformer 编码器实现双向上下文理解——同时利用目标词左右两侧的上下文信息进行深度语义建模，区别于仅用单向上下文的 GPT，故选 C。"
   },
   {
     "id": "q-155",
@@ -4305,7 +4459,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Vision Transformer（ViT）将图像分割为固定大小 Patch（如 16×16），展平后作为序列输入 Transformer 编码器，用自注意力机制替代卷积操作来建模全局图像关系，故选 B。"
   },
   {
     "id": "q-156",
@@ -4333,7 +4488,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "GPT 系列模型采用自回归（Autoregressive）生成方式——根据上文逐词预测下一个 token，依次产生完整文本序列，是典型的从左到右的单向生成，故选 A。"
   },
   {
     "id": "q-157",
@@ -4361,7 +4517,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "PyTorch 的主要特点是动态计算图（Define-by-Run）——计算图在运行时动态构建，调试直观灵活，非常适合研究和快速原型开发，故选 B。"
   },
   {
     "id": "q-158",
@@ -4389,7 +4546,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "TensorBoard 是 TensorFlow 配套的可视化工具，主要用于训练过程的可视化与监控——实时展示损失曲线、准确率变化、计算图结构和参数分布等，故选 A。"
   },
   {
     "id": "q-159",
@@ -4417,7 +4575,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "分布式表示（Distributed Representation）将概念表示为稠密向量——不同维度组合编码不同语义特征，捕捉语义相似性和概念关系，故选 C。"
   },
   {
     "id": "q-160",
@@ -4445,7 +4604,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "CNN 中卷积层的核心作用是提取输入数据的局部特征——卷积核在输入上滑动计算加权和，自动学习检测边缘、纹理等空间模式，故选 B。"
   },
   {
     "id": "q-161",
@@ -4473,7 +4633,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Transformer 解码器中'编码器-解码器注意力层'的作用是让解码器关注编码器的输出——将编码器提取的源序列信息融入解码过程，故选 B。"
   },
   {
     "id": "q-162",
@@ -4501,7 +4662,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "现代人工神经网络（ANN）的设计主要仿生人脑神经元的结构和信息传递方式——模拟神经元加权求和、阈值激活和突触可塑性等核心机制，故选 A。"
   },
   {
     "id": "q-163",
@@ -4529,7 +4691,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "MP 神经元模型构成要素：输入权重（模拟突触）、阈值（决定是否发放）、激活函数（处理输出）。池化核是 CNN 概念，不属于 MP 模型，故选 D。"
   },
   {
     "id": "q-164",
@@ -4557,7 +4720,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "单层感知机只能解决线性可分问题（AND、OR、NOT），无法解决异或（XOR）问题——XOR 在二维空间中四类样本无法用单条直线分开，故选 C。"
   },
   {
     "id": "q-165",
@@ -4585,7 +4749,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "神经网络第一次研究低潮始于 1969 年明斯基和派珀特出版《感知器》——严格证明单层感知机局限性，导致研究经费大幅削减，AI 研究进入寒冬，故选 B。"
   },
   {
     "id": "q-166",
@@ -4613,7 +4778,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "缩放点积注意力中的缩放因子 √dᵢ 是为了防止点积值过大——避免 Softmax 进入梯度极小区，故选 B。"
   },
   {
     "id": "q-167",
@@ -4641,7 +4807,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "BP 算法中文全称是反向传播算法（Backpropagation），1986 年由 Rumelhart、Hinton、Williams 系统提出，使多层网络高效训练成为可能，故选 B。"
   },
   {
     "id": "q-168",
@@ -4669,7 +4836,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "BP 算法计算多层网络误差梯度依托的数学原理是链式法则（Chain Rule）——通过链式法则将输出误差逐层反向分解为各层权重梯度，高效计算所有参数更新，故选 B。"
   },
   {
     "id": "q-169",
@@ -4697,7 +4865,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "深层神经网络使用 BP 训练最易出现梯度消失问题——误差梯度在反向传播时经多层连乘指数衰减，浅层权重几乎无法更新，网络无法有效训练深层次特征，故选 B。"
   },
   {
     "id": "q-170",
@@ -4725,7 +4894,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "CNN（Convolutional Neural Network）中文全称是卷积神经网络——通过卷积运算提取空间局部特征，广泛应用于图像识别和目标检测，故选 B。"
   },
   {
     "id": "q-171",
@@ -4753,7 +4923,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "CNN 三大核心特性：局部连接、权值共享和池化降维。全连接冗余参数正是 CNN 通过前两者来避免的问题，不属于 CNN 的核心特性，故选 D。"
   },
   {
     "id": "q-172",
@@ -4781,7 +4952,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "池化层核心作用：降低特征图维度、减少参数、提升平移不变性。自动学习卷积核是卷积层的功能，池化层无学习参数，故选 D。"
   },
   {
     "id": "q-173",
@@ -4809,7 +4981,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "ReLU（线性整流函数）在 x>0 时导数为 1，避免 Sigmoid/Tanh 饱和区的梯度消失问题（导数为 0），因此能有效缓解深层网络梯度消失，故选 C。"
   },
   {
     "id": "q-174",
@@ -4837,7 +5010,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "ResNet 核心结构是跳跃连接（残差连接/Skip Connection）——将浅层输入直接跨层传递 F(x)+x，梯度可绕过中间层流动，解决了深层网络的退化和梯度消失，故选 B。"
   },
   {
     "id": "q-175",
@@ -4865,7 +5039,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "RNN 具有循环连接和隐藏状态，能保留历史信息，天然适合时序序列数据——如自然语言、语音信号、股票价格等具有时间依赖性的数据，故选 B。"
   },
   {
     "id": "q-176",
@@ -4893,7 +5068,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "池化输出大小 = (32-2)/2+1 = 16，特征图缩小为原来的四分之一，故选 B。"
   },
   {
     "id": "q-177",
@@ -4921,7 +5097,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Transformer 最核心的创新机制是自注意力机制（Self-Attention）——序列中每个位置直接关注所有其他位置，实现并行化全局依赖建模，无需 RNN 逐步传递，故选 B。"
   },
   {
     "id": "q-178",
@@ -4949,7 +5126,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "交叉熵损失（Cross-Entropy Loss）常用于二分类和多分类任务——衡量预测概率分布与真实分布之间的差异，故选 B。"
   },
   {
     "id": "q-179",
@@ -4977,7 +5155,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "飞桨（PaddlePaddle）是百度公司开发的中国首个自主研发、开源开放的产业级深度学习平台，支持大规模分布式训练和端到端全流程部署，故选 A。"
   },
   {
     "id": "q-180",
@@ -5005,7 +5184,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "MindSpore 是华为推出的全场景 AI 深度学习框架，支持端-边-云协同部署——模型可在手机、IoT、边缘和云服务器上运行，是华为 AI 生态的核心，故选 A。"
   },
   {
     "id": "q-181",
@@ -5033,7 +5213,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "1986 年 Rumelhart、Hinton、Williams 提出的核心算法是反向传播（Backpropagation）算法——使多层感知机得以有效训练，故选 B。"
   },
   {
     "id": "q-182",
@@ -5061,7 +5242,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "万能近似定理：只需一个隐藏层（含足够多神经元和激活函数），即可逼近任意连续函数，故选 A。"
   },
   {
     "id": "q-183",
@@ -5089,7 +5271,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Hebb 学习规则缺乏明确的误差修正机制，导致权重无限增长，网络失去稳定性，故选 B。"
   },
   {
     "id": "q-184",
@@ -5117,7 +5300,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "δ 学习（Delta Rule）相比 Hebb 规则核心改进是引入监督学习机制——通过误差信号来调整权重，有明确的方向和目标，故选 D。"
   },
   {
     "id": "q-185",
@@ -5145,7 +5329,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "反向传播传递到较低层信息减少，导致梯度消失问题——浅层权重几乎无法更新，故选 B。"
   },
   {
     "id": "q-186",
@@ -5173,7 +5358,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "1980 年福岛邦彦设计的 Neocognitron 引入 S 层（简单细胞）和 C 层（复杂细胞），是 CNN 的雏形，故选 B。"
   },
   {
     "id": "q-187",
@@ -5201,7 +5387,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "CNN 处理图像的主要优势不包括'必须使用自回归范式预测像素'——自回归不是 CNN 的主要特点，故选 D。"
   },
   {
     "id": "q-188",
@@ -5229,7 +5416,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "池化操作使模型对尺度、平移、旋转变化具有一定的不变性——小幅变化后池化输出变化很小，故选 B。"
   },
   {
     "id": "q-189",
@@ -5257,7 +5445,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "ReLU 未彻底解决死亡神经元问题——当输入恒为负时神经元永久失活（Dead ReLU），D 选项描述不属于 ReLU 优势，故选 D。"
   },
   {
     "id": "q-190",
@@ -5285,7 +5474,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "CNN 端到端学习核心特征：单一模型直接处理输入，自动学习特征，无需人工干预和分阶段处理，故选 C。"
   },
   {
     "id": "q-191",
@@ -5313,7 +5503,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "ResNet 核心创新是引入跳跃连接（Skip Connections）——让梯度可以绕过一些层直接流动，解决深层网络退化问题，故选 B。"
   },
   {
     "id": "q-192",
@@ -5341,7 +5532,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "ViT 将图像分割为固定大小的 Patch，作为序列输入 Transformer——不依赖卷积运算，用自注意力建模全局关系，故选 C。"
   },
   {
     "id": "q-193",
@@ -5369,7 +5561,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "GPT 系列基于 Transformer 解码器架构，采用自回归生成方式，故选 B。"
   },
   {
     "id": "q-194",
@@ -5397,7 +5590,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "为有效解决传统 RNN 长距离依赖缺陷而衍生的网络是 LSTM（长短期记忆网络）——通过遗忘门、输入门、输出门的门控机制选择性记忆长期信息，缓解梯度消失，故选 A。"
   },
   {
     "id": "q-195",
@@ -5425,7 +5619,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Transformer 于 2017 年由 Vaswani 在《Attention Is All You Need》论文中提出——完全基于注意力机制，抛弃 RNN，故选 C。"
   },
   {
     "id": "q-196",
@@ -5453,7 +5648,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "BERT 核心创新是基于 Transformer 编码器的双向上下文理解——同时利用左右两侧信息，实现深度双向建模，故选 A。"
   },
   {
     "id": "q-197",
@@ -5481,7 +5677,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "2020 年 Dosovitskiy 等人提出 ViT——将 Transformer 架构直接应用于图像分类，将图像分割为固定 Patch 序列化后输入标准 Transformer 编码器，在大型数据集上超越 CNN，故选 B。"
   },
   {
     "id": "q-198",
@@ -5509,7 +5706,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "遥感图像分析中计算机视觉主要用于地物识别与分类——自动识别卫星/航拍图像中的土地类型、建筑、植被等，实现大范围高效的地表监测，故选 B。"
   },
   {
     "id": "q-199",
@@ -5537,7 +5735,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "自动驾驶中 CV 技术的核心功能是环境感知与目标检测——识别道路、车辆、行人、交通标志等，为决策和路径规划提供实时环境信息，故选 B。"
   },
   {
     "id": "q-200",
@@ -5565,7 +5764,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "OCR（光学字符识别）技术的关键步骤之一是将图像中的文字区域检测出来进行字符分割与识别。文字区域检测（文本定位）是 OCR 流程的起始步骤，故选 A。"
   },
   {
     "id": "q-201",
@@ -5593,7 +5793,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "增强现实（AR）中计算机视觉的核心作用是识别和跟踪现实世界——理解场景并叠加虚拟信息，故选 A。"
   },
   {
     "id": "q-202",
@@ -5621,7 +5822,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "遥感图像中检测非法采矿活动最适合的任务是目标检测——识别并定位采矿设备、矿坑等特定目标的位置和范围，语义分割虽然可行但目标检测更直接高效，故选 B。"
   },
   {
     "id": "q-203",
@@ -5649,7 +5851,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "自动驾驶中多传感器融合主要解决单一传感器的感知局限——通过融合摄像头、激光雷达、毫米波雷达等互补数据，提升环境感知的准确性和鲁棒性，故选 B。"
   },
   {
     "id": "q-204",
@@ -5677,7 +5880,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "医疗影像 AI 诊断面临的挑战包括数据标注成本高、可解释性不足、隐私保护等。'硬件设备成本过高'不是 AI 模型的主要挑战——属于基础设施问题而非算法挑战，故选 C。"
   },
   {
     "id": "q-205",
@@ -5705,7 +5909,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "人脸检测是目标检测的特例——在图像中定位人脸位置并用边界框标注，不同于'识别谁是谁'的人脸识别，故选 B。"
   },
   {
     "id": "q-206",
@@ -5733,7 +5938,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "遥感图像分析包括港口船舶识别——通过卫星/航拍影像识别地物，是典型的大范围监测应用，故选 A。"
   },
   {
     "id": "q-207",
@@ -5761,7 +5967,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "语义分割技术为图像中每个像素分配类别标签。在遥感图像中，区分农田与森林区域是语义分割的典型应用——将不同地物类型（农田/森林）进行像素级分类，故选 A。"
   },
   {
     "id": "q-208",
@@ -5789,7 +5996,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "目标检测中 AP（Average Precision）是精确率-召回率曲线下的面积——综合衡量检测模型的准确性和完整性。mAP 是对所有类别 AP 求均值，是目标检测的核心评价指标，故选 B。"
   },
   {
     "id": "q-209",
@@ -5819,7 +6027,8 @@
       "B",
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "R-CNN 系列模型三部分：①区域提议（Selective Search 生成候选区）；②特征提取（CNN 提取每区域特征）；③分类器（SVM 分类）。GAN 不属于 R-CNN 组成，故选 A、B、C。"
   },
   {
     "id": "q-210",
@@ -5849,7 +6058,8 @@
       "B",
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Vision Transformer（ViT）特点：①将图像分割为固定大小 Patch；②使用 Transformer 编码器处理；③自注意力机制提供全局感受野。ViT 不使用卷积核局部提取，故选 A、B、D。"
   },
   {
     "id": "q-211",
@@ -5879,7 +6089,8 @@
       "B",
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "人脸识别面临的挑战：光照变化影响识别精度、面部遮挡导致特征缺失、不同年龄段样貌变化等。这些因素都可能导致识别失败或准确率下降，故选 A、B、C。"
   },
   {
     "id": "q-212",
@@ -5909,7 +6120,8 @@
       "B",
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "传统人脸检测与识别的局限性：依赖手工设计特征（泛化能力弱）、对光照姿态变化敏感（鲁棒性差）、难以处理大规模数据库（效率低），深度学习正在克服这些问题，故选 A、B、C。"
   },
   {
     "id": "q-213",
@@ -5937,7 +6149,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Spatial CNN 在车道线检测中优势在于能处理空间连续结构——通过跨行跨列消息传递增强长距离空间建模，故选 A。"
   },
   {
     "id": "q-214",
@@ -5965,7 +6178,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "医疗 AI 诊断系统中数据增强的作用是增加训练样本多样性——对已有医学图像进行旋转、翻转、缩放等变换，缓解数据稀缺，提升模型泛化能力，故选 A。"
   },
   {
     "id": "q-215",
@@ -5993,7 +6207,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "RPN 的作用是生成可能存在目标的候选区域（锚框）——替代 Selective Search 并与检测网络共享特征，故选 A。"
   },
   {
     "id": "q-216",
@@ -6021,7 +6236,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "自动驾驶中车道线检测通常采用语义分割或空间 CNN（Spatial CNN）——利用车道线的空间连续性，将像素分类为车道线/非车道线实现精确检测，故选 A。"
   },
   {
     "id": "q-217",
@@ -6049,7 +6265,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "医疗影像 AI 辅助诊断最需关注数据隐私与算法透明度——涉及患者隐私保护和临床决策可解释性，故选 A。"
   },
   {
     "id": "q-218",
@@ -6077,7 +6294,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "IoU（交并比）衡量预测区域与真实区域的重叠程度——预测框与真实框交集/并集，越接近 1 越好，故选 C。"
   },
   {
     "id": "q-219",
@@ -6105,7 +6323,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "池化层主要作用是降低空间维度并增强平移不变性——减少计算量并提高模型的鲁棒性，故选 B。"
   },
   {
     "id": "q-220",
@@ -6133,7 +6352,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Faster R-CNN 是典型两阶段检测算法——首先生成候选区域（RPN），再分类和回归，故选 C。"
   },
   {
     "id": "q-221",
@@ -6161,7 +6381,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "交叉熵损失（Cross-Entropy）常用于二分类/多分类任务——衡量预测概率分布与真实分布之间的差异，故选 B。"
   },
   {
     "id": "q-222",
@@ -6189,7 +6410,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "图像归一化主要目的是统一像素值范围，加速模型收敛——使不同特征的尺度一致，梯度下降更稳定，故选 A。"
   },
   {
     "id": "q-223",
@@ -6217,7 +6439,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "传统特征描述符（SIFT/HOG）依赖手工设计，泛化能力弱——深度学习特征自动学习，适应更广泛场景，故选 A。"
   },
   {
     "id": "q-224",
@@ -6245,7 +6468,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "实时视频处理优先优化算法计算效率——需要低延迟高吞吐，在速度与精度间权衡，故选 A。"
   },
   {
     "id": "q-225",
@@ -6273,7 +6497,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Vision Transformer（ViT）首次将 Transformer 引入计算机视觉——用自注意力替代卷积处理图像，故选 B。"
   },
   {
     "id": "q-226",
@@ -6301,7 +6526,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "YOLO 核心思想：将图像划分为网格，每个网格预测边界框和类别——将检测转化为单次回归问题，故选 A。"
   },
   {
     "id": "q-227",
@@ -6329,7 +6555,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "R-CNN 第一步使用 Selective Search 生成约 2000 个候选区域——然后对每个区域用 CNN 提取特征，故选 A。"
   },
   {
     "id": "q-228",
@@ -6357,7 +6584,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Fast R-CNN 改进是引入 ROI Pooling 共享卷积特征——避免对每个候选区域重复卷积，大幅加速，故选 A。"
   },
   {
     "id": "q-229",
@@ -6385,7 +6613,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Faster R-CNN 核心创新是用 RPN 替代 Selective Search——候选区域生成也由网络完成，实现端到端训练，故选 A。"
   },
   {
     "id": "q-230",
@@ -6413,7 +6642,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "YOLO 是单阶段检测（一次预测），Faster R-CNN 是两阶段检测（先候选再分类）——这是两者根本架构区别，故选 A。"
   },
   {
     "id": "q-231",
@@ -6441,7 +6671,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "机器视觉核心任务是感知物体几何信息（位置/姿态）——从图像中理解三维世界，故选 B。"
   },
   {
     "id": "q-232",
@@ -6469,7 +6700,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "CNN 推动计算机视觉发展——自动学习层次化特征，替代手工特征设计，在检测、分割等任务上取得突破，故选 B。"
   },
   {
     "id": "q-233",
@@ -6497,7 +6729,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Haar-AdaBoost 人脸检测核心步骤：提取 Haar 特征、计算归一化特征值、级联检测器优化。不使用 SVM 直接分类，故选 B。"
   },
   {
     "id": "q-234",
@@ -6525,7 +6758,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Haar 特征包括边缘、线性和中心特征。颜色直方图特征不属于 Haar 特征体系，故选 C。"
   },
   {
     "id": "q-235",
@@ -6553,7 +6787,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "遥感图像识别不包括人脸实名认证——那是近距离身份验证，非遥感大范围地物识别的范畴，故选 C。"
   },
   {
     "id": "q-236",
@@ -6581,7 +6816,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "YOLO 核心特点是将目标检测转为单次回归问题——端到端的一次前向传播即完成检测，故选 B。"
   },
   {
     "id": "q-237",
@@ -6609,7 +6845,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "YOLO 缺点是对小目标和密集目标检测效果较差——因为网格划分粒度限制，小目标容易漏检，故选 A。"
   },
   {
     "id": "q-238",
@@ -6637,7 +6874,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "CNN 对 CV 的核心贡献是自动学习图像特征——从低级到高级层次化提取视觉特征，不需手工设计，故选 B。"
   },
   {
     "id": "q-239",
@@ -6665,7 +6903,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Mask R-CNN 可同时完成目标检测和实例分割——在 Faster R-CNN 上加并行掩码预测分支，故选 A。"
   },
   {
     "id": "q-240",
@@ -6693,7 +6932,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "词向量（Word Embedding）有利于语义相似性计算——语义相近的词向量距离更近，而 one-hot/ASCII 无法表达语义关系，故选 D。"
   },
   {
     "id": "q-241",
@@ -6721,7 +6961,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "机器通过概率建模处理语言的不确定性——输出概率分布而非确定值，用概率刻画多种可能的输出，故选 A。"
   },
   {
     "id": "q-242",
@@ -6749,7 +6990,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "语言模型的核心目标是预测一段文本的概率分布——计算词序列出现的联合概率 P(w1,w2,...,wn)，故选 B。"
   },
   {
     "id": "q-243",
@@ -6777,7 +7019,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "自回归语言模型假设当前输出仅依赖之前的输出——即 P(w_t|w_1,...,w_{t-1})，逐词生成序列，故选 C。"
   },
   {
     "id": "q-244",
@@ -6805,7 +7048,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "尺度定律（Scaling Law）揭示模型性能与参数规模、数据量之间的幂律关系——规模越大，性能持续但递减地提升，故选 B。"
   },
   {
     "id": "q-245",
@@ -6833,7 +7077,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "训练数据包含大量噪声或错误信息最可能导致幻觉——模型学到不可靠的'知识'并输出不实内容，故选 A。"
   },
   {
     "id": "q-246",
@@ -6861,7 +7106,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "引入外部知识库进行事实性验证（RAG 技术）是缓解幻觉的有效方法——基于可信来源生成回答，故选 C。"
   },
   {
     "id": "q-247",
@@ -6889,7 +7135,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "医疗诊断建议生成的幻觉影响最严重——错误建议直接危害患者健康，容忍度极低，故选 C。"
   },
   {
     "id": "q-248",
@@ -6917,7 +7164,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "检索增强生成（RAG）架构可有效减少幻觉——先从知识库检索相关信息，再基于检索结果生成回答，故选 C。"
   },
   {
     "id": "q-249",
@@ -6945,7 +7193,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "明确要求'仅基于可信来源回答'是降低幻觉风险的有效 Prompt 策略——引导模型避免自由发挥带来的不实信息，故选 B。"
   },
   {
     "id": "q-250",
@@ -6973,7 +7222,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "词向量核心目标是捕捉词语的语义和语法关系——语义相近词向量距离近，且支持语义运算（如 king-man+woman≈queen），故选 B。"
   },
   {
     "id": "q-251",
@@ -7001,7 +7251,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "词向量余弦相似度衡量语义相似性——向量夹角越小（余弦值越接近 1），词语语义越接近，故选 B。"
   },
   {
     "id": "q-252",
@@ -7029,7 +7280,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "机器翻译是语言模型最核心应用之一——需要理解和生成两种语言的文本，故选 B。"
   },
   {
     "id": "q-253",
@@ -7057,7 +7309,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "GPT 核心特点是基于自回归生成——逐词生成文本，当前输出依赖之前生成的词序列，故选 B。"
   },
   {
     "id": "q-254",
@@ -7085,7 +7338,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "指令微调（Instruction Tuning）通过多样化人类指令训练模型——使模型更好地理解用户意图并按要求执行，故选 B。"
   },
   {
     "id": "q-255",
@@ -7113,7 +7367,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "涌现能力指模型参数达到阈值后突然具备新能力——如思维链推理、上下文学习等，小模型没有这些能力，故选 C。"
   },
   {
     "id": "q-256",
@@ -7141,7 +7396,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "词向量作用是将词语转换为计算机可理解的数值向量——把离散符号映射到连续向量空间，支持语义运算，故选 A。"
   },
   {
     "id": "q-257",
@@ -7169,7 +7425,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "与搜索引擎实时结合验证可减少大模型生成不实内容——利用搜索结果对生成内容进行事实核查，故选 C。"
   },
   {
     "id": "q-258",
@@ -7197,7 +7454,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "LLM 预训练阶段主要学习海量无标注文本中的语言规律——通过自监督学习获取通用语言知识，故选 B。"
   },
   {
     "id": "q-259",
@@ -7225,7 +7483,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "智能客服自动回复问题是 NLP 典型应用——需要理解用户问题并生成自然语言回复，故选 B。"
   },
   {
     "id": "q-260",
@@ -7253,7 +7512,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "NLP 的主要目标是让计算机理解和生成人类语言——包括阅读理解、翻译、对话等任务，故选 B。"
   },
   {
     "id": "q-261",
@@ -7281,7 +7541,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "采用更高效的模型架构可降低大模型碳排放——减少不必要的计算冗余，提高能效比，故选 B。"
   },
   {
     "id": "q-262",
@@ -7309,7 +7570,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "图像分类属于计算机视觉而非 NLP——NLP 处理的是文本和语言数据，故选 C。"
   },
   {
     "id": "q-263",
@@ -7337,7 +7599,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "Transformer 核心机制是自注意力（Self-Attention）——允许序列中任意位置直接交互，而非 RNN 逐步传递，故选 C。"
   },
   {
     "id": "q-264",
@@ -7365,7 +7628,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "大模型伦理问题中的'幻觉'指模型生成看似合理但事实不符的内容——模型'编造'不存在的信息或事实错误，严重误导用户决策，故选 B。"
   },
   {
     "id": "q-265",
@@ -7393,7 +7657,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "模型幻觉问题的根本原因包括训练数据存在错误或偏差——模型学到了不可靠的'知识'并在生成时复现，数据质量是幻觉的重要源头，故选 A。"
   },
   {
     "id": "q-266",
@@ -7421,7 +7686,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "提示学习（Prompt Learning）核心思想是通过设计提示模板引导预训练模型——将下游任务重构为语言模型任务，而无需更新大量参数，故选 B。"
   },
   {
     "id": "q-267",
@@ -7449,7 +7715,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "图数据库（Graph Database）最适合存储知识图谱——知识图谱本质是节点和边构成的图结构，图数据库能高效存储和查询实体间的复杂关系，支持图遍历和推理，故选 D。"
   },
   {
     "id": "q-268",
@@ -7477,7 +7744,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "知识图谱构建关键步骤包括实体识别、关系抽取、知识融合和知识推理。'模型压缩'属于模型优化技术，不属于知识图谱构建流程，故选 C。"
   },
   {
     "id": "q-269",
@@ -7505,7 +7773,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "智能搜索引擎是知识图谱的典型应用——通过理解查询中的实体和关系，提供结构化精准结果（如 Google 的知识面板直接展示实体信息），故选 C。"
   },
   {
     "id": "q-270",
@@ -7533,7 +7802,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "知识图谱与传统数据库的核心区别：知识图谱以图结构存储实体关系——支持语义推理和关联查询；传统数据库以表结构存储数据，缺乏语义关联能力，故选 B。"
   },
   {
     "id": "q-271",
@@ -7561,7 +7831,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "知识图谱的'本体（Ontology）'主要用于定义概念和关系的模式——规范实体的类型、属性和关系约束，是知识图谱的顶层结构设计框架，故选 A。"
   },
   {
     "id": "q-272",
@@ -7589,7 +7860,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "知识图谱以三元组（实体-关系-实体）的形式存储知识——如（爱因斯坦, 提出, 相对论），构成图结构的知识网络，支持语义检索和推理，故选 C。"
   },
   {
     "id": "q-273",
@@ -7617,7 +7889,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "知识图谱主要组成部分包括实体（节点）、关系（边）和属性。'卷积核'是 CNN 的概念，不属于知识图谱的组成部分，故选 D。"
   },
   {
     "id": "q-274",
@@ -7645,7 +7918,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "在知识图谱中，实体可以是具体事物（人、地点、组织）或抽象概念。'关系'本身是连接两个实体的边，不是实体——实体是节点，关系是边，故选 D。"
   },
   {
     "id": "q-275",
@@ -7673,7 +7947,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "知识图谱通常用来表示实体之间的语义关系——以图结构（节点和边）组织知识，支持基于语义的推理、查询和知识发现，故选 C。"
   },
   {
     "id": "q-276",
@@ -7701,7 +7976,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "检索增强生成（RAG）结合了信息检索技术和大型语言模型生成能力——先从知识库检索相关信息，再基于检索结果生成回答，降低幻觉率，故选 A。"
   },
   {
     "id": "q-277",
@@ -7729,7 +8005,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "元学习（Meta-Learning）目标是'学会学习'——训练模型在少量样本上快速适应新任务，是通往通用 AI 的重要路径，故选 B。"
   },
   {
     "id": "q-278",
@@ -7757,7 +8034,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "自监督学习通过设计预训练任务从无标注数据中学习——如 MLM（掩码语言模型）和对比学习，无需人工标签，故选 B。"
   },
   {
     "id": "q-279",
@@ -7785,7 +8063,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "RAG 相比纯生成模型的主要优势是提高生成内容的事实准确性——基于检索到的真实信息生成回答，有据可查，显著减少幻觉和编造，故选 C。"
   },
   {
     "id": "q-280",
@@ -7813,7 +8092,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "莫拉维克悖论核心观点：对人类简单的感知和运动技能，机器实现比高级推理困难——AI 难以复现看似'低端'的人类能力，故选 B。"
   },
   {
     "id": "q-281",
@@ -7841,7 +8121,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "莫拉维克悖论的典型例子：机器人依靠复杂技术完成叠衣服这一简单任务——对人类轻而易举，对机器却需要复杂的感知、规划和精细控制，故选 B。"
   },
   {
     "id": "q-282",
@@ -7869,7 +8150,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "莫拉维克悖论的提出者包括汉斯·莫拉维克、罗德尼·布鲁克斯和马文·明斯基。艾伦·图灵不在此列——图灵以图灵测试和图灵机闻名，与莫拉维克悖论无关，故选 D。"
   },
   {
     "id": "q-283",
@@ -7897,7 +8179,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "强化学习核心机制是通过试错和奖励信号调整策略——智能体在环境中行动，根据奖励信号优化行为，最终学习最优策略，故选 B。"
   },
   {
     "id": "q-284",
@@ -7925,7 +8208,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "马尔可夫决策过程（MDP）的五元组为 (S, A, P, R, γ)：状态空间、动作空间、状态转移概率、奖励函数和折扣因子。学习率（α）不属于 MDP 五元组，故选 D。"
   },
   {
     "id": "q-285",
@@ -7953,7 +8237,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "深度强化学习特点：使用神经网络处理高维和连续的状态输入——将深度学习的感知能力与强化学习的决策能力结合，故选 B。"
   },
   {
     "id": "q-286",
@@ -7981,7 +8266,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "AlphaGo 的成功主要使用了强化学习与深度学习的结合——深度网络感知局面，强化学习优化策略，MCTS 精确搜索，故选 B。"
   },
   {
     "id": "q-287",
@@ -8009,7 +8295,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "折扣因子 γ 是折扣累计回报 G 的核心参数——用于调节当前奖励与未来奖励的重要性（γ 越大越重视未来奖励），故选 B。"
   },
   {
     "id": "q-288",
@@ -8037,7 +8324,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "强化学习依赖试错和延迟奖励——与监督学习（需要标注数据）根本不同。RL 通过与环境交互获得反馈，奖励可能延迟多步后才出现，故选 B。"
   },
   {
     "id": "q-289",
@@ -8065,7 +8353,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "强化学习中智能体的最终目标是最大化累计折扣奖励（Return）——不仅关注即时奖励，更关注长期总收益的最大化，故选 B。"
   },
   {
     "id": "q-290",
@@ -8093,7 +8382,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "围棋 AlphaGo 的环境是完全可观察的——棋盘状态对双方完全可见，无隐藏信息。自动驾驶（有盲区）和医疗诊断（无法完全获知患者状态）均为部分可观察，故选 C。"
   },
   {
     "id": "q-291",
@@ -8121,7 +8411,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "强化学习中策略（Policy）的功能是定义状态到动作的映射——π(a|s) 给出在状态 s 下选择动作 a 的概率或确定性动作，故选 C。"
   },
   {
     "id": "q-292",
@@ -8149,7 +8440,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "HumanPlus 机器人训练使用的强化学习算法是近端策略优化（PPO）——PPO 是 OpenAI 提出的经典策略梯度算法，广泛用于机器人控制，故选 B。"
   },
   {
     "id": "q-293",
@@ -8177,7 +8469,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "智能体定义规则中，行动不可以是随意的——必须基于感知和推理做出合理、有目的的行动，故选 D。"
   },
   {
     "id": "q-294",
@@ -8205,7 +8498,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "理性智能体并不总是知道行动实际效果并做出完美选择——受限于信息和算力，只能尽力而为（有限理性），故选 D。"
   },
   {
     "id": "q-295",
@@ -8233,7 +8527,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "智能体的理性不取决于自身动作的随机性——随机动作通常不利于理性决策，理性由性能度量、先验知识、感知序列和行为空间决定，故选 B。"
   },
   {
     "id": "q-296",
@@ -8261,7 +8556,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "任务环境 PEAS 描述包含：性能度量、环境、执行器、传感器。'状态空间'不属于 PEAS 框架——是问题求解层面的概念，故选 C。"
   },
   {
     "id": "q-297",
@@ -8289,7 +8585,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "医疗诊断智能体 PEAS：环境（医院）、执行器（触摸屏显示结果）、性能度量（诊断准确性）。'医生的行医执照'不属于 PEAS 任何要素，故选 B。"
   },
   {
     "id": "q-298",
@@ -8317,7 +8614,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "智能体环境类型分类依据不包括'智能体决策是否需要获取环境状态'——这更像是智能体定义的特征，而非环境分类维度，故选 B。"
   },
   {
     "id": "q-299",
@@ -8345,7 +8643,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "C 选项正确：零件挑选机器人在生产线上面对动态环境（工件随传送带移动）。A 错误（自动驾驶是部分可观察），B 错误（围棋是完全可观察），D 错误（自动驾驶是连续环境），故选 C。"
   },
   {
     "id": "q-300",
@@ -8373,7 +8672,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "B 选项分析不正确：自动驾驶属于序列式环境——当前决策影响未来状态，而非片段式（当前行动不影响未来的独立片段），故选 B。"
   },
   {
     "id": "q-301",
@@ -8401,7 +8701,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "医疗诊断智能体环境是部分可观察的——医生无法通过检查完全获知患者所有生理状态信息，故选 A。"
   },
   {
     "id": "q-302",
@@ -8429,7 +8730,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "智能体基本类型包括：简单反射型、基于模型的反射型、基于目标的、基于效用的。'理性智能体'不是基本类型——理性是属性而非结构类型，故选 C。"
   },
   {
     "id": "q-303",
@@ -8457,7 +8759,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "表驱动智能体需要记录所有感知序列及最佳行动——但组合爆炸使得'很容易获取查询表所有条目'的说法不正确，故选 C。"
   },
   {
     "id": "q-304",
@@ -8485,7 +8788,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "简单反射型智能体仅基于当前感知选择行动——不依赖感知历史进行决策，D 选项说法不正确，故选 D。"
   },
   {
     "id": "q-305",
@@ -8513,7 +8817,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "基于目标的智能体会考虑长期行动序列而非仅看短期利益——B 选项说'只考虑短期有利行动'是不正确的，故选 B。"
   },
   {
     "id": "q-306",
@@ -8541,7 +8846,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "基于效用的智能体的性能度量反馈信息更丰富（多维效用函数）——D 选项说'反馈信息比较单一'是不正确的，故选 D。"
   },
   {
     "id": "q-307",
@@ -8569,7 +8875,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "学习智能体显然需要行动的反馈——评价器（Critic）就是提供反馈的核心组件。C 选项说'不需要行动的反馈'是不正确的，故选 C。"
   },
   {
     "id": "q-308",
@@ -8597,7 +8904,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "机器人三个基本组成：传感器（感知）、处理器（决策）、效应器（执行）——这是机器人标准三要素，故选 A。"
   },
   {
     "id": "q-309",
@@ -8625,7 +8933,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "机器人是集感知、决策和执行能力于一体的智能系统——具有自主性，不限于工厂使用，无需全部人工控制，故选 C。"
   },
   {
     "id": "q-310",
@@ -8653,7 +8962,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "机器人被称为'智能决策的实体'因其具备感知、处理和执行的完整智能回路，故选 C。"
   },
   {
     "id": "q-311",
@@ -8681,7 +8991,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "激光雷达主动发射激光束并测量反射——属于有源传感器（Active Sensor），需主动发出信号，故选 C。"
   },
   {
     "id": "q-312",
@@ -8709,7 +9020,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "GPS 接收卫星信号——被动接收而不主动发射，属于无源传感器（Passive Sensor），故选 B。"
   },
   {
     "id": "q-313",
@@ -8737,7 +9049,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "感知系统相当于机器人的感官——收集环境数据（图像、距离、声音等），是信息输入接口，故选 B。"
   },
   {
     "id": "q-314",
@@ -8765,7 +9078,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "机器人逻辑推理和决策主要依靠处理器（中央控制单元）——相当于机器人的'大脑'，接收传感器数据，运行算法进行分析、规划和决策，故选 C。"
   },
   {
     "id": "q-315",
@@ -8793,7 +9107,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "摄像头是机器人的视觉传感器，相当于'眼睛'——通过图像采集实现物体识别、障碍物检测、环境感知等功能，是机器人最重要的传感器之一，故选 B。"
   },
   {
     "id": "q-316",
@@ -8821,7 +9136,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "处理器接收传感器信息进行分析后向执行器发送指令——体现了接收→处理→发送指令的信息处理流程，故选 B。"
   },
   {
     "id": "q-317",
@@ -8849,7 +9165,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "机器人将感知信息转为行动指令的是控制器/处理器——接收传感器数据后进行分析决策，生成控制指令发送给执行器驱动机械部件运动，故选 C。"
   },
   {
     "id": "q-318",
@@ -8877,7 +9194,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "有源传感器（如激光雷达）最大优势是主动发射信号——不依赖外部光源，可在黑暗环境中工作，测量精度高，探测距离远，抗干扰能力强，故选 B。"
   },
   {
     "id": "q-319",
@@ -8905,7 +9223,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "机器人具有一定自主性——能在无人工干预下完成部分任务。但'所有机器人都能完全自主'过于绝对，遥控/半自主机器人仍需人类操控，故选 B。"
   },
   {
     "id": "q-320",
@@ -8933,7 +9252,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "机器人三大核心模块协作流程：感知→决策→执行——传感器感知环境→处理器分析决策→执行器执行动作，形成完整智能闭环，故选 C。"
   },
   {
     "id": "q-321",
@@ -8961,7 +9281,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "AI 内生风险存在于系统自身——包括算法偏见、安全漏洞、鲁棒性不足等。'社会就业结构失衡'属于 AI 应用衍生的外部社会风险，非内生风险，故选 C。"
   },
   {
     "id": "q-322",
@@ -8989,7 +9310,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "AI 安全研究核心目标之一是提升模型的鲁棒性（Robustness）——使模型在噪声、干扰或恶意攻击下仍能稳定正确地输出，是 AI 安全的基础保障，故选 B。"
   },
   {
     "id": "q-323",
@@ -9017,7 +9339,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "AI 伦理'透明性'原则要求公开模型训练数据来源和决策逻辑——让用户和监督者了解模型如何运作和决策，是实现可问责性的前提，故选 C。"
   },
   {
     "id": "q-324",
@@ -9045,7 +9368,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "数据隐私要求包括知情同意、数据匿名化、加密传输和访问控制。'收集尽量多数据'违背数据最小化原则，不属于隐私保护措施，故选 B。"
   },
   {
     "id": "q-325",
@@ -9073,7 +9397,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "AI 安全问题包含鲁棒性、安全性和可靠性。'计算时间是否满足实时性'属于性能/效率范畴，不在核心安全范畴内，故选 B。"
   },
   {
     "id": "q-326",
@@ -9101,7 +9426,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "AI 伦理指导原则包括公平性、透明性、可解释性、隐私保护和问责制。'最大化模型参数'不属于伦理原则——是技术追求而非伦理诉求，故选 B。"
   },
   {
     "id": "q-327",
@@ -9129,7 +9455,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "AI 对社会就业的冲击属于衍生风险——是 AI 广泛应用后社会层面的间接影响，非 AI 系统本身的内生缺陷，需通过社会治理和政策应对，故选 B。"
   },
   {
     "id": "q-328",
@@ -9157,7 +9484,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "AI 系统的内生风险存在于系统本身——模型决策过程不可解释（黑箱效应）属于内生风险。虚假新闻、劳资矛盾、岗位替代等属于衍生/外部社会影响，故选 B。"
   },
   {
     "id": "q-329",
@@ -9185,7 +9513,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "公平性风险产生原因包括训练数据代表性不足、算法设计偏差等。'模型推理速度过快'与公平性无直接关系——推理速度是性能指标，不直接导致不公平，故选 D。"
   },
   {
     "id": "q-330",
@@ -9205,7 +9534,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "有害性风险不仅涉及恶意内容生成，还包括伦理问题——如算法偏见、隐私侵犯、歧视性输出等。题干说法'不包括伦理问题'是错误的，故选 B（错误）。"
   },
   {
     "id": "q-331",
@@ -9233,7 +9563,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "AI 模型在微调（Fine-tuning）后丢失原有知识的现象称为灾难性遗忘（Catastrophic Forgetting）——模型在学习新任务时覆盖了旧知识，故选 B。"
   },
   {
     "id": "q-332",
@@ -9261,7 +9592,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "可靠性风险典型表现是输出与输入指令无关的内容——模型功能失常，产生不相关、不可靠的输出。生成歧视言论和教唆自残属于有害性风险，就业失衡属于衍生风险，故选 B。"
   },
   {
     "id": "q-333",
@@ -9281,7 +9613,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "学术造假和就业市场失衡属于衍生风险——是 AI 技术被不当使用后在社会层面产生的后果，题干描述准确，故选 A（正确）。"
   },
   {
     "id": "q-334",
@@ -9309,7 +9642,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "训练数据包含未清洗的暴力内容会导致模型输出有害性风险——模型学到并复现训练数据中的有害内容，生成暴力、仇恨等不当输出，故选 C。"
   },
   {
     "id": "q-335",
@@ -9337,7 +9671,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "模型优化目标忽略公平性约束的直接后果是加剧对特定群体的系统性偏见——算法在追求准确率时可能牺牲少数群体的公平，导致歧视性结果，故选 B。"
   },
   {
     "id": "q-336",
@@ -9365,7 +9700,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "面部识别系统对非洲裔女性错误率较高主要反映公平性风险——算法在不同群体间表现不均，对特定群体产生系统性偏差，属于公平性问题，故选 C。"
   },
   {
     "id": "q-337",
@@ -9393,7 +9729,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "模型鲁棒性差最可能表现为在对抗样本攻击下输出错误结果——微小的输入扰动（人眼不可见）导致模型做出完全不同的错误预测，故选 A。"
   },
   {
     "id": "q-338",
@@ -9421,7 +9758,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "通过黑盒访问接口复制目标模型参数信息的攻击方式属于模型窃取攻击（Model Stealing Attack）——攻击者通过大量查询重建功能相似的克隆模型，故选 D。"
   },
   {
     "id": "q-339",
@@ -9449,7 +9787,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "'黑箱效应'（Black Box Effect）指模型判断高度依赖复杂参数与非线性映射——推理过程难以追溯和理解，阻碍了可解释性，故选 B。"
   },
   {
     "id": "q-340",
@@ -9478,7 +9817,8 @@
       "B",
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "对 AI 鲁棒性构成威胁：对抗补丁使模型难以识别遮挡人体（B，对抗攻击典型）和模型对训练外情境无法正确反应（D，分布外泛化失败）。A 是安全问题，C 是性能问题，故选 B、D。"
   },
   {
     "id": "q-341",
@@ -9498,7 +9838,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "可解释性风险虽然不一定直接导致错误结果，但在高风险领域绝不可忽略——缺乏可解释性就会缺乏信任，无法审计和追责，因此题干说法错误，故选 B（错误）。"
   },
   {
     "id": "q-342",
@@ -9522,7 +9863,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "长尾风险是鲁棒性问题——因为模型在尾部少数情境下（罕见场景/小众群体）缺乏足够的训练经验，导致表现不可靠，故选 B。"
   },
   {
     "id": "q-343",
@@ -9550,7 +9892,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "模型窃取攻击（Model Stealing Attack）在不知模型细节的前提下——通过大量查询接口获取输入输出对，训练出一个高度相似的克隆模型，故选 C。"
   },
   {
     "id": "q-344",
@@ -9578,7 +9921,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "训练数据未经匿名化处理时更易泄露敏感信息——匿名化是保护训练数据隐私的基础手段，故选 C。"
   },
   {
     "id": "q-345",
@@ -9606,7 +9950,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "基于数据的 AI 风险防范技术包括数据筛选与清洗、数据生成、数据增广。对抗训练属于基于训练策略的防范技术，不属于基于数据的范畴，故选 B。"
   },
   {
     "id": "q-346",
@@ -9634,7 +9979,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "多智能体推理通过多个 AI 智能体协作/辩论/交叉验证——提升推理准确性和可靠性，是重要的推理层面风险防范技术，故选 B。"
   },
   {
     "id": "q-347",
@@ -9654,7 +10000,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "数据清洗技术处理已有数据质量问题（删除重复、修正错误等）——而非通过人工生成新样本解决数据稀缺，那是数据生成/增强的任务。题干描述错误，故选 B（错误）。"
   },
   {
     "id": "q-348",
@@ -9674,7 +10021,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "检索增强生成（RAG）技术的核心正是引入外部知识库——不依赖模型自身参数检索知识。题干说法'不引入外部知识库'与 RAG 原理完全相反，故选 B（错误）。"
   },
   {
     "id": "q-349",
@@ -9702,7 +10050,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "提高已有数据质量的关键方式：数据筛选与清洗——删除重复、修正标注错误、去除异常值和噪声，故选 C。"
   },
   {
     "id": "q-350",
@@ -9732,7 +10081,8 @@
       "B",
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "数据清洗核心目标：删除重复数据、修正标注错误、去除异常数值。降低数据存储成本非核心目标——数据清洗关注数据质量而非存储效率，故选 A、B、D。"
   },
   {
     "id": "q-351",
@@ -9761,7 +10111,8 @@
       "A",
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "基于训练策略的 AI 风险防范技术：指令微调（训练模型遵循安全规范）和对抗训练（对抗样本增强鲁棒性）。RAG 和多智能体推理属于推理/部署层面防范，不属于训练策略，故选 A、C。"
   },
   {
     "id": "q-352",
@@ -9789,7 +10140,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "模型自推理改进（Self-Refinement）通过模型对自身输出进行反思和修正——实现模型的自我调节，是最直接的自我调节机制，故选 D。"
   },
   {
     "id": "q-353",
@@ -9817,7 +10169,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "构建更完善风险防范理论体系的核心任务：制定统一 AI 价值体系、分析局限与制衡、发展系统化安全优化理论。'提升模型训练速度'属工程效率问题，不在理论体系核心任务范围内，故选 B。"
   },
   {
     "id": "q-354",
@@ -9845,7 +10198,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "需要的措施包括制定统一价值体系、发展系统化安全优化理论、分析局限与制衡。'增加 AI 系统的计算能力'属于性能优化而非风险防范，故选 C。"
   },
   {
     "id": "q-355",
@@ -9865,7 +10219,8 @@
     "correctAnswers": [
       "A"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "超级对齐（Superalignment）研究的目标正是解决未来超级智能体可能超出人类控制的问题——确保超智能 AI 的目标与人类价值观一致，故选 A（正确）。"
   },
   {
     "id": "q-356",
@@ -9893,7 +10248,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "分析安全风险防范的'局限与制衡'需从技术、伦理、法律三个层面综合考虑——仅从单一维度分析是片面的，故选 B。"
   },
   {
     "id": "q-357",
@@ -9921,7 +10277,8 @@
     "correctAnswers": [
       "C"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "多维度风险评测基准用于掌握模型风险程度、发现具体问题、横向比较公平性和有害性。'解决推理速度不快'属性能优化，与风险评测无关，故选 C。"
   },
   {
     "id": "q-358",
@@ -9949,7 +10306,8 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "有效风险防范治理应解决 AI 引发的社会伦理问题、减轻就业负面影响、制定全面治理战略。'提升计算能力'是技术性能指标，不属治理核心关注点，故选 B。"
   },
   {
     "id": "q-359",
@@ -9977,7 +10335,8 @@
     "correctAnswers": [
       "D"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "AI 风险防范治理需多方协同：政策制定者（法规框架）、企业领导者（行业自律）、研究人员（安全技术）——缺少任何一方治理体系都不完整，故选 D。"
   },
   {
     "id": "q-360",
@@ -10005,6 +10364,7 @@
     "correctAnswers": [
       "B"
     ],
-    "subjectId": "ai"
+    "subjectId": "ai",
+    "explanation": "AI 风险防范治理关键目标是平衡技术创新与道德部署——同时推进技术进步和负责任的部署使用，故选 B。"
   }
 ]
