@@ -26,7 +26,9 @@ fn default_value(key: &str) -> Option<Value> {
         "wrongBook" => Some(json!([])),
         "progress" => Some(json!({ "attemptedQuestionIds": [] })),
         "activeExam" => Some(Value::Null),
-        "settings" => Some(json!({ "questionBankVersion": 5, "questionBankTag": "multi-0.1.5.1-20260602", "activeSubjectId": "ai" })),
+        "settings" => Some(
+            json!({ "questionBankVersion": 5, "questionBankTag": "multi-0.1.5.3-20260603", "activeSubjectId": "ai" }),
+        ),
         _ => None,
     }
 }
@@ -50,7 +52,8 @@ fn bank_directory(app: &tauri::AppHandle) -> Result<PathBuf, String> {
 
 fn write_json(path: &Path, value: &Value) -> Result<(), String> {
     let temporary = path.with_extension("json.tmp");
-    let text = serde_json::to_string_pretty(value).map_err(|error| format!("无法序列化数据：{error}"))?;
+    let text =
+        serde_json::to_string_pretty(value).map_err(|error| format!("无法序列化数据：{error}"))?;
     fs::write(&temporary, text).map_err(|error| format!("无法写入临时文件：{error}"))?;
     fs::rename(&temporary, path).map_err(|error| format!("无法保存数据文件：{error}"))?;
     Ok(())
@@ -96,11 +99,21 @@ fn should_replace_bank(existing_manifest: Option<Value>) -> bool {
     newer_tag_is_greater(embedded_tag, existing_tag)
 }
 
+fn subject_explanation_count(items: &[Value], subject_id: &str) -> usize {
+    items
+        .iter()
+        .filter(|item| item.get("subjectId").and_then(Value::as_str) == Some(subject_id))
+        .filter(|item| item.get("explanation").and_then(Value::as_str).is_some())
+        .count()
+}
+
 fn read_or_create_json(app: &tauri::AppHandle, key: &str) -> Result<Value, String> {
     let file = file_name(key).ok_or_else(|| format!("不支持的数据键：{key}"))?;
     let path = data_directory(app)?.join(file);
     match fs::read_to_string(&path) {
-        Ok(content) => serde_json::from_str(&content).map_err(|error| format!("数据文件格式错误：{error}")),
+        Ok(content) => {
+            serde_json::from_str(&content).map_err(|error| format!("数据文件格式错误：{error}"))
+        }
         Err(error) if error.kind() == std::io::ErrorKind::NotFound => {
             let value = default_value(key).ok_or_else(|| format!("不支持的数据键：{key}"))?;
             write_json(&path, &value)?;
@@ -121,8 +134,10 @@ fn embedded_subject_file_exists(bank_dir: &Path) -> bool {
 fn write_embedded_question_bank(bank_dir: &Path) -> Result<(), String> {
     let ai_dir = bank_dir.join("ai");
     let data_structure_dir = bank_dir.join("data-structure");
-    fs::create_dir_all(&ai_dir).map_err(|error| format!("无法创建人工智能导论题库目录：{error}"))?;
-    fs::create_dir_all(&data_structure_dir).map_err(|error| format!("无法创建数据结构题库目录：{error}"))?;
+    fs::create_dir_all(&ai_dir)
+        .map_err(|error| format!("无法创建人工智能导论题库目录：{error}"))?;
+    fs::create_dir_all(&data_structure_dir)
+        .map_err(|error| format!("无法创建数据结构题库目录：{error}"))?;
     fs::write(ai_dir.join("questions.json"), AI_QUESTIONS_JSON)
         .map_err(|error| format!("无法释放人工智能导论题库：{error}"))?;
     fs::write(
@@ -135,7 +150,10 @@ fn write_embedded_question_bank(bank_dir: &Path) -> Result<(), String> {
     Ok(())
 }
 
-fn read_questions_from_manifest(bank_dir: &Path, manifest: Option<&Value>) -> Result<Value, String> {
+fn read_questions_from_manifest(
+    bank_dir: &Path,
+    manifest: Option<&Value>,
+) -> Result<Value, String> {
     if let Some(subjects) = manifest
         .and_then(|value| value.get("subjects"))
         .and_then(Value::as_array)
@@ -162,7 +180,10 @@ fn read_questions_from_manifest(bank_dir: &Path, manifest: Option<&Value>) -> Re
     let questions_path = bank_dir.join("questions.json");
     fs::read_to_string(questions_path)
         .map_err(|error| format!("无法读取题库：{error}"))
-        .and_then(|content| serde_json::from_str::<Value>(&content).map_err(|error| format!("题库格式错误：{error}")))
+        .and_then(|content| {
+            serde_json::from_str::<Value>(&content)
+                .map_err(|error| format!("题库格式错误：{error}"))
+        })
 }
 
 fn ensure_data_files(app: &tauri::AppHandle) -> Result<(), String> {
@@ -217,7 +238,11 @@ fn get_data_directory(app: tauri::AppHandle) -> Result<String, String> {
 }
 
 #[tauri::command]
-fn install_question_bank(app: tauri::AppHandle, questions: Value, manifest: Value) -> Result<Value, String> {
+fn install_question_bank(
+    app: tauri::AppHandle,
+    questions: Value,
+    manifest: Value,
+) -> Result<Value, String> {
     let items = questions
         .as_array()
         .ok_or_else(|| "题库格式错误：顶层必须是数组".to_string())?;
@@ -230,10 +255,14 @@ fn install_question_bank(app: tauri::AppHandle, questions: Value, manifest: Valu
             || item.get("type").and_then(Value::as_str).is_none()
             || item.get("stem").and_then(Value::as_str).is_none()
             || item.get("options").and_then(Value::as_array).is_none()
-            || item.get("correctAnswers").and_then(Value::as_array).is_none()
-            || (subject_id == Some("data-structure") && item.get("explanation").and_then(Value::as_str).is_none())
+            || item
+                .get("correctAnswers")
+                .and_then(Value::as_array)
+                .is_none()
+            || (subject_id == Some("data-structure")
+                && item.get("explanation").and_then(Value::as_str).is_none())
         {
-            return Err("题库格式错误：存在缺少必填字段的数据结构题目".to_string());
+            return Err("题库格式错误：存在缺少必填字段的题目".to_string());
         }
     }
     let bank_dir = bank_directory(&app)?;
@@ -248,16 +277,28 @@ fn install_question_bank(app: tauri::AppHandle, questions: Value, manifest: Valu
                 .get("relativePath")
                 .and_then(Value::as_str)
                 .ok_or_else(|| "题库清单缺少科目文件路径".to_string())?;
+            if let Some(expected_explanations) = subject.get("explanations").and_then(Value::as_u64)
+            {
+                let actual_explanations = subject_explanation_count(items, subject_id) as u64;
+                if actual_explanations != expected_explanations {
+                    return Err(format!(
+                        "{subject_id} 题解数量异常：{actual_explanations} != {expected_explanations}"
+                    ));
+                }
+            }
             let subject_questions = Value::Array(
                 items
                     .iter()
-                    .filter(|item| item.get("subjectId").and_then(Value::as_str) == Some(subject_id))
+                    .filter(|item| {
+                        item.get("subjectId").and_then(Value::as_str) == Some(subject_id)
+                    })
                     .cloned()
                     .collect(),
             );
             let target_path = bank_dir.join(relative_path);
             if let Some(parent) = target_path.parent() {
-                fs::create_dir_all(parent).map_err(|error| format!("无法创建科目题库目录：{error}"))?;
+                fs::create_dir_all(parent)
+                    .map_err(|error| format!("无法创建科目题库目录：{error}"))?;
             }
             write_json(&target_path, &subject_questions)?;
         }
@@ -342,8 +383,10 @@ fn run_c_code(source: String, stdin: Option<String>) -> Result<Value, String> {
         }));
     }
 
-    let stdout_file = fs::File::create(&stdout_path).map_err(|error| format!("无法创建输出文件：{error}"))?;
-    let stderr_file = fs::File::create(&stderr_path).map_err(|error| format!("无法创建错误输出文件：{error}"))?;
+    let stdout_file =
+        fs::File::create(&stdout_path).map_err(|error| format!("无法创建输出文件：{error}"))?;
+    let stderr_file =
+        fs::File::create(&stderr_path).map_err(|error| format!("无法创建错误输出文件：{error}"))?;
     let mut child = Command::new(&binary_path)
         .stdin(Stdio::piped())
         .stdout(Stdio::from(stdout_file))

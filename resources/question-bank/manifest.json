@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "bankTag": "multi-0.1.5.2-20260603",
-  "appVersion": "0.1.5.2",
+  "bankTag": "multi-0.1.5.3-20260603",
+  "appVersion": "0.1.6",
   "questionCount": 738,
   "subjects": [
     {
@@ -18,7 +18,7 @@
         "blank": 0
       },
       "explanations": 360,
-      "bankTag": "ai-0.1.5.2-20260603"
+      "bankTag": "ai-0.1.5.3-20260603"
     },
     {
       "id": "data-structure",
@@ -57,8 +57,8 @@
   ],
   "updatedAt": "2026-06-03T00:00:00+08:00",
   "releaseNotes": [
-    "人工智能导论题库热更新至 0.1.5.2：为全部 360 道题目补充逐题题解。",
-    "题目数量和内容保持不变，仅新增 explanation 字段。",
+    "人工智能导论题库热更新至 0.1.5.3：修正逐题题解与题干/选项不匹配的问题。",
+    "题目数量保持不变，继续为全部 360 道题目保留逐题题解。",
     "题库总量仍为 738 道（人工智能导论 360 + 数据结构 378）。"
   ],
   "manifestUrl": "https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/manifest.json"
