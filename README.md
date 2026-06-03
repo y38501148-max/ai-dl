@@ -1,6 +1,6 @@
 # muz-选填题库
 
-版本：0.1.6
+版本：0.1.5
 
 `muz-选填题库` 是基于 Vue、Vite 与 Tauri 的本地/网页题库应用。当前内置「人工智能导论」与「数据结构」两个科目，支持模拟考试、自由练习、本地记录保存、错题复习、应用版本检测以及独立题库热更新。
 
@@ -220,12 +220,12 @@ npm run release:collect
 产物会输出到：
 
 ```text
-release/0.1.6/
+release/0.1.5/
 ```
 
-发布目录中的安装包文件名使用纯 ASCII，例如 `muz-choice-blank-bank_0.1.6_windows-x64-setup.exe`，便于上传到 GitHub Releases；应用内显示名称仍为 `muz-选填题库`。
+发布目录中的安装包文件名使用纯 ASCII，例如 `muz-choice-blank-bank_0.1.5_windows-x64-setup.exe`，便于上传到 GitHub Releases；应用内显示名称仍为 `muz-选填题库`。
 
-0.1.6 的安装包构建需在 GitHub Pages 调试确认无误后进行；平台列表沿用 `release/0.1.4/` 的发布产物范围。
+0.1.5 的安装包构建需在 GitHub Pages 调试确认无误后进行；平台列表沿用 `release/0.1.4/` 的发布产物范围。
 
 macOS 根目录 `/release` 可能是只读文件系统，因此本仓库默认使用项目内的 `release/<版本号>/` 作为发布目录。
 

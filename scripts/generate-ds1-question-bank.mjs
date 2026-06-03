@@ -427,7 +427,7 @@ writeFileSync(
     {
       schemaVersion: 2,
       bankTag: 'multi-0.1.5.3-20260603',
-      appVersion: '0.1.6',
+      appVersion: '0.1.5',
       questionCount: aiSubject.questionCount + dataStructureSubject.questionCount,
       subjects: [aiSubject, dataStructureSubject],
       updatedAt: '2026-06-03T00:00:00+08:00',

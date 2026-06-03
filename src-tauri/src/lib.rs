@@ -99,14 +99,6 @@ fn should_replace_bank(existing_manifest: Option<Value>) -> bool {
     newer_tag_is_greater(embedded_tag, existing_tag)
 }
 
-fn subject_explanation_count(items: &[Value], subject_id: &str) -> usize {
-    items
-        .iter()
-        .filter(|item| item.get("subjectId").and_then(Value::as_str) == Some(subject_id))
-        .filter(|item| item.get("explanation").and_then(Value::as_str).is_some())
-        .count()
-}
-
 fn read_or_create_json(app: &tauri::AppHandle, key: &str) -> Result<Value, String> {
     let file = file_name(key).ok_or_else(|| format!("不支持的数据键：{key}"))?;
     let path = data_directory(app)?.join(file);
@@ -262,7 +254,7 @@ fn install_question_bank(
             || (subject_id == Some("data-structure")
                 && item.get("explanation").and_then(Value::as_str).is_none())
         {
-            return Err("题库格式错误：存在缺少必填字段的题目".to_string());
+            return Err("题库格式错误：存在缺少必填字段的数据结构题目".to_string());
         }
     }
     let bank_dir = bank_directory(&app)?;
@@ -277,15 +269,6 @@ fn install_question_bank(
                 .get("relativePath")
                 .and_then(Value::as_str)
                 .ok_or_else(|| "题库清单缺少科目文件路径".to_string())?;
-            if let Some(expected_explanations) = subject.get("explanations").and_then(Value::as_u64)
-            {
-                let actual_explanations = subject_explanation_count(items, subject_id) as u64;
-                if actual_explanations != expected_explanations {
-                    return Err(format!(
-                        "{subject_id} 题解数量异常：{actual_explanations} != {expected_explanations}"
-                    ));
-                }
-            }
             let subject_questions = Value::Array(
                 items
                     .iter()

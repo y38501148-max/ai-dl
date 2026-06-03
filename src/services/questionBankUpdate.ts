@@ -32,15 +32,6 @@ async function fetchJson<T>(url: string, timeoutMs = 6000): Promise<T | null> {
 function validateQuestions(questions: Question[], manifest?: QuestionBankManifest, expectedSubjects = manifest?.subjects): boolean {
   const subjectIds = expectedSubjects?.map((subject) => subject.id) ?? []
   const expectedCount = expectedSubjects?.reduce((sum, subject) => sum + subject.questionCount, 0) ?? manifest?.questionCount
-  const expectedExplanationCounts = new Map(
-    expectedSubjects
-      ?.filter((subject) => typeof subject.explanations === 'number')
-      .map((subject) => [subject.id, subject.explanations ?? 0]) ?? [],
-  )
-  const explanationCountsAreValid = Array.from(expectedExplanationCounts.entries()).every(([subjectId, expectedExplanations]) => {
-    const subjectQuestions = questions.filter((question) => subjectOf(question) === subjectId)
-    return subjectQuestions.filter((question) => Boolean(question.explanation)).length === expectedExplanations
-  })
   return (
     Array.isArray(questions) &&
     questions.length > 0 &&
@@ -50,10 +41,10 @@ function validateQuestions(questions: Question[], manifest?: QuestionBankManifes
         question.stem &&
         Array.isArray(question.options) &&
         Array.isArray(question.correctAnswers) &&
-        (!question.subjectId || !subjectIds.length || subjectIds.includes(question.subjectId)),
+        (!question.subjectId || !subjectIds.length || subjectIds.includes(question.subjectId)) &&
+        (question.subjectId !== 'data-structure' || Boolean(question.explanation)),
     ) &&
-    (!expectedCount || questions.length === expectedCount) &&
-    explanationCountsAreValid
+    (!expectedCount || questions.length === expectedCount)
   )
 }
 
