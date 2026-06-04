@@ -7,7 +7,7 @@ const fallbackDefaults = {
   wrongBook: [],
   progress: { attemptedQuestionIds: [] },
   activeExam: null,
-  settings: { questionBankVersion: 5, questionBankTag: 'multi-0.1.5.4-20260604', activeSubjectId: 'ai' },
+  settings: { questionBankVersion: 5, questionBankTag: 'multi-0.1.5.4-fix1-20260604', activeSubjectId: 'ai' },
 }
 
 const QUESTION_BANK_OVERRIDE_KEY = 'muz-choice-blank-bank:questionBankOverride'
