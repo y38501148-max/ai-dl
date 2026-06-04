@@ -381,12 +381,24 @@ const existingManifest = existsSync(manifestPath) ? JSON.parse(readFileSync(mani
 const aiSubject = existingManifest.subjects?.find((subject) => subject.id === 'ai') ?? {
   id: 'ai',
   name: '人工智能导论',
-  bankTag: 'ai-0.1.5.3-20260603',
-  questionCount: 0,
+  bankTag: 'ai-0.1.5.4-20260604',
+  questionCount: 440,
   relativePath: 'ai/questions.json',
   questionsUrl: 'https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/ai/questions.json',
+  types: {
+    single: 417,
+    multiple: 13,
+    boolean: 10,
+    blank: 0,
+  },
+  explanations: 440,
+  releaseNotes: [
+    '人工智能导论题库热更新至 0.1.5.4：保留原 360 道题与题解不变，新增 80 道知识点覆盖题。',
+    '新增题覆盖搜索、知识表示、概率推理、机器学习、深度学习、自然语言处理、计算机视觉、隐私安全与 AI 治理。',
+    '人工智能导论题量更新为 440 道，全部题目均包含逐题题解。',
+  ],
 }
-aiSubject.bankTag = aiSubject.bankTag ?? 'ai-0.1.5.3-20260603'
+aiSubject.bankTag = aiSubject.bankTag ?? 'ai-0.1.5.4-20260604'
 const dataStructureSubject = {
   id: 'data-structure',
   name: '数据结构',
@@ -426,15 +438,15 @@ writeFileSync(
   `${JSON.stringify(
     {
       schemaVersion: 2,
-      bankTag: 'multi-0.1.5.3-20260603',
+      bankTag: 'multi-0.1.5.4-20260604',
       appVersion: '0.1.5',
       questionCount: aiSubject.questionCount + dataStructureSubject.questionCount,
       subjects: [aiSubject, dataStructureSubject],
-      updatedAt: '2026-06-03T00:00:00+08:00',
+      updatedAt: '2026-06-04T00:00:00+08:00',
       releaseNotes: [
-        '人工智能导论题库热更新至 0.1.5.3：修正逐题题解与题干/选项不匹配的问题。',
+        '人工智能导论题库热更新至 0.1.5.4：保留原 360 道题与题解不变，新增 80 道知识点覆盖题。',
         '数据结构题库保持 0.1.5.1，共 378 道题并保留逐题题解。',
-        '题库总量仍为 738 道（人工智能导论 360 + 数据结构 378）。',
+        '题库总量更新为 818 道（人工智能导论 440 + 数据结构 378），应用版本保持 0.1.5。',
       ],
       manifestUrl: 'https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/manifest.json',
     },
@@ -444,5 +456,5 @@ writeFileSync(
 )
 
 console.log(
-  `已生成 0.1.5.3 数据结构题库：${questions.length} 道；图片例题 ${imageExampleCount} 道，第七套作业 ${homework7QuestionCount} 道，真题选填 ${mdExamQuestionCount} 道，自主命题 ${choiceUnits.length + blankUnits.length} 道，专题补充 ${extraFoundationQuestionCount} 道，去重 ${dedupe.removedCount} 道，补题 ${dedupe.supplementCount} 道，复制图片 ${copiedImageCount} 张。`,
+  `已生成 0.1.5.4 数据结构题库：${questions.length} 道；图片例题 ${imageExampleCount} 道，第七套作业 ${homework7QuestionCount} 道，真题选填 ${mdExamQuestionCount} 道，自主命题 ${choiceUnits.length + blankUnits.length} 道，专题补充 ${extraFoundationQuestionCount} 道，去重 ${dedupe.removedCount} 道，补题 ${dedupe.supplementCount} 道，复制图片 ${copiedImageCount} 张。`,
 )

@@ -38,18 +38,18 @@ const mdExamQuestions = dsQuestions.filter((question) => question.tags?.includes
 const extraFoundationQuestions = dsQuestions.filter((question) => question.tags?.includes('专题补充'))
 const invalidIds = dsQuestions.filter((question, index) => question.id !== `ds1-${String(index + 1).padStart(3, '0')}`)
 
-if (manifest.bankTag !== 'multi-0.1.5.3-20260603') throw new Error(`题库标记异常：${manifest.bankTag}`)
+if (manifest.bankTag !== 'multi-0.1.5.4-20260604') throw new Error(`题库标记异常：${manifest.bankTag}`)
 if (!Array.isArray(manifest.releaseNotes) || manifest.releaseNotes.length < 3) {
   throw new Error('题库更新说明缺失')
 }
-if (questions.length !== 738) throw new Error(`题库总数异常：${questions.length}`)
+if (questions.length !== 818) throw new Error(`题库总数异常：${questions.length}`)
 if (manifest.questionCount !== questions.length) {
   throw new Error(`题库清单数量异常：${manifest.questionCount} != ${questions.length}`)
 }
-if (aiQuestions.length !== 360) throw new Error(`人工智能导论题库数量异常：${aiQuestions.length}`)
+if (aiQuestions.length !== 440) throw new Error(`人工智能导论题库数量异常：${aiQuestions.length}`)
 if (aiQuestions.some((question) => question.subjectId !== 'ai')) throw new Error('人工智能导论题库存在错误科目标识')
 if (aiExplanations.length !== aiQuestions.length) throw new Error(`人工智能导论存在缺少题解的题目：${aiQuestions.length - aiExplanations.length}`)
-if (aiManifest?.bankTag !== 'ai-0.1.5.3-20260603') throw new Error(`人工智能导论题库标记异常：${aiManifest?.bankTag}`)
+if (aiManifest?.bankTag !== 'ai-0.1.5.4-20260604') throw new Error(`人工智能导论题库标记异常：${aiManifest?.bankTag}`)
 if (dsQuestions.length !== 378) throw new Error(`数据结构题库数量异常：${dsQuestions.length}`)
 if (dsQuestions.some((question) => question.subjectId !== 'data-structure')) throw new Error('数据结构题库存在错误科目标识')
 if (dsSingles.length < 200 || dsMultiples.length < 1 || dsBlanks.length < 170) {

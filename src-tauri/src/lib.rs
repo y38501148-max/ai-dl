@@ -27,7 +27,7 @@ fn default_value(key: &str) -> Option<Value> {
         "progress" => Some(json!({ "attemptedQuestionIds": [] })),
         "activeExam" => Some(Value::Null),
         "settings" => Some(
-            json!({ "questionBankVersion": 5, "questionBankTag": "multi-0.1.5.3-20260603", "activeSubjectId": "ai" }),
+            json!({ "questionBankVersion": 5, "questionBankTag": "multi-0.1.5.4-20260604", "activeSubjectId": "ai" }),
         ),
         _ => None,
     }
