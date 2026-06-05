@@ -22,7 +22,7 @@
     "pack:win": "tauri build --bundles nsis",
     "pack:win:cross": "bash scripts/build-windows-nsis.sh",
     "pack:linux:deb": "bash scripts/build-debian-docker.sh",
-    "release:collect": "node scripts/collect-release.mjs",
+    "release:collect": "node scripts/collect-release.mjs && node scripts/fix-macos-dmgs.mjs",
     "android:init": "tauri android init",
     "android:dev": "tauri android dev",
     "pack:android:apk:debug": "npm run clean:android:question-bank && tauri android build --debug --apk",

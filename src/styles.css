@@ -710,6 +710,22 @@ p {
   padding: 32px;
 }
 
+.update-modal {
+  display: flex;
+  flex-direction: column;
+  width: min(560px, calc(100vw - 32px));
+  max-height: min(720px, calc(100vh - 48px));
+  padding: 0;
+  overflow: hidden;
+}
+
+.modal-scroll {
+  min-height: 0;
+  padding: 32px 32px 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
 .modal h2 {
   margin-bottom: 17px;
 }
@@ -724,6 +740,14 @@ p {
   justify-content: flex-end;
   gap: 12px;
   margin-top: 28px;
+}
+
+.update-modal .modal-actions {
+  flex: 0 0 auto;
+  margin-top: 0;
+  padding: 18px 32px 32px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
 }
 
 .rules {
@@ -1312,6 +1336,19 @@ p {
   .modal {
     width: calc(100vw - 32px);
     padding: 24px 20px;
+  }
+
+  .update-modal {
+    max-height: calc(100vh - 32px);
+    padding: 0;
+  }
+
+  .modal-scroll {
+    padding: 24px 20px 0;
+  }
+
+  .update-modal .modal-actions {
+    padding: 16px 20px 20px;
   }
 
   .modal-actions .button {

@@ -273,15 +273,17 @@ async function installQuestionBankUpdate() {
     </section>
   </div>
   <div v-if="updateInfo" class="modal-backdrop">
-    <section class="modal panel">
-      <p class="eyebrow">发现新版本</p>
-      <h2>可更新到 {{ updateInfo.latestVersion }}</h2>
-      <p>当前版本为 {{ updateInfo.currentVersion }}。更新检测已异步完成，网络失败不会影响正常使用。</p>
-      <div v-if="updateInfo.releaseNotes.length" class="update-notes">
-        <strong>更新说明</strong>
-        <ul>
-          <li v-for="note in updateInfo.releaseNotes" :key="note">{{ note }}</li>
-        </ul>
+    <section class="modal update-modal panel">
+      <div class="modal-scroll">
+        <p class="eyebrow">发现新版本</p>
+        <h2>可更新到 {{ updateInfo.latestVersion }}</h2>
+        <p>当前版本为 {{ updateInfo.currentVersion }}。更新检测已异步完成，网络失败不会影响正常使用。</p>
+        <div v-if="updateInfo.releaseNotes.length" class="update-notes">
+          <strong>更新说明</strong>
+          <ul>
+            <li v-for="note in updateInfo.releaseNotes" :key="note">{{ note }}</li>
+          </ul>
+        </div>
       </div>
       <div class="modal-actions">
         <button class="button secondary" @click="updateInfo = null">稍后</button>
@@ -290,19 +292,21 @@ async function installQuestionBankUpdate() {
     </section>
   </div>
   <div v-if="questionBankUpdateInfo" class="modal-backdrop">
-    <section class="modal panel">
-      <p class="eyebrow">发现新题库</p>
-      <h2>发现 {{ questionBankUpdateInfo.updatedSubjects.length }} 个科目可更新</h2>
-      <p>
-        将更新 {{ questionBankUpdateInfo.updatedSubjects.map((subject) => subject.name ?? subject.id).join('、') }}，这些科目共
-        {{ questionBankUpdateInfo.questionCount }} 道题。未变化的科目会保留当前本地题库。
-      </p>
-      <p class="update-tags">当前：{{ questionBankUpdateInfo.currentTag }}<br />最新：{{ questionBankUpdateInfo.latestTag }}</p>
-      <div v-if="questionBankUpdateInfo.releaseNotes.length" class="update-notes">
-        <strong>更新说明</strong>
-        <ul>
-          <li v-for="note in questionBankUpdateInfo.releaseNotes" :key="note">{{ note }}</li>
-        </ul>
+    <section class="modal update-modal panel">
+      <div class="modal-scroll">
+        <p class="eyebrow">发现新题库</p>
+        <h2>发现 {{ questionBankUpdateInfo.updatedSubjects.length }} 个科目可更新</h2>
+        <p>
+          将更新 {{ questionBankUpdateInfo.updatedSubjects.map((subject) => subject.name ?? subject.id).join('、') }}，这些科目共
+          {{ questionBankUpdateInfo.questionCount }} 道题。未变化的科目会保留当前本地题库。
+        </p>
+        <p class="update-tags">当前：{{ questionBankUpdateInfo.currentTag }}<br />最新：{{ questionBankUpdateInfo.latestTag }}</p>
+        <div v-if="questionBankUpdateInfo.releaseNotes.length" class="update-notes">
+          <strong>更新说明</strong>
+          <ul>
+            <li v-for="note in questionBankUpdateInfo.releaseNotes" :key="note">{{ note }}</li>
+          </ul>
+        </div>
       </div>
       <div class="modal-actions">
         <button class="button secondary" :disabled="questionBankUpdating" @click="questionBankUpdateInfo = null">
