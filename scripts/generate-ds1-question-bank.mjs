@@ -381,7 +381,7 @@ const existingManifest = existsSync(manifestPath) ? JSON.parse(readFileSync(mani
 const aiSubject = existingManifest.subjects?.find((subject) => subject.id === 'ai') ?? {
   id: 'ai',
   name: '人工智能导论',
-  bankTag: 'ai-0.1.5.4-fix1-20260604',
+  bankTag: 'ai-0.2.2-exam80-q361440-20260605',
   questionCount: 440,
   relativePath: 'ai/questions.json',
   questionsUrl: 'https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/ai/questions.json',
@@ -393,12 +393,12 @@ const aiSubject = existingManifest.subjects?.find((subject) => subject.id === 'a
   },
   explanations: 440,
   releaseNotes: [
-    '人工智能导论题库热更新至 0.1.5.4 修订版：保留原 360 道题与题解不变，新增 80 道题全部限定在原题库已覆盖知识点内。',
-    '修订新增题题解与答案，并移除原 360 题未出现的扩展知识点。',
+    '人工智能导论第 361-440 题完成题干与解析翻新。',
+    '人工智能导论模拟考试抽题数量调整为 80 道。',
     '人工智能导论题量更新为 440 道，全部题目均包含逐题题解。',
   ],
 }
-aiSubject.bankTag = aiSubject.bankTag ?? 'ai-0.1.5.4-fix1-20260604'
+aiSubject.bankTag = aiSubject.bankTag ?? 'ai-0.2.2-exam80-q361440-20260605'
 const preservedSubjects = (existingManifest.subjects ?? []).filter((subject) => !['ai', 'data-structure'].includes(subject.id))
 const dataStructureSubject = {
   id: 'data-structure',
@@ -439,8 +439,8 @@ writeFileSync(
   `${JSON.stringify(
     {
       schemaVersion: 2,
-      bankTag: existingManifest.bankTag ?? 'multi-0.1.6-20260605',
-      appVersion: existingManifest.appVersion ?? '0.2.1',
+      bankTag: existingManifest.bankTag ?? 'multi-0.2.2-ai80-q361440-20260605',
+      appVersion: existingManifest.appVersion ?? '0.2.2',
       questionCount:
         aiSubject.questionCount +
         dataStructureSubject.questionCount +
@@ -448,7 +448,7 @@ writeFileSync(
       subjects: [aiSubject, dataStructureSubject, ...preservedSubjects],
       updatedAt: existingManifest.updatedAt ?? '2026-06-05T00:00:00+08:00',
       releaseNotes: existingManifest.releaseNotes ?? [
-        '应用版本更新至 0.2.1，题库热更新支持按远端清单新增科目。',
+        '应用版本更新至 0.2.2，题库热更新支持按远端清单新增科目。',
         '新增智能感知与控制科目入口：试题收集中，敬请期待。',
         '题库总量保持 818 道（人工智能导论 440 + 数据结构 378 + 智能感知与控制 0）。',
       ],

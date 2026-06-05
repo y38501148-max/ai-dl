@@ -109,6 +109,7 @@ export interface QuestionBankSubjectManifest {
   durationSeconds?: number
   scorePerQuestion?: number
   officialQuestionCount?: number
+  examRules?: string[]
   allowPractice?: boolean
   notice?: string
   types?: Partial<Record<QuestionType, number>>

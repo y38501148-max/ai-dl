@@ -1,13 +1,16 @@
 # muz-test
 
-版本：0.2.1
+版本：0.2.2
 
 `muz-test` 是基于 Vue、Vite 与 Tauri 的本地/网页题库应用。当前内置「人工智能导论」「数据结构」与「智能感知与控制」三个科目，支持模拟考试、自由练习、本地记录保存、错题复习、应用版本检测以及独立题库热更新。
 
 ## 本次更新
 
-- 应用版本保持为 `0.2.1`，题库根版本更新为 `multi-0.2.1-ai80-20260605`。
+- 应用版本更新为 `0.2.2`，题库根版本更新为 `multi-0.2.2-ai80-q361440-20260605`。
 - 人工智能导论模拟考试抽题数量调整为 80 道。
+- 人工智能导论第 361-440 题完成题干与解析翻新。
+- 科目级 manifest 支持动态覆盖抽题数量、考试说明与考试规则列表。
+- macOS 包使用独立 Bundle ID `cn.aidl.muztest`，避免 Launchpad 继续复用旧应用索引。
 - 题库热更新支持通过远端 manifest 新增科目；旧客户端无需重新下载软件即可看到新增科目入口。
 - 新增「智能感知与控制」科目，当前公告为「试题收集中，敬请期待」，暂不内置试题。
 - 空题库科目会显示在科目选择中，但不会启动空考试。
@@ -233,12 +236,12 @@ npm run release:collect
 产物会输出到：
 
 ```text
-release/0.2.1/
+release/0.2.2/
 ```
 
-发布目录中的安装包文件名使用纯 ASCII，例如 `muz-choice-blank-bank_0.2.1_windows-x64-setup.exe`，便于上传到 GitHub Releases；应用内部名仍为 `muz-choice-blank-bank`，外显名称为 `muz-test`。
+发布目录中的安装包文件名使用纯 ASCII，例如 `muz-choice-blank-bank_0.2.2_windows-x64-setup.exe`，便于上传到 GitHub Releases；应用内部名仍为 `muz-choice-blank-bank`，外显名称为 `muz-test`。
 
-0.2.1 的安装包构建需在 GitHub Pages 调试确认无误后进行；平台列表沿用 `release/0.1.5/` 的发布产物范围。
+0.2.2 的安装包构建需在 GitHub Pages 调试确认无误后进行；平台列表沿用 `release/0.1.5/` 的发布产物范围。
 
 macOS 根目录 `/release` 可能是只读文件系统，因此本仓库默认使用项目内的 `release/<版本号>/` 作为发布目录。
 

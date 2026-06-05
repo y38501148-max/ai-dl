@@ -44,12 +44,12 @@ const attemptedCount = computed(
 onMounted(async () => {
   await store.initialize()
   if (store.activeExam.value) page.value = 'exam'
-  void checkForUpdate().then((info) => {
-    updateInfo.value = info
-  })
-  void checkForQuestionBankUpdate(store.questionBankManifest.value).then((info) => {
-    questionBankUpdateInfo.value = info
-  })
+  void (async () => {
+    const appUpdate = await checkForUpdate()
+    updateInfo.value = appUpdate
+    if (appUpdate) return
+    questionBankUpdateInfo.value = await checkForQuestionBankUpdate(store.questionBankManifest.value)
+  })()
 })
 
 async function changeSubject(subjectId: SubjectId) {

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "bankTag": "multi-0.2.1-ai80-20260605",
-  "appVersion": "0.2.1",
+  "bankTag": "multi-0.2.2-ai80-q361440-20260605",
+  "appVersion": "0.2.2",
   "questionCount": 818,
   "subjects": [
     {
@@ -18,12 +18,18 @@
         "blank": 0
       },
       "explanations": 440,
-      "bankTag": "ai-0.2.1-exam80-20260605",
+      "bankTag": "ai-0.2.2-exam80-q361440-20260605",
       "subtitle": "从 440 道题中随机组卷，覆盖单选、多选与判断训练。",
       "examDescription": "随机抽取 80 道题，限时 60 分钟，每题 2 分。",
       "officialQuestionCount": 80,
+      "examRules": [
+        "考试时长 60 分钟，超时自动交卷。",
+        "随机抽取 80 道题，每题 2 分。",
+        "考试界面仅显示本场题号，不显示题库原编号。"
+      ],
       "releaseNotes": [
         "人工智能导论模拟考试抽题数量调整为 80 道。",
+        "人工智能导论第 361-440 题完成题干与解析翻新。",
         "人工智能导论题量保持 440 道，全部题目均包含逐题题解。"
       ]
     },
@@ -92,7 +98,8 @@
   "updatedAt": "2026-06-05T00:00:00+08:00",
   "releaseNotes": [
     "人工智能导论模拟考试抽题数量调整为 80 道。",
-    "应用版本保持 0.2.1，题库热更新支持按远端清单新增科目。",
+    "人工智能导论第 361-440 题完成题干与解析翻新。",
+    "应用版本更新至 0.2.2，题库热更新支持按远端清单新增科目。",
     "题库总量保持 818 道（人工智能导论 440 + 数据结构 378 + 智能感知与控制 0）。"
   ],
   "manifestUrl": "https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/manifest.json"
