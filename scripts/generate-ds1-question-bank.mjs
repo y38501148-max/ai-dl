@@ -440,7 +440,7 @@ writeFileSync(
     {
       schemaVersion: 2,
       bankTag: existingManifest.bankTag ?? 'multi-0.1.6-20260605',
-      appVersion: existingManifest.appVersion ?? '0.1.6',
+      appVersion: existingManifest.appVersion ?? '0.2.1',
       questionCount:
         aiSubject.questionCount +
         dataStructureSubject.questionCount +
@@ -448,7 +448,7 @@ writeFileSync(
       subjects: [aiSubject, dataStructureSubject, ...preservedSubjects],
       updatedAt: existingManifest.updatedAt ?? '2026-06-05T00:00:00+08:00',
       releaseNotes: existingManifest.releaseNotes ?? [
-        '应用版本更新至 0.1.6，题库热更新支持按远端清单新增科目。',
+        '应用版本更新至 0.2.1，题库热更新支持按远端清单新增科目。',
         '新增智能感知与控制科目入口：试题收集中，敬请期待。',
         '题库总量保持 818 道（人工智能导论 440 + 数据结构 378 + 智能感知与控制 0）。',
       ],

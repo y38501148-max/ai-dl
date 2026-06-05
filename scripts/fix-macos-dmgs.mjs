@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os'
 import { execFileSync } from 'node:child_process'
 import packageInfo from '../package.json' with { type: 'json' }
 
-const appName = 'muz-选填题库'
+const appName = 'muz-test'
 const releaseName = `muz-choice-blank-bank_${packageInfo.version}`
 const releaseDirectory = resolve('release', packageInfo.version)
 

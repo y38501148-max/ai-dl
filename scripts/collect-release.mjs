@@ -4,6 +4,7 @@ import packageInfo from '../package.json' with { type: 'json' }
 
 const releaseDirectory = resolve('release', packageInfo.version)
 const releaseName = `muz-choice-blank-bank_${packageInfo.version}`
+const appName = 'muz-test'
 mkdirSync(releaseDirectory, { recursive: true })
 
 for (const file of readdirSync(releaseDirectory)) {
@@ -14,11 +15,11 @@ for (const file of readdirSync(releaseDirectory)) {
 const artifactGroups = [
   ['src-tauri/gen/android/app/build/outputs/apk/universal/release/app-universal-release.apk', `${releaseName}_android-universal.apk`],
   ['src-tauri/gen/android/app/build/outputs/bundle/universalRelease/app-universal-release.aab', `${releaseName}_android-universal.aab`],
-  [`src-tauri/target-linux-arm64/release/bundle/deb/muz-选填题库_${packageInfo.version}_arm64.deb`, `${releaseName}_linux-arm64.deb`],
-  [`src-tauri/target/release/bundle/dmg/muz-选填题库_${packageInfo.version}_aarch64.dmg`, `${releaseName}_macos-aarch64.dmg`],
-  [`src-tauri/target/universal-apple-darwin/release/bundle/dmg/muz-选填题库_${packageInfo.version}_universal.dmg`, `${releaseName}_macos-universal.dmg`],
-  [`src-tauri/target/x86_64-pc-windows-gnu/release/bundle/nsis/muz-选填题库_${packageInfo.version}_x64-setup.exe`, `${releaseName}_windows-x64-setup.exe`],
-  [`src-tauri/target/x86_64-pc-windows-msvc/release/bundle/nsis/muz-选填题库_${packageInfo.version}_x64-setup.exe`, `${releaseName}_windows-x64-setup.exe`],
+  [`src-tauri/target-linux-arm64/release/bundle/deb/${appName}_${packageInfo.version}_arm64.deb`, `${releaseName}_linux-arm64.deb`],
+  [`src-tauri/target/release/bundle/dmg/${appName}_${packageInfo.version}_aarch64.dmg`, `${releaseName}_macos-aarch64.dmg`],
+  [`src-tauri/target/universal-apple-darwin/release/bundle/dmg/${appName}_${packageInfo.version}_universal.dmg`, `${releaseName}_macos-universal.dmg`],
+  [`src-tauri/target/x86_64-pc-windows-gnu/release/bundle/nsis/${appName}_${packageInfo.version}_x64-setup.exe`, `${releaseName}_windows-x64-setup.exe`],
+  [`src-tauri/target/x86_64-pc-windows-msvc/release/bundle/nsis/${appName}_${packageInfo.version}_x64-setup.exe`, `${releaseName}_windows-x64-setup.exe`],
 ]
 
 const copied = []
