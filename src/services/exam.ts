@@ -43,7 +43,10 @@ export function selectOfficialQuestions(questions: Question[], subjectId: Subjec
     const blanks = shuffle(questions.filter((question) => question.type === 'blank')).slice(0, 10)
     return shuffle([...singles, ...blanks].map((question) => question.id))
   }
-  return shuffle(questions.map((question) => question.id)).slice(0, subjectConfig.officialQuestionCount)
+  const candidateQuestions = subjectConfig.officialQuestionTypes?.length
+    ? questions.filter((question) => subjectConfig.officialQuestionTypes?.includes(question.type))
+    : questions
+  return shuffle(candidateQuestions.map((question) => question.id)).slice(0, subjectConfig.officialQuestionCount)
 }
 
 export function sameAnswers(first: string[], second: string[]): boolean {

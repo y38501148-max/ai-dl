@@ -1,4 +1,4 @@
-import type { Question, QuestionBankManifest, QuestionBankSubjectManifest, SubjectId } from '../types'
+import type { Question, QuestionBankManifest, QuestionBankSubjectManifest, QuestionType, SubjectId } from '../types'
 
 export interface SubjectConfig {
   id: SubjectId
@@ -10,6 +10,7 @@ export interface SubjectConfig {
   durationSeconds: number
   scorePerQuestion: number
   officialQuestionCount: number
+  officialQuestionTypes?: QuestionType[]
   allowPractice: boolean
   examRules: string[]
   notice?: string
@@ -22,12 +23,13 @@ const STATIC_SUBJECTS: SubjectConfig[] = [
     title: '人工智能导论题库',
     subtitle: '从 440 道题中随机组卷，覆盖单选、多选与判断训练。',
     examLabel: 'AI COURSE EXAM',
-    examDescription: '随机抽取 80 道题，限时 60 分钟，每题 2 分。',
+    examDescription: '随机抽取 100 道题，限时 60 分钟，每题 1 分。',
     durationSeconds: 60 * 60,
-    scorePerQuestion: 2,
-    officialQuestionCount: 80,
+    scorePerQuestion: 1,
+    officialQuestionCount: 100,
+    officialQuestionTypes: ['single', 'multiple', 'boolean'],
     allowPractice: true,
-    examRules: ['考试时长 60 分钟，超时自动交卷。', '每题 2 分，自动保存考试记录。', '考试界面仅显示本场题号，不显示题库原编号。'],
+    examRules: ['考试时长 60 分钟，超时自动交卷。', '随机抽取 100 道题，每题 1 分，题型包含单选、多选与判断。', '考试界面仅显示本场题号，不显示题库原编号。'],
   },
   {
     id: 'data-structure',
@@ -90,6 +92,7 @@ function subjectFromManifest(subject: QuestionBankSubjectManifest): SubjectConfi
     durationSeconds: subject.durationSeconds ?? fallback.durationSeconds,
     scorePerQuestion: subject.scorePerQuestion ?? fallback.scorePerQuestion,
     officialQuestionCount: subject.officialQuestionCount ?? fallback.officialQuestionCount,
+    officialQuestionTypes: subject.officialQuestionTypes ?? fallback.officialQuestionTypes,
     examRules: subject.examRules ?? fallback.examRules,
     allowPractice: subject.allowPractice ?? fallback.allowPractice,
     notice: subject.notice ?? fallback.notice,

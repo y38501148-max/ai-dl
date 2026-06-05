@@ -29,7 +29,7 @@ fn default_value(key: &str) -> Option<Value> {
         "progress" => Some(json!({ "attemptedQuestionIds": [] })),
         "activeExam" => Some(Value::Null),
         "settings" => Some(
-            json!({ "questionBankVersion": 5, "questionBankTag": "multi-0.1.6-20260605", "activeSubjectId": "ai" }),
+            json!({ "questionBankVersion": 7, "questionBankTag": "multi-0.2.3.1-ai100-20260605", "activeSubjectId": "ai" }),
         ),
         _ => None,
     }
@@ -431,6 +431,7 @@ fn run_c_code(source: String, stdin: Option<String>) -> Result<Value, String> {
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_opener::init())
         .invoke_handler(tauri::generate_handler![
             bootstrap,
             save_data,

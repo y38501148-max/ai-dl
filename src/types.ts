@@ -109,6 +109,7 @@ export interface QuestionBankSubjectManifest {
   durationSeconds?: number
   scorePerQuestion?: number
   officialQuestionCount?: number
+  officialQuestionTypes?: QuestionType[]
   examRules?: string[]
   allowPractice?: boolean
   notice?: string
