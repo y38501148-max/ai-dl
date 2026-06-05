@@ -1,12 +1,15 @@
 # muz-选填题库
 
-版本：0.1.5
+版本：0.1.6
 
-`muz-选填题库` 是基于 Vue、Vite 与 Tauri 的本地/网页题库应用。当前内置「人工智能导论」与「数据结构」两个科目，支持模拟考试、自由练习、本地记录保存、错题复习、应用版本检测以及独立题库热更新。
+`muz-选填题库` 是基于 Vue、Vite 与 Tauri 的本地/网页题库应用。当前内置「人工智能导论」「数据结构」与「智能感知与控制」三个科目，支持模拟考试、自由练习、本地记录保存、错题复习、应用版本检测以及独立题库热更新。
 
 ## 本次更新
 
-- 题库内容版本更新为 `0.1.5.4`，应用版本保持 `0.1.5`。
+- 应用版本更新为 `0.1.6`，题库根版本更新为 `multi-0.1.6-20260605`。
+- 题库热更新支持通过远端 manifest 新增科目；旧客户端无需重新下载软件即可看到新增科目入口。
+- 新增「智能感知与控制」科目，当前公告为「试题收集中，敬请期待」，暂不内置试题。
+- 空题库科目会显示在科目选择中，但不会启动空考试。
 - 「人工智能导论」题库保留从 `v0.1.4` 历史题库恢复的原 360 道题与题解不变，并新增 80 道知识点覆盖题。
 - 人工智能导论新增题全部限定在原 360 道题已覆盖的知识点内，并重新核对题解与答案一致性。
 - 数据结构题库新增第七套作业中的 20 道选填例题，并补充对应题解。
@@ -15,7 +18,7 @@
 - 新增独立题库 manifest：题库更新可单独检测、下载和替换，不需要每次重新下载软件本体。
 - 版本更新和题库更新弹窗都会显示更新说明；桌面端「前往更新」会调用系统浏览器打开 GitHub Releases。
 - 启动后异步检查 GitHub 上的最新版本；网络异常不会阻塞题库加载和正常使用。
-- 当前总题量 818 道：人工智能导论 440 道，数据结构 378 道。
+- 当前总题量 818 道：人工智能导论 440 道，数据结构 378 道，智能感知与控制 0 道。
 - 当前数据结构题库包含 378 道题：图片例题、第七套作业例题、2019-2022 非编程题、自主命题题与专题补充题；2018 文件未包含选择/填空段。
 - 数据结构范围扩展到字符串初步、结构体基础、指针基础、链表、栈、队列、树、图、排序基础、查找基础等。
 - 数据结构题型为单选题、多选题与填空题，填空题支持多个等价答案。
@@ -50,6 +53,12 @@
 - 题库生成后会按题干归一化查重，重复题优先保留图片例题/原始来源题，并用补题池补足去除数量。
 - 选择题以单选为主，部分综合题为多选；填空题会进行去空格、大小写和常见中英文标点归一化后判分。
 
+### 智能感知与控制
+
+- 当前状态：试题收集中，敬请期待。
+- 当前题量：0 道。
+- 科目入口可通过题库热更新新增，无需重新下载软件本体。
+
 ## 本地开发
 
 ```bash
@@ -82,6 +91,7 @@ npm run import:questions -- "/path/to/人工智能导论-习题汇总.pdf"
 ```text
 resources/question-bank/ai/questions.json
 resources/question-bank/data-structure/questions.json
+resources/question-bank/intelligent-sensing-control/questions.json
 ```
 
 不要把不同科目的题目重新合并到单个源文件中维护；运行时会根据 manifest 聚合加载，维护和发布资源仍按科目分隔，便于后续继续增加新科目。
@@ -107,7 +117,7 @@ resources/question-bank/manifest.json
 ### 题库热更新发布方式
 
 1. 修改对应科目的题库文件，例如 `resources/question-bank/ai/questions.json`。
-2. 在 `resources/question-bank/manifest.json` 中提升根 `bankTag` 和该科目的 `subjects[].bankTag`，例如从 `multi-0.1.5.3-20260603` 提升到 `multi-0.1.5.4-20260604`，从 `ai-0.1.5.3-20260603` 提升到 `ai-0.1.5.4-20260604`。
+2. 在 `resources/question-bank/manifest.json` 中提升根 `bankTag` 和该科目的 `subjects[].bankTag`，例如从 `multi-0.1.5.4-fix1-20260604` 提升到 `multi-0.1.6-20260605`；新增科目时同步新增 `subjects[]` 条目和该科目的 `relativePath` 空/实题库文件。
 3. 保持 `questionCount`、`subjects[].questionCount`、`subjects[].explanations` 与实际题库一致，并更新 `releaseNotes[]`。
 4. 确认 `subjects[].questionsUrl` 和 `manifestUrl` 指向 GitHub raw 上的当前分支资源。
 5. 运行 `npm run build:web` 做类型检查和静态构建；如只验证网页题库资源，可启动 `npm run dev:web` 后运行 `node scripts/smoke-web.mjs 5173`。
@@ -118,6 +128,7 @@ resources/question-bank/manifest.json
 ```text
 dist/question-bank/ai/questions.json
 dist/question-bank/data-structure/questions.json
+dist/question-bank/intelligent-sensing-control/questions.json
 dist/question-bank/manifest.json
 dist/question-bank/ds-assets/
 ```
@@ -221,12 +232,12 @@ npm run release:collect
 产物会输出到：
 
 ```text
-release/0.1.5/
+release/0.1.6/
 ```
 
-发布目录中的安装包文件名使用纯 ASCII，例如 `muz-choice-blank-bank_0.1.5_windows-x64-setup.exe`，便于上传到 GitHub Releases；应用内显示名称仍为 `muz-选填题库`。
+发布目录中的安装包文件名使用纯 ASCII，例如 `muz-choice-blank-bank_0.1.6_windows-x64-setup.exe`，便于上传到 GitHub Releases；应用内显示名称仍为 `muz-选填题库`。
 
-0.1.5 的安装包构建需在 GitHub Pages 调试确认无误后进行；平台列表沿用 `release/0.1.4/` 的发布产物范围。
+0.1.6 的安装包构建需在 GitHub Pages 调试确认无误后进行；平台列表沿用 `release/0.1.5/` 的发布产物范围。
 
 macOS 根目录 `/release` 可能是只读文件系统，因此本仓库默认使用项目内的 `release/<版本号>/` 作为发布目录。
 

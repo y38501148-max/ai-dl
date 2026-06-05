@@ -5,6 +5,7 @@ src-tauri/target/
 src-tauri/target-linux-arm64/
 .DS_Store
 *.log
+MUSTREADME.md
 
 # Android release signing secrets
 *.jks

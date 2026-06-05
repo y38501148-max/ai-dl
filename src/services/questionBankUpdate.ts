@@ -34,7 +34,7 @@ function validateQuestions(questions: Question[], manifest?: QuestionBankManifes
   const expectedCount = expectedSubjects?.reduce((sum, subject) => sum + subject.questionCount, 0) ?? manifest?.questionCount
   return (
     Array.isArray(questions) &&
-    questions.length > 0 &&
+    (questions.length > 0 || expectedCount === 0) &&
     questions.every(
       (question) =>
         question.id &&

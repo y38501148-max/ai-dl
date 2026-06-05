@@ -10,6 +10,8 @@ use tauri::Manager;
 const AI_QUESTIONS_JSON: &str = include_str!("../../resources/question-bank/ai/questions.json");
 const DATA_STRUCTURE_QUESTIONS_JSON: &str =
     include_str!("../../resources/question-bank/data-structure/questions.json");
+const INTELLIGENT_SENSING_CONTROL_QUESTIONS_JSON: &str =
+    include_str!("../../resources/question-bank/intelligent-sensing-control/questions.json");
 const QUESTION_BANK_MANIFEST: &str = include_str!("../../resources/question-bank/manifest.json");
 
 const FILES: &[(&str, &str)] = &[
@@ -27,7 +29,7 @@ fn default_value(key: &str) -> Option<Value> {
         "progress" => Some(json!({ "attemptedQuestionIds": [] })),
         "activeExam" => Some(Value::Null),
         "settings" => Some(
-            json!({ "questionBankVersion": 5, "questionBankTag": "multi-0.1.5.4-fix1-20260604", "activeSubjectId": "ai" }),
+            json!({ "questionBankVersion": 5, "questionBankTag": "multi-0.1.6-20260605", "activeSubjectId": "ai" }),
         ),
         _ => None,
     }
@@ -121,15 +123,22 @@ fn embedded_subject_file_exists(bank_dir: &Path) -> bool {
             .join("data-structure")
             .join("questions.json")
             .exists()
+        && bank_dir
+            .join("intelligent-sensing-control")
+            .join("questions.json")
+            .exists()
 }
 
 fn write_embedded_question_bank(bank_dir: &Path) -> Result<(), String> {
     let ai_dir = bank_dir.join("ai");
     let data_structure_dir = bank_dir.join("data-structure");
+    let intelligent_sensing_control_dir = bank_dir.join("intelligent-sensing-control");
     fs::create_dir_all(&ai_dir)
         .map_err(|error| format!("无法创建人工智能导论题库目录：{error}"))?;
     fs::create_dir_all(&data_structure_dir)
         .map_err(|error| format!("无法创建数据结构题库目录：{error}"))?;
+    fs::create_dir_all(&intelligent_sensing_control_dir)
+        .map_err(|error| format!("无法创建智能感知与控制题库目录：{error}"))?;
     fs::write(ai_dir.join("questions.json"), AI_QUESTIONS_JSON)
         .map_err(|error| format!("无法释放人工智能导论题库：{error}"))?;
     fs::write(
@@ -137,11 +146,15 @@ fn write_embedded_question_bank(bank_dir: &Path) -> Result<(), String> {
         DATA_STRUCTURE_QUESTIONS_JSON,
     )
     .map_err(|error| format!("无法释放数据结构题库：{error}"))?;
+    fs::write(
+        intelligent_sensing_control_dir.join("questions.json"),
+        INTELLIGENT_SENSING_CONTROL_QUESTIONS_JSON,
+    )
+    .map_err(|error| format!("无法释放智能感知与控制题库：{error}"))?;
     fs::write(bank_dir.join("manifest.json"), QUESTION_BANK_MANIFEST)
         .map_err(|error| format!("无法释放题库清单：{error}"))?;
     Ok(())
 }
-
 fn read_questions_from_manifest(
     bank_dir: &Path,
     manifest: Option<&Value>,

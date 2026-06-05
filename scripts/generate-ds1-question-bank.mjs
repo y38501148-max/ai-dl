@@ -399,6 +399,7 @@ const aiSubject = existingManifest.subjects?.find((subject) => subject.id === 'a
   ],
 }
 aiSubject.bankTag = aiSubject.bankTag ?? 'ai-0.1.5.4-fix1-20260604'
+const preservedSubjects = (existingManifest.subjects ?? []).filter((subject) => !['ai', 'data-structure'].includes(subject.id))
 const dataStructureSubject = {
   id: 'data-structure',
   name: '数据结构',
@@ -438,15 +439,18 @@ writeFileSync(
   `${JSON.stringify(
     {
       schemaVersion: 2,
-      bankTag: 'multi-0.1.5.4-fix1-20260604',
-      appVersion: '0.1.5',
-      questionCount: aiSubject.questionCount + dataStructureSubject.questionCount,
-      subjects: [aiSubject, dataStructureSubject],
-      updatedAt: '2026-06-04T00:00:00+08:00',
-      releaseNotes: [
-        '人工智能导论题库热更新至 0.1.5.4 修订版：保留原 360 道题与题解不变，新增 80 道题全部限定在原题库已覆盖知识点内。',
-        '数据结构题库保持 0.1.5.1，共 378 道题并保留逐题题解。',
-        '题库总量更新为 818 道（人工智能导论 440 + 数据结构 378），应用版本保持 0.1.5。',
+      bankTag: existingManifest.bankTag ?? 'multi-0.1.6-20260605',
+      appVersion: existingManifest.appVersion ?? '0.1.6',
+      questionCount:
+        aiSubject.questionCount +
+        dataStructureSubject.questionCount +
+        preservedSubjects.reduce((sum, subject) => sum + (subject.questionCount ?? 0), 0),
+      subjects: [aiSubject, dataStructureSubject, ...preservedSubjects],
+      updatedAt: existingManifest.updatedAt ?? '2026-06-05T00:00:00+08:00',
+      releaseNotes: existingManifest.releaseNotes ?? [
+        '应用版本更新至 0.1.6，题库热更新支持按远端清单新增科目。',
+        '新增智能感知与控制科目入口：试题收集中，敬请期待。',
+        '题库总量保持 818 道（人工智能导论 440 + 数据结构 378 + 智能感知与控制 0）。',
       ],
       manifestUrl: 'https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/manifest.json',
     },

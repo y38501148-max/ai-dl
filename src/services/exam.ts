@@ -8,7 +8,7 @@ import type {
   SubjectId,
   WrongBookEntry,
 } from '../types'
-import { getSubjectConfig, subjectOf } from './subjects'
+import { getSubjectConfig, subjectOf, type SubjectConfig } from './subjects'
 
 function makeId(): string {
   return globalThis.crypto?.randomUUID?.() ?? `exam-${Date.now()}-${Math.random().toString(16).slice(2)}`
@@ -23,9 +23,8 @@ function shuffle<T>(values: T[]): T[] {
   return result
 }
 
-export function createExam(questionIds: string[], mode: ExamMode, subjectId: SubjectId): ActiveExam {
+export function createExam(questionIds: string[], mode: ExamMode, subjectId: SubjectId, subjectConfig = getSubjectConfig(subjectId)): ActiveExam {
   const startedAt = new Date()
-  const subject = getSubjectConfig(subjectId)
   return {
     id: makeId(),
     mode,
@@ -33,18 +32,18 @@ export function createExam(questionIds: string[], mode: ExamMode, subjectId: Sub
     questionIds: shuffle(questionIds),
     answers: {},
     startedAt: startedAt.toISOString(),
-    deadlineAt: new Date(startedAt.getTime() + subject.durationSeconds * 1000).toISOString(),
+    deadlineAt: new Date(startedAt.getTime() + subjectConfig.durationSeconds * 1000).toISOString(),
     currentIndex: 0,
   }
 }
 
-export function selectOfficialQuestions(questions: Question[], subjectId: SubjectId): string[] {
+export function selectOfficialQuestions(questions: Question[], subjectId: SubjectId, subjectConfig = getSubjectConfig(subjectId)): string[] {
   if (subjectId === 'data-structure') {
     const singles = shuffle(questions.filter((question) => question.type === 'single')).slice(0, 10)
     const blanks = shuffle(questions.filter((question) => question.type === 'blank')).slice(0, 10)
     return shuffle([...singles, ...blanks].map((question) => question.id))
   }
-  return shuffle(questions.map((question) => question.id)).slice(0, 50)
+  return shuffle(questions.map((question) => question.id)).slice(0, subjectConfig.officialQuestionCount)
 }
 
 export function sameAnswers(first: string[], second: string[]): boolean {
@@ -67,8 +66,8 @@ export function isCorrectAnswer(question: Question, selectedAnswers: string[]): 
   return accepted.includes(normalizedInput)
 }
 
-function scoreFor(question: Question, session: ActiveExam): number {
-  return getSubjectConfig(session.subjectId ?? subjectOf(question)).scorePerQuestion
+function scoreFor(question: Question, session: ActiveExam, subjectConfig?: SubjectConfig): number {
+  return subjectConfig?.scorePerQuestion ?? getSubjectConfig(session.subjectId ?? subjectOf(question)).scorePerQuestion
 }
 
 export function gradeExam(
@@ -76,6 +75,7 @@ export function gradeExam(
   questionMap: Map<string, Question>,
   method: SubmitMethod,
   attemptedBefore: Set<string>,
+  subjectConfig?: SubjectConfig,
 ): ExamRecord {
   const submittedAt = new Date()
   let newlyAttemptedCount = 0
@@ -96,7 +96,7 @@ export function gradeExam(
       correctAnswers: question.correctAnswers,
       answered,
       correct,
-      score: correct ? scoreFor(question, session) : 0,
+      score: correct ? scoreFor(question, session, subjectConfig) : 0,
     }
   })
 
@@ -115,7 +115,7 @@ export function gradeExam(
     questionIds: session.questionIds,
     evaluations,
     score,
-    maxScore: evaluations.reduce((total, item) => total + scoreFor(questionMap.get(item.questionId)!, session), 0),
+    maxScore: evaluations.reduce((total, item) => total + scoreFor(questionMap.get(item.questionId)!, session, subjectConfig), 0),
     correctCount: evaluations.filter((item) => item.correct).length,
     wrongCount: evaluations.filter((item) => item.answered && !item.correct).length,
     unansweredCount: evaluations.filter((item) => !item.answered).length,

@@ -2,7 +2,7 @@ export type QuestionType = 'single' | 'multiple' | 'boolean' | 'blank'
 export type ExamMode = 'exam' | 'wrong-practice' | 'practice'
 export type SubmitMethod = 'manual' | 'timeout'
 export type StorageKey = 'records' | 'wrongBook' | 'progress' | 'activeExam' | 'settings'
-export type SubjectId = 'ai' | 'data-structure'
+export type SubjectId = string
 
 export interface QuestionOption {
   key: string
@@ -102,6 +102,15 @@ export interface QuestionBankSubjectManifest {
   assetDirectory?: string
   restoredFrom?: string
   releaseNotes?: string[]
+  title?: string
+  subtitle?: string
+  examLabel?: string
+  examDescription?: string
+  durationSeconds?: number
+  scorePerQuestion?: number
+  officialQuestionCount?: number
+  allowPractice?: boolean
+  notice?: string
   types?: Partial<Record<QuestionType, number>>
   explanations?: number
   sourceCounts?: Record<string, unknown>

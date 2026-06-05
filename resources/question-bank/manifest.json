@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "bankTag": "multi-0.1.5.4-fix1-20260604",
-  "appVersion": "0.1.5",
+  "bankTag": "multi-0.1.6-20260605",
+  "appVersion": "0.1.6",
   "questionCount": 818,
   "subjects": [
     {
@@ -58,13 +58,40 @@
         "extraFoundationKept": 74,
         "homework7Kept": 20
       }
+    },
+    {
+      "id": "intelligent-sensing-control",
+      "name": "智能感知与控制",
+      "bankTag": "isc-0.1.6-20260605",
+      "questionCount": 0,
+      "relativePath": "intelligent-sensing-control/questions.json",
+      "questionsUrl": "https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/intelligent-sensing-control/questions.json",
+      "releaseNotes": [
+        "试题收集中，敬请期待"
+      ],
+      "title": "智能感知与控制题库",
+      "subtitle": "试题收集中，敬请期待。",
+      "examLabel": "INTELLIGENT SENSING AND CONTROL",
+      "examDescription": "试题收集中，敬请期待。",
+      "durationSeconds": 3600,
+      "scorePerQuestion": 2,
+      "officialQuestionCount": 0,
+      "allowPractice": false,
+      "notice": "试题收集中，敬请期待",
+      "types": {
+        "single": 0,
+        "multiple": 0,
+        "boolean": 0,
+        "blank": 0
+      },
+      "explanations": 0
     }
   ],
-  "updatedAt": "2026-06-04T00:00:00+08:00",
+  "updatedAt": "2026-06-05T00:00:00+08:00",
   "releaseNotes": [
-    "人工智能导论题库热更新至 0.1.5.4 修订版：保留原 360 道题与题解不变，新增 80 道题全部限定在原题库已覆盖知识点内。",
-    "修订新增题题解与答案，并移除原 360 题未出现的扩展知识点。",
-    "题库总量更新为 818 道（人工智能导论 440 + 数据结构 378），应用版本保持 0.1.5。"
+    "应用版本更新至 0.1.6，题库热更新支持按远端清单新增科目。",
+    "新增智能感知与控制科目入口：试题收集中，敬请期待。",
+    "题库总量保持 818 道（人工智能导论 440 + 数据结构 378 + 智能感知与控制 0）。"
   ],
   "manifestUrl": "https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/manifest.json"
 }

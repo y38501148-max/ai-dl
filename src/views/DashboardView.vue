@@ -38,7 +38,7 @@ function dateTime(value: string): string {
         <h1>{{ subject.title }}</h1>
         <p class="subtitle">{{ subject.subtitle }}</p>
         <div class="hero-actions">
-          <button class="button primary" @click="$emit('start')">开始模拟考试</button>
+          <button class="button primary" :disabled="totalQuestions === 0" @click="$emit('start')">开始模拟考试</button>
           <button v-if="subject.allowPractice" class="button secondary" @click="$emit('practice')">自由练习</button>
           <button v-if="activeExam" class="button secondary" @click="$emit('resume')">继续未完成考试</button>
         </div>
@@ -67,9 +67,14 @@ function dateTime(value: string): string {
         v-if="subject.allowPractice"
         label="待掌握错题"
         :value="wrongCount"
-        detail="可进入错题重练"
+        :detail="totalQuestions ? '可进入错题重练' : '试题收集中，敬请期待'"
       />
-      <StatCard v-else label="考试题型" value="10 + 10" detail="选择题 + 填空题" />
+      <StatCard
+        v-else
+        label="考试题型"
+        :value="totalQuestions ? '10 + 10' : '待更新'"
+        :detail="totalQuestions ? '选择题 + 填空题' : '试题收集中，敬请期待'"
+      />
     </section>
 
     <section class="dashboard-columns">
@@ -88,9 +93,9 @@ function dateTime(value: string): string {
           <span>练习模式</span>
           <small>按 60 题分组或自由挑题</small>
         </button>
-        <button v-else class="shortcut wide" @click="$emit('start')">
-          <span>数据结构模拟考试</span>
-          <small>10 道选择 + 10 道填空，含代码书写区</small>
+        <button v-else class="shortcut wide" :disabled="totalQuestions === 0" @click="$emit('start')">
+          <span>{{ subject.name }}模拟考试</span>
+          <small>{{ totalQuestions ? '10 道选择 + 10 道填空，含代码书写区' : '试题收集中，敬请期待' }}</small>
         </button>
         <button class="shortcut" @click="$emit('history')">
           <span>考试经历</span>

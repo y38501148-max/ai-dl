@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { useExamStore } from './composables/useExamStore'
-import { DEFAULT_SUBJECT_ID, SUBJECTS, subjectOf } from './services/subjects'
+import { DEFAULT_SUBJECT_ID, subjectOf } from './services/subjects'
 import { openExternalLink } from './services/externalLink'
 import {
   checkForQuestionBankUpdate,
@@ -55,7 +55,7 @@ onMounted(async () => {
 async function changeSubject(subjectId: SubjectId) {
   if (store.activeExam.value) return
   await store.setActiveSubject(subjectId)
-  const subject = SUBJECTS.find((item) => item.id === subjectId)
+  const subject = store.subjects.value.find((item) => item.id === subjectId)
   subjectNotice.value = subject?.notice ?? ''
   page.value = 'dashboard'
   result.value = null
@@ -65,6 +65,11 @@ async function startOfficial() {
   try {
     actionError.value = ''
     await store.startOfficialExam()
+    if (!store.activeExam.value) {
+      confirmingStart.value = false
+      actionError.value = '当前科目暂无试题。'
+      return
+    }
     confirmingStart.value = false
     page.value = 'exam'
   } catch {
@@ -180,7 +185,7 @@ async function installQuestionBankUpdate() {
         :disabled="Boolean(store.activeExam.value)"
         @change="changeSubject(($event.target as HTMLSelectElement).value as SubjectId)"
       >
-        <option v-for="subject in SUBJECTS" :key="subject.id" :value="subject.id">{{ subject.name }}</option>
+        <option v-for="subject in store.subjects.value" :key="subject.id" :value="subject.id">{{ subject.name }}</option>
       </select>
     </div>
 
@@ -214,7 +219,7 @@ async function installQuestionBankUpdate() {
       v-else-if="page === 'exam' && store.activeExam.value"
       :session="store.activeExam.value"
       :question-map="store.questionMap.value"
-      :subject="SUBJECTS.find((subject) => subject.id === activeExamSubjectId) ?? SUBJECTS[0]"
+      :subject="store.subjects.value.find((subject) => subject.id === activeExamSubjectId) ?? store.activeSubject.value"
       @answer="answer"
       @navigate="navigate"
       @submit="submit"
@@ -223,7 +228,7 @@ async function installQuestionBankUpdate() {
       v-else-if="page === 'result' && result"
       :record="result"
       :question-map="store.questionMap.value"
-      :subject="SUBJECTS.find((subject) => subject.id === resultSubjectId) ?? SUBJECTS[0]"
+      :subject="store.subjects.value.find((subject) => subject.id === resultSubjectId) ?? store.activeSubject.value"
       @home="home"
     />
     <WrongBookView
@@ -246,10 +251,7 @@ async function installQuestionBankUpdate() {
       <p class="eyebrow">开始考试</p>
       <h2>{{ store.activeSubject.value.examDescription }}</h2>
       <ul class="rules">
-        <li>考试时长 60 分钟，超时自动交卷。</li>
-        <li>每题 {{ store.activeSubject.value.scorePerQuestion }} 分，自动保存考试记录。</li>
-        <li>填空题以精确计算和模拟结果为主，选择题均为单选。</li>
-        <li>考试界面仅显示本场题号，不显示题库原编号。</li>
+        <li v-for="rule in store.activeSubject.value.examRules" :key="rule">{{ rule }}</li>
       </ul>
       <div class="modal-actions">
         <button class="button secondary" @click="confirmingStart = false">取消</button>

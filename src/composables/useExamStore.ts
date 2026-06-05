@@ -1,7 +1,7 @@
 import { computed, ref } from 'vue'
 import { createExam, gradeExam, selectOfficialQuestions, updateProgress, updateWrongBook } from '../services/exam'
 import { loadApplicationData, resolveDataDirectory, saveApplicationData } from '../services/storage'
-import { DEFAULT_SUBJECT_ID, getSubjectConfig, isSubjectId, subjectOf } from '../services/subjects'
+import { DEFAULT_SUBJECT_ID, getSubjectConfigs, isSubjectId, subjectOf } from '../services/subjects'
 import type {
   ActiveExam,
   ExamRecord,
@@ -13,7 +13,7 @@ import type {
   WrongBookEntry,
 } from '../types'
 
-const CURRENT_QUESTION_BANK_TAG = 'multi-0.1.5.4-fix1-20260604'
+const CURRENT_QUESTION_BANK_TAG = 'multi-0.1.6-20260605'
 const CURRENT_QUESTION_BANK_VERSION = 5
 
 export function useExamStore() {
@@ -29,7 +29,10 @@ export function useExamStore() {
   const questionBankManifest = ref<QuestionBankManifest | undefined>()
 
   const questionMap = computed(() => new Map(questions.value.map((question) => [question.id, question])))
-  const activeSubject = computed(() => getSubjectConfig(activeSubjectId.value))
+  const subjects = computed(() => getSubjectConfigs(questionBankManifest.value, questions.value))
+  const activeSubject = computed(
+    () => subjects.value.find((subject) => subject.id === activeSubjectId.value) ?? subjects.value[0] ?? getSubjectConfigs(undefined, [])[0],
+  )
   const subjectQuestions = computed(() => questions.value.filter((question) => subjectOf(question) === activeSubjectId.value))
   const subjectRecords = computed(() =>
     records.value.filter((record) => (record.subjectId ?? DEFAULT_SUBJECT_ID) === activeSubjectId.value),
@@ -93,11 +96,12 @@ export function useExamStore() {
       wrongBook.value = sanitizedWrongBook
       progress.value = sanitizedProgress
       activeExam.value = sanitizedActiveExam
-      activeSubjectId.value = isSubjectId(sanitizedActiveExam?.subjectId)
+      const initialSubjects = getSubjectConfigs(initial.questionBankManifest, initial.questions)
+      activeSubjectId.value = isSubjectId(sanitizedActiveExam?.subjectId, initialSubjects)
         ? sanitizedActiveExam.subjectId
-        : isSubjectId(initial.settings.activeSubjectId)
+        : isSubjectId(initial.settings.activeSubjectId, initialSubjects)
           ? initial.settings.activeSubjectId
-          : DEFAULT_SUBJECT_ID
+          : (initialSubjects[0]?.id ?? DEFAULT_SUBJECT_ID)
       if (cleanupTasks.length) await Promise.all(cleanupTasks)
       dataDirectory.value = await resolveDataDirectory()
     } catch (reason) {
@@ -118,6 +122,10 @@ export function useExamStore() {
 
   async function replaceQuestionBank(nextQuestions: Question[], manifest: QuestionBankManifest) {
     const validQuestionIds = new Set(nextQuestions.map((question) => question.id))
+    const nextSubjects = getSubjectConfigs(manifest, nextQuestions)
+    const nextActiveSubjectId = isSubjectId(activeSubjectId.value, nextSubjects)
+      ? activeSubjectId.value
+      : (nextSubjects[0]?.id ?? DEFAULT_SUBJECT_ID)
     const nextProgress = {
       attemptedQuestionIds: progress.value.attemptedQuestionIds.filter((id) => validQuestionIds.has(id)),
     }
@@ -129,18 +137,26 @@ export function useExamStore() {
       saveApplicationData('settings', {
         questionBankVersion: CURRENT_QUESTION_BANK_VERSION,
         questionBankTag: manifest.bankTag,
-        activeSubjectId: activeSubjectId.value,
+        activeSubjectId: nextActiveSubjectId,
       }),
     ])
     questions.value = nextQuestions
     questionBankManifest.value = manifest
+    activeSubjectId.value = nextActiveSubjectId
     progress.value = nextProgress
     wrongBook.value = nextWrongBook
     activeExam.value = null
   }
 
   async function startOfficialExam() {
-    const session = createExam(selectOfficialQuestions(subjectQuestions.value, activeSubjectId.value), 'exam', activeSubjectId.value)
+    const ids = selectOfficialQuestions(subjectQuestions.value, activeSubjectId.value, activeSubject.value)
+    if (!ids.length) return
+    const session = createExam(
+      ids,
+      'exam',
+      activeSubjectId.value,
+      activeSubject.value,
+    )
     await saveApplicationData('activeExam', session)
     activeExam.value = session
   }
@@ -151,14 +167,14 @@ export function useExamStore() {
       .map((entry) => entry.questionId)
       .slice(0, 50)
     if (!ids.length) return
-    const session = createExam(ids, 'wrong-practice', activeSubjectId.value)
+    const session = createExam(ids, 'wrong-practice', activeSubjectId.value, activeSubject.value)
     await saveApplicationData('activeExam', session)
     activeExam.value = session
   }
 
   async function startPractice(questionIds: string[]) {
     if (!questionIds.length) return
-    const session = createExam(questionIds, 'practice', activeSubjectId.value)
+    const session = createExam(questionIds, 'practice', activeSubjectId.value, activeSubject.value)
     await saveApplicationData('activeExam', session)
     activeExam.value = session
   }
@@ -186,7 +202,7 @@ export function useExamStore() {
   async function submitActiveExam(method: SubmitMethod): Promise<ExamRecord | null> {
     if (!activeExam.value) return null
     const attempted = new Set(progress.value.attemptedQuestionIds)
-    const record = gradeExam(activeExam.value, questionMap.value, method, attempted)
+    const record = gradeExam(activeExam.value, questionMap.value, method, attempted, activeSubject.value)
     const nextProgress = updateProgress(progress.value, record)
     const nextWrongBook = updateWrongBook(wrongBook.value, record)
     const nextRecords = [record, ...records.value]
@@ -212,6 +228,7 @@ export function useExamStore() {
     progress,
     activeExam,
     activeSubjectId,
+    subjects,
     questionBankManifest,
     activeSubject,
     subjectQuestions,
