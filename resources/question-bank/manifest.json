@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "bankTag": "multi-0.2.3.1-ai100-20260605",
-  "appVersion": "0.2.3",
+  "appVersion": "0.2.4",
   "questionCount": 818,
   "subjects": [
     {
@@ -105,7 +105,7 @@
   "releaseNotes": [
     "人工智能导论模拟考试调整为 100 道题，每题 1 分。",
     "人工智能导论第 361-440 题完成题干与解析翻新。",
-    "应用版本更新至 0.2.3，题库热更新支持按远端清单新增科目。",
+    "应用版本更新至 0.2.4，训练及考试结束页新增左上角便携返回首页按钮。",
     "题库总量保持 818 道（人工智能导论 440 + 数据结构 378 + 智能感知与控制 0）。"
   ],
   "manifestUrl": "https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/manifest.json"

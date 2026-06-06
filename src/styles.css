@@ -765,6 +765,32 @@ p {
   padding: 36px 44px;
 }
 
+.result-exit-button {
+  position: fixed;
+  z-index: 22;
+  top: 16px;
+  left: 18px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 16px;
+  color: #334158;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+  transition: 0.16s ease;
+}
+
+.result-exit-button:hover {
+  color: var(--primary);
+  border-color: #cfdcff;
+  background: white;
+}
+
 .result-summary h1 {
   color: var(--primary);
   font-size: 50px;
@@ -1360,6 +1386,13 @@ p {
     grid-template-columns: 1fr;
     gap: 22px;
     padding: 24px 20px;
+  }
+
+  .result-exit-button {
+    top: 12px;
+    left: 16px;
+    min-height: 38px;
+    padding: 0 14px;
   }
 
   .result-summary h1 {

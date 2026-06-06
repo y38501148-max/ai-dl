@@ -39,6 +39,10 @@ function modeText(mode: ExamRecord['mode']): string {
 
 <template>
   <main class="result-page">
+    <button class="result-exit-button" type="button" @click="$emit('home')" aria-label="返回首页">
+      返回首页
+    </button>
+
     <header class="result-summary panel">
       <div>
         <p class="eyebrow">{{ modeText(record.mode) }}</p>

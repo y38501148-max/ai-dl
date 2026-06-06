@@ -177,7 +177,7 @@ async function installQuestionBankUpdate() {
     <p>{{ store.error.value }}</p>
   </div>
   <template v-else>
-    <div class="subject-switcher panel">
+    <div v-if="page !== 'result'" class="subject-switcher panel">
       <label for="subject-select">科目选择</label>
       <select
         id="subject-select"

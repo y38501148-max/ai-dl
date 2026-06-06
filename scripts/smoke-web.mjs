@@ -40,7 +40,7 @@ const extraFoundationQuestions = dsQuestions.filter((question) => question.tags?
 const invalidIds = dsQuestions.filter((question, index) => question.id !== `ds1-${String(index + 1).padStart(3, '0')}`)
 
 if (manifest.bankTag !== 'multi-0.2.3.1-ai100-20260605') throw new Error(`题库标记异常：${manifest.bankTag}`)
-if (manifest.appVersion !== '0.2.3') throw new Error(`应用版本异常：${manifest.appVersion}`)
+if (manifest.appVersion !== '0.2.4') throw new Error(`应用版本异常：${manifest.appVersion}`)
 if (!Array.isArray(manifest.releaseNotes) || manifest.releaseNotes.length < 3) {
   throw new Error('题库更新说明缺失')
 }
