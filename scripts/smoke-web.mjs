@@ -32,6 +32,10 @@ const missingDsExplanations = dsQuestions.filter((question) => !question.explana
 const aiExplanations = aiQuestions.filter((question) => question.explanation)
 const aiManifest = manifest.subjects.find((subject) => subject.id === 'ai')
 const iscQuestions = subjectQuestionMap.get('intelligent-sensing-control') ?? []
+const iscSingles = iscQuestions.filter((question) => question.type === 'single')
+const iscMultiples = iscQuestions.filter((question) => question.type === 'multiple')
+const iscBlanks = iscQuestions.filter((question) => question.type === 'blank')
+const missingIscExplanations = iscQuestions.filter((question) => !question.explanation)
 const imageExamples = dsQuestions.filter((question) => question.tags?.includes('图片例题'))
 const homework7Questions = dsQuestions.filter((question) => question.tags?.includes('第七套作业'))
 const generatedExamples = dsQuestions.filter((question) => question.tags?.includes('自主命题'))
@@ -39,12 +43,12 @@ const mdExamQuestions = dsQuestions.filter((question) => question.tags?.includes
 const extraFoundationQuestions = dsQuestions.filter((question) => question.tags?.includes('专题补充'))
 const invalidIds = dsQuestions.filter((question, index) => question.id !== `ds1-${String(index + 1).padStart(3, '0')}`)
 
-if (manifest.bankTag !== 'multi-0.2.3.1-ai100-20260605') throw new Error(`题库标记异常：${manifest.bankTag}`)
+if (manifest.bankTag !== 'multi-0.2.3.2-isc120-20260607') throw new Error(`题库标记异常：${manifest.bankTag}`)
 if (manifest.appVersion !== '0.2.4') throw new Error(`应用版本异常：${manifest.appVersion}`)
 if (!Array.isArray(manifest.releaseNotes) || manifest.releaseNotes.length < 3) {
   throw new Error('题库更新说明缺失')
 }
-if (questions.length !== 818) throw new Error(`题库总数异常：${questions.length}`)
+if (questions.length !== 938) throw new Error(`题库总数异常：${questions.length}`)
 if (manifest.questionCount !== questions.length) {
   throw new Error(`题库清单数量异常：${manifest.questionCount} != ${questions.length}`)
 }
@@ -62,11 +66,19 @@ if (
   throw new Error('人工智能导论模拟考试题型范围异常')
 }
 if (!aiManifest?.examRules?.some((rule) => rule.includes('100 道题'))) throw new Error('人工智能导论考试规则未热更新为 100 道题')
-if (iscQuestions.length !== 0) throw new Error(`智能感知与控制题库数量异常：${iscQuestions.length}`)
+if (iscQuestions.length !== 120) throw new Error(`智能感知与控制题库数量异常：${iscQuestions.length}`)
 const iscManifest = manifest.subjects.find((subject) => subject.id === 'intelligent-sensing-control')
 if (!iscManifest) throw new Error('智能感知与控制科目清单缺失')
-if (iscManifest.bankTag !== 'isc-0.1.6-20260605') throw new Error(`智能感知与控制题库标记异常：${iscManifest.bankTag}`)
-if (!iscManifest.releaseNotes?.includes('试题收集中，敬请期待')) throw new Error('智能感知与控制更新说明缺失')
+if (iscManifest.bankTag !== 'isc-0.1.7-zg120-20260607') throw new Error(`智能感知与控制题库标记异常：${iscManifest.bankTag}`)
+if (!iscManifest.releaseNotes?.some((note) => note.includes('新增 120 道'))) throw new Error('智能感知与控制更新说明缺失')
+if (iscManifest.allowPractice !== true) throw new Error('智能感知与控制应已开放自由练习')
+if (iscManifest.officialQuestionCount !== 50) throw new Error(`智能感知与控制模拟考试数量异常：${iscManifest.officialQuestionCount}`)
+if (iscManifest.scorePerQuestion !== 2) throw new Error(`智能感知与控制每题分值异常：${iscManifest.scorePerQuestion}`)
+if (iscSingles.length !== 72 || iscMultiples.length !== 8 || iscBlanks.length !== 40) {
+  throw new Error(`智能感知与控制题型分布异常：单选 ${iscSingles.length}，多选 ${iscMultiples.length}，填空 ${iscBlanks.length}`)
+}
+if (iscMultiples.length > 10) throw new Error(`智能感知与控制多选题超限：${iscMultiples.length}`)
+if (missingIscExplanations.length) throw new Error(`智能感知与控制存在缺少题解的题目：${missingIscExplanations.length}`)
 if (dsQuestions.length !== 378) throw new Error(`数据结构题库数量异常：${dsQuestions.length}`)
 if (dsQuestions.some((question) => question.subjectId !== 'data-structure')) throw new Error('数据结构题库存在错误科目标识')
 if (dsSingles.length < 200 || dsMultiples.length < 1 || dsBlanks.length < 170) {

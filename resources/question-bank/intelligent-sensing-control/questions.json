@@ -1,1 +1,3408 @@
-[]
+[
+  {
+    "id": "isc-001",
+    "sourceNumber": 1,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "智能系统的首要环节是哪一项？",
+    "options": [
+      {
+        "key": "A",
+        "text": "环境感知"
+      },
+      {
+        "key": "B",
+        "text": "执行机构"
+      },
+      {
+        "key": "C",
+        "text": "发布报告"
+      },
+      {
+        "key": "D",
+        "text": "人工维护"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第1章",
+      "智能系统组成"
+    ],
+    "explanation": "环境感知用于采集外部环境信息，并在自测题中确认信息获取是智能系统的首要环节。执行、处理和决策都建立在感知结果之上。"
+  },
+  {
+    "id": "isc-002",
+    "sourceNumber": 2,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "在智能系统四个基本组成中，负责分析挖掘采集信息的是哪一环节？",
+    "options": [
+      {
+        "key": "A",
+        "text": "环境感知"
+      },
+      {
+        "key": "B",
+        "text": "信息处理"
+      },
+      {
+        "key": "C",
+        "text": "控制与决策"
+      },
+      {
+        "key": "D",
+        "text": "执行"
+      }
+    ],
+    "correctAnswers": [
+      "B"
+    ],
+    "tags": [
+      "第1章",
+      "智能系统组成"
+    ],
+    "explanation": "信息处理负责分析和挖掘采集到的信息，通常依托智能硬件和智能算法完成。"
+  },
+  {
+    "id": "isc-003",
+    "sourceNumber": 3,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "智能系统的闭环顺序是哪个？",
+    "options": [
+      {
+        "key": "A",
+        "text": "感知 → 处理 → 决策 → 执行 → 再感知"
+      },
+      {
+        "key": "B",
+        "text": "执行 → 决策 → 感知 → 处理 → 再执行"
+      },
+      {
+        "key": "C",
+        "text": "处理 → 执行 → 感知 → 决策 → 再处理"
+      },
+      {
+        "key": "D",
+        "text": "决策 → 感知 → 执行 → 处理 → 再决策"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第1章",
+      "智能系统闭环"
+    ],
+    "explanation": "四个环节构成闭环：感知、处理、决策、执行，再回到感知。缺少反馈控制就不是完整闭环。"
+  },
+  {
+    "id": "isc-004",
+    "sourceNumber": 4,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "工业 4.0 对应的核心技术是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "蒸汽机"
+      },
+      {
+        "key": "B",
+        "text": "电力广泛应用"
+      },
+      {
+        "key": "C",
+        "text": "自动化、信息化"
+      },
+      {
+        "key": "D",
+        "text": "智能化、CPS"
+      }
+    ],
+    "correctAnswers": [
+      "D"
+    ],
+    "tags": [
+      "第1章",
+      "工业革命"
+    ],
+    "explanation": "工业 4.0 是今天的阶段，核心技术为智能化和 CPS（信息物理融合系统）。"
+  },
+  {
+    "id": "isc-005",
+    "sourceNumber": 5,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "北京 5 号在北航无人机谱系中的地位是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "中国第一架无人机"
+      },
+      {
+        "key": "B",
+        "text": "中高空长航时无人机"
+      },
+      {
+        "key": "C",
+        "text": "高空高速无人侦察机"
+      },
+      {
+        "key": "D",
+        "text": "微小型蜂群无人机"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第1章",
+      "北航无人机谱系"
+    ],
+    "explanation": "北京 5 号（1958）是中国第一架无人机，关联人物为文传源教授。"
+  },
+  {
+    "id": "isc-006",
+    "sourceNumber": 6,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "蜂群区别于单机的关键特点是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "组网通信"
+      },
+      {
+        "key": "B",
+        "text": "机翼面积更大"
+      },
+      {
+        "key": "C",
+        "text": "只能人工遥控"
+      },
+      {
+        "key": "D",
+        "text": "不需要传感器"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第1章",
+      "无人机蜂群"
+    ],
+    "explanation": "组网通信是蜂群区别于单机的关键特点，因为信息共享是协同的基础。"
+  },
+  {
+    "id": "isc-007",
+    "sourceNumber": 7,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "余度设计的主要目的是什么？",
+    "options": [
+      {
+        "key": "A",
+        "text": "提高系统可靠性"
+      },
+      {
+        "key": "B",
+        "text": "减少所有传感器数量"
+      },
+      {
+        "key": "C",
+        "text": "取消反馈控制"
+      },
+      {
+        "key": "D",
+        "text": "降低数据采样频率"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第1章",
+      "余度设计"
+    ],
+    "explanation": "余度设计是在关键系统中采用双套或多套同功能设备，用硬件冗余换取更高可靠性。"
+  },
+  {
+    "id": "isc-008",
+    "sourceNumber": 8,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "无侦 5 被描述为哪类无人机？",
+    "options": [
+      {
+        "key": "A",
+        "text": "高空高速无人侦察机"
+      },
+      {
+        "key": "B",
+        "text": "微小型多旋翼无人机"
+      },
+      {
+        "key": "C",
+        "text": "长航时固定翼民用机"
+      },
+      {
+        "key": "D",
+        "text": "光谱测量卫星"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第1章",
+      "北航无人机谱系"
+    ],
+    "explanation": "无侦 5（1969）为高空高速无人侦察机，关联杨为民教授。"
+  },
+  {
+    "id": "isc-009",
+    "sourceNumber": 9,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "大气对航空器的作用中，机翼与空气相对运动产生的是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "升力"
+      },
+      {
+        "key": "B",
+        "text": "数字量"
+      },
+      {
+        "key": "C",
+        "text": "回环检测"
+      },
+      {
+        "key": "D",
+        "text": "短报文通信"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第2章",
+      "大气作用"
+    ],
+    "explanation": "升力的来源是大气对航空器的第一项作用，来自机翼与空气的相对运动。"
+  },
+  {
+    "id": "isc-010",
+    "sourceNumber": 10,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "标准气压高度 QNE 的基准面是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "标准大气压 1013.25hPa"
+      },
+      {
+        "key": "B",
+        "text": "机场场面气压"
+      },
+      {
+        "key": "C",
+        "text": "平均海平面"
+      },
+      {
+        "key": "D",
+        "text": "任意地形表面"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第2章",
+      "高度定义"
+    ],
+    "explanation": "QNE 以标准大气压 1013.25hPa 为基准面，主要用于航线飞行和高度层配备。"
+  },
+  {
+    "id": "isc-011",
+    "sourceNumber": 11,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "修正海压高度 QNH 主要用于哪个阶段？",
+    "options": [
+      {
+        "key": "A",
+        "text": "起飞、降落、进近"
+      },
+      {
+        "key": "B",
+        "text": "黑洞成像"
+      },
+      {
+        "key": "C",
+        "text": "图像语义分割"
+      },
+      {
+        "key": "D",
+        "text": "反潜磁异常探测"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第2章",
+      "高度定义"
+    ],
+    "explanation": "QNH 以机场场面气压为基准面，应用在起飞、降落和进近阶段。"
+  },
+  {
+    "id": "isc-012",
+    "sourceNumber": 12,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "无线电高度表的主要测量原理是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "调频连续波反射"
+      },
+      {
+        "key": "B",
+        "text": "大气压随高度递减"
+      },
+      {
+        "key": "C",
+        "text": "卫星三维定位"
+      },
+      {
+        "key": "D",
+        "text": "加速度积分"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第2章",
+      "高度测量设备"
+    ],
+    "explanation": "无线电高度表利用调频连续波反射，精度约 0.5m，适合进近/着陆。"
+  },
+  {
+    "id": "isc-013",
+    "sourceNumber": 13,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "大气静力方程 dp = -ρg dz 表示的核心关系是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "气压随高度增加而减小"
+      },
+      {
+        "key": "B",
+        "text": "气压随高度增加而增大"
+      },
+      {
+        "key": "C",
+        "text": "速度由角速度积分得到"
+      },
+      {
+        "key": "D",
+        "text": "视差越大物体越远"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第2章",
+      "大气静力方程"
+    ],
+    "explanation": "dp = -ρg dz，负号表示高度 dz 增加时气压 dp 减小。"
+  },
+  {
+    "id": "isc-014",
+    "sourceNumber": 14,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "ADS 中用于测总压的传感器是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "空速管"
+      },
+      {
+        "key": "B",
+        "text": "静压孔"
+      },
+      {
+        "key": "C",
+        "text": "总温传感器"
+      },
+      {
+        "key": "D",
+        "text": "攻角传感器"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第2章",
+      "ADS"
+    ],
+    "explanation": "ADS 传感器组成，其中空速管测总压，静压孔测静压。"
+  },
+  {
+    "id": "isc-015",
+    "sourceNumber": 15,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "四类压力传感器中精度最高的是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "硅谐振式"
+      },
+      {
+        "key": "B",
+        "text": "电位器式"
+      },
+      {
+        "key": "C",
+        "text": "硅压阻式"
+      },
+      {
+        "key": "D",
+        "text": "谐振筒式"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第2章",
+      "压力传感器"
+    ],
+    "explanation": "硅谐振式压力传感器精度最高，约 0.01%。"
+  },
+  {
+    "id": "isc-016",
+    "sourceNumber": 16,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "SADS 指的是哪一种系统？",
+    "options": [
+      {
+        "key": "A",
+        "text": "合成大气数据系统"
+      },
+      {
+        "key": "B",
+        "text": "同步定位与建图"
+      },
+      {
+        "key": "C",
+        "text": "合成孔径雷达"
+      },
+      {
+        "key": "D",
+        "text": "采样保持电路"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第2章",
+      "大气数据趋势"
+    ],
+    "explanation": "SADS 是合成大气数据系统，它通过融合 GPS、INS 和动力学模型来获得大气数据。"
+  },
+  {
+    "id": "isc-017",
+    "sourceNumber": 17,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "INS 中测量角速度并积分得到姿态的部件是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "陀螺仪"
+      },
+      {
+        "key": "B",
+        "text": "加速度计"
+      },
+      {
+        "key": "C",
+        "text": "静压孔"
+      },
+      {
+        "key": "D",
+        "text": "微透镜"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第3章",
+      "INS组成"
+    ],
+    "explanation": "陀螺仪测量角速度，积分后得到俯仰、偏航、滚转等姿态。"
+  },
+  {
+    "id": "isc-018",
+    "sourceNumber": 18,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "INS 中线加速度经过一次积分得到什么？",
+    "options": [
+      {
+        "key": "A",
+        "text": "速度"
+      },
+      {
+        "key": "B",
+        "text": "位置"
+      },
+      {
+        "key": "C",
+        "text": "马赫数"
+      },
+      {
+        "key": "D",
+        "text": "视差"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第3章",
+      "INS组成"
+    ],
+    "explanation": "加速度一次积分得到速度，二次积分得到位置。"
+  },
+  {
+    "id": "isc-019",
+    "sourceNumber": 19,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "INS 的核心优势可以概括为？",
+    "options": [
+      {
+        "key": "A",
+        "text": "全自主，不依赖外部信号"
+      },
+      {
+        "key": "B",
+        "text": "必须依赖卫星信号"
+      },
+      {
+        "key": "C",
+        "text": "长期误差不积累"
+      },
+      {
+        "key": "D",
+        "text": "只能输出图像特征"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第3章",
+      "INS特点"
+    ],
+    "explanation": "INS 的核心价值是全自主、不依赖外部信号，适合 GPS 拒止环境等场景。"
+  },
+  {
+    "id": "isc-020",
+    "sourceNumber": 20,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "下列哪项属于 INS 确定性误差？",
+    "options": [
+      {
+        "key": "A",
+        "text": "安装误差"
+      },
+      {
+        "key": "B",
+        "text": "白噪声"
+      },
+      {
+        "key": "C",
+        "text": "随机游走"
+      },
+      {
+        "key": "D",
+        "text": "随机常值"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第3章",
+      "INS误差"
+    ],
+    "explanation": "常值误差、安装误差、标度因数误差是确定性误差；其他三项属于随机性误差。"
+  },
+  {
+    "id": "isc-021",
+    "sourceNumber": 21,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "北斗 BDS 的独有特点是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "短报文通信"
+      },
+      {
+        "key": "B",
+        "text": "高纬度性能好"
+      },
+      {
+        "key": "C",
+        "text": "民用为主"
+      },
+      {
+        "key": "D",
+        "text": "应用最广"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第3章",
+      "GNSS"
+    ],
+    "explanation": "北斗的关键特点是短报文通信独有，并采用三轨道混合。"
+  },
+  {
+    "id": "isc-022",
+    "sourceNumber": 22,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "GNSS 解算三维位置和时间至少需要多少颗卫星？",
+    "options": [
+      {
+        "key": "A",
+        "text": "4 颗"
+      },
+      {
+        "key": "B",
+        "text": "1 颗"
+      },
+      {
+        "key": "C",
+        "text": "2 颗"
+      },
+      {
+        "key": "D",
+        "text": "3 颗"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第3章",
+      "GNSS"
+    ],
+    "explanation": "GNSS 解算三维位置时还需要同时解算时间偏差，因此至少需要 4 颗卫星。"
+  },
+  {
+    "id": "isc-023",
+    "sourceNumber": 23,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "INS 与 GNSS 组合导航中，GNSS 的主要短板是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "易受干扰"
+      },
+      {
+        "key": "B",
+        "text": "不能提供绝对定位"
+      },
+      {
+        "key": "C",
+        "text": "误差一定随时间积分发散"
+      },
+      {
+        "key": "D",
+        "text": "只能测角速度"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第3章",
+      "组合导航"
+    ],
+    "explanation": "GNSS 精准但依赖卫星、抗干扰弱；INS 自主且抗干扰强但会漂移。"
+  },
+  {
+    "id": "isc-024",
+    "sourceNumber": 24,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "光学陀螺的测量原理是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "Sagnac 效应"
+      },
+      {
+        "key": "B",
+        "text": "塞贝克效应"
+      },
+      {
+        "key": "C",
+        "text": "压电效应"
+      },
+      {
+        "key": "D",
+        "text": "大气静力方程"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第3章",
+      "陀螺仪"
+    ],
+    "explanation": "光学陀螺基于 Sagnac 效应，即利用光程差测角速度。"
+  },
+  {
+    "id": "isc-025",
+    "sourceNumber": 25,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "视觉感知的核心目标称为什么？",
+    "options": [
+      {
+        "key": "A",
+        "text": "空间智能"
+      },
+      {
+        "key": "B",
+        "text": "短报文通信"
+      },
+      {
+        "key": "C",
+        "text": "余度设计"
+      },
+      {
+        "key": "D",
+        "text": "通信协议"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第4章",
+      "视觉感知"
+    ],
+    "explanation": "视觉感知的核心目标是空间智能，包括物体视觉识别和空间视觉重建。"
+  },
+  {
+    "id": "isc-026",
+    "sourceNumber": 26,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "脉冲激光测距中，t 表示什么时间？",
+    "options": [
+      {
+        "key": "A",
+        "text": "光脉冲往返时间"
+      },
+      {
+        "key": "B",
+        "text": "单程飞行时间的一半"
+      },
+      {
+        "key": "C",
+        "text": "相机曝光时间"
+      },
+      {
+        "key": "D",
+        "text": "滤波采样周期"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第4章",
+      "激光测距"
+    ],
+    "explanation": "给出 d = ct/2，并注明 t 是光脉冲往返时间，所以距离要除以 2。"
+  },
+  {
+    "id": "isc-027",
+    "sourceNumber": 27,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "小孔成像中孔径过小时会造成什么问题？",
+    "options": [
+      {
+        "key": "A",
+        "text": "衍射模糊"
+      },
+      {
+        "key": "B",
+        "text": "短报文丢失"
+      },
+      {
+        "key": "C",
+        "text": "温度漂移消失"
+      },
+      {
+        "key": "D",
+        "text": "总线变为全双工"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第4章",
+      "光学成像"
+    ],
+    "explanation": "孔过小会导致衍射模糊，孔过大则图像不清晰。"
+  },
+  {
+    "id": "isc-028",
+    "sourceNumber": 28,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "成像探测器结构中负责分色的是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "滤色片"
+      },
+      {
+        "key": "B",
+        "text": "微透镜"
+      },
+      {
+        "key": "C",
+        "text": "感光层"
+      },
+      {
+        "key": "D",
+        "text": "静压孔"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第4章",
+      "光学成像"
+    ],
+    "explanation": "成像探测器结构为微透镜聚光、滤色片分色、感光层光电转换。"
+  },
+  {
+    "id": "isc-029",
+    "sourceNumber": 29,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "目标检测在二维视觉任务中的含义是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "识别 + 定位"
+      },
+      {
+        "key": "B",
+        "text": "持续定位与追踪"
+      },
+      {
+        "key": "C",
+        "text": "语义/实例/全景分割"
+      },
+      {
+        "key": "D",
+        "text": "三维点云建图"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第4章",
+      "二维视觉任务"
+    ],
+    "explanation": "目标检测是识别加定位，目标跟踪才是持续定位与追踪。"
+  },
+  {
+    "id": "isc-030",
+    "sourceNumber": 30,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "在可见光与热红外相机对比中，热红外的优势是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "可全黑工作"
+      },
+      {
+        "key": "B",
+        "text": "分辨率更高"
+      },
+      {
+        "key": "C",
+        "text": "成本更低"
+      },
+      {
+        "key": "D",
+        "text": "只能白天工作"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第4章",
+      "可见光与热红外"
+    ],
+    "explanation": "热红外受光照限制小，可全黑工作，但分辨率低、成本高。"
+  },
+  {
+    "id": "isc-031",
+    "sourceNumber": 31,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "光谱成像的最大优势是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "获得光谱特征以区分物质差异"
+      },
+      {
+        "key": "B",
+        "text": "直接获得 OODA 循环"
+      },
+      {
+        "key": "C",
+        "text": "消除所有 INS 误差"
+      },
+      {
+        "key": "D",
+        "text": "替代所有通信协议"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第4章",
+      "光谱测量"
+    ],
+    "explanation": "光谱成像最大优势是获得光谱特征，区分人眼看不见的物质差异。"
+  },
+  {
+    "id": "isc-032",
+    "sourceNumber": 32,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "双目立体视觉中，视差 dx 增大通常说明物体怎样？",
+    "options": [
+      {
+        "key": "A",
+        "text": "更近"
+      },
+      {
+        "key": "B",
+        "text": "更远"
+      },
+      {
+        "key": "C",
+        "text": "温度更高"
+      },
+      {
+        "key": "D",
+        "text": "通信更快"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第4章",
+      "双目视觉"
+    ],
+    "explanation": "给出 Z = fB/dx，f 和 B 不变时 dx 越大，深度 Z 越小，物体越近。"
+  },
+  {
+    "id": "isc-033",
+    "sourceNumber": 33,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "传感器技术三代演进的正确顺序是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "机电式 → 光学式 → 量子式"
+      },
+      {
+        "key": "B",
+        "text": "量子式 → 光学式 → 机电式"
+      },
+      {
+        "key": "C",
+        "text": "机电式 → 量子式 → 光学式"
+      },
+      {
+        "key": "D",
+        "text": "光学式 → 机电式 → 量子式"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第5章",
+      "传感器演进"
+    ],
+    "explanation": "三代演进为机电式、光学式、量子式。"
+  },
+  {
+    "id": "isc-034",
+    "sourceNumber": 34,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "压阻式柔性压力测量的公式为？",
+    "options": [
+      {
+        "key": "A",
+        "text": "R = ρL/A"
+      },
+      {
+        "key": "B",
+        "text": "C = ε0εrA/d"
+      },
+      {
+        "key": "C",
+        "text": "d = ct/2"
+      },
+      {
+        "key": "D",
+        "text": "Z = fB/dx"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第5章",
+      "柔性压力测量"
+    ],
+    "explanation": "压阻式原理为 R = ρL/A，形变改变电阻。"
+  },
+  {
+    "id": "isc-035",
+    "sourceNumber": 35,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "电容式柔性压力测量的关键特点是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "高灵敏度低功耗"
+      },
+      {
+        "key": "B",
+        "text": "自供能低能耗"
+      },
+      {
+        "key": "C",
+        "text": "结构简单易集成"
+      },
+      {
+        "key": "D",
+        "text": "必须依赖卫星信号"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第5章",
+      "柔性压力测量"
+    ],
+    "explanation": "电容式压力测量原理为 C = ε0εrA/d，特点是高灵敏度低功耗。"
+  },
+  {
+    "id": "isc-036",
+    "sourceNumber": 36,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "柔性温度测量中，热电偶式基于哪一效应？",
+    "options": [
+      {
+        "key": "A",
+        "text": "塞贝克效应"
+      },
+      {
+        "key": "B",
+        "text": "Sagnac 效应"
+      },
+      {
+        "key": "C",
+        "text": "压电效应"
+      },
+      {
+        "key": "D",
+        "text": "光程差效应"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第5章",
+      "柔性温度测量"
+    ],
+    "explanation": "热电偶式利用塞贝克效应，即两种导体温度差产生电压差。"
+  },
+  {
+    "id": "isc-037",
+    "sourceNumber": 37,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "石墨烯被描述为哪种结构？",
+    "options": [
+      {
+        "key": "A",
+        "text": "单层碳原子结构"
+      },
+      {
+        "key": "B",
+        "text": "双层硅梁结构"
+      },
+      {
+        "key": "C",
+        "text": "三维金属网格"
+      },
+      {
+        "key": "D",
+        "text": "核自旋气体结构"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第5章",
+      "石墨烯"
+    ],
+    "explanation": "石墨烯是单层碳原子结构，厚度 0.335nm。"
+  },
+  {
+    "id": "isc-038",
+    "sourceNumber": 38,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "光泵磁强计可用于哪类应用？",
+    "options": [
+      {
+        "key": "A",
+        "text": "反潜探测"
+      },
+      {
+        "key": "B",
+        "text": "小孔成像"
+      },
+      {
+        "key": "C",
+        "text": "总线仲裁"
+      },
+      {
+        "key": "D",
+        "text": "目标分割标注"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第5章",
+      "量子传感"
+    ],
+    "explanation": "光泵磁强计应用于反潜机，可从高空探测潜艇的微弱磁异常。"
+  },
+  {
+    "id": "isc-039",
+    "sourceNumber": 39,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "SERF 陀螺仪测角速度依靠的是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "原子自旋定轴性"
+      },
+      {
+        "key": "B",
+        "text": "机场场面气压"
+      },
+      {
+        "key": "C",
+        "text": "滤色片分色"
+      },
+      {
+        "key": "D",
+        "text": "多路开关选通"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第5章",
+      "原子陀螺仪"
+    ],
+    "explanation": "SERF 陀螺仪为无自旋交换弛豫，利用原子自旋定轴性测角速度。"
+  },
+  {
+    "id": "isc-040",
+    "sourceNumber": 40,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "DARPA C-SCAN 对应的目标之一是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "芯片级 10^-4 °/h，20cm³"
+      },
+      {
+        "key": "B",
+        "text": "18 亿像素广域监视"
+      },
+      {
+        "key": "C",
+        "text": "1013.25hPa 基准面"
+      },
+      {
+        "key": "D",
+        "text": "4D 激光雷达 21600 次/秒"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第5章",
+      "原子陀螺仪"
+    ],
+    "explanation": "DARPA C-SCAN 目标是芯片级 10^-4 °/h、20cm³ 的原子导航相关指标。"
+  },
+  {
+    "id": "isc-041",
+    "sourceNumber": 41,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "ABC-1 大型固定翼长航时无人机的关键传感器配置特点是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "双余度方案"
+      },
+      {
+        "key": "B",
+        "text": "只保留单个气压计"
+      },
+      {
+        "key": "C",
+        "text": "取消卫星导航"
+      },
+      {
+        "key": "D",
+        "text": "只使用热变色材料"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第6章",
+      "ABC-1"
+    ],
+    "explanation": "直接 ABC-1 传感器配置采用双余度方案，大气机、高度表、惯导、卫星导航都为 ×2。"
+  },
+  {
+    "id": "isc-042",
+    "sourceNumber": 42,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "ABC-1 中高度表 ×2 用于获得什么？",
+    "options": [
+      {
+        "key": "A",
+        "text": "相对地面真实高度及变化率"
+      },
+      {
+        "key": "B",
+        "text": "气压高度、空速和总温"
+      },
+      {
+        "key": "C",
+        "text": "光谱 448 通道数据"
+      },
+      {
+        "key": "D",
+        "text": "PWM 控制脉宽"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第6章",
+      "ABC-1"
+    ],
+    "explanation": "高度表 ×2 的输出是相对地面真实高度及变化率。"
+  },
+  {
+    "id": "isc-043",
+    "sourceNumber": 43,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "微小型无人机上的 IMU 通常使用哪类陀螺仪？",
+    "options": [
+      {
+        "key": "A",
+        "text": "MEMS 陀螺仪"
+      },
+      {
+        "key": "B",
+        "text": "机械转子陀螺"
+      },
+      {
+        "key": "C",
+        "text": "静电陀螺仪"
+      },
+      {
+        "key": "D",
+        "text": "NMR 陀螺仪"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第6章",
+      "ABC-2/3"
+    ],
+    "explanation": "微小型无人机上的 IMU 通常使用 MEMS 陀螺仪。"
+  },
+  {
+    "id": "isc-044",
+    "sourceNumber": 44,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "ABC-2/3 微小型无人机的特点不包括哪项？",
+    "options": [
+      {
+        "key": "A",
+        "text": "高成本大型惯导为主"
+      },
+      {
+        "key": "B",
+        "text": "多源融合"
+      },
+      {
+        "key": "C",
+        "text": "轻量化"
+      },
+      {
+        "key": "D",
+        "text": "集成度高"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第6章",
+      "ABC-2/3"
+    ],
+    "explanation": "微小型无人机强调多源融合、轻量化、低成本和高集成度，装配高成本大型惯导为主不符合这类平台的约束。"
+  },
+  {
+    "id": "isc-045",
+    "sourceNumber": 45,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "ABC-1 主被动视觉测量系统中的 SAR 指的是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "合成孔径雷达"
+      },
+      {
+        "key": "B",
+        "text": "合成大气数据系统"
+      },
+      {
+        "key": "C",
+        "text": "采样保持器"
+      },
+      {
+        "key": "D",
+        "text": "单向通信总线"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第6章",
+      "主被动视觉"
+    ],
+    "explanation": "ABC-1 采用光学 + SAR 双装载，并标注 SAR 为合成孔径雷达，可穿透云层。"
+  },
+  {
+    "id": "isc-046",
+    "sourceNumber": 46,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "ABC-2 全国产高光谱相机的波段范围为？",
+    "options": [
+      {
+        "key": "A",
+        "text": "400-1000nm"
+      },
+      {
+        "key": "B",
+        "text": "0.335nm"
+      },
+      {
+        "key": "C",
+        "text": "1013.25hPa"
+      },
+      {
+        "key": "D",
+        "text": "2×10^-7 °/s/Hz1/2"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第6章",
+      "主被动视觉"
+    ],
+    "explanation": "ABC-2 全国产高光谱相机参数为 400-1000nm、1.5nm 分辨率、448 通道。"
+  },
+  {
+    "id": "isc-047",
+    "sourceNumber": 47,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "高光谱激光雷达系统相比普通 LiDAR，额外强调获取什么信息？",
+    "options": [
+      {
+        "key": "A",
+        "text": "光谱信息"
+      },
+      {
+        "key": "B",
+        "text": "机场场面气压"
+      },
+      {
+        "key": "C",
+        "text": "单工通信状态"
+      },
+      {
+        "key": "D",
+        "text": "反向传播梯度"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第6章",
+      "高光谱激光雷达"
+    ],
+    "explanation": "高光谱激光雷达同时获取空间三维信息和光谱信息。"
+  },
+  {
+    "id": "isc-048",
+    "sourceNumber": 48,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "机器狗综合智能感知实验中的 4D 激光雷达采样频率为？",
+    "options": [
+      {
+        "key": "A",
+        "text": "21600 次/秒"
+      },
+      {
+        "key": "B",
+        "text": "15 次/秒"
+      },
+      {
+        "key": "C",
+        "text": "448 通道"
+      },
+      {
+        "key": "D",
+        "text": "900mA"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第6章",
+      "机器狗实验"
+    ],
+    "explanation": "4D 激光雷达提供 3D 位置加灰度，采样为 21600 次/秒。"
+  },
+  {
+    "id": "isc-049",
+    "sourceNumber": 49,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "平均滤波的一个副作用是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "使图像边缘变模糊"
+      },
+      {
+        "key": "B",
+        "text": "专门生成短报文"
+      },
+      {
+        "key": "C",
+        "text": "提高总线线数"
+      },
+      {
+        "key": "D",
+        "text": "让 QNH 变成 QNE"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第7章",
+      "数字滤波"
+    ],
+    "explanation": "平都滤波能抑制噪声，但会使图像边缘变模糊。"
+  },
+  {
+    "id": "isc-050",
+    "sourceNumber": 50,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "中值滤波最适合滤除哪类噪声？",
+    "options": [
+      {
+        "key": "A",
+        "text": "椒盐噪声"
+      },
+      {
+        "key": "B",
+        "text": "GNSS 星历误差"
+      },
+      {
+        "key": "C",
+        "text": "光谱通道误差"
+      },
+      {
+        "key": "D",
+        "text": "PWM 占空比误差"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第7章",
+      "数字滤波"
+    ],
+    "explanation": "中值滤波一般用于滤除椒盐噪声，并能较好保留边缘。"
+  },
+  {
+    "id": "isc-051",
+    "sourceNumber": 51,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "Kalman 滤波的两大步骤是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "时间更新和测量更新"
+      },
+      {
+        "key": "B",
+        "text": "滤色和感光"
+      },
+      {
+        "key": "C",
+        "text": "开关和继电"
+      },
+      {
+        "key": "D",
+        "text": "标定和发布"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第7章",
+      "Kalman滤波"
+    ],
+    "explanation": "Kalman 滤波包含时间更新（预测）和测量更新（修正）。"
+  },
+  {
+    "id": "isc-052",
+    "sourceNumber": 52,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "双目立体视觉数据处理流程中，立体匹配之后的步骤是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "三角计算"
+      },
+      {
+        "key": "B",
+        "text": "离线标定"
+      },
+      {
+        "key": "C",
+        "text": "立体校正"
+      },
+      {
+        "key": "D",
+        "text": "数据采集"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第7章",
+      "立体匹配"
+    ],
+    "explanation": "处理流程：离线标定、立体校正、立体匹配、三角计算、深度图。"
+  },
+  {
+    "id": "isc-053",
+    "sourceNumber": 53,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "三种立体匹配方法中，最慢但不受对比度亮度影响的是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "NCC"
+      },
+      {
+        "key": "B",
+        "text": "ZM"
+      },
+      {
+        "key": "C",
+        "text": "SSD"
+      },
+      {
+        "key": "D",
+        "text": "ICP"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第7章",
+      "立体匹配"
+    ],
+    "explanation": "归一化互相关 NCC 不受对比度亮度影响，但速度最慢。"
+  },
+  {
+    "id": "isc-054",
+    "sourceNumber": 54,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "SLAM 中用于识别“这个地方我来过”并消除累积误差的是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "回环检测"
+      },
+      {
+        "key": "B",
+        "text": "目标分割"
+      },
+      {
+        "key": "C",
+        "text": "采样保持"
+      },
+      {
+        "key": "D",
+        "text": "滤色片分色"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第7章",
+      "SLAM"
+    ],
+    "explanation": "强调回环检测用于识别回环、消除累积误差、得到全局一致轨迹和地图。"
+  },
+  {
+    "id": "isc-055",
+    "sourceNumber": 55,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "CNN 使用卷积的直接动机之一是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "通过局部连接和参数共享大幅降低参数量"
+      },
+      {
+        "key": "B",
+        "text": "让所有像素完全连接以增加参数量"
+      },
+      {
+        "key": "C",
+        "text": "取消损失函数"
+      },
+      {
+        "key": "D",
+        "text": "把模拟量直接输入计算机"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第7章",
+      "CNN"
+    ],
+    "explanation": "用 200×200 图像和 40K 神经元的例子全连接参数过多，卷积靠局部连接和参数共享降低参数量。"
+  },
+  {
+    "id": "isc-056",
+    "sourceNumber": 56,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "CNN 中池化层的作用是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "降采样、特征降维、提高鲁棒性"
+      },
+      {
+        "key": "B",
+        "text": "增加参数数量"
+      },
+      {
+        "key": "C",
+        "text": "测量大气静压"
+      },
+      {
+        "key": "D",
+        "text": "完成卫星短报文通信"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第7章",
+      "CNN"
+    ],
+    "explanation": "池化层用于降采样、特征降维和提高鲁棒性，而不是增加参数数量。"
+  },
+  {
+    "id": "isc-057",
+    "sourceNumber": 57,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "接口的定义是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "不同系统或设备之间的连接边界"
+      },
+      {
+        "key": "B",
+        "text": "大气压随高度变化的方程"
+      },
+      {
+        "key": "C",
+        "text": "双目相机间距"
+      },
+      {
+        "key": "D",
+        "text": "无人机集群的全局行为"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第8章",
+      "接口概念"
+    ],
+    "explanation": "接口是两个不同系统或设备之间的连接边界，实现信号/数据转换和传输。"
+  },
+  {
+    "id": "isc-058",
+    "sourceNumber": 58,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "接口规范三要素中的“数据格式、同步方式、传送速度、纠错方式”属于？",
+    "options": [
+      {
+        "key": "A",
+        "text": "通信协议"
+      },
+      {
+        "key": "B",
+        "text": "物理特性"
+      },
+      {
+        "key": "C",
+        "text": "电气规范"
+      },
+      {
+        "key": "D",
+        "text": "空间视觉"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第8章",
+      "接口规范"
+    ],
+    "explanation": "数据格式、同步方式、传送速度、纠错方式属于通信协议。"
+  },
+  {
+    "id": "isc-059",
+    "sourceNumber": 59,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "开关量信号的典型特征是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "幅值离散、时间连续，只有 ON/OFF"
+      },
+      {
+        "key": "B",
+        "text": "幅值连续、时间连续"
+      },
+      {
+        "key": "C",
+        "text": "幅值离散、时间离散"
+      },
+      {
+        "key": "D",
+        "text": "空间二维加光谱维"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第8章",
+      "信号类型"
+    ],
+    "explanation": "开关量幅值离散、时间连续，只有 ON/OFF，如限位开关和报警器。"
+  },
+  {
+    "id": "isc-060",
+    "sourceNumber": 60,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "物理世界的模拟信号进入计算机前必须经过什么转换？",
+    "options": [
+      {
+        "key": "A",
+        "text": "A/D 转换"
+      },
+      {
+        "key": "B",
+        "text": "D/A 转换"
+      },
+      {
+        "key": "C",
+        "text": "OODA 转换"
+      },
+      {
+        "key": "D",
+        "text": "FADS 转换"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第8章",
+      "模拟量通道"
+    ],
+    "explanation": "模拟量需经过 A/D 模数转换，才能被计算机读取。"
+  },
+  {
+    "id": "isc-061",
+    "sourceNumber": 61,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "模拟量输入通道中，S/H 的含义是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "采样保持"
+      },
+      {
+        "key": "B",
+        "text": "合成孔径"
+      },
+      {
+        "key": "C",
+        "text": "短报文"
+      },
+      {
+        "key": "D",
+        "text": "软件硬件"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第8章",
+      "模拟量通道"
+    ],
+    "explanation": "给出的输入通道包括 S/H，并在流程中位于多路开关与 A/D 转换之间，表示采样保持。"
+  },
+  {
+    "id": "isc-062",
+    "sourceNumber": 62,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "下列哪项是开关量输出接口的典型控制对象？",
+    "options": [
+      {
+        "key": "A",
+        "text": "继电器"
+      },
+      {
+        "key": "B",
+        "text": "GNSS 卫星"
+      },
+      {
+        "key": "C",
+        "text": "滤色片"
+      },
+      {
+        "key": "D",
+        "text": "石墨烯晶格"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第8章",
+      "开关量接口"
+    ],
+    "explanation": "开关量输出可控制继电器、指示灯、电磁阀。"
+  },
+  {
+    "id": "isc-063",
+    "sourceNumber": 63,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "串行通信在公路网比喻中相当于？",
+    "options": [
+      {
+        "key": "A",
+        "text": "单车道"
+      },
+      {
+        "key": "B",
+        "text": "多车道"
+      },
+      {
+        "key": "C",
+        "text": "单向广播塔"
+      },
+      {
+        "key": "D",
+        "text": "机场跑道基准面"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第8章",
+      "总线技术"
+    ],
+    "explanation": "串行通信相当于单车道，数据一位一位传，线少但速度慢。"
+  },
+  {
+    "id": "isc-064",
+    "sourceNumber": 64,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "下列哪一项是无人机上的接口实例？",
+    "options": [
+      {
+        "key": "A",
+        "text": "舵机/电机控制信号接口（PWM）"
+      },
+      {
+        "key": "B",
+        "text": "达特茅斯会议"
+      },
+      {
+        "key": "C",
+        "text": "石墨烯 0.335nm 厚度"
+      },
+      {
+        "key": "D",
+        "text": "QNE 标准气压高度"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第8章",
+      "无人机接口"
+    ],
+    "explanation": "无人机接口实例，包括 ADC 与飞控计算机接口、IMU 输出接口、PWM 舵机/电机控制接口、相机/云台接口。"
+  },
+  {
+    "id": "isc-065",
+    "sourceNumber": 65,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "中，智能控制的能力不包括哪一项？",
+    "options": [
+      {
+        "key": "A",
+        "text": "取消环境变化"
+      },
+      {
+        "key": "B",
+        "text": "感知"
+      },
+      {
+        "key": "C",
+        "text": "学习"
+      },
+      {
+        "key": "D",
+        "text": "决策和行动"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第9章",
+      "智能控制定义"
+    ],
+    "explanation": "说智能控制能适应环境变化、应对不确定性，不是取消环境变化；感知、学习、决策和行动都在定义中出现。"
+  },
+  {
+    "id": "isc-066",
+    "sourceNumber": 66,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "1956 年哪次会议标志着人工智能学科诞生？",
+    "options": [
+      {
+        "key": "A",
+        "text": "达特茅斯会议"
+      },
+      {
+        "key": "B",
+        "text": "EHT 会议"
+      },
+      {
+        "key": "C",
+        "text": "FAST 立项会议"
+      },
+      {
+        "key": "D",
+        "text": "USB 规范会议"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第9章",
+      "AI里程碑"
+    ],
+    "explanation": "表格，1956 年达特茅斯会议标志着 AI 学科诞生。"
+  },
+  {
+    "id": "isc-067",
+    "sourceNumber": 67,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "图灵测试在 AI 里程碑表中的年份是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "1950"
+      },
+      {
+        "key": "B",
+        "text": "1956"
+      },
+      {
+        "key": "C",
+        "text": "2006"
+      },
+      {
+        "key": "D",
+        "text": "2014"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第9章",
+      "AI里程碑"
+    ],
+    "explanation": "1950 年图灵测试，意义是首次提出机器智能的判断标准。"
+  },
+  {
+    "id": "isc-068",
+    "sourceNumber": 68,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "OODA 循环中的 Orient 对应中文含义是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "判断"
+      },
+      {
+        "key": "B",
+        "text": "观察"
+      },
+      {
+        "key": "C",
+        "text": "决策"
+      },
+      {
+        "key": "D",
+        "text": "行动"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第9章",
+      "OODA"
+    ],
+    "explanation": "给出 OODA = Observe（观察）、Orient（判断）、Decide（决策）、Act（行动）。"
+  },
+  {
+    "id": "isc-069",
+    "sourceNumber": 69,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "OODA 3.0 概括为？",
+    "options": [
+      {
+        "key": "A",
+        "text": "智能为王"
+      },
+      {
+        "key": "B",
+        "text": "机动为王"
+      },
+      {
+        "key": "C",
+        "text": "信息为王"
+      },
+      {
+        "key": "D",
+        "text": "蒸汽为王"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第9章",
+      "OODA"
+    ],
+    "explanation": "OODA 1.0 机动为王、2.0 信息为王、3.0 智能为王。"
+  },
+  {
+    "id": "isc-070",
+    "sourceNumber": 70,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "无人智能等级的第二层级是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "高品质工作"
+      },
+      {
+        "key": "B",
+        "text": "高可靠活着"
+      },
+      {
+        "key": "C",
+        "text": "为集体使命高效工作"
+      },
+      {
+        "key": "D",
+        "text": "只完成开关量输入"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第9章",
+      "无人智能等级"
+    ],
+    "explanation": "无人智能等级按能力提升递进为高可靠活着、高品质工作、为集体使命高效工作。"
+  },
+  {
+    "id": "isc-071",
+    "sourceNumber": 71,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "强化学习的学习方式是？",
+    "options": [
+      {
+        "key": "A",
+        "text": "通过试错和环境反馈学习最优策略"
+      },
+      {
+        "key": "B",
+        "text": "只用有标注数据训练"
+      },
+      {
+        "key": "C",
+        "text": "只从无标注数据发现模式"
+      },
+      {
+        "key": "D",
+        "text": "通过光泵测磁异常"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第9章",
+      "机器学习"
+    ],
+    "explanation": "强化学习通过试错和环境反馈学习最优策略，并以智能体-环境交互为特点。"
+  },
+  {
+    "id": "isc-072",
+    "sourceNumber": 72,
+    "type": "single",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "集群智能控制目标中，“没有单一指挥中心”对应哪一项？",
+    "options": [
+      {
+        "key": "A",
+        "text": "去中心化"
+      },
+      {
+        "key": "B",
+        "text": "群智涌现"
+      },
+      {
+        "key": "C",
+        "text": "动态抗毁"
+      },
+      {
+        "key": "D",
+        "text": "可扩展性"
+      }
+    ],
+    "correctAnswers": [
+      "A"
+    ],
+    "tags": [
+      "第9章",
+      "集群控制"
+    ],
+    "explanation": "对去中心化的解释是没有单一指挥中心，任何单机失效不导致集群崩溃。"
+  },
+  {
+    "id": "isc-073",
+    "sourceNumber": 73,
+    "type": "multiple",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "列出的智能系统基本组成包括哪些？",
+    "options": [
+      {
+        "key": "A",
+        "text": "环境感知"
+      },
+      {
+        "key": "B",
+        "text": "信息处理"
+      },
+      {
+        "key": "C",
+        "text": "控制与决策"
+      },
+      {
+        "key": "D",
+        "text": "执行"
+      }
+    ],
+    "correctAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "tags": [
+      "第1章",
+      "智能系统组成"
+    ],
+    "explanation": "逐项环境感知、信息处理、控制与决策、执行四个基本组成，四项都正确。"
+  },
+  {
+    "id": "isc-074",
+    "sourceNumber": 74,
+    "type": "multiple",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "无人机蜂群的关键能力包括哪些？",
+    "options": [
+      {
+        "key": "A",
+        "text": "组网通信"
+      },
+      {
+        "key": "B",
+        "text": "协同感知"
+      },
+      {
+        "key": "C",
+        "text": "协同控制"
+      },
+      {
+        "key": "D",
+        "text": "协同决策"
+      }
+    ],
+    "correctAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "tags": [
+      "第1章",
+      "无人机蜂群"
+    ],
+    "explanation": "蜂群关键能力为组网通信、协同感知、协同制导、协同控制、协同决策，四项都属于蜂群协同能力。"
+  },
+  {
+    "id": "isc-075",
+    "sourceNumber": 75,
+    "type": "multiple",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "ADS 集成大气数据系统的输出参数包括哪些？",
+    "options": [
+      {
+        "key": "A",
+        "text": "气压高度"
+      },
+      {
+        "key": "B",
+        "text": "马赫数"
+      },
+      {
+        "key": "C",
+        "text": "升降速度"
+      },
+      {
+        "key": "D",
+        "text": "攻角/侧滑角"
+      }
+    ],
+    "correctAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "tags": [
+      "第2章",
+      "ADS"
+    ],
+    "explanation": "的 ADS 输出包括气压高度、空速、马赫数、升降速度、攻角/侧滑角和大气静温，因此四项都正确。"
+  },
+  {
+    "id": "isc-076",
+    "sourceNumber": 76,
+    "type": "multiple",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "列出的全球四大卫星导航系统包括哪些？",
+    "options": [
+      {
+        "key": "A",
+        "text": "GPS"
+      },
+      {
+        "key": "B",
+        "text": "GLONASS"
+      },
+      {
+        "key": "C",
+        "text": "Galileo"
+      },
+      {
+        "key": "D",
+        "text": "北斗 BDS"
+      }
+    ],
+    "correctAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "tags": [
+      "第3章",
+      "GNSS"
+    ],
+    "explanation": "四大 GNSS：美国 GPS、俄罗斯 GLONASS、欧洲 Galileo、中国北斗 BDS。"
+  },
+  {
+    "id": "isc-077",
+    "sourceNumber": 77,
+    "type": "multiple",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "列出的二维视觉感知任务包括哪些？",
+    "options": [
+      {
+        "key": "A",
+        "text": "目标检测"
+      },
+      {
+        "key": "B",
+        "text": "目标跟踪"
+      },
+      {
+        "key": "C",
+        "text": "目标分割"
+      },
+      {
+        "key": "D",
+        "text": "光谱维展开"
+      }
+    ],
+    "correctAnswers": [
+      "A",
+      "B",
+      "C"
+    ],
+    "tags": [
+      "第4章",
+      "二维视觉任务"
+    ],
+    "explanation": "的二维视觉任务是目标检测、目标跟踪、目标分割；光谱维展开属于光谱测量的数据立方体描述，不属于该任务列表。"
+  },
+  {
+    "id": "isc-078",
+    "sourceNumber": 78,
+    "type": "multiple",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "柔性压力测量包括哪些方式？",
+    "options": [
+      {
+        "key": "A",
+        "text": "压阻式"
+      },
+      {
+        "key": "B",
+        "text": "电容式"
+      },
+      {
+        "key": "C",
+        "text": "压电式"
+      },
+      {
+        "key": "D",
+        "text": "摩擦式"
+      }
+    ],
+    "correctAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "tags": [
+      "第5章",
+      "柔性压力测量"
+    ],
+    "explanation": "柔性压力测量四种方式：压阻式、电容式、压电式、摩擦式，四项都正确。"
+  },
+  {
+    "id": "isc-079",
+    "sourceNumber": 79,
+    "type": "multiple",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "ABC-1 双余度配置中，列出的 ×2 传感器包括哪些？",
+    "options": [
+      {
+        "key": "A",
+        "text": "大气机"
+      },
+      {
+        "key": "B",
+        "text": "高度表"
+      },
+      {
+        "key": "C",
+        "text": "惯性导航"
+      },
+      {
+        "key": "D",
+        "text": "卫星导航"
+      }
+    ],
+    "correctAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "tags": [
+      "第6章",
+      "ABC-1"
+    ],
+    "explanation": "的传感器配置逐项大气机 ×2、高度表 ×2、惯性导航 ×2、卫星导航 ×2。"
+  },
+  {
+    "id": "isc-080",
+    "sourceNumber": 80,
+    "type": "multiple",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "集群智能控制的发展目标包括哪些？",
+    "options": [
+      {
+        "key": "A",
+        "text": "去中心化"
+      },
+      {
+        "key": "B",
+        "text": "群智涌现"
+      },
+      {
+        "key": "C",
+        "text": "动态抗毁"
+      },
+      {
+        "key": "D",
+        "text": "可扩展性"
+      }
+    ],
+    "correctAnswers": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "tags": [
+      "第9章",
+      "集群控制"
+    ],
+    "explanation": "明确无人机集群控制发展目标为去中心化、群智涌现、动态抗毁、可扩展性。"
+  },
+  {
+    "id": "isc-081",
+    "sourceNumber": 81,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "智能系统四个基本组成是环境感知、信息处理、控制与决策和____。",
+    "options": [],
+    "correctAnswers": [
+      "执行"
+    ],
+    "tags": [
+      "第1章",
+      "智能系统组成"
+    ],
+    "explanation": "的第四个组成是执行，指系统独立执行控制指令的执行机构环节。",
+    "acceptedAnswers": []
+  },
+  {
+    "id": "isc-082",
+    "sourceNumber": 82,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "工业 4.0 的核心技术为智能化和____（信息物理融合系统）。",
+    "options": [],
+    "correctAnswers": [
+      "CPS"
+    ],
+    "tags": [
+      "第1章",
+      "工业革命"
+    ],
+    "explanation": "工业 4.0 的核心技术为智能化、CPS（信息物理融合系统）。",
+    "acceptedAnswers": [
+      "信息物理融合系统"
+    ]
+  },
+  {
+    "id": "isc-083",
+    "sourceNumber": 83,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "可提高关键系统可靠性的双套或多套设备设计方法叫____。",
+    "options": [],
+    "correctAnswers": [
+      "余度设计"
+    ],
+    "tags": [
+      "第1章",
+      "余度设计"
+    ],
+    "explanation": "把这种用硬件冗余提高可靠性的方法称为余度设计。",
+    "acceptedAnswers": [
+      "冗余设计"
+    ]
+  },
+  {
+    "id": "isc-084",
+    "sourceNumber": 84,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "无人机蜂群中，支撑信息共享和协同的基础能力是____。",
+    "options": [],
+    "correctAnswers": [
+      "组网通信"
+    ],
+    "tags": [
+      "第1章",
+      "无人机蜂群"
+    ],
+    "explanation": "组网通信让多架无人机能够共享感知、制导、控制和决策信息，是蜂群形成协同能力的基础。",
+    "acceptedAnswers": []
+  },
+  {
+    "id": "isc-085",
+    "sourceNumber": 85,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "标准气压高度 QNE 以标准大气压____hPa 为基准面。",
+    "options": [],
+    "correctAnswers": [
+      "1013.25"
+    ],
+    "tags": [
+      "第2章",
+      "高度定义"
+    ],
+    "explanation": "QNE 以标准大气压 1013.25hPa 为基准面。",
+    "acceptedAnswers": [
+      "1013.25hPa"
+    ]
+  },
+  {
+    "id": "isc-086",
+    "sourceNumber": 86,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "大气静力方程写作 dp = ____。",
+    "options": [],
+    "correctAnswers": [
+      "-ρg dz"
+    ],
+    "tags": [
+      "第2章",
+      "大气静力方程"
+    ],
+    "explanation": "明确给出大气静力方程 dp = -ρg dz，表示气压随高度增加而减小。",
+    "acceptedAnswers": [
+      "-rho g dz",
+      "-ρgdz",
+      "-ρg·dz"
+    ]
+  },
+  {
+    "id": "isc-087",
+    "sourceNumber": 87,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "电位器式压力传感器中直接感受大气压力的元件是____。",
+    "options": [],
+    "correctAnswers": [
+      "弹性膜盒"
+    ],
+    "tags": [
+      "第2章",
+      "压力传感器"
+    ],
+    "explanation": "电位器式压力传感器由弹性膜盒直接感受大气压力，再通过电位器把机械位移转为电信号。",
+    "acceptedAnswers": []
+  },
+  {
+    "id": "isc-088",
+    "sourceNumber": 88,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "四类压力传感器中精度最高的是____压力传感器。",
+    "options": [],
+    "correctAnswers": [
+      "硅谐振式"
+    ],
+    "tags": [
+      "第2章",
+      "压力传感器"
+    ],
+    "explanation": "的精度排名为电位器式、硅压阻式、谐振筒式、硅谐振式，最高为硅谐振式。",
+    "acceptedAnswers": [
+      "硅谐振"
+    ]
+  },
+  {
+    "id": "isc-089",
+    "sourceNumber": 89,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "法航 447 空难归因于空速管____导致 ADS 数据失效。",
+    "options": [],
+    "correctAnswers": [
+      "结冰"
+    ],
+    "tags": [
+      "第2章",
+      "大气数据案例"
+    ],
+    "explanation": "法航 447 的故障链条是空速管结冰导致 ADS 数据失效，随后自动驾驶断开，错误操纵最终引发失速。",
+    "acceptedAnswers": []
+  },
+  {
+    "id": "isc-090",
+    "sourceNumber": 90,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "INS 通过陀螺仪测量角速度，积分得到____。",
+    "options": [],
+    "correctAnswers": [
+      "姿态"
+    ],
+    "tags": [
+      "第3章",
+      "INS组成"
+    ],
+    "explanation": "陀螺仪测角速度并积分得到姿态，包括俯仰、偏航、滚转。",
+    "acceptedAnswers": []
+  },
+  {
+    "id": "isc-091",
+    "sourceNumber": 91,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "INS 的核心特点是自主性强，短时间内精度____。",
+    "options": [],
+    "correctAnswers": [
+      "高"
+    ],
+    "tags": [
+      "第3章",
+      "INS特点"
+    ],
+    "explanation": "INS 不依赖外部信号，短时间内误差尚未明显积累，因此表现为自主性强、短时精度高。",
+    "acceptedAnswers": [
+      "较高"
+    ]
+  },
+  {
+    "id": "isc-092",
+    "sourceNumber": 92,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "GNSS 至少需要____颗卫星解算三维位置和时间。",
+    "options": [],
+    "correctAnswers": [
+      "4"
+    ],
+    "tags": [
+      "第3章",
+      "GNSS"
+    ],
+    "explanation": "至少 4 颗卫星才能解算三维位置加时间。",
+    "acceptedAnswers": [
+      "四",
+      "4颗"
+    ]
+  },
+  {
+    "id": "isc-093",
+    "sourceNumber": 93,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "陀螺仪漂移的单位是____。",
+    "options": [],
+    "correctAnswers": [
+      "度/小时"
+    ],
+    "tags": [
+      "第3章",
+      "陀螺仪"
+    ],
+    "explanation": "陀螺仪漂移表示角度误差随时间累积的速率，因此常用度/小时（°/h）表示。",
+    "acceptedAnswers": [
+      "°/h",
+      "度每小时"
+    ]
+  },
+  {
+    "id": "isc-094",
+    "sourceNumber": 94,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "中国激光陀螺之父是____。",
+    "options": [],
+    "correctAnswers": [
+      "高伯龙"
+    ],
+    "tags": [
+      "第3章",
+      "惯性技术人物"
+    ],
+    "explanation": "高伯龙（1928-2017）为中国激光陀螺之父。",
+    "acceptedAnswers": []
+  },
+  {
+    "id": "isc-095",
+    "sourceNumber": 95,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "脉冲激光测距公式为 d = ____。",
+    "options": [],
+    "correctAnswers": [
+      "ct/2"
+    ],
+    "tags": [
+      "第4章",
+      "激光测距"
+    ],
+    "explanation": "给出脉冲激光测距 d = ct/2，t 是往返时间。",
+    "acceptedAnswers": [
+      "c·t/2",
+      "c t / 2"
+    ]
+  },
+  {
+    "id": "isc-096",
+    "sourceNumber": 96,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "小孔与光波长相当时会造成____模糊。",
+    "options": [],
+    "correctAnswers": [
+      "衍射"
+    ],
+    "tags": [
+      "第4章",
+      "光学成像"
+    ],
+    "explanation": "小孔过小时孔径接近光波长，光的绕射效应变明显，会造成衍射模糊。",
+    "acceptedAnswers": []
+  },
+  {
+    "id": "isc-097",
+    "sourceNumber": 97,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "双目立体视觉中深度公式为 Z = f · ____。",
+    "options": [],
+    "correctAnswers": [
+      "B/dx"
+    ],
+    "tags": [
+      "第4章",
+      "双目视觉"
+    ],
+    "explanation": "给出视差 dx = xl - xr，深度 Z = f · B/dx。",
+    "acceptedAnswers": [
+      "B / dx",
+      "B÷dx"
+    ]
+  },
+  {
+    "id": "isc-098",
+    "sourceNumber": 98,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "光谱测量的数据立方体由空间二维和____维组成。",
+    "options": [],
+    "correctAnswers": [
+      "光谱"
+    ],
+    "tags": [
+      "第4章",
+      "光谱测量"
+    ],
+    "explanation": "数据立方体 = 空间二维 + 光谱维，光谱维用于区分物质差异。",
+    "acceptedAnswers": []
+  },
+  {
+    "id": "isc-099",
+    "sourceNumber": 99,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "LiDAR 相比双目视觉的突出优势是不受光照、纹理和____影响。",
+    "options": [],
+    "correctAnswers": [
+      "环境亮度"
+    ],
+    "tags": [
+      "第4章",
+      "LiDAR"
+    ],
+    "explanation": "LiDAR 不受光照/纹理/环境亮度影响，能在黑夜或弱纹理场景稳定工作。",
+    "acceptedAnswers": [
+      "亮度"
+    ]
+  },
+  {
+    "id": "isc-100",
+    "sourceNumber": 100,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "传感器三代演进为机电式、____式、量子式。",
+    "options": [],
+    "correctAnswers": [
+      "光学"
+    ],
+    "tags": [
+      "第5章",
+      "传感器演进"
+    ],
+    "explanation": "三代演进中间一代为光学式。",
+    "acceptedAnswers": [
+      "光学式"
+    ]
+  },
+  {
+    "id": "isc-101",
+    "sourceNumber": 101,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "石墨烯是____层碳原子结构。",
+    "options": [],
+    "correctAnswers": [
+      "单"
+    ],
+    "tags": [
+      "第5章",
+      "石墨烯"
+    ],
+    "explanation": "石墨烯由单层碳原子构成，“单”准确对应它的二维单原子层结构。",
+    "acceptedAnswers": [
+      "单层"
+    ]
+  },
+  {
+    "id": "isc-102",
+    "sourceNumber": 102,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "石墨烯厚度写为____nm。",
+    "options": [],
+    "correctAnswers": [
+      "0.335"
+    ],
+    "tags": [
+      "第5章",
+      "石墨烯"
+    ],
+    "explanation": "石墨烯厚度为 0.335nm。",
+    "acceptedAnswers": [
+      "0.335nm"
+    ]
+  },
+  {
+    "id": "isc-103",
+    "sourceNumber": 103,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "压电式柔性压力测量基于____效应。",
+    "options": [],
+    "correctAnswers": [
+      "压电"
+    ],
+    "tags": [
+      "第5章",
+      "柔性压力测量"
+    ],
+    "explanation": "压电式压力测量利用压电效应，特点是高灵敏度快响应。",
+    "acceptedAnswers": [
+      "压电效应"
+    ]
+  },
+  {
+    "id": "isc-104",
+    "sourceNumber": 104,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "ABC-1 大型无人机大气机采用____余度配置。",
+    "options": [],
+    "correctAnswers": [
+      "双"
+    ],
+    "tags": [
+      "第6章",
+      "ABC-1"
+    ],
+    "explanation": "ABC-1 的关键传感器采用双套配置，大气机也属于双余度配置，用来提高任务可靠性。",
+    "acceptedAnswers": [
+      "双余度"
+    ]
+  },
+  {
+    "id": "isc-105",
+    "sourceNumber": 105,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "ABC-2 全国产高光谱相机有____个通道。",
+    "options": [],
+    "correctAnswers": [
+      "448"
+    ],
+    "tags": [
+      "第6章",
+      "主被动视觉"
+    ],
+    "explanation": "ABC-2 高光谱相机参数为 400-1000nm、1.5nm 分辨率、448 通道。",
+    "acceptedAnswers": [
+      "448通道"
+    ]
+  },
+  {
+    "id": "isc-106",
+    "sourceNumber": 106,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "高光谱激光雷达系统同时获取空间三维信息和____信息。",
+    "options": [],
+    "correctAnswers": [
+      "光谱"
+    ],
+    "tags": [
+      "第6章",
+      "高光谱激光雷达"
+    ],
+    "explanation": "高光谱激光雷达同时获取空间三维信息和光谱信息。",
+    "acceptedAnswers": []
+  },
+  {
+    "id": "isc-107",
+    "sourceNumber": 107,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "机器狗实验中的前置摄像头参数为____@15fps。",
+    "options": [],
+    "correctAnswers": [
+      "720p"
+    ],
+    "tags": [
+      "第6章",
+      "机器狗实验"
+    ],
+    "explanation": "综合智能感知机器狗实验中前置摄像头为 720p@15fps。",
+    "acceptedAnswers": [
+      "720P"
+    ]
+  },
+  {
+    "id": "isc-108",
+    "sourceNumber": 108,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "中值滤波一般用于滤除____噪声。",
+    "options": [],
+    "correctAnswers": [
+      "椒盐"
+    ],
+    "tags": [
+      "第7章",
+      "数字滤波"
+    ],
+    "explanation": "中值滤波通过排序取中位数，可以剔除孤立的极端亮暗点，因此适合滤除椒盐噪声。",
+    "acceptedAnswers": [
+      "椒盐噪声"
+    ]
+  },
+  {
+    "id": "isc-109",
+    "sourceNumber": 109,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "Kalman 滤波的核心思想是预测 + ____。",
+    "options": [],
+    "correctAnswers": [
+      "修正"
+    ],
+    "tags": [
+      "第7章",
+      "Kalman滤波"
+    ],
+    "explanation": "Kalman 滤波核心思想为预测 + 修正，对应时间更新和测量更新。",
+    "acceptedAnswers": []
+  },
+  {
+    "id": "isc-110",
+    "sourceNumber": 110,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "SLAM 中____检测用于消除累积误差，得到全局一致轨迹和地图。",
+    "options": [],
+    "correctAnswers": [
+      "回环"
+    ],
+    "tags": [
+      "第7章",
+      "SLAM"
+    ],
+    "explanation": "回环检测能识别机器人回到曾经经过的位置，并用这一约束修正一路积累的定位误差。",
+    "acceptedAnswers": [
+      "回环检测"
+    ]
+  },
+  {
+    "id": "isc-111",
+    "sourceNumber": 111,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "CNN 卷积层两大核心设计是局部连接和____。",
+    "options": [],
+    "correctAnswers": [
+      "参数共享"
+    ],
+    "tags": [
+      "第7章",
+      "CNN"
+    ],
+    "explanation": "卷积层只连接局部区域，并在不同位置复用同一组参数，因此能大幅减少参数量。",
+    "acceptedAnswers": []
+  },
+  {
+    "id": "isc-112",
+    "sourceNumber": 112,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "立体匹配流程的最后一步输出____图。",
+    "options": [],
+    "correctAnswers": [
+      "深度"
+    ],
+    "tags": [
+      "第7章",
+      "立体匹配"
+    ],
+    "explanation": "处理流程最后为深度图：离线标定、立体校正、立体匹配、三角计算、深度图。",
+    "acceptedAnswers": [
+      "深度图"
+    ]
+  },
+  {
+    "id": "isc-113",
+    "sourceNumber": 113,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "接口规范的三要素是物理特性、电气规范和____。",
+    "options": [],
+    "correctAnswers": [
+      "通信协议"
+    ],
+    "tags": [
+      "第8章",
+      "接口规范"
+    ],
+    "explanation": "接口要能插得上、传得稳、说得通，所以规范需要同时约束物理特性、电气规范和通信协议。",
+    "acceptedAnswers": []
+  },
+  {
+    "id": "isc-114",
+    "sourceNumber": 114,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "三大接口信号类型是开关量、数字量和____。",
+    "options": [],
+    "correctAnswers": [
+      "模拟量"
+    ],
+    "tags": [
+      "第8章",
+      "信号类型"
+    ],
+    "explanation": "表格信号分为开关量、数字量和模拟量三大类。",
+    "acceptedAnswers": []
+  },
+  {
+    "id": "isc-115",
+    "sourceNumber": 115,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "模拟量输入通道中，计算机读取前需要进行____转换。",
+    "options": [],
+    "correctAnswers": [
+      "A/D"
+    ],
+    "tags": [
+      "第8章",
+      "模拟量通道"
+    ],
+    "explanation": "计算机处理的是数字信号，连续变化的模拟信号必须先经 A/D（模数）转换变成数字量。",
+    "acceptedAnswers": [
+      "模数",
+      "模数转换",
+      "A/D转换"
+    ]
+  },
+  {
+    "id": "isc-116",
+    "sourceNumber": 116,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "串行通信是一位一位传，线少但速度____。",
+    "options": [],
+    "correctAnswers": [
+      "慢"
+    ],
+    "tags": [
+      "第8章",
+      "总线技术"
+    ],
+    "explanation": "对串行通信的描述为数据一位一位传，线少但速度慢。",
+    "acceptedAnswers": [
+      "较慢"
+    ]
+  },
+  {
+    "id": "isc-117",
+    "sourceNumber": 117,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "1956 年____会议标志着人工智能学科的诞生。",
+    "options": [],
+    "correctAnswers": [
+      "达特茅斯"
+    ],
+    "tags": [
+      "第9章",
+      "AI里程碑"
+    ],
+    "explanation": "1956 年达特茅斯会议正式提出人工智能学科相关概念，因此被视为人工智能学科诞生标志。",
+    "acceptedAnswers": [
+      "Dartmouth",
+      "达特茅斯会议"
+    ]
+  },
+  {
+    "id": "isc-118",
+    "sourceNumber": 118,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "OODA 循环四步为 Observe、Orient、Decide 和____。",
+    "options": [],
+    "correctAnswers": [
+      "Act"
+    ],
+    "tags": [
+      "第9章",
+      "OODA"
+    ],
+    "explanation": "OODA = Observe（观察）、Orient（判断）、Decide（决策）、Act（行动）。",
+    "acceptedAnswers": [
+      "行动"
+    ]
+  },
+  {
+    "id": "isc-119",
+    "sourceNumber": 119,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "机器学习三类方法为监督学习、无监督学习和____学习。",
+    "options": [],
+    "correctAnswers": [
+      "强化"
+    ],
+    "tags": [
+      "第9章",
+      "机器学习"
+    ],
+    "explanation": "核心方法为监督学习、无监督学习、强化学习。",
+    "acceptedAnswers": [
+      "强化学习"
+    ]
+  },
+  {
+    "id": "isc-120",
+    "sourceNumber": 120,
+    "type": "blank",
+    "subjectId": "intelligent-sensing-control",
+    "stem": "无人机集群控制发展目标中，部分节点损失后能自重构对应____抗毁。",
+    "options": [],
+    "correctAnswers": [
+      "动态"
+    ],
+    "tags": [
+      "第9章",
+      "集群控制"
+    ],
+    "explanation": "动态抗毁强调部分节点损失后，系统仍能自主重构通信和任务分配，因此空格应填“动态”。",
+    "acceptedAnswers": [
+      "动态抗毁"
+    ]
+  }
+]
