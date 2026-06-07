@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "bankTag": "multi-0.2.3.2-isc120-20260607",
+  "bankTag": "multi-0.2.3.3-isc120-fix1-20260607",
   "appVersion": "0.2.4",
   "questionCount": 938,
   "subjects": [
@@ -76,14 +76,14 @@
     {
       "id": "intelligent-sensing-control",
       "name": "智能感知与控制",
-      "bankTag": "isc-0.1.7-zg120-20260607",
+      "bankTag": "isc-0.1.7.1-zg120-fix1-20260607",
       "questionCount": 120,
       "relativePath": "intelligent-sensing-control/questions.json",
       "questionsUrl": "https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/intelligent-sensing-control/questions.json",
       "releaseNotes": [
-        "智能感知与控制新增 120 道复习题，覆盖 9 章笔记知识点。",
-        "题型为 72 道单选、8 道多选、40 道填空，全部包含逐题题解。",
-        "智能感知与控制已开放模拟考试、自由练习、错题本和错题重练。"
+        "智能感知与控制修正题解表述与近重复题目，保持 120 道题总量不变。",
+        "题型保持为 72 道单选、8 道多选、40 道填空，全部包含逐题题解。",
+        "智能感知与控制继续开放模拟考试、自由练习、错题本和错题重练。"
       ],
       "title": "智能感知与控制题库",
       "subtitle": "从 120 道题中随机组卷，覆盖智能感知、测量、信息处理与控制。",
@@ -118,9 +118,9 @@
   ],
   "updatedAt": "2026-06-07T00:00:00+08:00",
   "releaseNotes": [
-    "智能感知与控制新增 120 道题并开放模拟考试与自由练习。",
-    "智能感知与控制题型分布为单选 72、多选 8、填空 40，全部包含逐题题解。",
-    "题库总量更新为 938 道（人工智能导论 440 + 数据结构 378 + 智能感知与控制 120）。"
+    "智能感知与控制修正题解表述与近重复题目。",
+    "题型分布保持为单选 72、多选 8、填空 40，全部包含逐题题解。",
+    "题库总量保持 938 道（人工智能导论 440 + 数据结构 378 + 智能感知与控制 120）。"
   ],
   "manifestUrl": "https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/manifest.json"
 }

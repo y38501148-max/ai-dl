@@ -43,7 +43,7 @@ const mdExamQuestions = dsQuestions.filter((question) => question.tags?.includes
 const extraFoundationQuestions = dsQuestions.filter((question) => question.tags?.includes('专题补充'))
 const invalidIds = dsQuestions.filter((question, index) => question.id !== `ds1-${String(index + 1).padStart(3, '0')}`)
 
-if (manifest.bankTag !== 'multi-0.2.3.2-isc120-20260607') throw new Error(`题库标记异常：${manifest.bankTag}`)
+if (manifest.bankTag !== 'multi-0.2.3.3-isc120-fix1-20260607') throw new Error(`题库标记异常：${manifest.bankTag}`)
 if (manifest.appVersion !== '0.2.4') throw new Error(`应用版本异常：${manifest.appVersion}`)
 if (!Array.isArray(manifest.releaseNotes) || manifest.releaseNotes.length < 3) {
   throw new Error('题库更新说明缺失')
@@ -69,8 +69,8 @@ if (!aiManifest?.examRules?.some((rule) => rule.includes('100 道题'))) throw n
 if (iscQuestions.length !== 120) throw new Error(`智能感知与控制题库数量异常：${iscQuestions.length}`)
 const iscManifest = manifest.subjects.find((subject) => subject.id === 'intelligent-sensing-control')
 if (!iscManifest) throw new Error('智能感知与控制科目清单缺失')
-if (iscManifest.bankTag !== 'isc-0.1.7-zg120-20260607') throw new Error(`智能感知与控制题库标记异常：${iscManifest.bankTag}`)
-if (!iscManifest.releaseNotes?.some((note) => note.includes('新增 120 道'))) throw new Error('智能感知与控制更新说明缺失')
+if (iscManifest.bankTag !== 'isc-0.1.7.1-zg120-fix1-20260607') throw new Error(`智能感知与控制题库标记异常：${iscManifest.bankTag}`)
+if (!iscManifest.releaseNotes?.some((note) => note.includes('修正题解'))) throw new Error('智能感知与控制更新说明缺失')
 if (iscManifest.allowPractice !== true) throw new Error('智能感知与控制应已开放自由练习')
 if (iscManifest.officialQuestionCount !== 50) throw new Error(`智能感知与控制模拟考试数量异常：${iscManifest.officialQuestionCount}`)
 if (iscManifest.scorePerQuestion !== 2) throw new Error(`智能感知与控制每题分值异常：${iscManifest.scorePerQuestion}`)
