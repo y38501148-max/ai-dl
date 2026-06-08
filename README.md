@@ -1,15 +1,17 @@
-下载链接：[latest release](https://github.com/y38501148-max/AI-DL/releases/latest)
+下载链接：[v0.2.5 release](https://github.com/y38501148-max/AI-DL/releases/tag/v0.2.5)
 在线网页：[github page](https://y38501148-max.github.io/AI-DL/)
 
 # muz-test
 
-版本：0.2.4
+版本：0.2.5
 
 `muz-test` 是基于 Vue、Vite 与 Tauri 的本地/网页题库应用。当前内置「人工智能导论」「数据结构」与「智能感知与控制」三个科目，支持模拟考试、自由练习、本地记录保存、错题复习、应用版本检测以及独立题库热更新。
 
 ## 本次更新
 
-- 应用版本保持 `0.2.4`，题库根版本更新为 `multi-0.2.3.5-ai-notice-20260608`。
+- 应用版本更新至 `0.2.5`，题库根版本保持 `multi-0.2.3.5-ai-notice-20260608`。
+- Android 端新增 GitHub Pages 题库下载兜底，避免 `raw.githubusercontent.com` 网络不稳定时旧题库无法更新。
+- 题库 manifest 的远端下载地址改为 GitHub Pages，旧客户端拉到新 manifest 后会优先从 Pages 下载科目题库。
 - 智能感知与控制题库新增 120 道题，题型为 72 道单选、8 道多选、40 道填空，全部包含逐题题解。
 - 智能感知与控制已从「试题收集中」改为可用，开放模拟考试、自由练习、错题本和错题重练。
 - 训练及考试结束页新增左上角便携「返回首页」按钮，翻阅长结果列表后无需回到页面顶部。
@@ -249,12 +251,12 @@ npm run release:collect
 产物会输出到：
 
 ```text
-release/0.2.4/
+release/0.2.5/
 ```
 
-发布目录中的安装包文件名使用纯 ASCII，例如 `muz-choice-blank-bank_0.2.4_windows-x64-setup.exe`，便于上传到 GitHub Releases；应用内部名仍为 `muz-choice-blank-bank`，外显名称为 `muz-test`。
+发布目录中的安装包文件名使用纯 ASCII，例如 `muz-choice-blank-bank_0.2.5_windows-x64-setup.exe`，便于上传到 GitHub Releases；应用内部名仍为 `muz-choice-blank-bank`，外显名称为 `muz-test`。
 
-0.2.4 的安装包构建需在 GitHub Pages 调试确认无误后进行；平台列表沿用 `release/0.1.5/` 的发布产物范围。
+0.2.5 的安装包构建需在 GitHub Pages 调试确认无误后进行；平台列表沿用 `release/0.1.5/` 的发布产物范围。
 
 macOS 根目录 `/release` 可能是只读文件系统，因此本仓库默认使用项目内的 `release/<版本号>/` 作为发布目录。
 

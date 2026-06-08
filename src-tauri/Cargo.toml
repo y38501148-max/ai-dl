@@ -1,6 +1,6 @@
 [package]
 name = "muz-choice-blank-bank"
-version = "0.2.4"
+version = "0.2.5"
 description = "muz-test 桌面练习与考试应用"
 authors = ["AI dl"]
 edition = "2021"
