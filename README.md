@@ -1,3 +1,6 @@
+下载链接：[latest release](https://github.com/y38501148-max/AI-DL/releases/latest)
+在线网页：[github page](https://y38501148-max.github.io/AI-DL/)
+
 # muz-test
 
 版本：0.2.4
