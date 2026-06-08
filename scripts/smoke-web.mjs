@@ -43,7 +43,7 @@ const mdExamQuestions = dsQuestions.filter((question) => question.tags?.includes
 const extraFoundationQuestions = dsQuestions.filter((question) => question.tags?.includes('专题补充'))
 const invalidIds = dsQuestions.filter((question, index) => question.id !== `ds1-${String(index + 1).padStart(3, '0')}`)
 
-if (manifest.bankTag !== 'multi-0.2.3.4-isc120-notice-20260608') throw new Error(`题库标记异常：${manifest.bankTag}`)
+if (manifest.bankTag !== 'multi-0.2.3.5-ai-notice-20260608') throw new Error(`题库标记异常：${manifest.bankTag}`)
 if (manifest.appVersion !== '0.2.4') throw new Error(`应用版本异常：${manifest.appVersion}`)
 if (!Array.isArray(manifest.releaseNotes) || !manifest.releaseNotes.length) {
   throw new Error('题库更新说明缺失')
@@ -55,7 +55,7 @@ if (manifest.questionCount !== questions.length) {
 if (aiQuestions.length !== 440) throw new Error(`人工智能导论题库数量异常：${aiQuestions.length}`)
 if (aiQuestions.some((question) => question.subjectId !== 'ai')) throw new Error('人工智能导论题库存在错误科目标识')
 if (aiExplanations.length !== aiQuestions.length) throw new Error(`人工智能导论存在缺少题解的题目：${aiQuestions.length - aiExplanations.length}`)
-if (aiManifest?.bankTag !== 'ai-0.2.3.1-exam100-20260605') throw new Error(`人工智能导论题库标记异常：${aiManifest?.bankTag}`)
+if (aiManifest?.bankTag !== 'ai-0.2.3.2-new80-notice-20260608') throw new Error(`人工智能导论题库标记异常：${aiManifest?.bankTag}`)
 if (aiManifest?.officialQuestionCount !== 100) throw new Error(`人工智能导论模拟考试数量异常：${aiManifest?.officialQuestionCount}`)
 if (aiManifest?.scorePerQuestion !== 1) throw new Error(`人工智能导论每题分值异常：${aiManifest?.scorePerQuestion}`)
 if (
@@ -66,6 +66,8 @@ if (
   throw new Error('人工智能导论模拟考试题型范围异常')
 }
 if (!aiManifest?.examRules?.some((rule) => rule.includes('100 道题'))) throw new Error('人工智能导论考试规则未热更新为 100 道题')
+if (!aiManifest?.notice?.includes('360+80=440')) throw new Error('人工智能导论新增题提醒缺失')
+if (!aiManifest?.releaseNotes?.some((note) => note.includes('修复了一些已知问题'))) throw new Error('人工智能导论更新说明缺失')
 if (iscQuestions.length !== 120) throw new Error(`智能感知与控制题库数量异常：${iscQuestions.length}`)
 const iscManifest = manifest.subjects.find((subject) => subject.id === 'intelligent-sensing-control')
 if (!iscManifest) throw new Error('智能感知与控制科目清单缺失')

@@ -30,6 +30,7 @@ const STATIC_SUBJECTS: SubjectConfig[] = [
     officialQuestionTypes: ['single', 'multiple', 'boolean'],
     allowPractice: true,
     examRules: ['考试时长 60 分钟，超时自动交卷。', '随机抽取 100 道题，每题 1 分，题型包含单选、多选与判断。', '考试界面仅显示本场题号，不显示题库原编号。'],
+    notice: '由于课程组通知，期末要考新题，所以按照已有知识点加了80道题，为360+80=440',
   },
   {
     id: 'data-structure',
