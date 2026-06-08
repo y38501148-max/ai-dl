@@ -9,7 +9,7 @@
       "name": "人工智能导论",
       "questionCount": 440,
       "relativePath": "ai/questions.json",
-      "questionsUrl": "https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/ai/questions.json",
+      "questionsUrl": "https://y38501148-max.github.io/AI-DL/question-bank/ai/questions.json",
       "restoredFrom": "v0.1.4:resources/question-bank/questions.json",
       "types": {
         "single": 417,
@@ -44,7 +44,7 @@
       "bankTag": "ds-0.1.5.1-20260602",
       "questionCount": 378,
       "relativePath": "data-structure/questions.json",
-      "questionsUrl": "https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/data-structure/questions.json",
+      "questionsUrl": "https://y38501148-max.github.io/AI-DL/question-bank/data-structure/questions.json",
       "assetDirectory": "ds-assets",
       "releaseNotes": [
         "新增第七套作业 20 道选填例题，并补充逐题题解。",
@@ -78,7 +78,7 @@
       "bankTag": "isc-0.1.7.2-zg120-notice-20260608",
       "questionCount": 120,
       "relativePath": "intelligent-sensing-control/questions.json",
-      "questionsUrl": "https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/intelligent-sensing-control/questions.json",
+      "questionsUrl": "https://y38501148-max.github.io/AI-DL/question-bank/intelligent-sensing-control/questions.json",
       "releaseNotes": [
         "修复了一些已知问题"
       ],
@@ -119,5 +119,5 @@
   "releaseNotes": [
     "修复了一些已知问题"
   ],
-  "manifestUrl": "https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/manifest.json"
+  "manifestUrl": "https://y38501148-max.github.io/AI-DL/question-bank/manifest.json"
 }

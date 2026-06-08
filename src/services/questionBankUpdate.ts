@@ -5,6 +5,7 @@ import { subjectOf } from './subjects'
 
 const DEFAULT_MANIFEST_URL = 'https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/manifest.json'
 const DEFAULT_QUESTIONS_URL = 'https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/questions.json'
+const PAGES_QUESTION_BANK_URL = 'https://y38501148-max.github.io/AI-DL/question-bank'
 
 export interface QuestionBankUpdateInfo {
   currentTag: string
@@ -27,6 +28,15 @@ async function fetchJson<T>(url: string, timeoutMs = 6000): Promise<T | null> {
   } finally {
     window.clearTimeout(timeout)
   }
+}
+
+async function fetchFirstJson<T>(urls: (string | undefined)[], timeoutMs = 6000): Promise<T | null> {
+  const uniqueUrls = [...new Set(urls.filter((url): url is string => Boolean(url)))]
+  for (const url of uniqueUrls) {
+    const result = await fetchJson<T>(url, timeoutMs)
+    if (result) return result
+  }
+  return null
 }
 
 function validateQuestions(questions: Question[], manifest?: QuestionBankManifest, expectedSubjects = manifest?.subjects): boolean {
@@ -75,7 +85,11 @@ function changedSubjects(
 export async function checkForQuestionBankUpdate(
   currentManifest: QuestionBankManifest | undefined,
 ): Promise<QuestionBankUpdateInfo | null> {
-  const latest = await fetchJson<QuestionBankManifest>(currentManifest?.manifestUrl ?? DEFAULT_MANIFEST_URL)
+  const latest = await fetchFirstJson<QuestionBankManifest>([
+    currentManifest?.manifestUrl,
+    DEFAULT_MANIFEST_URL,
+    `${PAGES_QUESTION_BANK_URL}/manifest.json`,
+  ])
   if (!latest?.bankTag || !latest.questionCount) return null
   const subjects = changedSubjects(latest, currentManifest)
   if (!subjects.length) return null
@@ -104,8 +118,9 @@ export async function downloadAndInstallQuestionBank(
         await Promise.all(
           targetSubjects.map(async (subject) => {
             const questionsUrl = subject.questionsUrl
-            if (!questionsUrl) throw new Error(`题库清单缺少 ${subject.id} 的下载地址`)
-            const subjectQuestions = await fetchJson<Question[]>(questionsUrl, 15000)
+            const fallbackQuestionsUrl = subject.relativePath ? `${PAGES_QUESTION_BANK_URL}/${subject.relativePath}` : undefined
+            if (!questionsUrl && !fallbackQuestionsUrl) throw new Error(`题库清单缺少 ${subject.id} 的下载地址`)
+            const subjectQuestions = await fetchFirstJson<Question[]>([questionsUrl, fallbackQuestionsUrl], 15000)
             if (!subjectQuestions) throw new Error(`下载 ${subject.id} 题库失败`)
             if (subject.questionCount && subjectQuestions.length !== subject.questionCount) {
               throw new Error(`${subject.id} 题库数量异常`)
@@ -114,7 +129,10 @@ export async function downloadAndInstallQuestionBank(
           }),
         )
       ).flat()
-    : await fetchJson<Question[]>(update.manifest.questionsUrl ?? DEFAULT_QUESTIONS_URL, 15000)
+    : await fetchFirstJson<Question[]>(
+        [update.manifest.questionsUrl, DEFAULT_QUESTIONS_URL, `${PAGES_QUESTION_BANK_URL}/questions.json`],
+        15000,
+      )
   if (!downloadedQuestions || !validateQuestions(downloadedQuestions, update.manifest, targetSubjects)) {
     throw new Error('下载到的题库格式不完整')
   }

@@ -136,7 +136,7 @@ resources/question-bank/manifest.json
 1. 修改对应科目的题库文件，例如 `resources/question-bank/ai/questions.json`。
 2. 在 `resources/question-bank/manifest.json` 中提升根 `bankTag` 和该科目的 `subjects[].bankTag`，例如从 `multi-0.1.5.4-fix1-20260604` 提升到 `multi-0.1.6-20260605`；新增科目时同步新增 `subjects[]` 条目和该科目的 `relativePath` 空/实题库文件。
 3. 保持 `questionCount`、`subjects[].questionCount`、`subjects[].explanations` 与实际题库一致，并更新 `releaseNotes[]`。
-4. 确认 `subjects[].questionsUrl` 和 `manifestUrl` 指向 GitHub raw 上的当前分支资源。
+4. 确认 `subjects[].questionsUrl` 和 `manifestUrl` 指向 GitHub Pages 上的当前题库资源。
 5. 运行 `npm run build:web` 做类型检查和静态构建；如只验证网页题库资源，可启动 `npm run dev:web` 后运行 `node scripts/smoke-web.mjs 5173`。
 6. 推送到 GitHub 后，旧客户端启动时会拉取远端 manifest；发现科目级 `bankTag` 变大后，只下载变化科目的 JSON，再与本地未变化科目合并写入本地题库目录或浏览器本地存储。
 
