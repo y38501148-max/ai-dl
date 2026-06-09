@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="300" viewBox="0 0 520 300" role="img" aria-label="Dijkstra directed weighted graph from a">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#202938"/>
+    </marker>
+  </defs>
+  <rect width="520" height="300" fill="#ffffff"/>
+  <g stroke="#202938" stroke-width="2.6" fill="none" marker-end="url(#arrow)" stroke-linecap="round">
+    <path d="M 90 136 L 157 87"/>
+    <path d="M 90 166 L 179 197"/>
+    <path d="M 91 169 Q 190 276 298 235"/>
+    <path d="M 94 148 Q 240 112 355 145"/>
+    <path d="M 90 134 Q 260 10 439 58"/>
+    <path d="M 184 94 L 196 186"/>
+    <path d="M 224 214 L 296 226"/>
+    <path d="M 337 212 L 369 171"/>
+    <path d="M 397 132 L 445 89"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="20" fill="#202938" text-anchor="middle">
+    <text x="122" y="107">1</text>
+    <text x="136" y="198">4</text>
+    <text x="210" y="267">6</text>
+    <text x="265" y="116">8</text>
+    <text x="286" y="38">10</text>
+    <text x="220" y="156">2</text>
+    <text x="261" y="209">1</text>
+    <text x="351" y="205">2</text>
+    <text x="425" y="118">2</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle">
+    <g fill="#f7fafc" stroke="#202938" stroke-width="2.6">
+      <circle cx="70" cy="150" r="24"/>
+      <circle cx="176" cy="70" r="24"/>
+      <circle cx="200" cy="210" r="24"/>
+      <circle cx="320" cy="230" r="24"/>
+      <circle cx="380" cy="150" r="24"/>
+      <circle cx="460" cy="70" r="24"/>
+    </g>
+    <g fill="#202938">
+      <text x="70" y="159">a</text>
+      <text x="176" y="79">b</text>
+      <text x="200" y="219">d</text>
+      <text x="320" y="239">f</text>
+      <text x="380" y="159">c</text>
+      <text x="460" y="79">e</text>
+    </g>
+  </g>
+</svg>

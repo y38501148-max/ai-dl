@@ -12,6 +12,56 @@ const assetDir = join(bankDir, 'ds-assets')
 const sourceDir = '/Users/muzermat/Documents/ds-xtlt'
 const homework7Dir = join(sourceDir, '7')
 const imageExamplesPath = join(root, 'scripts/data/ds-image-examples.json')
+const generatedDijkstra2022Asset = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="300" viewBox="0 0 520 300" role="img" aria-label="Dijkstra directed weighted graph from a">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#202938"/>
+    </marker>
+  </defs>
+  <rect width="520" height="300" fill="#ffffff"/>
+  <g stroke="#202938" stroke-width="2.6" fill="none" marker-end="url(#arrow)" stroke-linecap="round">
+    <path d="M 90 136 L 157 87"/>
+    <path d="M 90 166 L 179 197"/>
+    <path d="M 91 169 Q 190 276 298 235"/>
+    <path d="M 94 148 Q 240 112 355 145"/>
+    <path d="M 90 134 Q 260 10 439 58"/>
+    <path d="M 184 94 L 196 186"/>
+    <path d="M 224 214 L 296 226"/>
+    <path d="M 337 212 L 369 171"/>
+    <path d="M 397 132 L 445 89"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="20" fill="#202938" text-anchor="middle">
+    <text x="122" y="107">1</text>
+    <text x="136" y="198">4</text>
+    <text x="210" y="267">6</text>
+    <text x="265" y="116">8</text>
+    <text x="286" y="38">10</text>
+    <text x="220" y="156">2</text>
+    <text x="261" y="209">1</text>
+    <text x="351" y="205">2</text>
+    <text x="425" y="118">2</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="26" font-weight="700" text-anchor="middle">
+    <g fill="#f7fafc" stroke="#202938" stroke-width="2.6">
+      <circle cx="70" cy="150" r="24"/>
+      <circle cx="176" cy="70" r="24"/>
+      <circle cx="200" cy="210" r="24"/>
+      <circle cx="320" cy="230" r="24"/>
+      <circle cx="380" cy="150" r="24"/>
+      <circle cx="460" cy="70" r="24"/>
+    </g>
+    <g fill="#202938">
+      <text x="70" y="159">a</text>
+      <text x="176" y="79">b</text>
+      <text x="200" y="219">d</text>
+      <text x="320" y="239">f</text>
+      <text x="380" y="159">c</text>
+      <text x="460" y="79">e</text>
+    </g>
+  </g>
+</svg>
+`
 
 const questions = []
 let sourceNumber = 1
@@ -86,6 +136,12 @@ function copyAllImages() {
     copyFileSync(file, join(assetDir, targetName))
   })
   return orderedFiles.length
+}
+
+function writeGeneratedAssets() {
+  mkdirSync(assetDir, { recursive: true })
+  writeFileSync(join(assetDir, 'ds1-dijkstra-2022.svg'), generatedDijkstra2022Asset, 'utf8')
+  return 1
 }
 
 function addImageExamples() {
@@ -365,6 +421,7 @@ function addGeneratedQuestions() {
 }
 
 const copiedImageCount = copyAllImages()
+const generatedAssetCount = writeGeneratedAssets()
 const imageExampleCount = addImageExamples()
 const mdExamQuestionCount = addMdExamQuestions()
 addGeneratedQuestions()
@@ -399,6 +456,7 @@ const aiSubject = existingManifest.subjects?.find((subject) => subject.id === 'a
   ],
 }
 aiSubject.bankTag = aiSubject.bankTag ?? 'ai-0.2.3.1-exam100-20260605'
+const existingDataStructureSubject = existingManifest.subjects?.find((subject) => subject.id === 'data-structure')
 const preservedSubjects = (existingManifest.subjects ?? []).filter((subject) => !['ai', 'data-structure'].includes(subject.id))
 const dataStructureSubject = {
   id: 'data-structure',
@@ -406,7 +464,9 @@ const dataStructureSubject = {
   bankTag: 'ds-0.1.5.1-20260602',
   questionCount: questions.length,
   relativePath: 'data-structure/questions.json',
-  questionsUrl: 'https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/data-structure/questions.json',
+  questionsUrl:
+    existingDataStructureSubject?.questionsUrl ??
+    'https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/data-structure/questions.json',
   assetDirectory: 'ds-assets',
   releaseNotes: [
     '新增第七套作业 20 道选填例题，并补充逐题题解。',
@@ -452,7 +512,9 @@ writeFileSync(
         '新增智能感知与控制科目入口：试题收集中，敬请期待。',
         '题库总量保持 818 道（人工智能导论 440 + 数据结构 378 + 智能感知与控制 0）。',
       ],
-      manifestUrl: 'https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/manifest.json',
+      manifestUrl:
+        existingManifest.manifestUrl ??
+        'https://raw.githubusercontent.com/y38501148-max/AI-DL/main/resources/question-bank/manifest.json',
     },
     null,
     2,
@@ -460,5 +522,5 @@ writeFileSync(
 )
 
 console.log(
-  `已生成 0.1.5.4 数据结构题库：${questions.length} 道；图片例题 ${imageExampleCount} 道，第七套作业 ${homework7QuestionCount} 道，真题选填 ${mdExamQuestionCount} 道，自主命题 ${choiceUnits.length + blankUnits.length} 道，专题补充 ${extraFoundationQuestionCount} 道，去重 ${dedupe.removedCount} 道，补题 ${dedupe.supplementCount} 道，复制图片 ${copiedImageCount} 张。`,
+  `已生成 0.1.5.4 数据结构题库：${questions.length} 道；图片例题 ${imageExampleCount} 道，第七套作业 ${homework7QuestionCount} 道，真题选填 ${mdExamQuestionCount} 道，自主命题 ${choiceUnits.length + blankUnits.length} 道，专题补充 ${extraFoundationQuestionCount} 道，去重 ${dedupe.removedCount} 道，补题 ${dedupe.supplementCount} 道，复制图片 ${copiedImageCount} 张，生成补充图片 ${generatedAssetCount} 张。`,
 )

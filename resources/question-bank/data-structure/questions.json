@@ -3179,7 +3179,8 @@
       "2022真题",
       "非编程题"
     ],
-    "explanation": "按题图边权执行 Dijkstra：确定 b 后，当前最小暂定距离依次落在 d、f、c、e 上，因此后续次序为 d,f,c,e。"
+    "explanation": "图中 a 到 b 为 1；确定 b 后经 b 更新 d 为 3，再经 d 更新 f 为 4，经 f 更新 c 为 6，经 c 更新 e 为 8，因此后续次序为 d,f,c,e。",
+    "image": "question-bank/ds-assets/ds1-dijkstra-2022.svg"
   },
   {
     "id": "ds1-118",
