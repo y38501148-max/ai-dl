@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "bankTag": "multi-0.2.3.6-isc-shuffle-20260610",
+  "bankTag": "multi-0.2.3.7-ds-hw7-fix-20260616",
   "appVersion": "0.2.5",
   "questionCount": 938,
   "subjects": [
@@ -41,15 +41,15 @@
     {
       "id": "data-structure",
       "name": "数据结构",
-      "bankTag": "ds-0.1.5.1-20260602",
+      "bankTag": "ds-0.1.5.2-hw7-fix-20260616",
       "questionCount": 378,
       "relativePath": "data-structure/questions.json",
       "questionsUrl": "https://y38501148-max.github.io/AI-DL/question-bank/data-structure/questions.json",
       "assetDirectory": "ds-assets",
       "releaseNotes": [
-        "新增第七套作业 20 道选填例题，并补充逐题题解。",
-        "数据结构题量更新为 378 道，题型分布为单选 203、多选 1、填空 174。",
-        "新增第七套作业截图资源，保留旧图片资源编号稳定。"
+        "修正第七套作业折半查找题的题干表述与 k50 填空题答案。",
+        "数据结构题量保持 378 道，题型分布为单选 203、多选 1、填空 174。",
+        "第七套作业 20 道选填例题均保留逐题题解。"
       ],
       "types": {
         "single": 203,
@@ -115,9 +115,9 @@
       }
     }
   ],
-  "updatedAt": "2026-06-10T00:00:00+08:00",
+  "updatedAt": "2026-06-16T00:00:00+08:00",
   "releaseNotes": [
-    "智能感知与控制选择题选项已重新乱序，修复单选题正确答案位置过于集中的问题。"
+    "修正数据结构第七套作业折半查找题干与 k50 填空题答案。"
   ],
   "manifestUrl": "https://y38501148-max.github.io/AI-DL/question-bank/manifest.json"
 }

@@ -43,7 +43,7 @@ const mdExamQuestions = dsQuestions.filter((question) => question.tags?.includes
 const extraFoundationQuestions = dsQuestions.filter((question) => question.tags?.includes('专题补充'))
 const invalidIds = dsQuestions.filter((question, index) => question.id !== `ds1-${String(index + 1).padStart(3, '0')}`)
 
-if (manifest.bankTag !== 'multi-0.2.3.6-isc-shuffle-20260610') throw new Error(`题库标记异常：${manifest.bankTag}`)
+if (manifest.bankTag !== 'multi-0.2.3.7-ds-hw7-fix-20260616') throw new Error(`题库标记异常：${manifest.bankTag}`)
 if (manifest.appVersion !== '0.2.5') throw new Error(`应用版本异常：${manifest.appVersion}`)
 if (!Array.isArray(manifest.releaseNotes) || !manifest.releaseNotes.length) {
   throw new Error('题库更新说明缺失')
@@ -92,6 +92,7 @@ if (imageExamples.length < 83) throw new Error(`图片例题数量异常：${ima
 if (homework7Questions.length !== 20) throw new Error(`第七套作业数量异常：${homework7Questions.length}`)
 const dsManifest = manifest.subjects.find((subject) => subject.id === 'data-structure')
 if (!manifest.subjects.every((subject) => subject.bankTag)) throw new Error('科目级题库标记缺失')
+if (dsManifest?.bankTag !== 'ds-0.1.5.2-hw7-fix-20260616') throw new Error(`数据结构题库标记异常：${dsManifest?.bankTag}`)
 if (!dsManifest?.releaseNotes?.length) throw new Error('数据结构科目更新说明缺失')
 if (mdExamQuestions.length !== dsManifest?.sourceCounts?.mdExamKept) {
   throw new Error(`2019-2022 非编程题保留数量异常：${mdExamQuestions.length}`)
