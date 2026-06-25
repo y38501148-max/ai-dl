@@ -46,7 +46,7 @@ const mdExamQuestions = dsQuestions.filter((question) => question.tags?.includes
 const extraFoundationQuestions = dsQuestions.filter((question) => question.tags?.includes('专题补充'))
 const invalidIds = dsQuestions.filter((question, index) => question.id !== `ds1-${String(index + 1).padStart(3, '0')}`)
 
-if (manifest.bankTag !== 'multi-0.2.4.1-cmh-audit-20260625') throw new Error(`题库标记异常：${manifest.bankTag}`)
+if (manifest.bankTag !== 'multi-0.2.4.1-cmh-audit-20260625-fix2') throw new Error(`题库标记异常：${manifest.bankTag}`)
 if (manifest.appVersion !== '0.2.5') throw new Error(`应用版本异常：${manifest.appVersion}`)
 if (!Array.isArray(manifest.releaseNotes) || !manifest.releaseNotes.length) {
   throw new Error('题库更新说明缺失')
@@ -87,7 +87,7 @@ if (iscSingles.length !== 72 || iscMultiples.length !== 8 || iscBlanks.length !=
 if (iscMultiples.length > 10) throw new Error(`智能感知与控制多选题超限：${iscMultiples.length}`)
 if (missingIscExplanations.length) throw new Error(`智能感知与控制存在缺少题解的题目：${missingIscExplanations.length}`)
 if (!cmhManifest) throw new Error('中国近现代史纲要科目清单缺失')
-if (cmhManifest.bankTag !== 'cmh-0.1.1-shigang-audit-20260625') throw new Error(`中国近现代史纲要题库标记异常：${cmhManifest.bankTag}`)
+if (cmhManifest.bankTag !== 'cmh-0.1.1-shigang-audit-20260625-fix2') throw new Error(`中国近现代史纲要题库标记异常：${cmhManifest.bankTag}`)
 if (cmhQuestions.length !== 227) throw new Error(`中国近现代史纲要题库数量异常：${cmhQuestions.length}`)
 if (cmhSingles.length !== cmhQuestions.length) throw new Error('中国近现代史纲要题库必须全部为单选题')
 if (cmhQuestions.some((question) => question.subjectId !== 'china-modern-history')) throw new Error('中国近现代史纲要题库存在错误科目标识')

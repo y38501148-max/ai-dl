@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "bankTag": "multi-0.2.4.1-cmh-audit-20260625",
+  "bankTag": "multi-0.2.4.1-cmh-audit-20260625-fix2",
   "appVersion": "0.2.5",
   "questionCount": 1165,
   "subjects": [
@@ -117,7 +117,7 @@
     {
       "id": "china-modern-history",
       "name": "中国近现代史纲要",
-      "bankTag": "cmh-0.1.1-shigang-audit-20260625",
+      "bankTag": "cmh-0.1.1-shigang-audit-20260625-fix2",
       "questionCount": 227,
       "relativePath": "china-modern-history/questions.json",
       "questionsUrl": "https://y38501148-max.github.io/AI-DL/question-bank/china-modern-history/questions.json",
