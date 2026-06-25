@@ -10,8 +10,8 @@ const REVIEW_QUEUE_FILE = join(OUTPUT_DIR, 'review-queue.json')
 const MANIFEST_FILE = resolve('resources/question-bank/manifest.json')
 const DOC_FILE = resolve('shigang/中国近代史试题库(1).doc')
 const DOCX_FILE = resolve('shigang/近代史题库单选总结(1).docx')
-const ROOT_BANK_TAG = 'multi-0.2.4.1-cmh-audit-20260625-fix2'
-const SUBJECT_BANK_TAG = 'cmh-0.1.1-shigang-audit-20260625-fix2'
+const ROOT_BANK_TAG = 'multi-0.2.4.1-cmh-audit-20260625-fix3'
+const SUBJECT_BANK_TAG = 'cmh-0.1.1-shigang-audit-20260625-fix3'
 const UPDATED_AT = '2026-06-25T00:00:00+08:00'
 const LOW_CONFIDENCE_THRESHOLD = 0.72
 
