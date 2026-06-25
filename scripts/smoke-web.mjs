@@ -51,7 +51,7 @@ if (manifest.appVersion !== '0.2.5') throw new Error(`应用版本异常：${man
 if (!Array.isArray(manifest.releaseNotes) || !manifest.releaseNotes.length) {
   throw new Error('题库更新说明缺失')
 }
-if (questions.length !== 1165) throw new Error(`题库总数异常：${questions.length}`)
+if (questions.length !== 1164) throw new Error(`题库总数异常：${questions.length}`)
 if (manifest.questionCount !== questions.length) {
   throw new Error(`题库清单数量异常：${manifest.questionCount} != ${questions.length}`)
 }
@@ -88,12 +88,12 @@ if (iscMultiples.length > 10) throw new Error(`智能感知与控制多选题超
 if (missingIscExplanations.length) throw new Error(`智能感知与控制存在缺少题解的题目：${missingIscExplanations.length}`)
 if (!cmhManifest) throw new Error('中国近现代史纲要科目清单缺失')
 if (cmhManifest.bankTag !== 'cmh-0.1.1-shigang-audit-20260625-fix2') throw new Error(`中国近现代史纲要题库标记异常：${cmhManifest.bankTag}`)
-if (cmhQuestions.length !== 227) throw new Error(`中国近现代史纲要题库数量异常：${cmhQuestions.length}`)
+if (cmhQuestions.length !== 226) throw new Error(`中国近现代史纲要题库数量异常：${cmhQuestions.length}`)
 if (cmhSingles.length !== cmhQuestions.length) throw new Error('中国近现代史纲要题库必须全部为单选题')
 if (cmhQuestions.some((question) => question.subjectId !== 'china-modern-history')) throw new Error('中国近现代史纲要题库存在错误科目标识')
 if (cmhQuestions.some((question) => question.correctAnswers.length !== 1)) throw new Error('中国近现代史纲要题库存在非单答案题目')
 if (cmhQuestions.some((question) => question.options.length !== 4)) throw new Error('中国近现代史纲要题库存在非四选项题目')
-if (cmhManifest.types?.single !== 227 || cmhManifest.types?.multiple !== 0 || cmhManifest.types?.blank !== 0 || cmhManifest.types?.boolean !== 0) {
+if (cmhManifest.types?.single !== 226 || cmhManifest.types?.multiple !== 0 || cmhManifest.types?.blank !== 0 || cmhManifest.types?.boolean !== 0) {
   throw new Error('中国近现代史纲要题型分布异常')
 }
 if (!cmhManifest.officialQuestionTypes?.includes('single') || cmhManifest.officialQuestionTypes.length !== 1) {

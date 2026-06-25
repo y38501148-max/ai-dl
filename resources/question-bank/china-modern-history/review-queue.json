@@ -93,11 +93,6 @@
           "severity": "critical",
           "code": "low-confidence",
           "message": "草稿置信度低于入库阈值。"
-        },
-        {
-          "severity": "red",
-          "code": "long-option",
-          "message": "答案或干扰项过长，需要人工确认可读性。"
         }
       ],
       "downlined": true
@@ -109,6 +104,31 @@
       "sourceText": "20世纪20年代，日本关东军主任作战参谋石原莞尔提出“满蒙问题的解决是日本唯一的生存途径”通过九一八事变这个荒谬的办法变成了关东军的侵略行径",
       "stem": "下列关于中华民族的抗日战争的说法中，正确的是____。",
       "answerText": "20世纪20年代，日本关东军主任作战参谋石原莞尔提出“满蒙问题的解决是日本唯一的生存途径”通过九一八事变这个荒谬的办法变成了关东军的侵略行径",
+      "answerType": "statement",
+      "answerSubtype": "correct-statement",
+      "templateId": "statement-correct",
+      "confidence": 0.68,
+      "flags": [
+        {
+          "severity": "critical",
+          "code": "low-confidence",
+          "message": "草稿置信度低于入库阈值。"
+        },
+        {
+          "severity": "red",
+          "code": "long-option",
+          "message": "答案或干扰项过长，需要人工确认可读性。"
+        }
+      ],
+      "downlined": true
+    },
+    {
+      "draftNumber": 112,
+      "questionId": "cmh-dropped-112",
+      "chapter": "中华民族的抗日战争",
+      "sourceText": "抗日民族统一战线形成的标志是国民党中央通讯社播发《中国共产党为公布国公合作宣言》",
+      "stem": "下列关于中华民族的抗日战争的说法中，正确的是____。",
+      "answerText": "抗日民族统一战线形成的标志是国民党中央通讯社播发《中国共产党为公布国公合作宣言》",
       "answerType": "statement",
       "answerSubtype": "correct-statement",
       "templateId": "statement-correct",

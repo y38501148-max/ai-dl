@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "bankTag": "multi-0.2.4.1-cmh-audit-20260625-fix2",
   "appVersion": "0.2.5",
-  "questionCount": 1165,
+  "questionCount": 1164,
   "subjects": [
     {
       "id": "ai",
@@ -118,13 +118,13 @@
       "id": "china-modern-history",
       "name": "中国近现代史纲要",
       "bankTag": "cmh-0.1.1-shigang-audit-20260625-fix2",
-      "questionCount": 227,
+      "questionCount": 226,
       "relativePath": "china-modern-history/questions.json",
       "questionsUrl": "https://y38501148-max.github.io/AI-DL/question-bank/china-modern-history/questions.json",
       "releaseNotes": [
         "重建摘要改写单选题生成逻辑：先按事实类型分桶，再按同语义桶生成干扰项。",
-        "本科目仅含单选题，共 227 道题（.doc 原题 53 道、摘要改写 174 道）。",
-        "自动审题下线 9 道低置信度题，9 道进入人工复核队列。"
+        "本科目仅含单选题，共 226 道题（.doc 原题 53 道、摘要改写 173 道）。",
+        "自动审题下线 10 道低置信度题，10 道进入人工复核队列。"
       ],
       "title": "中国近现代史纲要题库",
       "subtitle": "从 236 道单选题中随机组卷，覆盖反侵略斗争、辛亥革命、建党、大革命、抗战与解放战争等内容。",
@@ -135,12 +135,12 @@
       "officialQuestionCount": 50,
       "allowPractice": true,
       "types": {
-        "single": 227,
+        "single": 226,
         "multiple": 0,
         "boolean": 0,
         "blank": 0
       },
-      "explanations": 227,
+      "explanations": 226,
       "officialQuestionTypes": [
         "single"
       ],
@@ -153,17 +153,17 @@
       "notice": "本科目仅含单选题；题库来源于 shigang 目录下两份中国近现代史纲要资料。",
       "sourceCounts": {
         "docSingleChoice": 53,
-        "summaryDerivedSingleChoice": 174,
-        "summaryBlankQuestions": 174,
-        "reviewQueueSize": 9,
-        "downlinedCount": 9
+        "summaryDerivedSingleChoice": 173,
+        "summaryBlankQuestions": 173,
+        "reviewQueueSize": 10,
+        "downlinedCount": 10
       }
     }
   ],
   "updatedAt": "2026-06-25T00:00:00+08:00",
   "releaseNotes": [
     "重建中国近现代史纲要摘要改写题生成逻辑，收紧改写规则并新增自动审题与人工复核队列。",
-    "近现代史纲要题库热更新至 227 道单选题，旧客户端可经远端 manifest 拉取。"
+    "近现代史纲要题库热更新至 226 道单选题，旧客户端可经远端 manifest 拉取。"
   ],
   "manifestUrl": "https://y38501148-max.github.io/AI-DL/question-bank/manifest.json"
 }
