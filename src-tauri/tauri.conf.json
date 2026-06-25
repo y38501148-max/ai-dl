@@ -43,6 +43,7 @@
       "../resources/question-bank/ai": "question-bank/ai",
       "../resources/question-bank/data-structure": "question-bank/data-structure",
       "../resources/question-bank/intelligent-sensing-control": "question-bank/intelligent-sensing-control",
+      "../resources/question-bank/china-modern-history": "question-bank/china-modern-history",
       "../resources/question-bank/ds-assets": "question-bank/ds-assets"
     }
   }

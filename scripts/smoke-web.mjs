@@ -5,7 +5,7 @@ const manifestResponse = await fetch(`http://127.0.0.1:${port}${basePath}/questi
 if (!manifestResponse.ok) throw new Error('无法读取开发服务器题库清单')
 const manifest = await manifestResponse.json()
 
-if (!Array.isArray(manifest.subjects) || manifest.subjects.length < 3) {
+if (!Array.isArray(manifest.subjects) || manifest.subjects.length < 4) {
   throw new Error('题库清单应按科目列出独立题库文件')
 }
 
@@ -36,6 +36,9 @@ const iscSingles = iscQuestions.filter((question) => question.type === 'single')
 const iscMultiples = iscQuestions.filter((question) => question.type === 'multiple')
 const iscBlanks = iscQuestions.filter((question) => question.type === 'blank')
 const missingIscExplanations = iscQuestions.filter((question) => !question.explanation)
+const cmhQuestions = subjectQuestionMap.get('china-modern-history') ?? []
+const cmhSingles = cmhQuestions.filter((question) => question.type === 'single')
+const cmhManifest = manifest.subjects.find((subject) => subject.id === 'china-modern-history')
 const imageExamples = dsQuestions.filter((question) => question.tags?.includes('图片例题'))
 const homework7Questions = dsQuestions.filter((question) => question.tags?.includes('第七套作业'))
 const generatedExamples = dsQuestions.filter((question) => question.tags?.includes('自主命题'))
@@ -43,12 +46,12 @@ const mdExamQuestions = dsQuestions.filter((question) => question.tags?.includes
 const extraFoundationQuestions = dsQuestions.filter((question) => question.tags?.includes('专题补充'))
 const invalidIds = dsQuestions.filter((question, index) => question.id !== `ds1-${String(index + 1).padStart(3, '0')}`)
 
-if (manifest.bankTag !== 'multi-0.2.3.7-ds-hw7-fix-20260616') throw new Error(`题库标记异常：${manifest.bankTag}`)
+if (manifest.bankTag !== 'multi-0.2.4.0-cmh-20260625') throw new Error(`题库标记异常：${manifest.bankTag}`)
 if (manifest.appVersion !== '0.2.5') throw new Error(`应用版本异常：${manifest.appVersion}`)
 if (!Array.isArray(manifest.releaseNotes) || !manifest.releaseNotes.length) {
   throw new Error('题库更新说明缺失')
 }
-if (questions.length !== 938) throw new Error(`题库总数异常：${questions.length}`)
+if (questions.length !== 1174) throw new Error(`题库总数异常：${questions.length}`)
 if (manifest.questionCount !== questions.length) {
   throw new Error(`题库清单数量异常：${manifest.questionCount} != ${questions.length}`)
 }
@@ -83,6 +86,20 @@ if (iscSingles.length !== 72 || iscMultiples.length !== 8 || iscBlanks.length !=
 }
 if (iscMultiples.length > 10) throw new Error(`智能感知与控制多选题超限：${iscMultiples.length}`)
 if (missingIscExplanations.length) throw new Error(`智能感知与控制存在缺少题解的题目：${missingIscExplanations.length}`)
+if (!cmhManifest) throw new Error('中国近现代史纲要科目清单缺失')
+if (cmhManifest.bankTag !== 'cmh-0.1.0-shigang236-20260625') throw new Error(`中国近现代史纲要题库标记异常：${cmhManifest.bankTag}`)
+if (cmhQuestions.length !== 236) throw new Error(`中国近现代史纲要题库数量异常：${cmhQuestions.length}`)
+if (cmhSingles.length !== cmhQuestions.length) throw new Error('中国近现代史纲要题库必须全部为单选题')
+if (cmhQuestions.some((question) => question.subjectId !== 'china-modern-history')) throw new Error('中国近现代史纲要题库存在错误科目标识')
+if (cmhQuestions.some((question) => question.correctAnswers.length !== 1)) throw new Error('中国近现代史纲要题库存在非单答案题目')
+if (cmhQuestions.some((question) => question.options.length !== 4)) throw new Error('中国近现代史纲要题库存在非四选项题目')
+if (cmhManifest.types?.single !== 236 || cmhManifest.types?.multiple !== 0 || cmhManifest.types?.blank !== 0 || cmhManifest.types?.boolean !== 0) {
+  throw new Error('中国近现代史纲要题型分布异常')
+}
+if (!cmhManifest.officialQuestionTypes?.includes('single') || cmhManifest.officialQuestionTypes.length !== 1) {
+  throw new Error('中国近现代史纲要模拟考试题型范围异常')
+}
+if (!cmhManifest.notice?.includes('仅含单选题')) throw new Error('中国近现代史纲要单选提醒缺失')
 if (dsQuestions.length !== 378) throw new Error(`数据结构题库数量异常：${dsQuestions.length}`)
 if (dsQuestions.some((question) => question.subjectId !== 'data-structure')) throw new Error('数据结构题库存在错误科目标识')
 if (dsSingles.length < 200 || dsMultiples.length < 1 || dsBlanks.length < 170) {
@@ -121,5 +138,5 @@ for (const question of dsQuestions) {
 }
 
 console.log(
-  `Web 冒烟检查通过：AI ${aiQuestions.length} 题、数据结构 ${dsQuestions.length} 题、智能感知与控制 ${iscQuestions.length} 题；科目题库已分文件维护。`,
+  `Web 冒烟检查通过：AI ${aiQuestions.length} 题、数据结构 ${dsQuestions.length} 题、智能感知与控制 ${iscQuestions.length} 题、中国近现代史纲要 ${cmhQuestions.length} 题；科目题库已分文件维护。`,
 )

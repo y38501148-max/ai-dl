@@ -112,6 +112,7 @@ npm run import:questions -- "/path/to/人工智能导论-习题汇总.pdf"
 resources/question-bank/ai/questions.json
 resources/question-bank/data-structure/questions.json
 resources/question-bank/intelligent-sensing-control/questions.json
+resources/question-bank/china-modern-history/questions.json
 ```
 
 不要把不同科目的题目重新合并到单个源文件中维护；运行时会根据 manifest 聚合加载，维护和发布资源仍按科目分隔，便于后续继续增加新科目。
@@ -149,6 +150,7 @@ resources/question-bank/manifest.json
 dist/question-bank/ai/questions.json
 dist/question-bank/data-structure/questions.json
 dist/question-bank/intelligent-sensing-control/questions.json
+dist/question-bank/china-modern-history/questions.json
 dist/question-bank/manifest.json
 dist/question-bank/ds-assets/
 ```

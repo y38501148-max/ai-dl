@@ -9,6 +9,7 @@
     "dev:web": "vite",
     "import:questions": "node scripts/import-question-bank.mjs",
     "generate:ds": "node scripts/generate-ds1-question-bank.mjs",
+    "generate:cmh": "node scripts/generate-china-modern-history-question-bank.mjs",
     "clean:android:question-bank": "node scripts/clean-android-question-bank-assets.mjs",
     "verify:exam-timer": "node scripts/verify-exam-timer.mjs",
     "smoke:web": "node scripts/smoke-web.mjs",

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "bankTag": "multi-0.2.3.7-ds-hw7-fix-20260616",
+  "bankTag": "multi-0.2.4.0-cmh-20260625",
   "appVersion": "0.2.5",
-  "questionCount": 938,
+  "questionCount": 1174,
   "subjects": [
     {
       "id": "ai",
@@ -113,11 +113,54 @@
         "note": "n_resources/zg/智能感知复习笔记_v2.pdf",
         "knowledgeOutline": "n_resources/zg/智能感知知识点分类.md"
       }
+    },
+    {
+      "id": "china-modern-history",
+      "name": "中国近现代史纲要",
+      "bankTag": "cmh-0.1.0-shigang236-20260625",
+      "questionCount": 236,
+      "relativePath": "china-modern-history/questions.json",
+      "questionsUrl": "https://y38501148-max.github.io/AI-DL/question-bank/china-modern-history/questions.json",
+      "releaseNotes": [
+        "新增中国近现代史纲要题库 236 道单选题，来源于 shigang 目录下两份资料。",
+        "本科目仅含单选题，摘要资料已改写为挖空式单选题。"
+      ],
+      "title": "中国近现代史纲要题库",
+      "subtitle": "从 236 道单选题中随机组卷，覆盖反侵略斗争、辛亥革命、建党、大革命、抗战与解放战争等内容。",
+      "examLabel": "CHINA MODERN HISTORY",
+      "examDescription": "随机抽取 50 道单选题，限时 60 分钟，每题 2 分。",
+      "durationSeconds": 3600,
+      "scorePerQuestion": 2,
+      "officialQuestionCount": 50,
+      "allowPractice": true,
+      "types": {
+        "single": 236,
+        "multiple": 0,
+        "boolean": 0,
+        "blank": 0
+      },
+      "explanations": 236,
+      "officialQuestionTypes": [
+        "single"
+      ],
+      "examRules": [
+        "本科目题库仅包含单选题。",
+        "考试时长 60 分钟，超时自动交卷。",
+        "随机抽取 50 道单选题，每题 2 分。",
+        "考试界面仅显示本场题号，不显示题库原编号。"
+      ],
+      "notice": "本科目仅含单选题；题库来源于 shigang 目录下两份中国近现代史纲要资料。",
+      "sourceCounts": {
+        "docSingleChoice": 53,
+        "summaryDerivedSingleChoice": 183,
+        "summaryBlankQuestions": 183
+      }
     }
   ],
-  "updatedAt": "2026-06-16T00:00:00+08:00",
+  "updatedAt": "2026-06-25T00:00:00+08:00",
   "releaseNotes": [
-    "修正数据结构第七套作业折半查找题干与 k50 填空题答案。"
+    "新增中国近现代史纲要科目，包含 236 道单选题。",
+    "本科目仅含单选题，已支持题库热更新下载。"
   ],
   "manifestUrl": "https://y38501148-max.github.io/AI-DL/question-bank/manifest.json"
 }
