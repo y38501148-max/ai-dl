@@ -46,12 +46,12 @@ const mdExamQuestions = dsQuestions.filter((question) => question.tags?.includes
 const extraFoundationQuestions = dsQuestions.filter((question) => question.tags?.includes('专题补充'))
 const invalidIds = dsQuestions.filter((question, index) => question.id !== `ds1-${String(index + 1).padStart(3, '0')}`)
 
-if (manifest.bankTag !== 'multi-0.2.4.0-cmh-20260625') throw new Error(`题库标记异常：${manifest.bankTag}`)
+if (manifest.bankTag !== 'multi-0.2.4.1-cmh-audit-20260625') throw new Error(`题库标记异常：${manifest.bankTag}`)
 if (manifest.appVersion !== '0.2.5') throw new Error(`应用版本异常：${manifest.appVersion}`)
 if (!Array.isArray(manifest.releaseNotes) || !manifest.releaseNotes.length) {
   throw new Error('题库更新说明缺失')
 }
-if (questions.length !== 1174) throw new Error(`题库总数异常：${questions.length}`)
+if (questions.length !== 1165) throw new Error(`题库总数异常：${questions.length}`)
 if (manifest.questionCount !== questions.length) {
   throw new Error(`题库清单数量异常：${manifest.questionCount} != ${questions.length}`)
 }
@@ -87,13 +87,13 @@ if (iscSingles.length !== 72 || iscMultiples.length !== 8 || iscBlanks.length !=
 if (iscMultiples.length > 10) throw new Error(`智能感知与控制多选题超限：${iscMultiples.length}`)
 if (missingIscExplanations.length) throw new Error(`智能感知与控制存在缺少题解的题目：${missingIscExplanations.length}`)
 if (!cmhManifest) throw new Error('中国近现代史纲要科目清单缺失')
-if (cmhManifest.bankTag !== 'cmh-0.1.0-shigang236-20260625') throw new Error(`中国近现代史纲要题库标记异常：${cmhManifest.bankTag}`)
-if (cmhQuestions.length !== 236) throw new Error(`中国近现代史纲要题库数量异常：${cmhQuestions.length}`)
+if (cmhManifest.bankTag !== 'cmh-0.1.1-shigang-audit-20260625') throw new Error(`中国近现代史纲要题库标记异常：${cmhManifest.bankTag}`)
+if (cmhQuestions.length !== 227) throw new Error(`中国近现代史纲要题库数量异常：${cmhQuestions.length}`)
 if (cmhSingles.length !== cmhQuestions.length) throw new Error('中国近现代史纲要题库必须全部为单选题')
 if (cmhQuestions.some((question) => question.subjectId !== 'china-modern-history')) throw new Error('中国近现代史纲要题库存在错误科目标识')
 if (cmhQuestions.some((question) => question.correctAnswers.length !== 1)) throw new Error('中国近现代史纲要题库存在非单答案题目')
 if (cmhQuestions.some((question) => question.options.length !== 4)) throw new Error('中国近现代史纲要题库存在非四选项题目')
-if (cmhManifest.types?.single !== 236 || cmhManifest.types?.multiple !== 0 || cmhManifest.types?.blank !== 0 || cmhManifest.types?.boolean !== 0) {
+if (cmhManifest.types?.single !== 227 || cmhManifest.types?.multiple !== 0 || cmhManifest.types?.blank !== 0 || cmhManifest.types?.boolean !== 0) {
   throw new Error('中国近现代史纲要题型分布异常')
 }
 if (!cmhManifest.officialQuestionTypes?.includes('single') || cmhManifest.officialQuestionTypes.length !== 1) {

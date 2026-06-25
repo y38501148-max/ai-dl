@@ -1,12 +1,19 @@
 import { execFileSync } from 'node:child_process'
-import { mkdirSync, writeFileSync } from 'node:fs'
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { resolve, join } from 'node:path'
 
 const SUBJECT_ID = 'china-modern-history'
 const OUTPUT_DIR = resolve('resources/question-bank/china-modern-history')
 const OUTPUT_FILE = join(OUTPUT_DIR, 'questions.json')
+const DRAFTS_FILE = join(OUTPUT_DIR, 'drafts.json')
+const REVIEW_QUEUE_FILE = join(OUTPUT_DIR, 'review-queue.json')
+const MANIFEST_FILE = resolve('resources/question-bank/manifest.json')
 const DOC_FILE = resolve('shigang/中国近代史试题库(1).doc')
 const DOCX_FILE = resolve('shigang/近代史题库单选总结(1).docx')
+const ROOT_BANK_TAG = 'multi-0.2.4.1-cmh-audit-20260625'
+const SUBJECT_BANK_TAG = 'cmh-0.1.1-shigang-audit-20260625'
+const UPDATED_AT = '2026-06-25T00:00:00+08:00'
+const LOW_CONFIDENCE_THRESHOLD = 0.72
 
 const CHAPTER_TITLES = new Set([
   '进入近代后中华民族的磨难与抗争',
@@ -17,6 +24,94 @@ const CHAPTER_TITLES = new Set([
   '中华民族的抗日战争',
   '为建立新中国而奋斗',
 ])
+
+const PERSON_ANSWERS = new Set([
+  '林则徐',
+  '郑观应',
+  '孙中山',
+  '英国人赫德',
+  '冯子材',
+  '邓世昌',
+  '洪仁玕',
+  '严复',
+  '康有为',
+  '洪秀全',
+  '光绪皇帝',
+  '冯桂芬',
+  '邹容',
+  '张勋',
+  '蔡锷',
+  '黄兴',
+  '李大钊',
+  '陈独秀',
+  '陈望道',
+  '鲍罗廷',
+  '毛泽东',
+  '王明',
+  '傅作义',
+])
+
+const PLACE_ANSWERS = new Set([
+  '南京',
+  '广东',
+  '黄花岗',
+  '四川',
+  '浙江萧山县',
+  '井冈山',
+  '广州、武汉',
+  '中原解放区',
+  '解放区',
+  '河北平山县',
+  '国统区',
+  '乡村',
+])
+
+const COUNTRY_FORCE_ANSWERS = new Set([
+  '资本-帝国主义',
+  '封建阶级',
+  '俄国',
+  '德国',
+  '英国',
+  '法国',
+  '日本',
+  '日本和俄国',
+  '资产阶级',
+  '农民阶级的局限性',
+  '中外反动势力的联合镇压',
+  '留学生为骨干的青年知识分子',
+  '国民党反动派',
+  '中国',
+  '美国',
+  '蒋介石国民党政府的经济崩溃和政治危机',
+])
+
+const CONCLUSION_BUCKETS = [
+  [/根本原因|失败的共同原因|衷心拥护原因|主要是因为|原因是|之所以能够/, 'root-cause'],
+  [/实质|事实上质|事实本质/, 'essence'],
+  [/起点标志|形成的标志|失败的标志|由盛转衰的标志|开端|开始于|转折点|标志着|标志是|标志毛泽东思想/, 'mark'],
+  [/导火索/, 'trigger'],
+  [/焦点/, 'focus'],
+  [/根本目的|短期目标|长期的基本目标|基本目标|目的|目标/, 'goal'],
+  [/重大意义|意义在于/, 'significance'],
+  [/主要任务|最主要的任务/, 'task'],
+  [/主要矛盾/, 'contradiction'],
+  [/根本利益/, 'interest'],
+]
+
+// 独子桶扩容映射：当某判断结论/小桶只有 1 道题、无法从同桶取干扰项时，
+// 用语义近似的更大类型作为回退池（仍属同类历史概念，避免跨类型混杂）。
+const BUCKET_FALLBACK_TYPE = {
+  'judgment:trigger': 'event',
+  'judgment:task': 'policy',
+  'judgment:interest': 'policy',
+  'judgment:contradiction': 'country-force',
+  'judgment:significance': 'event',
+  'judgment:focus': 'event',
+  'policy:slogan': 'policy',
+  'event:incident': 'event',
+  'event:uprising-or-strike': 'event',
+  'time:range': 'time',
+}
 
 function compact(text) {
   return text
@@ -35,6 +130,99 @@ function readWordText(file) {
 
 function unique(values) {
   return [...new Set(values.filter(Boolean))]
+}
+
+function countVisibleCharacters(value) {
+  return Array.from(String(value).replace(/\s+/g, '')).length
+}
+
+function quoteIsBalanced(value) {
+  const text = String(value)
+  return (
+    (text.match(/《/g)?.length ?? 0) === (text.match(/》/g)?.length ?? 0) &&
+    (text.match(/“/g)?.length ?? 0) === (text.match(/”/g)?.length ?? 0)
+  )
+}
+
+function detectConclusionSubtype(stem, sourceText) {
+  const text = `${stem} ${sourceText}`
+  for (const [pattern, subtype] of CONCLUSION_BUCKETS) {
+    if (pattern.test(text)) return subtype
+  }
+  return null
+}
+
+function classifyBaseAnswer(answer) {
+  if (/^\d{4}年(?:\d{1,2}月)?(?:-\d{4}年\d{0,2}月?)?$/.test(answer) || /^\d{1,2}月\d{1,2}日$/.test(answer)) {
+    return { answerType: 'time', answerSubtype: answer.includes('-') ? 'range' : 'date' }
+  }
+  if (PERSON_ANSWERS.has(answer)) return { answerType: 'person', answerSubtype: 'individual' }
+  if (/^《[^》]+》/.test(answer) || /条约|协定|二十一条|共同纲领|宣言|约法|纲领|报|杂志|新篇|本本主义|人民民主专政|革命军|五四指示|土地法大纲/.test(answer)) {
+    if (/条约|协定|二十一条/.test(answer)) return { answerType: 'text', answerSubtype: 'treaty-or-agreement' }
+    if (/报|杂志/.test(answer)) return { answerType: 'text', answerSubtype: 'periodical' }
+    return { answerType: 'text', answerSubtype: 'document-or-work' }
+  }
+  if (/会议|大会|全会|中共[一二三四五六七八九十]+大|国民党“一大”|政治协商会议|波茨坦会议|民盟一届三中全会/.test(answer)) {
+    return { answerType: 'meeting', answerSubtype: /中共|国民党|民盟/.test(answer) ? 'party-meeting' : 'conference' }
+  }
+  if (PLACE_ANSWERS.has(answer) || /南京|广东|四川|浙江|河北|黄花岗|井冈山|瑞金|解放区|国统区|台湾|澎湖|广州|武汉|乡村/.test(answer)) {
+    return { answerType: 'place', answerSubtype: /解放区|国统区|乡村/.test(answer) ? 'region' : 'location' }
+  }
+  if (/同盟会|北洋水师|新四军|红一、二、四方面军|政府委员会|行政院|立法院|民主同盟|中国国民党革命委员会|政治协商会议|中华苏维埃共和国临时中央政府/.test(answer)) {
+    if (/新四军|红一、二、四方面军|水师/.test(answer)) return { answerType: 'organization', answerSubtype: 'army' }
+    if (/政府|行政院|立法院|政治协商会议/.test(answer)) return { answerType: 'organization', answerSubtype: 'state-organ' }
+    return { answerType: 'organization', answerSubtype: 'party-or-group' }
+  }
+  if (/战争|运动|起义|革命|事变|战役|罢工|易帜|和平解决|全面内战|占领南京|覆灭/.test(answer)) {
+    if (/战争|战役/.test(answer)) return { answerType: 'event', answerSubtype: 'war-or-campaign' }
+    if (/起义|罢工/.test(answer)) return { answerType: 'event', answerSubtype: 'uprising-or-strike' }
+    if (/运动|革命/.test(answer)) return { answerType: 'event', answerSubtype: 'movement-or-revolution' }
+    return { answerType: 'event', answerSubtype: 'incident' }
+  }
+  if (/制度|主义|道路|方针|政策|原则|口号|思想|理论|中体西用|三三制|君主立宪制|减租减息|耕者有其田|和平建国|民主与科学|土地革命|土地制度|国家政权|领导权|联盟|农民战争|政治方式|内线作战|外线作战/.test(answer)) {
+    if (/制度|君主立宪制|三三制/.test(answer)) return { answerType: 'policy', answerSubtype: 'system' }
+    if (/口号|民主与科学|两个务必/.test(answer)) return { answerType: 'policy', answerSubtype: 'slogan' }
+    if (/原则|方针|政策|减租减息|耕者有其田|和平建国/.test(answer)) return { answerType: 'policy', answerSubtype: 'policy-or-principle' }
+    return { answerType: 'policy', answerSubtype: 'theory-or-line' }
+  }
+  if (COUNTRY_FORCE_ANSWERS.has(answer) || /帝国主义|阶级|政府|国民党|日本|俄国|英国|法国|德国|美国|中国|势力/.test(answer)) {
+    if (/日本|俄国|英国|法国|德国|美国|中国/.test(answer)) return { answerType: 'country-force', answerSubtype: 'country' }
+    if (/阶级|势力/.test(answer)) return { answerType: 'country-force', answerSubtype: 'social-force' }
+    return { answerType: 'country-force', answerSubtype: 'political-force' }
+  }
+  return { answerType: 'concept', answerSubtype: 'historical-concept' }
+}
+
+function classifyDraft(stem, answer, sourceText, kind) {
+  if (kind === 'statement') {
+    return {
+      templateId: 'statement-correct',
+      answerType: 'statement',
+      answerSubtype: 'correct-statement',
+      confidence: 0.68,
+    }
+  }
+
+  const conclusionSubtype = detectConclusionSubtype(stem, sourceText)
+  if (conclusionSubtype) {
+    return {
+      templateId: `blank-judgment-${conclusionSubtype}`,
+      answerType: 'judgment',
+      answerSubtype: conclusionSubtype,
+      confidence: 0.93,
+    }
+  }
+
+  const base = classifyBaseAnswer(answer)
+  return {
+    templateId: `blank-${base.answerType}-${base.answerSubtype}`,
+    ...base,
+    confidence: /____/.test(stem) ? 0.96 : 0.74,
+  }
+}
+
+function bucketKey(draft) {
+  return `${draft.answerType}:${draft.answerSubtype}`
 }
 
 function hashString(value) {
@@ -66,37 +254,119 @@ function shuffle(values, seedText) {
   return result
 }
 
-function pickDistractors(pool, correctAnswer, seedText) {
-  const candidates = unique(pool).filter((item) => item !== correctAnswer)
-  const shuffled = shuffle(candidates, seedText)
-  const picks = shuffled.slice(0, 3)
-  if (picks.length === 3) return picks
-
-  const fallback = unique(pool.concat(candidates)).filter((item) => item !== correctAnswer && !picks.includes(item))
-  return picks.concat(fallback).slice(0, 3)
+function pushMapValue(map, key, value) {
+  map.set(key, [...(map.get(key) ?? []), value])
 }
 
-function makePool(drafts, kind) {
-  const matching = drafts.filter((draft) => draft.kind === kind)
-  const byChapter = new Map()
-  for (const draft of matching) {
-    const key = draft.chapter ?? 'general'
-    byChapter.set(key, [...(byChapter.get(key) ?? []), draft.answer])
+function makeTypedPools(drafts) {
+  const pools = {
+    all: [],
+    byType: new Map(),
+    byBucket: new Map(),
+    byChapterType: new Map(),
+    byChapterBucket: new Map(),
   }
+
+  for (const draft of drafts) {
+    pools.all.push(draft)
+    pushMapValue(pools.byType, draft.answerType, draft)
+    pushMapValue(pools.byBucket, bucketKey(draft), draft)
+    pushMapValue(pools.byChapterType, `${draft.chapter ?? 'general'}:${draft.answerType}`, draft)
+    pushMapValue(pools.byChapterBucket, `${draft.chapter ?? 'general'}:${bucketKey(draft)}`, draft)
+  }
+  return pools
+}
+
+function uniqueAnswersFromDrafts(drafts, correctAnswer, existing = []) {
+  return unique(drafts.map((draft) => draft.answer)).filter((answer) => answer !== correctAnswer && !existing.includes(answer))
+}
+
+function takeAnswers(pool, count, seedText) {
+  return shuffle(pool, seedText).slice(0, count)
+}
+
+function pickTypedDistractors(draft, pools, seedText) {
+  const chapter = draft.chapter ?? 'general'
+  const sameBucket = uniqueAnswersFromDrafts(
+    [...((pools.byChapterBucket.get(`${chapter}:${bucketKey(draft)}`) ?? [])), ...((pools.byBucket.get(bucketKey(draft)) ?? []))],
+    draft.answer,
+  )
+  const sameType = uniqueAnswersFromDrafts(
+    [...((pools.byChapterType.get(`${chapter}:${draft.answerType}`) ?? [])), ...((pools.byType.get(draft.answerType) ?? []))],
+    draft.answer,
+  )
+  const fallbackType = BUCKET_FALLBACK_TYPE[bucketKey(draft)]
+  const fallbackPool = fallbackType && fallbackType !== draft.answerType
+    ? uniqueAnswersFromDrafts(
+        [...((pools.byChapterType.get(`${chapter}:${fallbackType}`) ?? [])), ...((pools.byType.get(fallbackType) ?? []))],
+        draft.answer,
+      )
+    : []
+  // 同章回退：当小桶/同类都不足时，用同章其他答案补足，保证不跨章混杂。
+  const sameChapter = uniqueAnswersFromDrafts(
+    pools.all.filter((item) => (item.chapter ?? 'general') === chapter),
+    draft.answer,
+  )
+  const all = uniqueAnswersFromDrafts(pools.all, draft.answer)
+
+  const picks = []
+  picks.push(...takeAnswers(sameBucket, Math.min(3, sameBucket.length), `${seedText}:same-bucket`))
+  if (picks.length < 3) {
+    picks.push(...takeAnswers(fallbackPool.filter((answer) => !picks.includes(answer)), Math.min(3 - picks.length, fallbackPool.length), `${seedText}:fallback-type`))
+  }
+  if (picks.length < 3) {
+    picks.push(...takeAnswers(sameType.filter((answer) => !picks.includes(answer)), 3 - picks.length, `${seedText}:same-type`))
+  }
+  if (picks.length < 3) {
+    picks.push(...takeAnswers(sameChapter.filter((answer) => !picks.includes(answer)), 3 - picks.length, `${seedText}:same-chapter`))
+  }
+  if (picks.length < 3) {
+    picks.push(...takeAnswers(all.filter((answer) => !picks.includes(answer)), 3 - picks.length, `${seedText}:fallback`))
+  }
+
+  const distractors = picks.slice(0, 3)
+  const sameBucketLike = [...sameBucket, ...fallbackPool, ...sameType]
   return {
-    all: unique(matching.map((draft) => draft.answer)),
-    byChapter: new Map([...byChapter.entries()].map(([chapter, values]) => [chapter, unique(values)])),
+    distractors,
+    sameBucketDistractorCount: distractors.filter((answer) => sameBucketLike.includes(answer)).length,
+    sameTypeDistractorCount: distractors.filter((answer) => sameType.includes(answer) || fallbackPool.includes(answer)).length,
   }
 }
 
-function poolForDraft(draft, pools) {
-  const chapterPool = pools.byChapter.get(draft.chapter ?? 'general') ?? []
-  return chapterPool.length >= 4 ? chapterPool : unique([...chapterPool, ...pools.all])
+function auditDraftQuestion(draft, distractors, sameBucketDistractorCount, sameTypeDistractorCount) {
+  const flags = []
+  const options = [draft.answer, ...distractors]
+  if (draft.confidence < LOW_CONFIDENCE_THRESHOLD) {
+    flags.push({ severity: 'critical', code: 'low-confidence', message: '草稿置信度低于入库阈值。' })
+  }
+  if (distractors.length !== 3) {
+    flags.push({ severity: 'critical', code: 'missing-distractors', message: '未能生成 3 个干扰项。' })
+  }
+  // 同语义类型（answerType）干扰项少于 2 个：选项类型混杂，代回题干易荒谬。
+  if (sameTypeDistractorCount < 2) {
+    flags.push({ severity: 'red', code: 'semantic-type-too-small', message: '同语义类型干扰项少于 2 个。' })
+  }
+  if (draft.kind === 'blank' && !draft.stem.includes('____')) {
+    flags.push({ severity: 'critical', code: 'blank-missing', message: '挖空题题干缺少空格占位。' })
+  }
+  if (options.some((option) => countVisibleCharacters(option) > 32)) {
+    flags.push({ severity: 'red', code: 'long-option', message: '答案或干扰项过长，需要人工确认可读性。' })
+  }
+  if (options.some((option) => !quoteIsBalanced(option))) {
+    flags.push({ severity: 'red', code: 'unbalanced-quote', message: '选项存在引号或书名号不平衡。' })
+  }
+  if (options.some((option) => /____|。$|，$|；$/.test(option))) {
+    flags.push({ severity: 'red', code: 'fragment-option', message: '选项疑似半截句或残留题干符号。' })
+  }
+  return flags
 }
 
-function makeQuestion(draft, index, answerPool, statementPool) {
-  const pool = draft.kind === 'statement' ? poolForDraft(draft, statementPool) : poolForDraft(draft, answerPool)
-  const distractors = pickDistractors(pool, draft.answer, `${draft.chapter ?? 'general'}:${index}:${draft.answer}`)
+function makeQuestion(draft, index, pools) {
+  const { distractors, sameBucketDistractorCount, sameTypeDistractorCount } = pickTypedDistractors(
+    draft,
+    pools,
+    `${draft.chapter ?? 'general'}:${index}:${draft.answer}`,
+  )
   const options = shuffle([draft.answer, ...distractors], `${draft.chapter ?? 'general'}:${index}:options`)
   const correctKey = String.fromCharCode(65 + options.indexOf(draft.answer))
 
@@ -115,7 +385,25 @@ function makeQuestion(draft, index, answerPool, statementPool) {
   }
 
   if (draft.chapter) question.tags = [draft.chapter]
-  return question
+  const flags = auditDraftQuestion(draft, distractors, sameBucketDistractorCount, sameTypeDistractorCount)
+  return {
+    question,
+    reviewItem: flags.length
+      ? {
+          draftNumber: index + 1,
+          questionId: question.id,
+          chapter: draft.chapter,
+          sourceText: draft.sourceText,
+          stem: question.stem,
+          answerText: draft.answer,
+          answerType: draft.answerType,
+          answerSubtype: draft.answerSubtype,
+          templateId: draft.templateId,
+          confidence: draft.confidence,
+          flags,
+        }
+      : null,
+  }
 }
 
 function parseDocQuestions() {
@@ -168,17 +456,34 @@ function parseDocQuestions() {
 }
 
 function makeBlankDraft(chapter, sourceText, stem, answer, explanation = sourceText) {
-  return { kind: 'blank', chapter, sourceText, stem, answer, explanation }
+  const cleanStem = compact(stem)
+  const cleanAnswer = compact(answer)
+  return {
+    kind: 'blank',
+    sourceType: 'docx-summary',
+    chapter,
+    sourceText,
+    stem: cleanStem,
+    answer: cleanAnswer,
+    answerText: cleanAnswer,
+    explanation,
+    ...classifyDraft(cleanStem, cleanAnswer, sourceText, 'blank'),
+  }
 }
 
 function makeStatementDraft(chapter, sourceText, answer, explanation = sourceText) {
+  const cleanAnswer = compact(answer)
+  const stem = `下列关于${chapter ?? '中国近现代史纲要'}的说法中，正确的是____。`
   return {
     kind: 'statement',
+    sourceType: 'docx-summary',
     chapter,
     sourceText,
-    stem: `下列关于${chapter ?? '中国近现代史纲要'}的说法中，正确的是____。`,
-    answer,
+    stem,
+    answer: cleanAnswer,
+    answerText: cleanAnswer,
     explanation,
+    ...classifyDraft(stem, cleanAnswer, sourceText, 'statement'),
   }
 }
 
@@ -311,7 +616,7 @@ function extractDocxDrafts(line, chapter) {
     ['华北事变发生后，中国共产党组织领导的一二九运动标志着中国人民抗日救亡新高潮的到来', '华北事变发生后，中国共产党组织领导的____标志着中国人民抗日救亡新高潮的到来。', '一二九运动'],
     ['大革命时期的统一战线和抗日民族的统一战线皆有各阶级阶层广泛参加', '大革命时期的统一战线和抗日民族统一战线____。', '皆有各阶级阶层广泛参加'],
     ['抗日民族统一战线形成的标志是国民党中央通讯社播发《中国共产党为公布国公合作宣言》', '抗日民族统一战线形成的标志是国民党中央通讯社播发____。', '《中国共产党为公布国公合作宣言》'],
-    ['抗日战争爆发后，国民党政府正式对日宣战是在七七事变后', '抗日战争爆发后，国民党政府正式对日宣战是在____后。', '七七事变'],
+    // 国民政府正式对日宣战实为1941年12月9日（珍珠港事件后），源文"七七事变后"史实存疑，暂下线待人工补题。
     ['国共两党十年内战基本结束，国内和平基本实现的标志是西安事变的和平解决', '国共两党十年内战基本结束，国内和平基本实现的标志是____。', '西安事变的和平解决'],
     ['毛泽东在《论持久战》中指出，中国抗日战争取得最后胜利的最为关键的阶段是战略相持阶段', '毛泽东在《论持久战》中指出，中国抗日战争取得最后胜利的最为关键的阶段是____。', '战略相持阶段'],
     ['全国性抗战开始于七七事变', '全国性抗战开始于____。', '七七事变'],
@@ -395,35 +700,8 @@ function extractDocxDrafts(line, chapter) {
     if (pattern.test(normalized)) return [makeBlankDraft(chapter, sourceText, stem, answer)]
   }
 
-  const generic =
-    normalized.match(/^(.*?)(?:是|为)(.+)$/) ??
-    normalized.match(/^(.*?)提出(.+)$/) ??
-    normalized.match(/^(.*?)创办(.+)$/) ??
-    normalized.match(/^(.*?)建立(.+)$/) ??
-    normalized.match(/^(.*?)领导(.+)$/) ??
-    normalized.match(/^(.*?)发起(.+)$/) ??
-    normalized.match(/^(.*?)组织(.+)$/) ??
-    normalized.match(/^(.*?)定都于?(.+)$/) ??
-    normalized.match(/^(.*?)掌握(.+)$/) ??
-    normalized.match(/^(.*?)宣布(.+)$/) ??
-    normalized.match(/^(.*?)召开(.+)$/) ??
-    normalized.match(/^(.*?)发表(.+)$/) ??
-    normalized.match(/^(.*?)发布(.+)$/) ??
-    normalized.match(/^(.*?)签署了(.+)$/) ??
-    normalized.match(/^(.*?)签订了(.+)$/) ??
-    normalized.match(/^(.*?)开展的(.+)$/) ??
-    normalized.match(/^(.*?)举行了(.+)$/) ??
-    normalized.match(/^(.*?)获得(.+)$/) ??
-    normalized.match(/^(.*?)由(.+)$/) ??
-    normalized.match(/^(.*?)于(\\d{4}年)$/)
-
-  if (generic) {
-    const left = compact(generic[1] ?? '')
-    const right = compact(generic[2] ?? '')
-    const leftLooksLikeAnswer = left.length > 0 && left.length <= 12 && !/[的第主要根本历史中国近代清政府太平天国辛亥革命中国共产党五四运动抗日战争人民民族革命战争运动条约会议制度思想道路新局面]/.test(left)
-    if (leftLooksLikeAnswer && right) return [makeBlankDraft(chapter, sourceText, `____${normalized.slice(left.length)}`, left)]
-    if (right) return [makeBlankDraft(chapter, sourceText, `${left}是____。`, right)]
-  }
+  // Keep uncovered summary lines out of the published bank. They remain in
+  // review-queue.json as low-confidence statement drafts for manual repair.
 
   if (/^《马关条约》含有强迫清政府把台湾割让给日本$/.test(normalized)) return [makeBlankDraft(chapter, sourceText, '____含有强迫清政府把台湾割让给日本。', '《马关条约》')]
   if (/^1898年把山东划分给帝国主义国家德国的势力范围$/.test(normalized)) return [makeBlankDraft(chapter, sourceText, '1898年把山东划分给帝国主义国家____的势力范围。', '德国')]
@@ -449,6 +727,7 @@ function parseDocxQuestions() {
     .filter(Boolean)
 
   const drafts = []
+  const uncoveredLines = []
   let chapter = null
 
   for (const line of bullets) {
@@ -457,32 +736,129 @@ function parseDocxQuestions() {
       continue
     }
     const items = extractDocxDrafts(line, chapter)
+    if (!items.length) {
+      uncoveredLines.push({ chapter, line })
+      continue
+    }
     drafts.push(...items)
   }
 
-  const answerPool = makePool(drafts, 'blank')
-  const statementPool = makePool(drafts, 'statement')
+  const pools = makeTypedPools(drafts)
+  const results = drafts.map((draft, index) => makeQuestion(draft, index + 1, pools))
+  return { drafts, results, uncoveredLines }
+}
 
-  return drafts.map((draft, index) => makeQuestion(draft, index + 1, answerPool, statementPool))
+function severityRank(severity) {
+  return { critical: 0, red: 1 }[severity] ?? 2
+}
+
+function buildReviewQueue(reviewItems, downlinedItems, uncoveredLines) {
+  const entries = [...reviewItems, ...downlinedItems].map((item) => ({
+    ...item,
+    flags: [...item.flags].sort((a, b) => severityRank(a.severity) - severityRank(b.severity)),
+  }))
+  return { generatedAt: UPDATED_AT, uncoveredLines, reviewItems: entries }
+}
+
+function countByAnswerType(items) {
+  const counts = new Map()
+  for (const item of items) {
+    const key = item.answerType ?? 'unknown'
+    counts.set(key, (counts.get(key) ?? 0) + 1)
+  }
+  return Object.fromEntries([...counts.entries()].sort())
+}
+
+function updateManifest(publishedCount, docxPublishedCount, downlinedCount, reviewCount) {
+  const manifest = JSON.parse(readFileSync(MANIFEST_FILE, 'utf8'))
+  const cmh = manifest.subjects.find((subject) => subject.id === SUBJECT_ID)
+  if (!cmh) throw new Error('manifest 中缺少中国近现代史纲要科目')
+
+  cmh.bankTag = SUBJECT_BANK_TAG
+  cmh.questionCount = publishedCount
+  cmh.types = { single: publishedCount, multiple: 0, boolean: 0, blank: 0 }
+  cmh.explanations = publishedCount
+  cmh.sourceCounts = {
+    docSingleChoice: 53,
+    summaryDerivedSingleChoice: docxPublishedCount,
+    summaryBlankQuestions: docxPublishedCount,
+    reviewQueueSize: reviewCount,
+    downlinedCount,
+  }
+  cmh.releaseNotes = [
+    '重建摘要改写单选题生成逻辑：先按事实类型分桶，再按同语义桶生成干扰项。',
+    `本科目仅含单选题，共 ${publishedCount} 道题（.doc 原题 53 道、摘要改写 ${docxPublishedCount} 道）。`,
+    `自动审题下线 ${downlinedCount} 道低置信度题，${reviewCount} 道进入人工复核队列。`,
+  ]
+
+  manifest.bankTag = ROOT_BANK_TAG
+  manifest.questionCount = manifest.subjects.reduce((sum, subject) => sum + subject.questionCount, 0)
+  manifest.updatedAt = UPDATED_AT
+  manifest.releaseNotes = [
+    '重建中国近现代史纲要摘要改写题生成逻辑，收紧改写规则并新增自动审题与人工复核队列。',
+    `近现代史纲要题库热更新至 ${publishedCount} 道单选题，旧客户端可经远端 manifest 拉取。`,
+  ]
+
+  writeFileSync(MANIFEST_FILE, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8')
+  return manifest
 }
 
 function main() {
   const docQuestions = parseDocQuestions()
-  const docxQuestions = parseDocxQuestions()
-  const questions = [...docQuestions, ...docxQuestions].map((question, index) => ({
-    ...question,
-    sourceNumber: index + 1,
-    id: `cmh-${String(index + 1).padStart(3, '0')}`,
-  }))
+  const { drafts, results, uncoveredLines } = parseDocxQuestions()
+
+  const publishedPairs = []
+  const reviewItems = []
+  const downlinedItems = []
+
+  for (const { question, reviewItem } of results) {
+    const isCritical = reviewItem?.flags.some((flag) => flag.severity === 'critical')
+    if (isCritical) {
+      const draftNumber = reviewItem.draftNumber
+      const droppedId = `cmh-dropped-${String(draftNumber).padStart(3, '0')}`
+      downlinedItems.push({ ...reviewItem, questionId: droppedId, downlined: true })
+      continue
+    }
+    publishedPairs.push({ question, reviewItem })
+    if (reviewItem) reviewItems.push(reviewItem)
+  }
+
+  const questions = [...docQuestions, ...publishedPairs.map((pair) => pair.question)]
+  questions.forEach((question, index) => {
+    question.sourceNumber = index + 1
+    question.id = `cmh-${String(index + 1).padStart(3, '0')}`
+  })
+
+  const docCount = docQuestions.length
+  for (let index = 0; index < publishedPairs.length; index += 1) {
+    const pair = publishedPairs[index]
+    if (pair.reviewItem) {
+      pair.reviewItem.questionId = questions[docCount + index].id
+    }
+  }
 
   mkdirSync(OUTPUT_DIR, { recursive: true })
   writeFileSync(OUTPUT_FILE, `${JSON.stringify(questions, null, 2)}\n`, 'utf8')
+  writeFileSync(DRAFTS_FILE, `${JSON.stringify({ generatedAt: UPDATED_AT, drafts }, null, 2)}\n`, 'utf8')
+  writeFileSync(
+    REVIEW_QUEUE_FILE,
+    `${JSON.stringify(buildReviewQueue(reviewItems, downlinedItems, uncoveredLines), null, 2)}\n`,
+    'utf8',
+  )
 
-  const blankCount = docxQuestions.filter((question) => !question.stem.startsWith('下列关于')).length
-  const statementCount = docxQuestions.length - blankCount
+  const manifest = updateManifest(
+    questions.length,
+    publishedPairs.length,
+    downlinedItems.length,
+    reviewItems.length + downlinedItems.length,
+  )
+
   console.log(`已生成 ${questions.length} 道中国近现代史纲要单选题。`)
-  console.log(`来源：.doc ${docQuestions.length} 题，.docx ${docxQuestions.length} 题（挖空 ${blankCount}，题干式 ${statementCount}）。`)
+  console.log(`来源：.doc ${docQuestions.length} 题，.docx 摘要改写入库 ${publishedPairs.length} 题。`)
+  console.log(`摘要草稿题型分布：${JSON.stringify(countByAnswerType(drafts))}`)
+  console.log(`复核队列数量：${reviewItems.length + downlinedItems.length}（其中下线 ${downlinedItems.length} 道）。`)
   console.log(`输出：${OUTPUT_FILE}`)
+  console.log(`manifest 题库总数：${manifest.questionCount}（bankTag ${manifest.bankTag}）`)
 }
 
 main()

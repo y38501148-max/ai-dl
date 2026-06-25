@@ -1,0 +1,231 @@
+{
+  "generatedAt": "2026-06-25T00:00:00+08:00",
+  "uncoveredLines": [],
+  "reviewItems": [
+    {
+      "draftNumber": 11,
+      "questionId": "cmh-dropped-011",
+      "chapter": "进入近代后中华民族的磨难与抗争",
+      "sourceText": "《北京条约》并非是第一次鸦片战争后签订的",
+      "stem": "下列关于进入近代后中华民族的磨难与抗争的说法中，正确的是____。",
+      "answerText": "《北京条约》并非是第一次鸦片战争后签订的",
+      "answerType": "statement",
+      "answerSubtype": "correct-statement",
+      "templateId": "statement-correct",
+      "confidence": 0.68,
+      "flags": [
+        {
+          "severity": "critical",
+          "code": "low-confidence",
+          "message": "草稿置信度低于入库阈值。"
+        },
+        {
+          "severity": "red",
+          "code": "long-option",
+          "message": "答案或干扰项过长，需要人工确认可读性。"
+        }
+      ],
+      "downlined": true
+    },
+    {
+      "draftNumber": 12,
+      "questionId": "cmh-dropped-012",
+      "chapter": "进入近代后中华民族的磨难与抗争",
+      "sourceText": "近代中国人民斗争的主要出发点是挽救中华民族的危亡",
+      "stem": "下列关于进入近代后中华民族的磨难与抗争的说法中，正确的是____。",
+      "answerText": "近代中国人民斗争的主要出发点是挽救中华民族的危亡",
+      "answerType": "statement",
+      "answerSubtype": "correct-statement",
+      "templateId": "statement-correct",
+      "confidence": 0.68,
+      "flags": [
+        {
+          "severity": "critical",
+          "code": "low-confidence",
+          "message": "草稿置信度低于入库阈值。"
+        },
+        {
+          "severity": "red",
+          "code": "long-option",
+          "message": "答案或干扰项过长，需要人工确认可读性。"
+        }
+      ],
+      "downlined": true
+    },
+    {
+      "draftNumber": 81,
+      "questionId": "cmh-dropped-081",
+      "chapter": "中国共产党成立和中国革命的新局面",
+      "sourceText": "大革命中上海的工人阶级接连举行了三次武装起义",
+      "stem": "下列关于中国共产党成立和中国革命的新局面的说法中，正确的是____。",
+      "answerText": "大革命中上海的工人阶级接连举行了三次武装起义",
+      "answerType": "statement",
+      "answerSubtype": "correct-statement",
+      "templateId": "statement-correct",
+      "confidence": 0.68,
+      "flags": [
+        {
+          "severity": "critical",
+          "code": "low-confidence",
+          "message": "草稿置信度低于入库阈值。"
+        },
+        {
+          "severity": "red",
+          "code": "long-option",
+          "message": "答案或干扰项过长，需要人工确认可读性。"
+        }
+      ],
+      "downlined": true
+    },
+    {
+      "draftNumber": 94,
+      "questionId": "cmh-dropped-094",
+      "chapter": "中国革命的新道路",
+      "sourceText": "中国共产党开创的第一个农村革命根据地是井冈山",
+      "stem": "下列关于中国革命的新道路的说法中，正确的是____。",
+      "answerText": "中国共产党开创的第一个农村革命根据地是井冈山",
+      "answerType": "statement",
+      "answerSubtype": "correct-statement",
+      "templateId": "statement-correct",
+      "confidence": 0.68,
+      "flags": [
+        {
+          "severity": "critical",
+          "code": "low-confidence",
+          "message": "草稿置信度低于入库阈值。"
+        },
+        {
+          "severity": "red",
+          "code": "long-option",
+          "message": "答案或干扰项过长，需要人工确认可读性。"
+        }
+      ],
+      "downlined": true
+    },
+    {
+      "draftNumber": 111,
+      "questionId": "cmh-dropped-111",
+      "chapter": "中华民族的抗日战争",
+      "sourceText": "20世纪20年代，日本关东军主任作战参谋石原莞尔提出“满蒙问题的解决是日本唯一的生存途径”通过九一八事变这个荒谬的办法变成了关东军的侵略行径",
+      "stem": "下列关于中华民族的抗日战争的说法中，正确的是____。",
+      "answerText": "20世纪20年代，日本关东军主任作战参谋石原莞尔提出“满蒙问题的解决是日本唯一的生存途径”通过九一八事变这个荒谬的办法变成了关东军的侵略行径",
+      "answerType": "statement",
+      "answerSubtype": "correct-statement",
+      "templateId": "statement-correct",
+      "confidence": 0.68,
+      "flags": [
+        {
+          "severity": "critical",
+          "code": "low-confidence",
+          "message": "草稿置信度低于入库阈值。"
+        },
+        {
+          "severity": "red",
+          "code": "long-option",
+          "message": "答案或干扰项过长，需要人工确认可读性。"
+        }
+      ],
+      "downlined": true
+    },
+    {
+      "draftNumber": 113,
+      "questionId": "cmh-dropped-113",
+      "chapter": "中华民族的抗日战争",
+      "sourceText": "抗日战争爆发后，国民党政府正式对日宣战是在七七事变后",
+      "stem": "下列关于中华民族的抗日战争的说法中，正确的是____。",
+      "answerText": "抗日战争爆发后，国民党政府正式对日宣战是在七七事变后",
+      "answerType": "statement",
+      "answerSubtype": "correct-statement",
+      "templateId": "statement-correct",
+      "confidence": 0.68,
+      "flags": [
+        {
+          "severity": "critical",
+          "code": "low-confidence",
+          "message": "草稿置信度低于入库阈值。"
+        },
+        {
+          "severity": "red",
+          "code": "long-option",
+          "message": "答案或干扰项过长，需要人工确认可读性。"
+        }
+      ],
+      "downlined": true
+    },
+    {
+      "draftNumber": 124,
+      "questionId": "cmh-dropped-124",
+      "chapter": "中华民族的抗日战争",
+      "sourceText": "福建事变不是日本侵华事件",
+      "stem": "下列关于中华民族的抗日战争的说法中，正确的是____。",
+      "answerText": "福建事变不是日本侵华事件",
+      "answerType": "statement",
+      "answerSubtype": "correct-statement",
+      "templateId": "statement-correct",
+      "confidence": 0.68,
+      "flags": [
+        {
+          "severity": "critical",
+          "code": "low-confidence",
+          "message": "草稿置信度低于入库阈值。"
+        },
+        {
+          "severity": "red",
+          "code": "long-option",
+          "message": "答案或干扰项过长，需要人工确认可读性。"
+        }
+      ],
+      "downlined": true
+    },
+    {
+      "draftNumber": 148,
+      "questionId": "cmh-dropped-148",
+      "chapter": "为建立新中国而奋斗",
+      "sourceText": "全面内战爆发不久，毛泽东提出了“必须打败蒋介石”的论断，原因是蒋介石发动的战争是反对中国民族独立和人民解放的反革命战争",
+      "stem": "下列关于为建立新中国而奋斗的说法中，正确的是____。",
+      "answerText": "全面内战爆发不久，毛泽东提出了“必须打败蒋介石”的论断，原因是蒋介石发动的战争是反对中国民族独立和人民解放的反革命战争",
+      "answerType": "statement",
+      "answerSubtype": "correct-statement",
+      "templateId": "statement-correct",
+      "confidence": 0.68,
+      "flags": [
+        {
+          "severity": "critical",
+          "code": "low-confidence",
+          "message": "草稿置信度低于入库阈值。"
+        },
+        {
+          "severity": "red",
+          "code": "long-option",
+          "message": "答案或干扰项过长，需要人工确认可读性。"
+        }
+      ],
+      "downlined": true
+    },
+    {
+      "draftNumber": 149,
+      "questionId": "cmh-dropped-149",
+      "chapter": "为建立新中国而奋斗",
+      "sourceText": "毛泽东提出“一切反动派都是纸老虎”的著名论断针对的是内战初期国民党在军事和经济方面占有的明显优势",
+      "stem": "下列关于为建立新中国而奋斗的说法中，正确的是____。",
+      "answerText": "毛泽东提出“一切反动派都是纸老虎”的著名论断针对的是内战初期国民党在军事和经济方面占有的明显优势",
+      "answerType": "statement",
+      "answerSubtype": "correct-statement",
+      "templateId": "statement-correct",
+      "confidence": 0.68,
+      "flags": [
+        {
+          "severity": "critical",
+          "code": "low-confidence",
+          "message": "草稿置信度低于入库阈值。"
+        },
+        {
+          "severity": "red",
+          "code": "long-option",
+          "message": "答案或干扰项过长，需要人工确认可读性。"
+        }
+      ],
+      "downlined": true
+    }
+  ]
+}

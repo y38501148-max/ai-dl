@@ -1545,7 +1545,7 @@
     "options": [
       {
         "key": "A",
-        "text": "《辛丑条约》的签订"
+        "text": "五四运动"
       },
       {
         "key": "B",
@@ -1553,11 +1553,11 @@
       },
       {
         "key": "C",
-        "text": "邓世昌"
+        "text": "七七事变"
       },
       {
         "key": "D",
-        "text": "南京条约"
+        "text": "参加新政协并将在新中国参政"
       }
     ],
     "correctAnswers": [
@@ -1577,11 +1577,11 @@
     "options": [
       {
         "key": "A",
-        "text": "英国人赫德"
+        "text": "中国民族资本主义的初步发展"
       },
       {
         "key": "B",
-        "text": "民族意识"
+        "text": "国家政权"
       },
       {
         "key": "C",
@@ -1589,7 +1589,7 @@
       },
       {
         "key": "D",
-        "text": "挽救中华民族的危亡"
+        "text": "政治方式"
       }
     ],
     "correctAnswers": [
@@ -1609,15 +1609,15 @@
     "options": [
       {
         "key": "A",
-        "text": "英国"
+        "text": "中外反动势力的联合镇压"
       },
       {
         "key": "B",
-        "text": "邓世昌"
+        "text": "工人阶级，农民阶级和城市小资产阶级"
       },
       {
         "key": "C",
-        "text": "林则徐"
+        "text": "资产阶级"
       },
       {
         "key": "D",
@@ -1641,15 +1641,15 @@
     "options": [
       {
         "key": "A",
-        "text": "孙中山"
+        "text": "“二十一条”"
       },
       {
         "key": "B",
-        "text": "冯子材"
+        "text": "《马关条约》"
       },
       {
         "key": "C",
-        "text": "民族意识"
+        "text": "《北京条约》"
       },
       {
         "key": "D",
@@ -1677,15 +1677,15 @@
       },
       {
         "key": "B",
-        "text": "冯子材"
+        "text": "蔡锷"
       },
       {
         "key": "C",
-        "text": "资本-帝国主义"
+        "text": "鲍罗廷"
       },
       {
         "key": "D",
-        "text": "第一次鸦片战争后签订的"
+        "text": "严复"
       }
     ],
     "correctAnswers": [
@@ -1705,15 +1705,15 @@
     "options": [
       {
         "key": "A",
-        "text": "第二次鸦片战争时的英法联军"
+        "text": "严复"
       },
       {
         "key": "B",
-        "text": "邓世昌"
+        "text": "蔡锷"
       },
       {
         "key": "C",
-        "text": "林则徐"
+        "text": "英国人赫德"
       },
       {
         "key": "D",
@@ -1741,15 +1741,15 @@
       },
       {
         "key": "B",
-        "text": "邓世昌"
+        "text": "王明"
       },
       {
         "key": "C",
-        "text": "《北京条约》"
+        "text": "英国人赫德"
       },
       {
         "key": "D",
-        "text": "鸦片战争"
+        "text": "黄兴"
       }
     ],
     "correctAnswers": [
@@ -1773,15 +1773,15 @@
       },
       {
         "key": "B",
-        "text": "德国"
+        "text": "遵义会议"
       },
       {
         "key": "C",
-        "text": "林则徐"
+        "text": "参加新政协并将在新中国参政"
       },
       {
         "key": "D",
-        "text": "郑观应"
+        "text": "香港海员罢工"
       }
     ],
     "correctAnswers": [
@@ -1801,15 +1801,15 @@
     "options": [
       {
         "key": "A",
-        "text": "林则徐"
+        "text": "《北京条约》"
       },
       {
         "key": "B",
-        "text": "日本"
+        "text": "“二十一条”"
       },
       {
         "key": "C",
-        "text": "资本-帝国主义"
+        "text": "南京条约"
       },
       {
         "key": "D",
@@ -1829,70 +1829,6 @@
     "sourceNumber": 63,
     "subjectId": "china-modern-history",
     "type": "single",
-    "stem": "《北京条约》并非是____。",
-    "options": [
-      {
-        "key": "A",
-        "text": "林则徐"
-      },
-      {
-        "key": "B",
-        "text": "郑观应"
-      },
-      {
-        "key": "C",
-        "text": "第一次鸦片战争后签订的"
-      },
-      {
-        "key": "D",
-        "text": "封建阶级"
-      }
-    ],
-    "correctAnswers": [
-      "C"
-    ],
-    "explanation": "《北京条约》并非是第一次鸦片战争后签订的",
-    "tags": [
-      "进入近代后中华民族的磨难与抗争"
-    ]
-  },
-  {
-    "id": "cmh-064",
-    "sourceNumber": 64,
-    "subjectId": "china-modern-history",
-    "type": "single",
-    "stem": "近代中国人民斗争的主要出发点是____。",
-    "options": [
-      {
-        "key": "A",
-        "text": "第一次鸦片战争后签订的"
-      },
-      {
-        "key": "B",
-        "text": "挽救中华民族的危亡"
-      },
-      {
-        "key": "C",
-        "text": "日本"
-      },
-      {
-        "key": "D",
-        "text": "林则徐"
-      }
-    ],
-    "correctAnswers": [
-      "B"
-    ],
-    "explanation": "近代中国人民斗争的主要出发点是挽救中华民族的危亡",
-    "tags": [
-      "进入近代后中华民族的磨难与抗争"
-    ]
-  },
-  {
-    "id": "cmh-065",
-    "sourceNumber": 65,
-    "subjectId": "china-modern-history",
-    "type": "single",
     "stem": "割占我国九龙半岛的不平等条约是____。",
     "options": [
       {
@@ -1901,15 +1837,15 @@
       },
       {
         "key": "B",
-        "text": "鸦片战争"
-      },
-      {
-        "key": "C",
         "text": "《马关条约》"
       },
       {
+        "key": "C",
+        "text": "南京条约"
+      },
+      {
         "key": "D",
-        "text": "封建阶级"
+        "text": "“二十一条”"
       }
     ],
     "correctAnswers": [
@@ -1921,8 +1857,8 @@
     ]
   },
   {
-    "id": "cmh-066",
-    "sourceNumber": 66,
+    "id": "cmh-064",
+    "sourceNumber": 64,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "从中国攫取一百多万平方公里土地，在第二次鸦片战争中获利最大的国家是____。",
@@ -1933,11 +1869,11 @@
       },
       {
         "key": "B",
-        "text": "封建阶级"
+        "text": "中国"
       },
       {
         "key": "C",
-        "text": "《辛丑条约》的签订"
+        "text": "日本"
       },
       {
         "key": "D",
@@ -1953,19 +1889,19 @@
     ]
   },
   {
-    "id": "cmh-067",
-    "sourceNumber": 67,
+    "id": "cmh-065",
+    "sourceNumber": 65,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1898年把山东划分给帝国主义国家____的势力范围。",
     "options": [
       {
         "key": "A",
-        "text": "第一次鸦片战争后签订的"
+        "text": "法国"
       },
       {
         "key": "B",
-        "text": "封建阶级"
+        "text": "俄国"
       },
       {
         "key": "C",
@@ -1973,7 +1909,7 @@
       },
       {
         "key": "D",
-        "text": "鸦片战争"
+        "text": "日本和俄国"
       }
     ],
     "correctAnswers": [
@@ -1985,15 +1921,15 @@
     ]
   },
   {
-    "id": "cmh-068",
-    "sourceNumber": 68,
+    "id": "cmh-066",
+    "sourceNumber": 66,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1898年把长江流域划分给帝国主义国家____的势力范围。",
     "options": [
       {
         "key": "A",
-        "text": "鸦片战争"
+        "text": "法国"
       },
       {
         "key": "B",
@@ -2001,11 +1937,11 @@
       },
       {
         "key": "C",
-        "text": "八国联军"
+        "text": "日本和俄国"
       },
       {
         "key": "D",
-        "text": "林则徐"
+        "text": "日本"
       }
     ],
     "correctAnswers": [
@@ -2017,15 +1953,15 @@
     ]
   },
   {
-    "id": "cmh-069",
-    "sourceNumber": 69,
+    "id": "cmh-067",
+    "sourceNumber": 67,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1898年把广东、广西、云南划分给帝国主义国家____的势力范围。",
     "options": [
       {
         "key": "A",
-        "text": "鸦片战争"
+        "text": "德国"
       },
       {
         "key": "B",
@@ -2033,11 +1969,11 @@
       },
       {
         "key": "C",
-        "text": "《辛丑条约》的签订"
+        "text": "英国"
       },
       {
         "key": "D",
-        "text": "冯子材"
+        "text": "日本和俄国"
       }
     ],
     "correctAnswers": [
@@ -2049,15 +1985,15 @@
     ]
   },
   {
-    "id": "cmh-070",
-    "sourceNumber": 70,
+    "id": "cmh-068",
+    "sourceNumber": 68,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1898年把福建划分给帝国主义国家____的势力范围。",
     "options": [
       {
         "key": "A",
-        "text": "鸦片战争"
+        "text": "俄国"
       },
       {
         "key": "B",
@@ -2065,11 +2001,11 @@
       },
       {
         "key": "C",
-        "text": "郑观应"
+        "text": "日本和俄国"
       },
       {
         "key": "D",
-        "text": "德国"
+        "text": "英国"
       }
     ],
     "correctAnswers": [
@@ -2081,8 +2017,8 @@
     ]
   },
   {
-    "id": "cmh-071",
-    "sourceNumber": 71,
+    "id": "cmh-069",
+    "sourceNumber": 69,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1898年把长城以北划分给帝国主义国家____的势力范围。",
@@ -2093,15 +2029,15 @@
       },
       {
         "key": "B",
-        "text": "英国人赫德"
+        "text": "日本"
       },
       {
         "key": "C",
-        "text": "南京条约"
+        "text": "日本和俄国"
       },
       {
         "key": "D",
-        "text": "郑观应"
+        "text": "中国"
       }
     ],
     "correctAnswers": [
@@ -2113,23 +2049,23 @@
     ]
   },
   {
-    "id": "cmh-072",
-    "sourceNumber": 72,
+    "id": "cmh-070",
+    "sourceNumber": 70,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "第一次火烧圆明园的侵略军是____。",
     "options": [
       {
         "key": "A",
-        "text": "《北京条约》"
+        "text": "台儿庄战役"
       },
       {
         "key": "B",
-        "text": "德国"
+        "text": "土地革命和武装反抗国民党反动统治"
       },
       {
         "key": "C",
-        "text": "英国"
+        "text": "豫湘桂战役"
       },
       {
         "key": "D",
@@ -2145,19 +2081,19 @@
     ]
   },
   {
-    "id": "cmh-073",
-    "sourceNumber": 73,
+    "id": "cmh-071",
+    "sourceNumber": 71,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "第二次火烧圆明园的侵略军是____。",
     "options": [
       {
         "key": "A",
-        "text": "封建阶级"
+        "text": "没收地主的土地"
       },
       {
         "key": "B",
-        "text": "鸦片战争"
+        "text": "临时宪法"
       },
       {
         "key": "C",
@@ -2165,7 +2101,7 @@
       },
       {
         "key": "D",
-        "text": "挽救中华民族的危亡"
+        "text": "先全盘否定后来保留其封建纲常"
       }
     ],
     "correctAnswers": [
@@ -2177,23 +2113,23 @@
     ]
   },
   {
-    "id": "cmh-074",
-    "sourceNumber": 74,
+    "id": "cmh-072",
+    "sourceNumber": 72,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "掌握中国海关大权40余年的是____。",
     "options": [
       {
         "key": "A",
-        "text": "《马关条约》"
+        "text": "陈独秀"
       },
       {
         "key": "B",
-        "text": "第一次鸦片战争后签订的"
+        "text": "黄兴"
       },
       {
         "key": "C",
-        "text": "俄国"
+        "text": "郑观应"
       },
       {
         "key": "D",
@@ -2209,19 +2145,19 @@
     ]
   },
   {
-    "id": "cmh-075",
-    "sourceNumber": 75,
+    "id": "cmh-073",
+    "sourceNumber": 73,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "在中法战争期间指挥清军获得镇南关大捷的爱国将领是____。",
     "options": [
       {
         "key": "A",
-        "text": "民族意识"
+        "text": "毛泽东"
       },
       {
         "key": "B",
-        "text": "挽救中华民族的危亡"
+        "text": "李大钊"
       },
       {
         "key": "C",
@@ -2229,7 +2165,7 @@
       },
       {
         "key": "D",
-        "text": "英国"
+        "text": "黄兴"
       }
     ],
     "correctAnswers": [
@@ -2241,19 +2177,19 @@
     ]
   },
   {
-    "id": "cmh-076",
-    "sourceNumber": 76,
+    "id": "cmh-074",
+    "sourceNumber": 74,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "在甲午中日战争中英勇殉国的爱国将领是____。",
     "options": [
       {
         "key": "A",
-        "text": "民族意识"
+        "text": "蔡锷"
       },
       {
         "key": "B",
-        "text": "法国"
+        "text": "孙中山"
       },
       {
         "key": "C",
@@ -2261,7 +2197,7 @@
       },
       {
         "key": "D",
-        "text": "英国人赫德"
+        "text": "陈独秀"
       }
     ],
     "correctAnswers": [
@@ -2273,19 +2209,19 @@
     ]
   },
   {
-    "id": "cmh-077",
-    "sourceNumber": 77,
+    "id": "cmh-075",
+    "sourceNumber": 75,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "甲午战争之后中华民族面临生死存亡关头，开始普遍有了____的觉醒。",
     "options": [
       {
         "key": "A",
-        "text": "日本"
+        "text": "“反对内战，争取自由”"
       },
       {
         "key": "B",
-        "text": "第二次鸦片战争时的英法联军"
+        "text": "太平天国和捻军"
       },
       {
         "key": "C",
@@ -2293,7 +2229,7 @@
       },
       {
         "key": "D",
-        "text": "法国"
+        "text": "中共“三大”"
       }
     ],
     "correctAnswers": [
@@ -2305,8 +2241,8 @@
     ]
   },
   {
-    "id": "cmh-078",
-    "sourceNumber": 78,
+    "id": "cmh-076",
+    "sourceNumber": 76,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "____能比较典型地反映太平天国农民政权特点。",
@@ -2317,15 +2253,15 @@
       },
       {
         "key": "B",
-        "text": "冯桂芬"
+        "text": "抗日救国十大纲领"
       },
       {
         "key": "C",
-        "text": "康有为"
+        "text": "《资政新篇》"
       },
       {
         "key": "D",
-        "text": "洪秀全"
+        "text": "《反对本本主义》"
       }
     ],
     "correctAnswers": [
@@ -2337,15 +2273,15 @@
     ]
   },
   {
-    "id": "cmh-079",
-    "sourceNumber": 79,
+    "id": "cmh-077",
+    "sourceNumber": 77,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "天京事变是太平天国由盛转衰的____。",
     "options": [
       {
         "key": "A",
-        "text": "中体西用"
+        "text": "民盟一届三中全会"
       },
       {
         "key": "B",
@@ -2353,11 +2289,11 @@
       },
       {
         "key": "C",
-        "text": "北洋水师的覆灭"
+        "text": "农村包围城市，武装夺取政权理论的提出"
       },
       {
         "key": "D",
-        "text": "南京"
+        "text": "鸦片战争"
       }
     ],
     "correctAnswers": [
@@ -2369,15 +2305,15 @@
     ]
   },
   {
-    "id": "cmh-080",
-    "sourceNumber": 80,
+    "id": "cmh-078",
+    "sourceNumber": 78,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "太平天国政权失败的根本原因是____。",
     "options": [
       {
         "key": "A",
-        "text": "严复"
+        "text": "日军战线太长，兵力和财力不足"
       },
       {
         "key": "B",
@@ -2385,11 +2321,11 @@
       },
       {
         "key": "C",
-        "text": "《资政新篇》"
+        "text": "土地制度的革命"
       },
       {
         "key": "D",
-        "text": "洋务派"
+        "text": "不能依靠和发动人民群众"
       }
     ],
     "correctAnswers": [
@@ -2401,19 +2337,19 @@
     ]
   },
   {
-    "id": "cmh-081",
-    "sourceNumber": 81,
+    "id": "cmh-079",
+    "sourceNumber": 79,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "太平天国运动面对中国历史上历次农民战争所不曾有的新情况，即____。",
     "options": [
       {
         "key": "A",
-        "text": "洋务派"
+        "text": "工人阶级，农民阶级和城市小资产阶级"
       },
       {
         "key": "B",
-        "text": "《天朝田亩制度》"
+        "text": "工人阶级和民族资产阶级"
       },
       {
         "key": "C",
@@ -2421,7 +2357,7 @@
       },
       {
         "key": "D",
-        "text": "资产阶级君主立宪制"
+        "text": "皆有各阶级阶层广泛参加"
       }
     ],
     "correctAnswers": [
@@ -2433,8 +2369,8 @@
     ]
   },
   {
-    "id": "cmh-082",
-    "sourceNumber": 82,
+    "id": "cmh-080",
+    "sourceNumber": 80,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "洋务运动失败的标志是____。",
@@ -2445,15 +2381,15 @@
       },
       {
         "key": "B",
-        "text": "太平天国和捻军"
+        "text": "七七事变"
       },
       {
         "key": "C",
-        "text": "中国民族资本主义的初步发展"
+        "text": "陈独秀在上海创办《青年杂志》"
       },
       {
         "key": "D",
-        "text": "严复"
+        "text": "民盟一届三中全会"
       }
     ],
     "correctAnswers": [
@@ -2465,19 +2401,19 @@
     ]
   },
   {
-    "id": "cmh-083",
-    "sourceNumber": 83,
+    "id": "cmh-081",
+    "sourceNumber": 81,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "____能与当时世界历史潮流同步。",
     "options": [
       {
         "key": "A",
-        "text": "先全盘否定后来保留其封建纲常"
+        "text": "《反对本本主义》"
       },
       {
         "key": "B",
-        "text": "北洋水师"
+        "text": "论人民民主专政"
       },
       {
         "key": "C",
@@ -2485,7 +2421,7 @@
       },
       {
         "key": "D",
-        "text": "资产阶级君主立宪制"
+        "text": "《中华民国临时约法》"
       }
     ],
     "correctAnswers": [
@@ -2497,15 +2433,15 @@
     ]
   },
   {
-    "id": "cmh-084",
-    "sourceNumber": 84,
+    "id": "cmh-082",
+    "sourceNumber": 82,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "____最早向中国介绍西方进化论。",
     "options": [
       {
         "key": "A",
-        "text": "中体西用"
+        "text": "康有为"
       },
       {
         "key": "B",
@@ -2513,11 +2449,11 @@
       },
       {
         "key": "C",
-        "text": "康有为"
+        "text": "蔡锷"
       },
       {
         "key": "D",
-        "text": "冯桂芬"
+        "text": "黄兴"
       }
     ],
     "correctAnswers": [
@@ -2529,23 +2465,23 @@
     ]
   },
   {
-    "id": "cmh-085",
-    "sourceNumber": 85,
+    "id": "cmh-083",
+    "sourceNumber": 83,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "____是清末倡议变法的维新派领袖。",
     "options": [
       {
         "key": "A",
-        "text": "中外反动势力的联合镇压"
+        "text": "毛泽东"
       },
       {
         "key": "B",
-        "text": "先全盘否定后来保留其封建纲常"
+        "text": "王明"
       },
       {
         "key": "C",
-        "text": "洪秀全"
+        "text": "张勋"
       },
       {
         "key": "D",
@@ -2561,8 +2497,8 @@
     ]
   },
   {
-    "id": "cmh-086",
-    "sourceNumber": 86,
+    "id": "cmh-084",
+    "sourceNumber": 84,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "太平天国政权对儒家思想的态度是____。",
@@ -2573,15 +2509,15 @@
       },
       {
         "key": "B",
-        "text": "严复"
+        "text": "有理有利有节"
       },
       {
         "key": "C",
-        "text": "资产阶级"
+        "text": "洋务派"
       },
       {
         "key": "D",
-        "text": "北洋水师"
+        "text": "战略相持阶段"
       }
     ],
     "correctAnswers": [
@@ -2593,15 +2529,15 @@
     ]
   },
   {
-    "id": "cmh-087",
-    "sourceNumber": 87,
+    "id": "cmh-085",
+    "sourceNumber": 85,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "太平天国最高领导者是____。",
     "options": [
       {
         "key": "A",
-        "text": "中体西用"
+        "text": "黄兴"
       },
       {
         "key": "B",
@@ -2609,11 +2545,11 @@
       },
       {
         "key": "C",
-        "text": "北洋水师的覆灭"
+        "text": "冯桂芬"
       },
       {
         "key": "D",
-        "text": "光绪皇帝"
+        "text": "傅作义"
       }
     ],
     "correctAnswers": [
@@ -2625,15 +2561,15 @@
     ]
   },
   {
-    "id": "cmh-088",
-    "sourceNumber": 88,
+    "id": "cmh-086",
+    "sourceNumber": 86,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "太平天国定都于____。",
     "options": [
       {
         "key": "A",
-        "text": "洋务派"
+        "text": "四川"
       },
       {
         "key": "B",
@@ -2641,11 +2577,11 @@
       },
       {
         "key": "C",
-        "text": "标志"
+        "text": "广东"
       },
       {
         "key": "D",
-        "text": "资产阶级"
+        "text": "浙江萧山县"
       }
     ],
     "correctAnswers": [
@@ -2657,15 +2593,15 @@
     ]
   },
   {
-    "id": "cmh-089",
-    "sourceNumber": 89,
+    "id": "cmh-087",
+    "sourceNumber": 87,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "洋务派认为清王朝的“心腹之害”是____。",
     "options": [
       {
         "key": "A",
-        "text": "中体西用"
+        "text": "临时宪法"
       },
       {
         "key": "B",
@@ -2673,11 +2609,11 @@
       },
       {
         "key": "C",
-        "text": "洋务派"
+        "text": "农村包围城市，武装夺取政权"
       },
       {
         "key": "D",
-        "text": "标志"
+        "text": "1949年4月23日"
       }
     ],
     "correctAnswers": [
@@ -2689,23 +2625,23 @@
     ]
   },
   {
-    "id": "cmh-090",
-    "sourceNumber": 90,
+    "id": "cmh-088",
+    "sourceNumber": 88,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "清政府的海上主力是____。",
     "options": [
       {
         "key": "A",
-        "text": "洪仁玕的《资政新篇》"
+        "text": "新四军"
       },
       {
         "key": "B",
-        "text": "中体西用"
+        "text": "红一、二、四方面军"
       },
       {
         "key": "C",
-        "text": "《天朝田亩制度》"
+        "text": "中国民主同盟"
       },
       {
         "key": "D",
@@ -2721,19 +2657,19 @@
     ]
   },
   {
-    "id": "cmh-091",
-    "sourceNumber": 91,
+    "id": "cmh-089",
+    "sourceNumber": 89,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "维新派代表了____的利益和要求。",
     "options": [
       {
         "key": "A",
-        "text": "《时务报》"
+        "text": "中外反动势力的联合镇压"
       },
       {
         "key": "B",
-        "text": "北洋水师的覆灭"
+        "text": "工人阶级，农民阶级和城市小资产阶级"
       },
       {
         "key": "C",
@@ -2741,7 +2677,7 @@
       },
       {
         "key": "D",
-        "text": "冯桂芬"
+        "text": "工人阶级及其政党"
       }
     ],
     "correctAnswers": [
@@ -2753,15 +2689,15 @@
     ]
   },
   {
-    "id": "cmh-092",
-    "sourceNumber": 92,
+    "id": "cmh-090",
+    "sourceNumber": 90,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "在维新派推动下实行“戊戌变法”的清帝是____。",
     "options": [
       {
         "key": "A",
-        "text": "标志"
+        "text": "孙中山"
       },
       {
         "key": "B",
@@ -2769,11 +2705,11 @@
       },
       {
         "key": "C",
-        "text": "南京"
+        "text": "邹容"
       },
       {
         "key": "D",
-        "text": "中国民族资本主义的初步发展"
+        "text": "邓世昌"
       }
     ],
     "correctAnswers": [
@@ -2785,23 +2721,23 @@
     ]
   },
   {
-    "id": "cmh-093",
-    "sourceNumber": 93,
+    "id": "cmh-091",
+    "sourceNumber": 91,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "近代中国第一个比较系统的发展资本主义的方案是____。",
     "options": [
       {
         "key": "A",
-        "text": "光绪皇帝"
+        "text": "论人民民主专政"
       },
       {
         "key": "B",
-        "text": "资产阶级"
+        "text": "洪仁玕的《资政新篇》"
       },
       {
         "key": "C",
-        "text": "中外反动势力的联合镇压"
+        "text": "《中华民国临时约法》"
       },
       {
         "key": "D",
@@ -2817,8 +2753,8 @@
     ]
   },
   {
-    "id": "cmh-094",
-    "sourceNumber": 94,
+    "id": "cmh-092",
+    "sourceNumber": 92,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "最早对兴办洋务运动的指导思想做出完整表述的是____。",
@@ -2829,15 +2765,15 @@
       },
       {
         "key": "B",
-        "text": "北洋水师的覆灭"
+        "text": "邹容"
       },
       {
         "key": "C",
-        "text": "《资政新篇》"
+        "text": "陈望道"
       },
       {
         "key": "D",
-        "text": "北洋水师"
+        "text": "英国人赫德"
       }
     ],
     "correctAnswers": [
@@ -2849,23 +2785,23 @@
     ]
   },
   {
-    "id": "cmh-095",
-    "sourceNumber": 95,
+    "id": "cmh-093",
+    "sourceNumber": 93,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "戊戌维新运动是一次____改革运动。",
     "options": [
       {
         "key": "A",
-        "text": "中国民族资本主义的初步发展"
+        "text": "皆有各阶级阶层广泛参加"
       },
       {
         "key": "B",
-        "text": "严复"
+        "text": "工人阶级和民族资产阶级"
       },
       {
         "key": "C",
-        "text": "北洋水师的覆灭"
+        "text": "封建阶级"
       },
       {
         "key": "D",
@@ -2881,8 +2817,8 @@
     ]
   },
   {
-    "id": "cmh-096",
-    "sourceNumber": 96,
+    "id": "cmh-094",
+    "sourceNumber": 94,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "戊戌维新运动中维新派主张建立的政治制度是____。",
@@ -2893,15 +2829,15 @@
       },
       {
         "key": "B",
-        "text": "《资政新篇》"
+        "text": "内线作战转向至外线作战"
       },
       {
         "key": "C",
-        "text": "《天朝田亩制度》"
+        "text": "资本-帝国主义"
       },
       {
         "key": "D",
-        "text": "北洋水师的覆灭"
+        "text": "“三三制”"
       }
     ],
     "correctAnswers": [
@@ -2913,8 +2849,8 @@
     ]
   },
   {
-    "id": "cmh-097",
-    "sourceNumber": 97,
+    "id": "cmh-095",
+    "sourceNumber": 95,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "提出“三纲四维之道不可变”，“择西学之可以补吾阙者用之”的主张是____。",
@@ -2925,15 +2861,15 @@
       },
       {
         "key": "B",
-        "text": "太平天国和捻军"
+        "text": "战略相持阶段"
       },
       {
         "key": "C",
-        "text": "洪秀全"
+        "text": "三次"
       },
       {
         "key": "D",
-        "text": "《天朝田亩制度》"
+        "text": "民族意识"
       }
     ],
     "correctAnswers": [
@@ -2945,8 +2881,8 @@
     ]
   },
   {
-    "id": "cmh-098",
-    "sourceNumber": 98,
+    "id": "cmh-096",
+    "sourceNumber": 96,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "戊戌维新时期，维新派在上海创办的影响较大的报刊是____。",
@@ -2957,15 +2893,15 @@
       },
       {
         "key": "B",
-        "text": "洋务派"
+        "text": "《马关条约》"
       },
       {
         "key": "C",
-        "text": "中国民族资本主义的初步发展"
+        "text": "《新青年》"
       },
       {
         "key": "D",
-        "text": "严复"
+        "text": "《民报》"
       }
     ],
     "correctAnswers": [
@@ -2977,23 +2913,23 @@
     ]
   },
   {
-    "id": "cmh-099",
-    "sourceNumber": 99,
+    "id": "cmh-097",
+    "sourceNumber": 97,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "洋务运动指导思想是____。",
     "options": [
       {
         "key": "A",
-        "text": "光绪皇帝"
+        "text": "党的思想建设"
       },
       {
         "key": "B",
-        "text": "康有为"
+        "text": "中国民族资本主义的初步发展"
       },
       {
         "key": "C",
-        "text": "资产阶级"
+        "text": "政治方式"
       },
       {
         "key": "D",
@@ -3009,23 +2945,23 @@
     ]
   },
   {
-    "id": "cmh-100",
-    "sourceNumber": 100,
+    "id": "cmh-098",
+    "sourceNumber": 98,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "清末维新派的目的是在中国建立起____。",
     "options": [
       {
         "key": "A",
-        "text": "《时务报》"
+        "text": "延续清政府的统治"
       },
       {
         "key": "B",
-        "text": "资产阶级"
+        "text": "统一的亲美政府"
       },
       {
         "key": "C",
-        "text": "太平天国和捻军"
+        "text": "避免共产党完全控制中国"
       },
       {
         "key": "D",
@@ -3041,15 +2977,15 @@
     ]
   },
   {
-    "id": "cmh-101",
-    "sourceNumber": 101,
+    "id": "cmh-099",
+    "sourceNumber": 99,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "戊戌维新运动兴起的社会物资条件是____。",
     "options": [
       {
         "key": "A",
-        "text": "农民阶级的局限性"
+        "text": "国家政权"
       },
       {
         "key": "B",
@@ -3057,11 +2993,11 @@
       },
       {
         "key": "C",
-        "text": "《时务报》"
+        "text": "中体西用"
       },
       {
         "key": "D",
-        "text": "洪秀全"
+        "text": "内线作战转向至外线作战"
       }
     ],
     "correctAnswers": [
@@ -3073,8 +3009,8 @@
     ]
   },
   {
-    "id": "cmh-102",
-    "sourceNumber": 102,
+    "id": "cmh-100",
+    "sourceNumber": 100,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "科举制度是清政府在清末“新政”活动中____。",
@@ -3085,15 +3021,15 @@
       },
       {
         "key": "B",
-        "text": "辛亥革命"
+        "text": "“反对内战，争取自由”"
       },
       {
         "key": "C",
-        "text": "张勋"
+        "text": "洋务派"
       },
       {
         "key": "D",
-        "text": "留学生为骨干的青年知识分子"
+        "text": "先全盘否定后来保留其封建纲常"
       }
     ],
     "correctAnswers": [
@@ -3105,15 +3041,15 @@
     ]
   },
   {
-    "id": "cmh-103",
-    "sourceNumber": 103,
+    "id": "cmh-101",
+    "sourceNumber": 101,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "辛亥革命的中坚力量是____。",
     "options": [
       {
         "key": "A",
-        "text": "不能依靠和发动人民群众"
+        "text": "国民党反动统治"
       },
       {
         "key": "B",
@@ -3121,11 +3057,11 @@
       },
       {
         "key": "C",
-        "text": "黄花岗"
+        "text": "资产阶级"
       },
       {
         "key": "D",
-        "text": "陈独秀在上海创办《青年杂志》"
+        "text": "工人阶级和民族资产阶级"
       }
     ],
     "correctAnswers": [
@@ -3137,8 +3073,8 @@
     ]
   },
   {
-    "id": "cmh-104",
-    "sourceNumber": 104,
+    "id": "cmh-102",
+    "sourceNumber": 102,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "近代中国第一个领导资产阶级革命的全国性政党是____。",
@@ -3149,15 +3085,15 @@
       },
       {
         "key": "B",
-        "text": "废除的"
+        "text": "中国国民党革命委员会"
       },
       {
         "key": "C",
-        "text": "张勋"
+        "text": "中国民主同盟"
       },
       {
         "key": "D",
-        "text": "日本和俄国"
+        "text": "中华苏维埃共和国临时中央政府"
       }
     ],
     "correctAnswers": [
@@ -3169,19 +3105,19 @@
     ]
   },
   {
-    "id": "cmh-105",
-    "sourceNumber": 105,
+    "id": "cmh-103",
+    "sourceNumber": 103,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中国历史上第一个具有资产阶级共和国性质的法典是____。",
     "options": [
       {
         "key": "A",
-        "text": "四川"
+        "text": "洪仁玕的《资政新篇》"
       },
       {
         "key": "B",
-        "text": "同盟会"
+        "text": "抗日救国十大纲领"
       },
       {
         "key": "C",
@@ -3189,7 +3125,7 @@
       },
       {
         "key": "D",
-        "text": "“二次革命”"
+        "text": "《资政新篇》"
       }
     ],
     "correctAnswers": [
@@ -3201,23 +3137,23 @@
     ]
   },
   {
-    "id": "cmh-106",
-    "sourceNumber": 106,
+    "id": "cmh-104",
+    "sourceNumber": 104,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "辛亥革命和戊戌维新运动失败的共同原因是____。",
     "options": [
       {
         "key": "A",
-        "text": "日本和俄国"
+        "text": "日军战线太长，兵力和财力不足"
       },
       {
         "key": "B",
-        "text": "黄花岗"
+        "text": "土地革命"
       },
       {
         "key": "C",
-        "text": "延续清政府的统治"
+        "text": "蒋介石国民党政府的经济崩溃和政治危机"
       },
       {
         "key": "D",
@@ -3233,15 +3169,15 @@
     ]
   },
   {
-    "id": "cmh-107",
-    "sourceNumber": 107,
+    "id": "cmh-105",
+    "sourceNumber": 105,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "新文化运动兴起的标志是____。",
     "options": [
       {
         "key": "A",
-        "text": "兴中会"
+        "text": "参加新政协并将在新中国参政"
       },
       {
         "key": "B",
@@ -3249,11 +3185,11 @@
       },
       {
         "key": "C",
-        "text": "辛亥革命"
+        "text": "中华人民共和国"
       },
       {
         "key": "D",
-        "text": "革命"
+        "text": "一二九运动"
       }
     ],
     "correctAnswers": [
@@ -3265,15 +3201,15 @@
     ]
   },
   {
-    "id": "cmh-108",
-    "sourceNumber": 108,
+    "id": "cmh-106",
+    "sourceNumber": 106,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "清末“预备立宪”的根本目的在于____。",
     "options": [
       {
         "key": "A",
-        "text": "蔡锷"
+        "text": "统一的亲美政府"
       },
       {
         "key": "B",
@@ -3281,11 +3217,11 @@
       },
       {
         "key": "C",
-        "text": "留学生为骨干的青年知识分子"
+        "text": "资产阶级君主立宪制"
       },
       {
         "key": "D",
-        "text": "兴中会"
+        "text": "避免共产党完全控制中国"
       }
     ],
     "correctAnswers": [
@@ -3297,19 +3233,19 @@
     ]
   },
   {
-    "id": "cmh-109",
-    "sourceNumber": 109,
+    "id": "cmh-107",
+    "sourceNumber": 107,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "孙中山建立的第一个资产阶级革命团体是____。",
     "options": [
       {
         "key": "A",
-        "text": "《民报》"
+        "text": "没收地主的土地"
       },
       {
         "key": "B",
-        "text": "四川"
+        "text": "战略相持阶段"
       },
       {
         "key": "C",
@@ -3317,7 +3253,7 @@
       },
       {
         "key": "D",
-        "text": "《中华民国临时约法》"
+        "text": "三次"
       }
     ],
     "correctAnswers": [
@@ -3329,19 +3265,19 @@
     ]
   },
   {
-    "id": "cmh-110",
-    "sourceNumber": 110,
+    "id": "cmh-108",
+    "sourceNumber": 108,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "热情讴歌革命的文章《革命军》的作者是____。",
     "options": [
       {
         "key": "A",
-        "text": "四川"
+        "text": "光绪皇帝"
       },
       {
         "key": "B",
-        "text": "陈独秀在上海创办《青年杂志》"
+        "text": "傅作义"
       },
       {
         "key": "C",
@@ -3349,7 +3285,7 @@
       },
       {
         "key": "D",
-        "text": "不能依靠和发动人民群众"
+        "text": "冯子材"
       }
     ],
     "correctAnswers": [
@@ -3361,23 +3297,23 @@
     ]
   },
   {
-    "id": "cmh-111",
-    "sourceNumber": 111,
+    "id": "cmh-109",
+    "sourceNumber": 109,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "资产阶级革命政党中国同盟会的机关报是____。",
     "options": [
       {
         "key": "A",
-        "text": "黄兴"
+        "text": "《新青年》"
       },
       {
         "key": "B",
-        "text": "《中华民国临时约法》"
+        "text": "“二十一条”"
       },
       {
         "key": "C",
-        "text": "1906年"
+        "text": "《时务报》"
       },
       {
         "key": "D",
@@ -3393,19 +3329,19 @@
     ]
   },
   {
-    "id": "cmh-112",
-    "sourceNumber": 112,
+    "id": "cmh-110",
+    "sourceNumber": 110,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1911年4月在广州发生的起义之所以被称为“黄花岗起义”是因为起牺牲的烈士被葬在____。",
     "options": [
       {
         "key": "A",
-        "text": "同盟会"
+        "text": "四川"
       },
       {
         "key": "B",
-        "text": "黄兴"
+        "text": "广东"
       },
       {
         "key": "C",
@@ -3413,7 +3349,7 @@
       },
       {
         "key": "D",
-        "text": "“二次革命”"
+        "text": "河北平山县"
       }
     ],
     "correctAnswers": [
@@ -3425,19 +3361,19 @@
     ]
   },
   {
-    "id": "cmh-113",
-    "sourceNumber": 113,
+    "id": "cmh-111",
+    "sourceNumber": 111,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "袁世凯暗杀了国民党领袖宋教仁后，孙中山发动了____。",
     "options": [
       {
         "key": "A",
-        "text": "不能依靠和发动人民群众"
+        "text": "挽救了党和中国革命"
       },
       {
         "key": "B",
-        "text": "“二十一条”"
+        "text": "土地革命和武装反抗国民党反动统治"
       },
       {
         "key": "C",
@@ -3445,7 +3381,7 @@
       },
       {
         "key": "D",
-        "text": "邹容"
+        "text": "五四运动时期"
       }
     ],
     "correctAnswers": [
@@ -3457,23 +3393,23 @@
     ]
   },
   {
-    "id": "cmh-114",
-    "sourceNumber": 114,
+    "id": "cmh-112",
+    "sourceNumber": 112,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "为了让对方支持他复辟帝制，袁世凯与日本签订了严重丧权辱国的____。",
     "options": [
       {
         "key": "A",
-        "text": "兴中会"
+        "text": "南京条约"
       },
       {
         "key": "B",
-        "text": "留学生为骨干的青年知识分子"
+        "text": "《马关条约》"
       },
       {
         "key": "C",
-        "text": "黄兴"
+        "text": "《北京条约》"
       },
       {
         "key": "D",
@@ -3489,23 +3425,23 @@
     ]
   },
   {
-    "id": "cmh-115",
-    "sourceNumber": 115,
+    "id": "cmh-113",
+    "sourceNumber": 113,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1917年悍然拥立废帝溥仪，复辟清朝的封建军阀是____。",
     "options": [
       {
         "key": "A",
-        "text": "留学生为骨干的青年知识分子"
+        "text": "冯桂芬"
       },
       {
         "key": "B",
-        "text": "革命"
+        "text": "毛泽东"
       },
       {
         "key": "C",
-        "text": "同盟会"
+        "text": "陈独秀"
       },
       {
         "key": "D",
@@ -3521,15 +3457,15 @@
     ]
   },
   {
-    "id": "cmh-116",
-    "sourceNumber": 116,
+    "id": "cmh-114",
+    "sourceNumber": 114,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "组织“护国军”，发起护国运动的人是____。",
     "options": [
       {
         "key": "A",
-        "text": "革命"
+        "text": "陈独秀"
       },
       {
         "key": "B",
@@ -3537,11 +3473,11 @@
       },
       {
         "key": "C",
-        "text": "四川"
+        "text": "郑观应"
       },
       {
         "key": "D",
-        "text": "延续清政府的统治"
+        "text": "冯桂芬"
       }
     ],
     "correctAnswers": [
@@ -3553,19 +3489,19 @@
     ]
   },
   {
-    "id": "cmh-117",
-    "sourceNumber": 117,
+    "id": "cmh-115",
+    "sourceNumber": 115,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "革命派和改良派论证的焦点是要不要以____的手段推翻清王朝。",
     "options": [
       {
         "key": "A",
-        "text": "陈独秀在上海创办《青年杂志》"
+        "text": "台儿庄战役"
       },
       {
         "key": "B",
-        "text": "同盟会"
+        "text": "“二次革命”"
       },
       {
         "key": "C",
@@ -3573,7 +3509,7 @@
       },
       {
         "key": "D",
-        "text": "延续清政府的统治"
+        "text": "人民军队和解放区的合法地位问题"
       }
     ],
     "correctAnswers": [
@@ -3585,8 +3521,8 @@
     ]
   },
   {
-    "id": "cmh-118",
-    "sourceNumber": 118,
+    "id": "cmh-116",
+    "sourceNumber": 116,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "引起20世纪中国第一次历史性巨变的重大事件是____。",
@@ -3597,15 +3533,15 @@
       },
       {
         "key": "B",
-        "text": "1906年"
+        "text": "土地革命和武装反抗国民党反动统治"
       },
       {
         "key": "C",
-        "text": "蔡锷"
+        "text": "挽救了党和中国革命"
       },
       {
         "key": "D",
-        "text": "日本和俄国"
+        "text": "五四运动时期"
       }
     ],
     "correctAnswers": [
@@ -3617,15 +3553,15 @@
     ]
   },
   {
-    "id": "cmh-119",
-    "sourceNumber": 119,
+    "id": "cmh-117",
+    "sourceNumber": 117,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1904-1905年，为了争夺在华利益而在中国东北进行战争的帝国主义国家是____。",
     "options": [
       {
         "key": "A",
-        "text": "陈独秀在上海创办《青年杂志》"
+        "text": "日本"
       },
       {
         "key": "B",
@@ -3633,11 +3569,11 @@
       },
       {
         "key": "C",
-        "text": "1906年"
+        "text": "德国"
       },
       {
         "key": "D",
-        "text": "留学生为骨干的青年知识分子"
+        "text": "英国"
       }
     ],
     "correctAnswers": [
@@ -3649,19 +3585,19 @@
     ]
   },
   {
-    "id": "cmh-120",
-    "sourceNumber": 120,
+    "id": "cmh-118",
+    "sourceNumber": 118,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "我国科举制度正式废除于____。",
     "options": [
       {
         "key": "A",
-        "text": "张勋"
+        "text": "9月3日"
       },
       {
         "key": "B",
-        "text": "留学生为骨干的青年知识分子"
+        "text": "1948年9月-1949年1月"
       },
       {
         "key": "C",
@@ -3669,7 +3605,7 @@
       },
       {
         "key": "D",
-        "text": "黄花岗"
+        "text": "1922年"
       }
     ],
     "correctAnswers": [
@@ -3681,15 +3617,15 @@
     ]
   },
   {
-    "id": "cmh-121",
-    "sourceNumber": 121,
+    "id": "cmh-119",
+    "sourceNumber": 119,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1911年4月，资产阶级革命派在____的带领下举行了黄花岗起义。",
     "options": [
       {
         "key": "A",
-        "text": "张勋"
+        "text": "邓世昌"
       },
       {
         "key": "B",
@@ -3697,11 +3633,11 @@
       },
       {
         "key": "C",
-        "text": "日本和俄国"
+        "text": "康有为"
       },
       {
         "key": "D",
-        "text": "兴中会"
+        "text": "陈独秀"
       }
     ],
     "correctAnswers": [
@@ -3713,8 +3649,8 @@
     ]
   },
   {
-    "id": "cmh-122",
-    "sourceNumber": 122,
+    "id": "cmh-120",
+    "sourceNumber": 120,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1911年爆发的保路运动中，规模最大、斗争最激烈的省份是____。",
@@ -3725,15 +3661,15 @@
       },
       {
         "key": "B",
-        "text": "《民报》"
+        "text": "南京"
       },
       {
         "key": "C",
-        "text": "辛亥革命"
+        "text": "河北平山县"
       },
       {
         "key": "D",
-        "text": "留学生为骨干的青年知识分子"
+        "text": "广东"
       }
     ],
     "correctAnswers": [
@@ -3745,19 +3681,19 @@
     ]
   },
   {
-    "id": "cmh-123",
-    "sourceNumber": 123,
+    "id": "cmh-121",
+    "sourceNumber": 121,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "新文化运动的基本口号是____。",
     "options": [
       {
         "key": "A",
-        "text": "鲍罗廷"
+        "text": "资本-帝国主义"
       },
       {
         "key": "B",
-        "text": "陈独秀"
+        "text": "党的思想建设"
       },
       {
         "key": "C",
@@ -3765,7 +3701,7 @@
       },
       {
         "key": "D",
-        "text": "资产阶级民主主义运动"
+        "text": "中国民族资本主义的初步发展"
       }
     ],
     "correctAnswers": [
@@ -3777,19 +3713,19 @@
     ]
   },
   {
-    "id": "cmh-124",
-    "sourceNumber": 124,
+    "id": "cmh-122",
+    "sourceNumber": 122,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "宣传新文化的主要刊物是____。",
     "options": [
       {
         "key": "A",
-        "text": "浙江萧山县"
+        "text": "《中华民国临时约法》"
       },
       {
         "key": "B",
-        "text": "资产阶级民主主义运动"
+        "text": "抗日救国十大纲领"
       },
       {
         "key": "C",
@@ -3797,7 +3733,7 @@
       },
       {
         "key": "D",
-        "text": "陈望道"
+        "text": "洪仁玕的《资政新篇》"
       }
     ],
     "correctAnswers": [
@@ -3809,15 +3745,15 @@
     ]
   },
   {
-    "id": "cmh-125",
-    "sourceNumber": 125,
+    "id": "cmh-123",
+    "sourceNumber": 123,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "五四运动的直接导火索是____。",
     "options": [
       {
         "key": "A",
-        "text": "《新青年》"
+        "text": "第二次鸦片战争时的英法联军"
       },
       {
         "key": "B",
@@ -3825,11 +3761,11 @@
       },
       {
         "key": "C",
-        "text": "陈独秀"
+        "text": "“东北易帜”"
       },
       {
         "key": "D",
-        "text": "民主与科学"
+        "text": "“二次革命”"
       }
     ],
     "correctAnswers": [
@@ -3841,8 +3777,8 @@
     ]
   },
   {
-    "id": "cmh-126",
-    "sourceNumber": 126,
+    "id": "cmh-124",
+    "sourceNumber": 124,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "“问题与主义”争论的双方主要代表人物是____和胡适。",
@@ -3853,15 +3789,15 @@
       },
       {
         "key": "B",
-        "text": "国民党“一大”"
+        "text": "毛泽东"
       },
       {
         "key": "C",
-        "text": "《新青年》"
+        "text": "张勋"
       },
       {
         "key": "D",
-        "text": "民主与科学"
+        "text": "黄兴"
       }
     ],
     "correctAnswers": [
@@ -3873,23 +3809,23 @@
     ]
   },
   {
-    "id": "cmh-127",
-    "sourceNumber": 127,
+    "id": "cmh-125",
+    "sourceNumber": 125,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中国共产党就国共合作的方针和方法做出正确的决定是在____。",
     "options": [
       {
         "key": "A",
-        "text": "五四运动"
+        "text": "废除的"
       },
       {
         "key": "B",
-        "text": "香港海员罢工"
+        "text": "太平天国和捻军"
       },
       {
         "key": "C",
-        "text": "浙江萧山县"
+        "text": "临时宪法"
       },
       {
         "key": "D",
@@ -3905,8 +3841,8 @@
     ]
   },
   {
-    "id": "cmh-128",
-    "sourceNumber": 128,
+    "id": "cmh-126",
+    "sourceNumber": 126,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "第一次国共合作形成的标志是____。",
@@ -3917,15 +3853,15 @@
       },
       {
         "key": "B",
-        "text": "五四运动时期"
+        "text": "遵义会议"
       },
       {
         "key": "C",
-        "text": "民主与科学"
+        "text": "民盟一届三中全会"
       },
       {
         "key": "D",
-        "text": "巴黎和会上中国的外交失败"
+        "text": "南昌起义"
       }
     ],
     "correctAnswers": [
@@ -3937,23 +3873,23 @@
     ]
   },
   {
-    "id": "cmh-129",
-    "sourceNumber": 129,
+    "id": "cmh-127",
+    "sourceNumber": 127,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中共创立时领导人是____。",
     "options": [
       {
         "key": "A",
-        "text": "《新青年》"
+        "text": "冯子材"
       },
       {
         "key": "B",
-        "text": "广东"
+        "text": "毛泽东"
       },
       {
         "key": "C",
-        "text": "民主与科学"
+        "text": "林则徐"
       },
       {
         "key": "D",
@@ -3969,19 +3905,19 @@
     ]
   },
   {
-    "id": "cmh-130",
-    "sourceNumber": 130,
+    "id": "cmh-128",
+    "sourceNumber": 128,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "初期新文化运动的实质是____。",
     "options": [
       {
         "key": "A",
-        "text": "三次武装起义"
+        "text": "旧民主主义道路"
       },
       {
         "key": "B",
-        "text": "中共“三大”"
+        "text": "农民战争"
       },
       {
         "key": "C",
@@ -3989,7 +3925,7 @@
       },
       {
         "key": "D",
-        "text": "巴黎和会上中国的外交失败"
+        "text": "事实本质"
       }
     ],
     "correctAnswers": [
@@ -4001,8 +3937,8 @@
     ]
   },
   {
-    "id": "cmh-131",
-    "sourceNumber": 131,
+    "id": "cmh-129",
+    "sourceNumber": 129,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中国工人阶级以独立的姿态登上政治舞台是____。",
@@ -4013,15 +3949,15 @@
       },
       {
         "key": "B",
-        "text": "中共“三大”"
+        "text": "辛亥革命"
       },
       {
         "key": "C",
-        "text": "三次武装起义"
+        "text": "“二次革命”"
       },
       {
         "key": "D",
-        "text": "陈独秀"
+        "text": "挽救了党和中国革命"
       }
     ],
     "correctAnswers": [
@@ -4033,19 +3969,19 @@
     ]
   },
   {
-    "id": "cmh-132",
-    "sourceNumber": 132,
+    "id": "cmh-130",
+    "sourceNumber": 130,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "大革命开始的革命根据地在____。",
     "options": [
       {
         "key": "A",
-        "text": "巴黎和会上中国的外交失败"
+        "text": "南京"
       },
       {
         "key": "B",
-        "text": "陈独秀"
+        "text": "浙江萧山县"
       },
       {
         "key": "C",
@@ -4053,7 +3989,7 @@
       },
       {
         "key": "D",
-        "text": "民主与科学"
+        "text": "四川"
       }
     ],
     "correctAnswers": [
@@ -4065,47 +4001,15 @@
     ]
   },
   {
-    "id": "cmh-133",
-    "sourceNumber": 133,
-    "subjectId": "china-modern-history",
-    "type": "single",
-    "stem": "大革命中上海的工人阶级接连是____。",
-    "options": [
-      {
-        "key": "A",
-        "text": "民主与科学"
-      },
-      {
-        "key": "B",
-        "text": "三次武装起义"
-      },
-      {
-        "key": "C",
-        "text": "资产阶级民主主义运动"
-      },
-      {
-        "key": "D",
-        "text": "陈望道"
-      }
-    ],
-    "correctAnswers": [
-      "B"
-    ],
-    "explanation": "大革命中上海的工人阶级接连举行了三次武装起义",
-    "tags": [
-      "中国共产党成立和中国革命的新局面"
-    ]
-  },
-  {
-    "id": "cmh-134",
-    "sourceNumber": 134,
+    "id": "cmh-131",
+    "sourceNumber": 131,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "《共产党宣言》第一个中文全译本的译者是____。",
     "options": [
       {
         "key": "A",
-        "text": "1922年"
+        "text": "冯桂芬"
       },
       {
         "key": "B",
@@ -4113,11 +4017,11 @@
       },
       {
         "key": "C",
-        "text": "香港海员罢工"
+        "text": "严复"
       },
       {
         "key": "D",
-        "text": "中共“三大”"
+        "text": "鲍罗廷"
       }
     ],
     "correctAnswers": [
@@ -4129,15 +4033,15 @@
     ]
   },
   {
-    "id": "cmh-135",
-    "sourceNumber": 135,
+    "id": "cmh-132",
+    "sourceNumber": 132,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "在新文化运动中率先举起马克思主义旗帜的是____。",
     "options": [
       {
         "key": "A",
-        "text": "浙江萧山县"
+        "text": "蔡锷"
       },
       {
         "key": "B",
@@ -4145,11 +4049,11 @@
       },
       {
         "key": "C",
-        "text": "资产阶级民主主义运动"
+        "text": "陈望道"
       },
       {
         "key": "D",
-        "text": "鲍罗廷"
+        "text": "孙中山"
       }
     ],
     "correctAnswers": [
@@ -4161,23 +4065,23 @@
     ]
   },
   {
-    "id": "cmh-136",
-    "sourceNumber": 136,
+    "id": "cmh-133",
+    "sourceNumber": 133,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中国工人运动第一次高潮起点的标志是____。",
     "options": [
       {
         "key": "A",
-        "text": "浙江萧山县"
+        "text": "国民党“一大”"
       },
       {
         "key": "B",
-        "text": "李大钊"
+        "text": "《中国共产党为公布国公合作宣言》"
       },
       {
         "key": "C",
-        "text": "三次武装起义"
+        "text": "中原解放区"
       },
       {
         "key": "D",
@@ -4193,23 +4097,23 @@
     ]
   },
   {
-    "id": "cmh-137",
-    "sourceNumber": 137,
+    "id": "cmh-134",
+    "sourceNumber": 134,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中国新民主主义革命的开端是____。",
     "options": [
       {
         "key": "A",
-        "text": "国民党“一大”"
+        "text": "北洋水师的覆灭"
       },
       {
         "key": "B",
-        "text": "香港海员罢工"
+        "text": "民盟一届三中全会"
       },
       {
         "key": "C",
-        "text": "李大钊"
+        "text": "标志"
       },
       {
         "key": "D",
@@ -4225,15 +4129,15 @@
     ]
   },
   {
-    "id": "cmh-138",
-    "sourceNumber": 138,
+    "id": "cmh-135",
+    "sourceNumber": 135,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中国共产党第一次提出反帝反封建的民主革命的纲领是在____召开的中共二大。",
     "options": [
       {
         "key": "A",
-        "text": "国民党“一大”"
+        "text": "1948年9月-1949年1月"
       },
       {
         "key": "B",
@@ -4241,11 +4145,11 @@
       },
       {
         "key": "C",
-        "text": "浙江萧山县"
+        "text": "9月3日"
       },
       {
         "key": "D",
-        "text": "《新青年》"
+        "text": "1906年"
       }
     ],
     "correctAnswers": [
@@ -4257,23 +4161,23 @@
     ]
   },
   {
-    "id": "cmh-139",
-    "sourceNumber": 139,
+    "id": "cmh-136",
+    "sourceNumber": 136,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中国第一个农民协会诞生于____。",
     "options": [
       {
         "key": "A",
-        "text": "中共“三大”"
+        "text": "广东"
       },
       {
         "key": "B",
-        "text": "香港海员罢工"
+        "text": "四川"
       },
       {
         "key": "C",
-        "text": "民主与科学"
+        "text": "广州、武汉"
       },
       {
         "key": "D",
@@ -4289,15 +4193,15 @@
     ]
   },
   {
-    "id": "cmh-140",
-    "sourceNumber": 140,
+    "id": "cmh-137",
+    "sourceNumber": 137,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "国民革命时期，国民政府聘请了苏联的政治顾问____。",
     "options": [
       {
         "key": "A",
-        "text": "资产阶级民主主义运动"
+        "text": "陈独秀"
       },
       {
         "key": "B",
@@ -4305,11 +4209,11 @@
       },
       {
         "key": "C",
-        "text": "民主与科学"
+        "text": "蔡锷"
       },
       {
         "key": "D",
-        "text": "香港海员罢工"
+        "text": "光绪皇帝"
       }
     ],
     "correctAnswers": [
@@ -4321,19 +4225,19 @@
     ]
   },
   {
-    "id": "cmh-141",
-    "sourceNumber": 141,
+    "id": "cmh-138",
+    "sourceNumber": 138,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中国共产党独立领导革命战争，创建人民军队和武装夺取政权的开端是____。",
     "options": [
       {
         "key": "A",
-        "text": "井冈山"
+        "text": "《辛丑条约》的签订"
       },
       {
         "key": "B",
-        "text": "土地革命"
+        "text": "《中国共产党为公布国公合作宣言》"
       },
       {
         "key": "C",
@@ -4341,7 +4245,7 @@
       },
       {
         "key": "D",
-        "text": "军事问题"
+        "text": "鸦片战争"
       }
     ],
     "correctAnswers": [
@@ -4353,19 +4257,19 @@
     ]
   },
   {
-    "id": "cmh-142",
-    "sourceNumber": 142,
+    "id": "cmh-139",
+    "sourceNumber": 139,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "在大革命失败的危急关头，中共八七会议确定总方针是____。",
     "options": [
       {
         "key": "A",
-        "text": "鲁迅"
+        "text": "挽救了党和中国革命"
       },
       {
         "key": "B",
-        "text": "须知政权是由枪杆子中取得的"
+        "text": "五四运动时期"
       },
       {
         "key": "C",
@@ -4373,7 +4277,7 @@
       },
       {
         "key": "D",
-        "text": "“东北易帜”"
+        "text": "辛亥革命"
       }
     ],
     "correctAnswers": [
@@ -4385,19 +4289,19 @@
     ]
   },
   {
-    "id": "cmh-143",
-    "sourceNumber": 143,
+    "id": "cmh-140",
+    "sourceNumber": 140,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "毛泽东在1927年中共八七会议上提出著名论断是____。",
     "options": [
       {
         "key": "A",
-        "text": "农村包围城市，武装夺取政权"
+        "text": "三次"
       },
       {
         "key": "B",
-        "text": "三次"
+        "text": "八国联军"
       },
       {
         "key": "C",
@@ -4405,7 +4309,7 @@
       },
       {
         "key": "D",
-        "text": "“东北易帜”"
+        "text": "洋务派"
       }
     ],
     "correctAnswers": [
@@ -4417,8 +4321,8 @@
     ]
   },
   {
-    "id": "cmh-144",
-    "sourceNumber": 144,
+    "id": "cmh-141",
+    "sourceNumber": 141,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "八七会议和遵义会议的相同之处是____。",
@@ -4429,15 +4333,15 @@
       },
       {
         "key": "B",
-        "text": "军事问题"
+        "text": "“二次革命”"
       },
       {
         "key": "C",
-        "text": "土地革命和武装反抗国民党反动统治"
+        "text": "五四运动时期"
       },
       {
         "key": "D",
-        "text": "土地革命"
+        "text": "辛亥革命"
       }
     ],
     "correctAnswers": [
@@ -4449,15 +4353,15 @@
     ]
   },
   {
-    "id": "cmh-145",
-    "sourceNumber": 145,
+    "id": "cmh-142",
+    "sourceNumber": 142,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "张学良宣布____使国民党在全国范围内建立了自己的统治。",
     "options": [
       {
         "key": "A",
-        "text": "红一、二、四方面军"
+        "text": "秋收起义"
       },
       {
         "key": "B",
@@ -4465,11 +4369,11 @@
       },
       {
         "key": "C",
-        "text": "三次"
+        "text": "“二次革命”"
       },
       {
         "key": "D",
-        "text": "《反对本本主义》"
+        "text": "第二次鸦片战争时的英法联军"
       }
     ],
     "correctAnswers": [
@@ -4481,55 +4385,23 @@
     ]
   },
   {
-    "id": "cmh-146",
-    "sourceNumber": 146,
-    "subjectId": "china-modern-history",
-    "type": "single",
-    "stem": "中国共产党开创的第一个农村革命根据地是____。",
-    "options": [
-      {
-        "key": "A",
-        "text": "《反对本本主义》"
-      },
-      {
-        "key": "B",
-        "text": "秋收起义"
-      },
-      {
-        "key": "C",
-        "text": "土地革命"
-      },
-      {
-        "key": "D",
-        "text": "井冈山"
-      }
-    ],
-    "correctAnswers": [
-      "D"
-    ],
-    "explanation": "中国共产党开创的第一个农村革命根据地是井冈山",
-    "tags": [
-      "中国革命的新道路"
-    ]
-  },
-  {
-    "id": "cmh-147",
-    "sourceNumber": 147,
+    "id": "cmh-143",
+    "sourceNumber": 143,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1931年11月在江西省瑞金县成立的红色政权是____。",
     "options": [
       {
         "key": "A",
-        "text": "土地革命和武装反抗国民党反动统治"
+        "text": "立法院"
       },
       {
         "key": "B",
-        "text": "土地制度的革命"
+        "text": "政府委员会"
       },
       {
         "key": "C",
-        "text": "鲁迅"
+        "text": "行政院"
       },
       {
         "key": "D",
@@ -4545,23 +4417,23 @@
     ]
   },
   {
-    "id": "cmh-148",
-    "sourceNumber": 148,
+    "id": "cmh-144",
+    "sourceNumber": 144,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "土地革命战争时期，中国共产党开辟的“中国革命的新道路”是指____。",
     "options": [
       {
         "key": "A",
-        "text": "王明"
+        "text": "有理有利有节"
       },
       {
         "key": "B",
-        "text": "鲁迅"
+        "text": "废除的"
       },
       {
         "key": "C",
-        "text": "“东北易帜”"
+        "text": "平型关大捷"
       },
       {
         "key": "D",
@@ -4577,15 +4449,15 @@
     ]
   },
   {
-    "id": "cmh-149",
-    "sourceNumber": 149,
+    "id": "cmh-145",
+    "sourceNumber": 145,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "国共十年对峙时期，中共得到农民的衷心拥护原因是进行了____。",
     "options": [
       {
         "key": "A",
-        "text": "红一、二、四方面军"
+        "text": "农民阶级的局限性"
       },
       {
         "key": "B",
@@ -4593,11 +4465,11 @@
       },
       {
         "key": "C",
-        "text": "农村包围城市，武装夺取政权理论的提出"
+        "text": "不能依靠和发动人民群众"
       },
       {
         "key": "D",
-        "text": "“东北易帜”"
+        "text": "土地制度的革命"
       }
     ],
     "correctAnswers": [
@@ -4609,19 +4481,19 @@
     ]
   },
   {
-    "id": "cmh-150",
-    "sourceNumber": 150,
+    "id": "cmh-146",
+    "sourceNumber": 146,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1927年9月，毛泽东领导的武装起义是____。",
     "options": [
       {
         "key": "A",
-        "text": "农村包围城市，武装夺取政权"
+        "text": "台儿庄战役"
       },
       {
         "key": "B",
-        "text": "土地革命"
+        "text": "“东北易帜”"
       },
       {
         "key": "C",
@@ -4629,7 +4501,7 @@
       },
       {
         "key": "D",
-        "text": "军事问题"
+        "text": "豫湘桂战役"
       }
     ],
     "correctAnswers": [
@@ -4641,8 +4513,8 @@
     ]
   },
   {
-    "id": "cmh-151",
-    "sourceNumber": 151,
+    "id": "cmh-147",
+    "sourceNumber": 147,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "标志毛泽东思想初步形成的是____。",
@@ -4653,15 +4525,15 @@
       },
       {
         "key": "B",
-        "text": "挽救了党和中国革命"
+        "text": "《辛丑条约》的签订"
       },
       {
         "key": "C",
-        "text": "军事问题"
+        "text": "中原解放区"
       },
       {
         "key": "D",
-        "text": "三次"
+        "text": "西安事变的和平解决"
       }
     ],
     "correctAnswers": [
@@ -4673,23 +4545,23 @@
     ]
   },
   {
-    "id": "cmh-152",
-    "sourceNumber": 152,
+    "id": "cmh-148",
+    "sourceNumber": 148,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "左翼文化运动中，被称为“文化新军的最伟大和最英勇的旗手”的中国文化革命伟人是____。",
     "options": [
       {
         "key": "A",
-        "text": "《反对本本主义》"
+        "text": "有理有利有节"
       },
       {
         "key": "B",
-        "text": "须知政权是由枪杆子中取得的"
+        "text": "洋务派"
       },
       {
         "key": "C",
-        "text": "井冈山"
+        "text": "农村包围城市，武装夺取政权"
       },
       {
         "key": "D",
@@ -4705,19 +4577,19 @@
     ]
   },
   {
-    "id": "cmh-153",
-    "sourceNumber": 153,
+    "id": "cmh-149",
+    "sourceNumber": 149,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "土地革命战争时期“左”倾错误党中央占据统治地位的有____。",
     "options": [
       {
         "key": "A",
-        "text": "“东北易帜”"
+        "text": "太平天国和捻军"
       },
       {
         "key": "B",
-        "text": "王明"
+        "text": "1949年4月23日"
       },
       {
         "key": "C",
@@ -4725,7 +4597,7 @@
       },
       {
         "key": "D",
-        "text": "农村包围城市，武装夺取政权理论的提出"
+        "text": "平型关大捷"
       }
     ],
     "correctAnswers": [
@@ -4737,19 +4609,19 @@
     ]
   },
   {
-    "id": "cmh-154",
-    "sourceNumber": 154,
+    "id": "cmh-150",
+    "sourceNumber": 150,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1936年10月，在甘肃会宁、静宁将台堡胜利会师的三大主力红军是____。",
     "options": [
       {
         "key": "A",
-        "text": "须知政权是由枪杆子中取得的"
+        "text": "新四军"
       },
       {
         "key": "B",
-        "text": "农村包围城市，武装夺取政权"
+        "text": "同盟会"
       },
       {
         "key": "C",
@@ -4757,7 +4629,7 @@
       },
       {
         "key": "D",
-        "text": "军事问题"
+        "text": "北洋水师"
       }
     ],
     "correctAnswers": [
@@ -4769,19 +4641,19 @@
     ]
   },
   {
-    "id": "cmh-155",
-    "sourceNumber": 155,
+    "id": "cmh-151",
+    "sourceNumber": 151,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "红军长征途中，中国共产党召开的、成为党的历史上生死攸关的转折点的会议是____。",
     "options": [
       {
         "key": "A",
-        "text": "土地制度的革命"
+        "text": "陈独秀在上海创办《青年杂志》"
       },
       {
         "key": "B",
-        "text": "王明"
+        "text": "《辛丑条约》的签订"
       },
       {
         "key": "C",
@@ -4801,23 +4673,23 @@
     ]
   },
   {
-    "id": "cmh-156",
-    "sourceNumber": 156,
+    "id": "cmh-152",
+    "sourceNumber": 152,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中国共产党在长征途中召开的遵义会议，集中解决了当时具有决定意义的____和组织问题。",
     "options": [
       {
         "key": "A",
-        "text": "鲁迅"
+        "text": "战略相持阶段"
       },
       {
         "key": "B",
-        "text": "遵义会议"
+        "text": "向全国进军的命令"
       },
       {
         "key": "C",
-        "text": "农村包围城市，武装夺取政权理论的提出"
+        "text": "有理有利有节"
       },
       {
         "key": "D",
@@ -4833,23 +4705,23 @@
     ]
   },
   {
-    "id": "cmh-157",
-    "sourceNumber": 157,
+    "id": "cmh-153",
+    "sourceNumber": 153,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "在土地革命战争时期，毛泽东提出“没有调查，没有发言权”重要思想的著作是____。",
     "options": [
       {
         "key": "A",
-        "text": "鲁迅"
+        "text": "《中华民国临时约法》"
       },
       {
         "key": "B",
-        "text": "三次"
+        "text": "《新青年》"
       },
       {
         "key": "C",
-        "text": "农村包围城市，武装夺取政权理论的提出"
+        "text": "论人民民主专政"
       },
       {
         "key": "D",
@@ -4865,23 +4737,23 @@
     ]
   },
   {
-    "id": "cmh-158",
-    "sourceNumber": 158,
+    "id": "cmh-154",
+    "sourceNumber": 154,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "在土地革命战争时期，提出坚决打击富农和“地主不分田，富农分坏田”的主张是____。",
     "options": [
       {
         "key": "A",
-        "text": "土地革命"
+        "text": "洪秀全"
       },
       {
         "key": "B",
-        "text": "挽救了党和中国革命"
+        "text": "严复"
       },
       {
         "key": "C",
-        "text": "《反对本本主义》"
+        "text": "毛泽东"
       },
       {
         "key": "D",
@@ -4897,15 +4769,15 @@
     ]
   },
   {
-    "id": "cmh-159",
-    "sourceNumber": 159,
+    "id": "cmh-155",
+    "sourceNumber": 155,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中国革命之所以能够得到坚持和发展，根本原因是中国共产党紧紧依靠了农民，领导农民进行了____。",
     "options": [
       {
         "key": "A",
-        "text": "南昌起义"
+        "text": "土地革命"
       },
       {
         "key": "B",
@@ -4913,11 +4785,11 @@
       },
       {
         "key": "C",
-        "text": "王明"
+        "text": "不能依靠和发动人民群众"
       },
       {
         "key": "D",
-        "text": "农村包围城市，武装夺取政权理论的提出"
+        "text": "日军战线太长，兵力和财力不足"
       }
     ],
     "correctAnswers": [
@@ -4929,23 +4801,23 @@
     ]
   },
   {
-    "id": "cmh-160",
-    "sourceNumber": 160,
+    "id": "cmh-156",
+    "sourceNumber": 156,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "局部抗日战争开始于____。",
     "options": [
       {
         "key": "A",
-        "text": "9月3日"
+        "text": "《辛丑条约》的签订"
       },
       {
         "key": "B",
-        "text": "皆有各阶级阶层广泛参加"
+        "text": "标志"
       },
       {
         "key": "C",
-        "text": "抗日救国十大纲领"
+        "text": "《中国共产党为公布国公合作宣言》"
       },
       {
         "key": "D",
@@ -4961,8 +4833,8 @@
     ]
   },
   {
-    "id": "cmh-161",
-    "sourceNumber": 161,
+    "id": "cmh-157",
+    "sourceNumber": 157,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "华北事变发生后，中国共产党组织领导的____标志着中国人民抗日救亡新高潮的到来。",
@@ -4973,15 +4845,15 @@
       },
       {
         "key": "B",
-        "text": "“三三制”"
+        "text": "中原解放区"
       },
       {
         "key": "C",
-        "text": "抗日救国十大纲领"
+        "text": "九一八事变"
       },
       {
         "key": "D",
-        "text": "战略相持阶段"
+        "text": "遵义会议"
       }
     ],
     "correctAnswers": [
@@ -4993,15 +4865,15 @@
     ]
   },
   {
-    "id": "cmh-162",
-    "sourceNumber": 162,
+    "id": "cmh-158",
+    "sourceNumber": 158,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "大革命时期的统一战线和抗日民族统一战线____。",
     "options": [
       {
         "key": "A",
-        "text": "主观主义"
+        "text": "资产阶级"
       },
       {
         "key": "B",
@@ -5009,11 +4881,11 @@
       },
       {
         "key": "C",
-        "text": "毛泽东"
+        "text": "工人阶级，农民阶级和城市小资产阶级"
       },
       {
         "key": "D",
-        "text": "一二九运动"
+        "text": "封建阶级"
       }
     ],
     "correctAnswers": [
@@ -5025,40 +4897,8 @@
     ]
   },
   {
-    "id": "cmh-163",
-    "sourceNumber": 163,
-    "subjectId": "china-modern-history",
-    "type": "single",
-    "stem": "20世纪20年代，日本关东军主任作战参谋石原莞尔提出“满蒙问题的解决是____。",
-    "options": [
-      {
-        "key": "A",
-        "text": "战略相持阶段"
-      },
-      {
-        "key": "B",
-        "text": "日本唯一的生存途径”通过九一八事变这个荒谬的办法变成了关东军的侵略行径"
-      },
-      {
-        "key": "C",
-        "text": "福建事变不"
-      },
-      {
-        "key": "D",
-        "text": "中国"
-      }
-    ],
-    "correctAnswers": [
-      "B"
-    ],
-    "explanation": "20世纪20年代，日本关东军主任作战参谋石原莞尔提出“满蒙问题的解决是日本唯一的生存途径”通过九一八事变这个荒谬的办法变成了关东军的侵略行径",
-    "tags": [
-      "中华民族的抗日战争"
-    ]
-  },
-  {
-    "id": "cmh-164",
-    "sourceNumber": 164,
+    "id": "cmh-159",
+    "sourceNumber": 159,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "抗日民族统一战线形成的标志是国民党中央通讯社播发____。",
@@ -5069,15 +4909,15 @@
       },
       {
         "key": "B",
-        "text": "抗日救国十大纲领"
+        "text": "《辛丑条约》的签订"
       },
       {
         "key": "C",
-        "text": "新四军"
+        "text": "陈独秀在上海创办《青年杂志》"
       },
       {
         "key": "D",
-        "text": "减租减息"
+        "text": "七七事变"
       }
     ],
     "correctAnswers": [
@@ -5089,47 +4929,15 @@
     ]
   },
   {
-    "id": "cmh-165",
-    "sourceNumber": 165,
-    "subjectId": "china-modern-history",
-    "type": "single",
-    "stem": "抗日战争爆发后，国民党政府正式对日宣战是在____后。",
-    "options": [
-      {
-        "key": "A",
-        "text": "新四军"
-      },
-      {
-        "key": "B",
-        "text": "七七事变"
-      },
-      {
-        "key": "C",
-        "text": "9月3日"
-      },
-      {
-        "key": "D",
-        "text": "减租减息"
-      }
-    ],
-    "correctAnswers": [
-      "B"
-    ],
-    "explanation": "抗日战争爆发后，国民党政府正式对日宣战是在七七事变后",
-    "tags": [
-      "中华民族的抗日战争"
-    ]
-  },
-  {
-    "id": "cmh-166",
-    "sourceNumber": 166,
+    "id": "cmh-160",
+    "sourceNumber": 160,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "国共两党十年内战基本结束，国内和平基本实现的标志是____。",
     "options": [
       {
         "key": "A",
-        "text": "一二九运动"
+        "text": "国民党“一大”"
       },
       {
         "key": "B",
@@ -5137,11 +4945,11 @@
       },
       {
         "key": "C",
-        "text": "减租减息"
+        "text": "中华人民共和国"
       },
       {
         "key": "D",
-        "text": "中共六届六中全会"
+        "text": "一二九运动"
       }
     ],
     "correctAnswers": [
@@ -5153,19 +4961,19 @@
     ]
   },
   {
-    "id": "cmh-167",
-    "sourceNumber": 167,
+    "id": "cmh-161",
+    "sourceNumber": 161,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "毛泽东在《论持久战》中指出，中国抗日战争取得最后胜利的最为关键的阶段是____。",
     "options": [
       {
         "key": "A",
-        "text": "中共六届六中全会"
+        "text": "鲁迅"
       },
       {
         "key": "B",
-        "text": "“三三制”"
+        "text": "军事问题"
       },
       {
         "key": "C",
@@ -5173,7 +4981,7 @@
       },
       {
         "key": "D",
-        "text": "9月3日"
+        "text": "没收地主的土地"
       }
     ],
     "correctAnswers": [
@@ -5185,23 +4993,23 @@
     ]
   },
   {
-    "id": "cmh-168",
-    "sourceNumber": 168,
+    "id": "cmh-162",
+    "sourceNumber": 162,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "全国性抗战开始于____。",
     "options": [
       {
         "key": "A",
-        "text": "九一八事变"
+        "text": "遵义会议"
       },
       {
         "key": "B",
-        "text": "抗日救国十大纲领"
+        "text": "《中国共产党为公布国公合作宣言》"
       },
       {
         "key": "C",
-        "text": "战略相持阶段"
+        "text": "中原解放区"
       },
       {
         "key": "D",
@@ -5217,19 +5025,19 @@
     ]
   },
   {
-    "id": "cmh-169",
-    "sourceNumber": 169,
+    "id": "cmh-163",
+    "sourceNumber": 163,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "全面抗战爆发后，中国军队的第一次重大胜利是____。",
     "options": [
       {
         "key": "A",
-        "text": "9月3日"
+        "text": "创始国"
       },
       {
         "key": "B",
-        "text": "毛泽东"
+        "text": "须知政权是由枪杆子中取得的"
       },
       {
         "key": "C",
@@ -5237,7 +5045,7 @@
       },
       {
         "key": "D",
-        "text": "有理有利有节"
+        "text": "民族意识"
       }
     ],
     "correctAnswers": [
@@ -5249,15 +5057,15 @@
     ]
   },
   {
-    "id": "cmh-170",
-    "sourceNumber": 170,
+    "id": "cmh-164",
+    "sourceNumber": 164,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "共产党在同顽固派作斗争时应坚持____的原则。",
     "options": [
       {
         "key": "A",
-        "text": "九一八事变"
+        "text": "战略相持阶段"
       },
       {
         "key": "B",
@@ -5265,11 +5073,11 @@
       },
       {
         "key": "C",
-        "text": "七七事变"
+        "text": "兴中会"
       },
       {
         "key": "D",
-        "text": "9月3日"
+        "text": "“反对内战，争取自由”"
       }
     ],
     "correctAnswers": [
@@ -5281,23 +5089,23 @@
     ]
   },
   {
-    "id": "cmh-171",
-    "sourceNumber": 171,
+    "id": "cmh-165",
+    "sourceNumber": 165,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1938年10月，日本侵略军占领了广州、武汉后改变了侵华战略方针，这主要是因为____。",
     "options": [
       {
         "key": "A",
-        "text": "战略相持阶段"
+        "text": "土地革命"
       },
       {
         "key": "B",
-        "text": "中国"
+        "text": "农民阶级的局限性"
       },
       {
         "key": "C",
-        "text": "主观主义"
+        "text": "不能依靠和发动人民群众"
       },
       {
         "key": "D",
@@ -5313,8 +5121,8 @@
     ]
   },
   {
-    "id": "cmh-172",
-    "sourceNumber": 172,
+    "id": "cmh-166",
+    "sourceNumber": 166,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "抗战转入相持阶段是在日本占领____后。",
@@ -5325,15 +5133,15 @@
       },
       {
         "key": "B",
-        "text": "台儿庄战役"
+        "text": "四川"
       },
       {
         "key": "C",
-        "text": "《中国共产党为公布国公合作宣言》"
+        "text": "河北平山县"
       },
       {
         "key": "D",
-        "text": "毛泽东"
+        "text": "南京"
       }
     ],
     "correctAnswers": [
@@ -5345,23 +5153,23 @@
     ]
   },
   {
-    "id": "cmh-173",
-    "sourceNumber": 173,
+    "id": "cmh-167",
+    "sourceNumber": 167,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中国共产党在抗日战争时期实行的土地政策是____。",
     "options": [
       {
         "key": "A",
-        "text": "西安事变的和平解决"
+        "text": "政治方式"
       },
       {
         "key": "B",
-        "text": "日军战线太长，兵力和财力不足"
+        "text": "耕者有其田"
       },
       {
         "key": "C",
-        "text": "平型关大捷"
+        "text": "和平建国"
       },
       {
         "key": "D",
@@ -5377,19 +5185,19 @@
     ]
   },
   {
-    "id": "cmh-174",
-    "sourceNumber": 174,
+    "id": "cmh-168",
+    "sourceNumber": 168,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "抗日战争时期，根据地政权的民主建设主要体现为实行____的原则。",
     "options": [
       {
         "key": "A",
-        "text": "日军战线太长，兵力和财力不足"
+        "text": "资本-帝国主义"
       },
       {
         "key": "B",
-        "text": "有理有利有节"
+        "text": "君主立宪制"
       },
       {
         "key": "C",
@@ -5397,7 +5205,7 @@
       },
       {
         "key": "D",
-        "text": "皆有各阶级阶层广泛参加"
+        "text": "减租减息"
       }
     ],
     "correctAnswers": [
@@ -5409,8 +5217,8 @@
     ]
   },
   {
-    "id": "cmh-175",
-    "sourceNumber": 175,
+    "id": "cmh-169",
+    "sourceNumber": 169,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中国共产党第一次提出“马克思主义中国化”的命题和任务的会议是____。",
@@ -5421,15 +5229,15 @@
       },
       {
         "key": "B",
-        "text": "主观主义"
+        "text": "中共七大"
       },
       {
         "key": "C",
-        "text": "福建事变不"
+        "text": "中国人民政治协商会议"
       },
       {
         "key": "D",
-        "text": "中国"
+        "text": "七届二中全会"
       }
     ],
     "correctAnswers": [
@@ -5441,40 +5249,8 @@
     ]
   },
   {
-    "id": "cmh-176",
-    "sourceNumber": 176,
-    "subjectId": "china-modern-history",
-    "type": "single",
-    "stem": "____是日本侵华事件",
-    "options": [
-      {
-        "key": "A",
-        "text": "毛泽东"
-      },
-      {
-        "key": "B",
-        "text": "中共六届六中全会"
-      },
-      {
-        "key": "C",
-        "text": "福建事变不"
-      },
-      {
-        "key": "D",
-        "text": "七七事变"
-      }
-    ],
-    "correctAnswers": [
-      "C"
-    ],
-    "explanation": "福建事变不是日本侵华事件",
-    "tags": [
-      "中华民族的抗日战争"
-    ]
-  },
-  {
-    "id": "cmh-177",
-    "sourceNumber": 177,
+    "id": "cmh-170",
+    "sourceNumber": 170,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1938年3月，国民党军队在正面战场取得大捷是____。",
@@ -5485,15 +5261,15 @@
       },
       {
         "key": "B",
-        "text": "创始国"
+        "text": "豫湘桂战役"
       },
       {
         "key": "C",
-        "text": "日本唯一的生存途径”通过九一八事变这个荒谬的办法变成了关东军的侵略行径"
+        "text": "第二次鸦片战争时的英法联军"
       },
       {
         "key": "D",
-        "text": "波茨坦会议"
+        "text": "“东北易帜”"
       }
     ],
     "correctAnswers": [
@@ -5505,19 +5281,19 @@
     ]
   },
   {
-    "id": "cmh-178",
-    "sourceNumber": 178,
+    "id": "cmh-171",
+    "sourceNumber": 171,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "抗战后期国民党军队在____中再次大溃败。",
     "options": [
       {
         "key": "A",
-        "text": "西安事变的和平解决"
+        "text": "台儿庄战役"
       },
       {
         "key": "B",
-        "text": "平型关大捷"
+        "text": "第二次鸦片战争时的英法联军"
       },
       {
         "key": "C",
@@ -5525,7 +5301,7 @@
       },
       {
         "key": "D",
-        "text": "减租减息"
+        "text": "“东北易帜”"
       }
     ],
     "correctAnswers": [
@@ -5537,19 +5313,19 @@
     ]
   },
   {
-    "id": "cmh-179",
-    "sourceNumber": 179,
+    "id": "cmh-172",
+    "sourceNumber": 172,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "国民党军队在皖南事变中袭击了共产党领导的____。",
     "options": [
       {
         "key": "A",
-        "text": "有理有利有节"
+        "text": "红一、二、四方面军"
       },
       {
         "key": "B",
-        "text": "西安事变的和平解决"
+        "text": "中国国民党革命委员会"
       },
       {
         "key": "C",
@@ -5557,7 +5333,7 @@
       },
       {
         "key": "D",
-        "text": "中共七大"
+        "text": "北洋水师"
       }
     ],
     "correctAnswers": [
@@ -5569,15 +5345,15 @@
     ]
   },
   {
-    "id": "cmh-180",
-    "sourceNumber": 180,
+    "id": "cmh-173",
+    "sourceNumber": 173,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1937年8月，中国共产党在陕北洛川召开的政治局扩大会议制定了____。",
     "options": [
       {
         "key": "A",
-        "text": "新四军"
+        "text": "《新青年》"
       },
       {
         "key": "B",
@@ -5585,11 +5361,11 @@
       },
       {
         "key": "C",
-        "text": "《中国共产党为公布国公合作宣言》"
+        "text": "论人民民主专政"
       },
       {
         "key": "D",
-        "text": "毛泽东"
+        "text": "《中华民国临时约法》"
       }
     ],
     "correctAnswers": [
@@ -5601,8 +5377,8 @@
     ]
   },
   {
-    "id": "cmh-181",
-    "sourceNumber": 181,
+    "id": "cmh-174",
+    "sourceNumber": 174,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1945年7月，同盟国敦促日本无条件投降的会议是____。",
@@ -5613,15 +5389,15 @@
       },
       {
         "key": "B",
-        "text": "抗日救国十大纲领"
+        "text": "七届二中全会"
       },
       {
         "key": "C",
-        "text": "平型关大捷"
+        "text": "中国人民政治协商会议"
       },
       {
         "key": "D",
-        "text": "福建事变不"
+        "text": "中共六届六中全会"
       }
     ],
     "correctAnswers": [
@@ -5633,8 +5409,8 @@
     ]
   },
   {
-    "id": "cmh-182",
-    "sourceNumber": 182,
+    "id": "cmh-175",
+    "sourceNumber": 175,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1945年中国成为联合国的____和五个常任理事国之一。",
@@ -5645,15 +5421,15 @@
       },
       {
         "key": "B",
-        "text": "有理有利有节"
+        "text": "须知政权是由枪杆子中取得的"
       },
       {
         "key": "C",
-        "text": "抗日救国十大纲领"
+        "text": "平型关大捷"
       },
       {
         "key": "D",
-        "text": "战略相持阶段"
+        "text": "向全国进军的命令"
       }
     ],
     "correctAnswers": [
@@ -5665,8 +5441,8 @@
     ]
   },
   {
-    "id": "cmh-183",
-    "sourceNumber": 183,
+    "id": "cmh-176",
+    "sourceNumber": 176,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中国人民抗日战争胜利纪念日是____。",
@@ -5677,15 +5453,15 @@
       },
       {
         "key": "B",
-        "text": "抗日救国十大纲领"
+        "text": "1948年9月-1949年1月"
       },
       {
         "key": "C",
-        "text": "主观主义"
+        "text": "1922年"
       },
       {
         "key": "D",
-        "text": "创始国"
+        "text": "1906年"
       }
     ],
     "correctAnswers": [
@@ -5697,19 +5473,19 @@
     ]
   },
   {
-    "id": "cmh-184",
-    "sourceNumber": 184,
+    "id": "cmh-177",
+    "sourceNumber": 177,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "台湾以及澎湖列岛由____收回。",
     "options": [
       {
         "key": "A",
-        "text": "一二九运动"
+        "text": "英国"
       },
       {
         "key": "B",
-        "text": "西安事变的和平解决"
+        "text": "法国"
       },
       {
         "key": "C",
@@ -5717,7 +5493,7 @@
       },
       {
         "key": "D",
-        "text": "皆有各阶级阶层广泛参加"
+        "text": "俄国"
       }
     ],
     "correctAnswers": [
@@ -5729,15 +5505,15 @@
     ]
   },
   {
-    "id": "cmh-185",
-    "sourceNumber": 185,
+    "id": "cmh-178",
+    "sourceNumber": 178,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中共六届六中全会上明确提出实现“马克思主义中国化”命题是____。",
     "options": [
       {
         "key": "A",
-        "text": "中共七大"
+        "text": "洪秀全"
       },
       {
         "key": "B",
@@ -5745,11 +5521,11 @@
       },
       {
         "key": "C",
-        "text": "9月3日"
+        "text": "张勋"
       },
       {
         "key": "D",
-        "text": "主观主义"
+        "text": "鲍罗廷"
       }
     ],
     "correctAnswers": [
@@ -5761,15 +5537,15 @@
     ]
   },
   {
-    "id": "cmh-186",
-    "sourceNumber": 186,
+    "id": "cmh-179",
+    "sourceNumber": 179,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "把毛泽东思想确定为党的指导思想的会议是____。",
     "options": [
       {
         "key": "A",
-        "text": "“三三制”"
+        "text": "波茨坦会议"
       },
       {
         "key": "B",
@@ -5777,11 +5553,11 @@
       },
       {
         "key": "C",
-        "text": "抗日救国十大纲领"
+        "text": "中共六届六中全会"
       },
       {
         "key": "D",
-        "text": "日军战线太长，兵力和财力不足"
+        "text": "中国人民政治协商会议"
       }
     ],
     "correctAnswers": [
@@ -5793,19 +5569,19 @@
     ]
   },
   {
-    "id": "cmh-187",
-    "sourceNumber": 187,
+    "id": "cmh-180",
+    "sourceNumber": 180,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "20世纪40年代，中国共产党开展的延安整风运动最主要的任务是反对____。",
     "options": [
       {
         "key": "A",
-        "text": "《中国共产党为公布国公合作宣言》"
+        "text": "民主与科学"
       },
       {
         "key": "B",
-        "text": "波茨坦会议"
+        "text": "中体西用"
       },
       {
         "key": "C",
@@ -5813,7 +5589,7 @@
       },
       {
         "key": "D",
-        "text": "中共七大"
+        "text": "党的思想建设"
       }
     ],
     "correctAnswers": [
@@ -5825,15 +5601,15 @@
     ]
   },
   {
-    "id": "cmh-188",
-    "sourceNumber": 188,
+    "id": "cmh-181",
+    "sourceNumber": 181,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "抗战胜利后，中国人民的根本利益是____。",
     "options": [
       {
         "key": "A",
-        "text": "行政院"
+        "text": "减租减息"
       },
       {
         "key": "B",
@@ -5841,11 +5617,11 @@
       },
       {
         "key": "C",
-        "text": "中国国民党革命委员会"
+        "text": "资本-帝国主义"
       },
       {
         "key": "D",
-        "text": "解放区"
+        "text": "政治方式"
       }
     ],
     "correctAnswers": [
@@ -5857,8 +5633,8 @@
     ]
   },
   {
-    "id": "cmh-189",
-    "sourceNumber": 189,
+    "id": "cmh-182",
+    "sourceNumber": 182,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "抗日战争结束后，中国社会主要矛盾是中国人民同____之间的矛盾。",
@@ -5869,15 +5645,15 @@
       },
       {
         "key": "B",
-        "text": "“反对内战，争取自由”"
+        "text": "资产阶级"
       },
       {
         "key": "C",
-        "text": "乡村"
+        "text": "中国"
       },
       {
         "key": "D",
-        "text": "和平建国"
+        "text": "英国"
       }
     ],
     "correctAnswers": [
@@ -5889,15 +5665,15 @@
     ]
   },
   {
-    "id": "cmh-190",
-    "sourceNumber": 190,
+    "id": "cmh-183",
+    "sourceNumber": 183,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "抗战胜利后，美国在中国追求的短期目标首先是____。",
     "options": [
       {
         "key": "A",
-        "text": "论人民民主专政"
+        "text": "统一的亲美政府"
       },
       {
         "key": "B",
@@ -5905,11 +5681,11 @@
       },
       {
         "key": "C",
-        "text": "民盟一届三中全会"
+        "text": "延续清政府的统治"
       },
       {
         "key": "D",
-        "text": "旧民主主义道路"
+        "text": "资产阶级君主立宪制"
       }
     ],
     "correctAnswers": [
@@ -5921,19 +5697,19 @@
     ]
   },
   {
-    "id": "cmh-191",
-    "sourceNumber": 191,
+    "id": "cmh-184",
+    "sourceNumber": 184,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "抗战胜利后，美国在中国追求的长期的基本目标是推动建立一个____。",
     "options": [
       {
         "key": "A",
-        "text": "没收地主的土地"
+        "text": "避免共产党完全控制中国"
       },
       {
         "key": "B",
-        "text": "内线作战转向至外线作战"
+        "text": "延续清政府的统治"
       },
       {
         "key": "C",
@@ -5941,7 +5717,7 @@
       },
       {
         "key": "D",
-        "text": "纸老虎”的著名论断针对的是内战初期国民党在军事和经济方面占有的明显优势"
+        "text": "资产阶级君主立宪制"
       }
     ],
     "correctAnswers": [
@@ -5953,23 +5729,23 @@
     ]
   },
   {
-    "id": "cmh-192",
-    "sourceNumber": 192,
+    "id": "cmh-185",
+    "sourceNumber": 185,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1945年，重庆谈判的焦点问题是____。",
     "options": [
       {
         "key": "A",
-        "text": "工人阶级及其政党"
+        "text": "土地革命和武装反抗国民党反动统治"
       },
       {
         "key": "B",
-        "text": "党的思想建设"
+        "text": "革命"
       },
       {
         "key": "C",
-        "text": "旧民主主义道路"
+        "text": "“东北易帜”"
       },
       {
         "key": "D",
@@ -5985,23 +5761,23 @@
     ]
   },
   {
-    "id": "cmh-193",
-    "sourceNumber": 193,
+    "id": "cmh-186",
+    "sourceNumber": 186,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1945年10月10日，国共双方签署了双十协定，确定的基本方针是____。",
     "options": [
       {
         "key": "A",
-        "text": "旧民主主义道路"
+        "text": "耕者有其田"
       },
       {
         "key": "B",
-        "text": "人民军队和解放区的合法地位问题"
+        "text": "减租减息"
       },
       {
         "key": "C",
-        "text": "中国国民党革命委员会"
+        "text": "国家政权"
       },
       {
         "key": "D",
@@ -6017,8 +5793,8 @@
     ]
   },
   {
-    "id": "cmh-194",
-    "sourceNumber": 194,
+    "id": "cmh-187",
+    "sourceNumber": 187,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1946年，政治协商会议确定的最高国务机关是____。",
@@ -6029,15 +5805,15 @@
       },
       {
         "key": "B",
-        "text": "“反对内战，争取自由”"
+        "text": "中华苏维埃共和国临时中央政府"
       },
       {
         "key": "C",
-        "text": "中国人民政治协商会议"
+        "text": "行政院"
       },
       {
         "key": "D",
-        "text": "土地革命"
+        "text": "立法院"
       }
     ],
     "correctAnswers": [
@@ -6049,15 +5825,15 @@
     ]
   },
   {
-    "id": "cmh-195",
-    "sourceNumber": 195,
+    "id": "cmh-188",
+    "sourceNumber": 188,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1946年，政治协商会议确定的最高行政机关是____。",
     "options": [
       {
         "key": "A",
-        "text": "纸老虎”的著名论断针对的是内战初期国民党在军事和经济方面占有的明显优势"
+        "text": "立法院"
       },
       {
         "key": "B",
@@ -6069,7 +5845,7 @@
       },
       {
         "key": "D",
-        "text": "农民战争"
+        "text": "中华苏维埃共和国临时中央政府"
       }
     ],
     "correctAnswers": [
@@ -6081,19 +5857,19 @@
     ]
   },
   {
-    "id": "cmh-196",
-    "sourceNumber": 196,
+    "id": "cmh-189",
+    "sourceNumber": 189,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1946年，政治协商会议确定的最高立法机关是____。",
     "options": [
       {
         "key": "A",
-        "text": "行政院"
+        "text": "中华苏维埃共和国临时中央政府"
       },
       {
         "key": "B",
-        "text": "蒋介石国民党政府的经济崩溃和政治危机"
+        "text": "政府委员会"
       },
       {
         "key": "C",
@@ -6101,7 +5877,7 @@
       },
       {
         "key": "D",
-        "text": "蒋介石发动的战争是反对中国民族独立和人民解放的反革命战争"
+        "text": "行政院"
       }
     ],
     "correctAnswers": [
@@ -6113,23 +5889,23 @@
     ]
   },
   {
-    "id": "cmh-197",
-    "sourceNumber": 197,
+    "id": "cmh-190",
+    "sourceNumber": 190,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1946年，政协闭幕第二天，中共中央发出党内指示“从此中国即走上了和平民主建设的新阶段”，国内问题的解决方式是____。",
     "options": [
       {
         "key": "A",
-        "text": "政府委员会"
+        "text": "中体西用"
       },
       {
         "key": "B",
-        "text": "解放区"
+        "text": "内线作战转向至外线作战"
       },
       {
         "key": "C",
-        "text": "为建立新中国而奋斗"
+        "text": "党的思想建设"
       },
       {
         "key": "D",
@@ -6145,8 +5921,8 @@
     ]
   },
   {
-    "id": "cmh-198",
-    "sourceNumber": 198,
+    "id": "cmh-191",
+    "sourceNumber": 191,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "全面内战爆发的标志是国民党军队大举进攻____。",
@@ -6157,15 +5933,15 @@
       },
       {
         "key": "B",
-        "text": "蒋介石国民党政府的经济崩溃和政治危机"
+        "text": "遵义会议"
       },
       {
         "key": "C",
-        "text": "“反对内战，争取自由”"
+        "text": "北洋水师的覆灭"
       },
       {
         "key": "D",
-        "text": "向全国进军的命令"
+        "text": "参加新政协并将在新中国参政"
       }
     ],
     "correctAnswers": [
@@ -6177,15 +5953,15 @@
     ]
   },
   {
-    "id": "cmh-199",
-    "sourceNumber": 199,
+    "id": "cmh-192",
+    "sourceNumber": 192,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "全面内战爆发，“煮豆燃豆萁，相煎何太急”更接近____。",
     "options": [
       {
         "key": "A",
-        "text": "纸老虎”的著名论断针对的是内战初期国民党在军事和经济方面占有的明显优势"
+        "text": "旧民主主义道路"
       },
       {
         "key": "B",
@@ -6193,11 +5969,11 @@
       },
       {
         "key": "C",
-        "text": "傅作义"
+        "text": "资产阶级民主主义运动"
       },
       {
         "key": "D",
-        "text": "毛泽东"
+        "text": "农民战争"
       }
     ],
     "correctAnswers": [
@@ -6209,72 +5985,8 @@
     ]
   },
   {
-    "id": "cmh-200",
-    "sourceNumber": 200,
-    "subjectId": "china-modern-history",
-    "type": "single",
-    "stem": "全面内战爆发不久，毛泽东提出了“必须打败蒋介石”的论断，原因是____。",
-    "options": [
-      {
-        "key": "A",
-        "text": "向全国进军的命令"
-      },
-      {
-        "key": "B",
-        "text": "工人阶级及其政党"
-      },
-      {
-        "key": "C",
-        "text": "和平建国"
-      },
-      {
-        "key": "D",
-        "text": "蒋介石发动的战争是反对中国民族独立和人民解放的反革命战争"
-      }
-    ],
-    "correctAnswers": [
-      "D"
-    ],
-    "explanation": "全面内战爆发不久，毛泽东提出了“必须打败蒋介石”的论断，原因是蒋介石发动的战争是反对中国民族独立和人民解放的反革命战争",
-    "tags": [
-      "为建立新中国而奋斗"
-    ]
-  },
-  {
-    "id": "cmh-201",
-    "sourceNumber": 201,
-    "subjectId": "china-modern-history",
-    "type": "single",
-    "stem": "毛泽东提出“一切反动派都是____。",
-    "options": [
-      {
-        "key": "A",
-        "text": "河北平山县"
-      },
-      {
-        "key": "B",
-        "text": "1948年9月-1949年1月"
-      },
-      {
-        "key": "C",
-        "text": "毛泽东"
-      },
-      {
-        "key": "D",
-        "text": "纸老虎”的著名论断针对的是内战初期国民党在军事和经济方面占有的明显优势"
-      }
-    ],
-    "correctAnswers": [
-      "D"
-    ],
-    "explanation": "毛泽东提出“一切反动派都是纸老虎”的著名论断针对的是内战初期国民党在军事和经济方面占有的明显优势",
-    "tags": [
-      "为建立新中国而奋斗"
-    ]
-  },
-  {
-    "id": "cmh-202",
-    "sourceNumber": 202,
+    "id": "cmh-193",
+    "sourceNumber": 193,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1946年6月-1947年6月，人民军队处于战略防御阶段，战争区域是____。",
@@ -6285,7 +5997,7 @@
       },
       {
         "key": "B",
-        "text": "1949年4月23日"
+        "text": "广东"
       },
       {
         "key": "C",
@@ -6293,7 +6005,7 @@
       },
       {
         "key": "D",
-        "text": "工人阶级，农民阶级和城市小资产阶级"
+        "text": "乡村"
       }
     ],
     "correctAnswers": [
@@ -6305,23 +6017,23 @@
     ]
   },
   {
-    "id": "cmh-203",
-    "sourceNumber": 203,
+    "id": "cmh-194",
+    "sourceNumber": 194,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1947年6月，中国人民解放军开始实行战略进攻的战略意图是由____。",
     "options": [
       {
         "key": "A",
-        "text": "蒋介石国民党政府的经济崩溃和政治危机"
+        "text": "政治方式"
       },
       {
         "key": "B",
-        "text": "国民党反动统治"
+        "text": "国家政权"
       },
       {
         "key": "C",
-        "text": "行政院"
+        "text": "中体西用"
       },
       {
         "key": "D",
@@ -6337,8 +6049,8 @@
     ]
   },
   {
-    "id": "cmh-204",
-    "sourceNumber": 204,
+    "id": "cmh-195",
+    "sourceNumber": 195,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1947年，刘邓大军挺进中原的重大意义在于____。",
@@ -6349,15 +6061,15 @@
       },
       {
         "key": "B",
-        "text": "1948年9月-1949年1月"
+        "text": "第二次鸦片战争时的英法联军"
       },
       {
         "key": "C",
-        "text": "中国人民政治协商会议"
+        "text": "“东北易帜”"
       },
       {
         "key": "D",
-        "text": "统一的亲美政府"
+        "text": "豫湘桂战役"
       }
     ],
     "correctAnswers": [
@@ -6369,8 +6081,8 @@
     ]
   },
   {
-    "id": "cmh-205",
-    "sourceNumber": 205,
+    "id": "cmh-196",
+    "sourceNumber": 196,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1946年5月4日，中共中央发出《五四指示》所决定的土地政策是____。",
@@ -6381,15 +6093,15 @@
       },
       {
         "key": "B",
-        "text": "毛泽东"
+        "text": "和平建国"
       },
       {
         "key": "C",
-        "text": "中原解放区"
+        "text": "减租减息"
       },
       {
         "key": "D",
-        "text": "中国国民党革命委员会"
+        "text": "中体西用"
       }
     ],
     "correctAnswers": [
@@ -6401,19 +6113,19 @@
     ]
   },
   {
-    "id": "cmh-206",
-    "sourceNumber": 206,
+    "id": "cmh-197",
+    "sourceNumber": 197,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1947年中共中央召开全国土地会议，制订了《中国土地法大纲》的地点是____。",
     "options": [
       {
         "key": "A",
-        "text": "中国人民政治协商会议"
+        "text": "南京"
       },
       {
         "key": "B",
-        "text": "工人阶级和民族资产阶级"
+        "text": "广州、武汉"
       },
       {
         "key": "C",
@@ -6421,7 +6133,7 @@
       },
       {
         "key": "D",
-        "text": "解放区"
+        "text": "浙江萧山县"
       }
     ],
     "correctAnswers": [
@@ -6433,23 +6145,23 @@
     ]
   },
   {
-    "id": "cmh-207",
-    "sourceNumber": 207,
+    "id": "cmh-198",
+    "sourceNumber": 198,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1947年制订的《中国土地法大纲》规定____。",
     "options": [
       {
         "key": "A",
-        "text": "纸老虎”的著名论断针对的是内战初期国民党在军事和经济方面占有的明显优势"
+        "text": "兴中会"
       },
       {
         "key": "B",
-        "text": "国民党反动派"
+        "text": "太平天国和捻军"
       },
       {
         "key": "C",
-        "text": "避免共产党完全控制中国"
+        "text": "向全国进军的命令"
       },
       {
         "key": "D",
@@ -6465,8 +6177,8 @@
     ]
   },
   {
-    "id": "cmh-208",
-    "sourceNumber": 208,
+    "id": "cmh-199",
+    "sourceNumber": 199,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中国共产党得到农民衷心拥护原因是进行了____。",
@@ -6477,15 +6189,15 @@
       },
       {
         "key": "B",
-        "text": "政府委员会"
-      },
-      {
-        "key": "C",
         "text": "蒋介石国民党政府的经济崩溃和政治危机"
       },
       {
+        "key": "C",
+        "text": "农民阶级的局限性"
+      },
+      {
         "key": "D",
-        "text": "为建立新中国而奋斗"
+        "text": "不能依靠和发动人民群众"
       }
     ],
     "correctAnswers": [
@@ -6497,19 +6209,19 @@
     ]
   },
   {
-    "id": "cmh-209",
-    "sourceNumber": 209,
+    "id": "cmh-200",
+    "sourceNumber": 200,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "解放战争时期，国民党统治区人民民主运动高涨的根本原因是____。",
     "options": [
       {
         "key": "A",
-        "text": "改变解放战争的重要态势"
+        "text": "土地制度的革命"
       },
       {
         "key": "B",
-        "text": "河北平山县"
+        "text": "农民阶级的局限性"
       },
       {
         "key": "C",
@@ -6517,7 +6229,7 @@
       },
       {
         "key": "D",
-        "text": "党的思想建设"
+        "text": "土地革命"
       }
     ],
     "correctAnswers": [
@@ -6529,23 +6241,23 @@
     ]
   },
   {
-    "id": "cmh-210",
-    "sourceNumber": 210,
+    "id": "cmh-201",
+    "sourceNumber": 201,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1945年年底爆发的一二一运动，昆明学生提出的口号是____。",
     "options": [
       {
         "key": "A",
-        "text": "党的思想建设"
+        "text": "军事问题"
       },
       {
         "key": "B",
-        "text": "国家政权"
+        "text": "须知政权是由枪杆子中取得的"
       },
       {
         "key": "C",
-        "text": "向全国进军的命令"
+        "text": "创始国"
       },
       {
         "key": "D",
@@ -6561,15 +6273,15 @@
     ]
   },
   {
-    "id": "cmh-211",
-    "sourceNumber": 211,
+    "id": "cmh-202",
+    "sourceNumber": 202,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "对解放战争时期反蒋斗争第二条战线的准确描述是____。",
     "options": [
       {
         "key": "A",
-        "text": "立法院"
+        "text": "乡村"
       },
       {
         "key": "B",
@@ -6577,11 +6289,11 @@
       },
       {
         "key": "C",
-        "text": "中国民主同盟"
+        "text": "解放区"
       },
       {
         "key": "D",
-        "text": "论人民民主专政"
+        "text": "四川"
       }
     ],
     "correctAnswers": [
@@ -6593,8 +6305,8 @@
     ]
   },
   {
-    "id": "cmh-212",
-    "sourceNumber": 212,
+    "id": "cmh-203",
+    "sourceNumber": 203,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "解放战争时期，中间路线鼓吹者所主张的道路实质上是____。",
@@ -6605,15 +6317,15 @@
       },
       {
         "key": "B",
-        "text": "国家政权"
+        "text": "农民战争"
       },
       {
         "key": "C",
-        "text": "傅作义"
+        "text": "事实本质"
       },
       {
         "key": "D",
-        "text": "解放区"
+        "text": "资产阶级民主主义运动"
       }
     ],
     "correctAnswers": [
@@ -6625,15 +6337,15 @@
     ]
   },
   {
-    "id": "cmh-213",
-    "sourceNumber": 213,
+    "id": "cmh-204",
+    "sourceNumber": 204,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "解放战争时期，最早与蒋介石集团决裂的民主党派是____。",
     "options": [
       {
         "key": "A",
-        "text": "党的思想建设"
+        "text": "行政院"
       },
       {
         "key": "B",
@@ -6641,11 +6353,11 @@
       },
       {
         "key": "C",
-        "text": "农民战争"
+        "text": "中国国民党革命委员会"
       },
       {
         "key": "D",
-        "text": "耕者有其田"
+        "text": "同盟会"
       }
     ],
     "correctAnswers": [
@@ -6657,23 +6369,23 @@
     ]
   },
   {
-    "id": "cmh-214",
-    "sourceNumber": 214,
+    "id": "cmh-205",
+    "sourceNumber": 205,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1947年10月，被国民党当局宣布为“非法团体”的是____。",
     "options": [
       {
         "key": "A",
-        "text": "毛泽东"
+        "text": "同盟会"
       },
       {
         "key": "B",
-        "text": "工人阶级和民族资产阶级"
+        "text": "红一、二、四方面军"
       },
       {
         "key": "C",
-        "text": "避免共产党完全控制中国"
+        "text": "中国国民党革命委员会"
       },
       {
         "key": "D",
@@ -6689,19 +6401,19 @@
     ]
   },
   {
-    "id": "cmh-215",
-    "sourceNumber": 215,
+    "id": "cmh-206",
+    "sourceNumber": 206,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "宋庆龄为名誉主席的民主党派是____。",
     "options": [
       {
         "key": "A",
-        "text": "中国人民政治协商会议"
+        "text": "中国民主同盟"
       },
       {
         "key": "B",
-        "text": "纸老虎”的著名论断针对的是内战初期国民党在军事和经济方面占有的明显优势"
+        "text": "行政院"
       },
       {
         "key": "C",
@@ -6709,7 +6421,7 @@
       },
       {
         "key": "D",
-        "text": "论人民民主专政"
+        "text": "同盟会"
       }
     ],
     "correctAnswers": [
@@ -6721,15 +6433,15 @@
     ]
   },
   {
-    "id": "cmh-216",
-    "sourceNumber": 216,
+    "id": "cmh-207",
+    "sourceNumber": 207,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "标志着民盟站在新民主主义革命的立场上来的会议是____。",
     "options": [
       {
         "key": "A",
-        "text": "为建立新中国而奋斗"
+        "text": "西安事变的和平解决"
       },
       {
         "key": "B",
@@ -6737,11 +6449,11 @@
       },
       {
         "key": "C",
-        "text": "国民党反动统治"
+        "text": "五四运动"
       },
       {
         "key": "D",
-        "text": "政治方式"
+        "text": "南昌起义"
       }
     ],
     "correctAnswers": [
@@ -6753,19 +6465,19 @@
     ]
   },
   {
-    "id": "cmh-217",
-    "sourceNumber": 217,
+    "id": "cmh-208",
+    "sourceNumber": 208,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中国各民主党派地位根本变化的标志是____。",
     "options": [
       {
         "key": "A",
-        "text": "国民党反动派"
+        "text": "国民党“一大”"
       },
       {
         "key": "B",
-        "text": "纸老虎”的著名论断针对的是内战初期国民党在军事和经济方面占有的明显优势"
+        "text": "中原解放区"
       },
       {
         "key": "C",
@@ -6773,7 +6485,7 @@
       },
       {
         "key": "D",
-        "text": "解放区"
+        "text": "西安事变的和平解决"
       }
     ],
     "correctAnswers": [
@@ -6785,15 +6497,15 @@
     ]
   },
   {
-    "id": "cmh-218",
-    "sourceNumber": 218,
+    "id": "cmh-209",
+    "sourceNumber": 209,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中国共产党领导的多党合作与政治协商制度的基本组织形式是____。",
     "options": [
       {
         "key": "A",
-        "text": "民盟一届三中全会"
+        "text": "中共七大"
       },
       {
         "key": "B",
@@ -6801,11 +6513,11 @@
       },
       {
         "key": "C",
-        "text": "政治方式"
+        "text": "七届二中全会"
       },
       {
         "key": "D",
-        "text": "耕者有其田"
+        "text": "波茨坦会议"
       }
     ],
     "correctAnswers": [
@@ -6817,19 +6529,19 @@
     ]
   },
   {
-    "id": "cmh-219",
-    "sourceNumber": 219,
+    "id": "cmh-210",
+    "sourceNumber": 210,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "辽沈、淮海、平津三大战役进行的时间是____。",
     "options": [
       {
         "key": "A",
-        "text": "纸老虎”的著名论断针对的是内战初期国民党在军事和经济方面占有的明显优势"
+        "text": "1906年"
       },
       {
         "key": "B",
-        "text": "中国国民党革命委员会"
+        "text": "1922年"
       },
       {
         "key": "C",
@@ -6837,7 +6549,7 @@
       },
       {
         "key": "D",
-        "text": "“反对内战，争取自由”"
+        "text": "9月3日"
       }
     ],
     "correctAnswers": [
@@ -6849,23 +6561,23 @@
     ]
   },
   {
-    "id": "cmh-220",
-    "sourceNumber": 220,
+    "id": "cmh-211",
+    "sourceNumber": 211,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "率领北平国民党军队接受和平改编的国民党将领是____。",
     "options": [
       {
         "key": "A",
-        "text": "党的思想建设"
+        "text": "蔡锷"
       },
       {
         "key": "B",
-        "text": "国家政权"
+        "text": "陈望道"
       },
       {
         "key": "C",
-        "text": "国民党反动统治"
+        "text": "王明"
       },
       {
         "key": "D",
@@ -6881,19 +6593,19 @@
     ]
   },
   {
-    "id": "cmh-221",
-    "sourceNumber": 221,
+    "id": "cmh-212",
+    "sourceNumber": 212,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1949年4月21日，毛泽东和朱德桓发布《____》。",
     "options": [
       {
         "key": "A",
-        "text": "避免共产党完全控制中国"
+        "text": "战略相持阶段"
       },
       {
         "key": "B",
-        "text": "耕者有其田"
+        "text": "农村包围城市，武装夺取政权"
       },
       {
         "key": "C",
@@ -6901,7 +6613,7 @@
       },
       {
         "key": "D",
-        "text": "中国民主同盟"
+        "text": "八国联军"
       }
     ],
     "correctAnswers": [
@@ -6913,15 +6625,15 @@
     ]
   },
   {
-    "id": "cmh-222",
-    "sourceNumber": 222,
+    "id": "cmh-213",
+    "sourceNumber": 213,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "国民党统治覆灭的时间是____。",
     "options": [
       {
         "key": "A",
-        "text": "为建立新中国而奋斗"
+        "text": "太平天国和捻军"
       },
       {
         "key": "B",
@@ -6929,11 +6641,11 @@
       },
       {
         "key": "C",
-        "text": "中国民主同盟"
+        "text": "民族意识"
       },
       {
         "key": "D",
-        "text": "蒋介石国民党政府的经济崩溃和政治危机"
+        "text": "临时宪法"
       }
     ],
     "correctAnswers": [
@@ -6945,19 +6657,19 @@
     ]
   },
   {
-    "id": "cmh-223",
-    "sourceNumber": 223,
+    "id": "cmh-214",
+    "sourceNumber": 214,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1949年，人民解放军占领了南京，宣告延续了22年之久的____覆灭了。",
     "options": [
       {
         "key": "A",
-        "text": "党的思想建设"
+        "text": "留学生为骨干的青年知识分子"
       },
       {
         "key": "B",
-        "text": "事实本质"
+        "text": "德国"
       },
       {
         "key": "C",
@@ -6965,7 +6677,7 @@
       },
       {
         "key": "D",
-        "text": "傅作义"
+        "text": "工人阶级和民族资产阶级"
       }
     ],
     "correctAnswers": [
@@ -6977,15 +6689,15 @@
     ]
   },
   {
-    "id": "cmh-224",
-    "sourceNumber": 224,
+    "id": "cmh-215",
+    "sourceNumber": 215,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "“钟山风雨起苍黄，百万雄师过大江……天若有情天亦老，人间正道是沧桑”是____在解放军占领南京后所做的诗。",
     "options": [
       {
         "key": "A",
-        "text": "中华人民共和国"
+        "text": "光绪皇帝"
       },
       {
         "key": "B",
@@ -6993,11 +6705,11 @@
       },
       {
         "key": "C",
-        "text": "中国人民政治协商会议"
+        "text": "邹容"
       },
       {
         "key": "D",
-        "text": "国统区的人民民主运动"
+        "text": "英国人赫德"
       }
     ],
     "correctAnswers": [
@@ -7009,19 +6721,19 @@
     ]
   },
   {
-    "id": "cmh-225",
-    "sourceNumber": 225,
+    "id": "cmh-216",
+    "sourceNumber": 216,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "毛泽东向全党提出“两个务必”思想是在____。",
     "options": [
       {
         "key": "A",
-        "text": "党的思想建设"
+        "text": "中共七大"
       },
       {
         "key": "B",
-        "text": "没收地主的土地"
+        "text": "中国人民政治协商会议"
       },
       {
         "key": "C",
@@ -7029,7 +6741,7 @@
       },
       {
         "key": "D",
-        "text": "民盟一届三中全会"
+        "text": "波茨坦会议"
       }
     ],
     "correctAnswers": [
@@ -7041,15 +6753,15 @@
     ]
   },
   {
-    "id": "cmh-226",
-    "sourceNumber": 226,
+    "id": "cmh-217",
+    "sourceNumber": 217,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "1949年6月30日，毛泽东发表了著名的《____》。",
     "options": [
       {
         "key": "A",
-        "text": "民盟一届三中全会"
+        "text": "《资政新篇》"
       },
       {
         "key": "B",
@@ -7057,11 +6769,11 @@
       },
       {
         "key": "C",
-        "text": "为建立新中国而奋斗"
+        "text": "《中华民国临时约法》"
       },
       {
         "key": "D",
-        "text": "河北平山县"
+        "text": "《新青年》"
       }
     ],
     "correctAnswers": [
@@ -7073,15 +6785,15 @@
     ]
   },
   {
-    "id": "cmh-227",
-    "sourceNumber": 227,
+    "id": "cmh-218",
+    "sourceNumber": 218,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "人民民主专政的基础是____的联盟。",
     "options": [
       {
         "key": "A",
-        "text": "纸老虎”的著名论断针对的是内战初期国民党在军事和经济方面占有的明显优势"
+        "text": "封建阶级"
       },
       {
         "key": "B",
@@ -7089,11 +6801,11 @@
       },
       {
         "key": "C",
-        "text": "中原解放区"
+        "text": "中外反动势力的联合镇压"
       },
       {
         "key": "D",
-        "text": "参加新政协并将在新中国参政"
+        "text": "工人阶级和民族资产阶级"
       }
     ],
     "correctAnswers": [
@@ -7105,15 +6817,15 @@
     ]
   },
   {
-    "id": "cmh-228",
-    "sourceNumber": 228,
+    "id": "cmh-219",
+    "sourceNumber": 219,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "在中国共产党的领导下，中国人民推翻了三座大山，于1949年成立了____，这标志着新民主主义革命的胜利。",
     "options": [
       {
         "key": "A",
-        "text": "解放区"
+        "text": "香港海员罢工"
       },
       {
         "key": "B",
@@ -7121,11 +6833,11 @@
       },
       {
         "key": "C",
-        "text": "傅作义"
+        "text": "南昌起义"
       },
       {
         "key": "D",
-        "text": "统一的亲美政府"
+        "text": "陈独秀在上海创办《青年杂志》"
       }
     ],
     "correctAnswers": [
@@ -7137,23 +6849,23 @@
     ]
   },
   {
-    "id": "cmh-229",
-    "sourceNumber": 229,
+    "id": "cmh-220",
+    "sourceNumber": 220,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中共七届二中全会提出中国共产党的工作重心由____转到城市。",
     "options": [
       {
         "key": "A",
-        "text": "中华人民共和国"
+        "text": "国统区的人民民主运动"
       },
       {
         "key": "B",
-        "text": "工人阶级及其政党"
+        "text": "解放区"
       },
       {
         "key": "C",
-        "text": "政府委员会"
+        "text": "四川"
       },
       {
         "key": "D",
@@ -7169,23 +6881,23 @@
     ]
   },
   {
-    "id": "cmh-230",
-    "sourceNumber": 230,
+    "id": "cmh-221",
+    "sourceNumber": 221,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中华人民共和国成立时，《共同纲领》起____作用。",
     "options": [
       {
         "key": "A",
-        "text": "中国人民政治协商会议"
+        "text": "没收地主的土地"
       },
       {
         "key": "B",
-        "text": "为建立新中国而奋斗"
+        "text": "创始国"
       },
       {
         "key": "C",
-        "text": "工人阶级，农民阶级和城市小资产阶级"
+        "text": "1949年4月23日"
       },
       {
         "key": "D",
@@ -7201,19 +6913,19 @@
     ]
   },
   {
-    "id": "cmh-231",
-    "sourceNumber": 231,
+    "id": "cmh-222",
+    "sourceNumber": 222,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "在统一战线中，我们要积极争取和扩大的是____的联盟。",
     "options": [
       {
         "key": "A",
-        "text": "河北平山县"
+        "text": "工人阶级及其政党"
       },
       {
         "key": "B",
-        "text": "国统区的人民民主运动"
+        "text": "封建阶级"
       },
       {
         "key": "C",
@@ -7221,7 +6933,7 @@
       },
       {
         "key": "D",
-        "text": "1949年4月23日"
+        "text": "皆有各阶级阶层广泛参加"
       }
     ],
     "correctAnswers": [
@@ -7233,23 +6945,23 @@
     ]
   },
   {
-    "id": "cmh-232",
-    "sourceNumber": 232,
+    "id": "cmh-223",
+    "sourceNumber": 223,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "巩固和扩大统一战线的关键是坚持____的领导权。",
     "options": [
       {
         "key": "A",
-        "text": "旧民主主义道路"
+        "text": "工人阶级和民族资产阶级"
       },
       {
         "key": "B",
-        "text": "人民军队和解放区的合法地位问题"
+        "text": "中外反动势力的联合镇压"
       },
       {
         "key": "C",
-        "text": "傅作义"
+        "text": "皆有各阶级阶层广泛参加"
       },
       {
         "key": "D",
@@ -7265,15 +6977,15 @@
     ]
   },
   {
-    "id": "cmh-233",
-    "sourceNumber": 233,
+    "id": "cmh-224",
+    "sourceNumber": 224,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "中国的武装战争实质是由工人阶级领导的____。",
     "options": [
       {
         "key": "A",
-        "text": "1948年9月-1949年1月"
+        "text": "事实本质"
       },
       {
         "key": "B",
@@ -7281,11 +6993,11 @@
       },
       {
         "key": "C",
-        "text": "党的思想建设"
+        "text": "旧民主主义道路"
       },
       {
         "key": "D",
-        "text": "旧民主主义道路"
+        "text": "资产阶级民主主义运动"
       }
     ],
     "correctAnswers": [
@@ -7297,15 +7009,15 @@
     ]
   },
   {
-    "id": "cmh-234",
-    "sourceNumber": 234,
+    "id": "cmh-225",
+    "sourceNumber": 225,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "完成创建新中国的任务，是由____来承担的。",
     "options": [
       {
         "key": "A",
-        "text": "国统区的人民民主运动"
+        "text": "七届二中全会"
       },
       {
         "key": "B",
@@ -7313,11 +7025,11 @@
       },
       {
         "key": "C",
-        "text": "国民党反动统治"
+        "text": "波茨坦会议"
       },
       {
         "key": "D",
-        "text": "政府委员会"
+        "text": "中共七大"
       }
     ],
     "correctAnswers": [
@@ -7329,23 +7041,23 @@
     ]
   },
   {
-    "id": "cmh-235",
-    "sourceNumber": 235,
+    "id": "cmh-226",
+    "sourceNumber": 226,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "加强中国共产党的建设，首先着重____。",
     "options": [
       {
         "key": "A",
-        "text": "改变解放战争的重要态势"
+        "text": "国家政权"
       },
       {
         "key": "B",
-        "text": "国民党反动派"
+        "text": "中国民族资本主义的初步发展"
       },
       {
         "key": "C",
-        "text": "中国民主同盟"
+        "text": "中体西用"
       },
       {
         "key": "D",
@@ -7361,19 +7073,19 @@
     ]
   },
   {
-    "id": "cmh-236",
-    "sourceNumber": 236,
+    "id": "cmh-227",
+    "sourceNumber": 227,
     "subjectId": "china-modern-history",
     "type": "single",
     "stem": "革命的根本问题是____问题。",
     "options": [
       {
         "key": "A",
-        "text": "避免共产党完全控制中国"
+        "text": "党的思想建设"
       },
       {
         "key": "B",
-        "text": "工人阶级及其政党"
+        "text": "中国民族资本主义的初步发展"
       },
       {
         "key": "C",
@@ -7381,7 +7093,7 @@
       },
       {
         "key": "D",
-        "text": "傅作义"
+        "text": "中体西用"
       }
     ],
     "correctAnswers": [
